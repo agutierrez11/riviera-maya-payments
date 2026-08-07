@@ -60,7 +60,7 @@ class NumberedCanvas(canvas.Canvas):
         # Footer page counter & confidential mark
         self.setFillColor(colors.HexColor('#64748B'))
         self.setFont("Helvetica", 9)
-        self.drawString(245, 20, "DOCUMENTO CONFIDENCIAL ESTATAL CON FUENTES Y TEMPORALIDADES DE VIAJE")
+        self.drawString(245, 20, "DOCUMENTO CONFIDENCIAL CON DESGLOSE TAM / SAM / SOM POR PAÍS Y MUNICIPIO")
         self.drawRightString(width - 30, 20, f"Diapositiva {self._pageNumber} de {page_count}")
 
 
@@ -107,8 +107,8 @@ def generate_pdf():
         'CardLabel',
         parent=styles['Heading2'],
         fontName='Helvetica-Bold',
-        fontSize=12,
-        leading=15,
+        fontSize=11.5,
+        leading=14.5,
         textColor=colors.HexColor('#0F172A'),
         spaceAfter=4
     )
@@ -117,8 +117,8 @@ def generate_pdf():
         'CardDesc',
         parent=styles['Normal'],
         fontName='Helvetica',
-        fontSize=9.5,
-        leading=12.5,
+        fontSize=9,
+        leading=12,
         textColor=colors.HexColor('#334155')
     )
 
@@ -177,8 +177,72 @@ def generate_pdf():
     story.append(Paragraph("📌 <b>FUENTES OFICIALES CORROBORABLES:</b> DATATUR (Secretaría de Turismo de México) · SECTUR Quintana Roo (Reporte Anual) · CNET.", source_style))
     story.append(PageBreak())
 
-    # ------------------ SLIDE 2: TEMPORALIDADES Y ESTACIONALIDAD ------------------
-    story.append(Paragraph("02 · TEMPORALIDADES DE VIAJE Y CONTRA-CICLO ESTACIONAL", tag_style))
+    # ------------------ SLIDE 2: TAM / SAM / SOM DESGLOSADO POR PAÍS Y MUNICIPIO ------------------
+    story.append(Paragraph("02 · MODELO FINANCIERO TAM / SAM / SOM DESGLOSADO", tag_style))
+    story.append(Paragraph("Desglose del Mercado Total (TAM $1,113M USD), Atendible (SAM $350.6M USD) y Captación Piso (SOM $3.5M USD)", title_style))
+    
+    data_tam_sam_som = [
+        [
+            Paragraph("<b>DESGLOSE POR PAÍS DE ORIGEN</b>", card_label_style),
+            Paragraph("<b>TAM (Gasto Sitio)</b>", card_label_style),
+            Paragraph("<b>SAM (31.5% Dig.)</b>", card_label_style),
+            Paragraph("<b>SOM (Piso 1%)</b>", card_label_style)
+        ],
+        [
+            Paragraph("🇨🇴 <b>Colombia (380k Turistas)</b>", card_desc_style),
+            Paragraph("$395.00 M USD", card_desc_style),
+            Paragraph("$124.40 M USD", card_desc_style),
+            Paragraph("<b>$1,244,000 USD</b>", card_desc_style)
+        ],
+        [
+            Paragraph("🇧🇷 <b>Brasil (150k Turistas)</b>", card_desc_style),
+            Paragraph("$181.35 M USD", card_desc_style),
+            Paragraph("$57.12 M USD", card_desc_style),
+            Paragraph("<b>$571,200 USD</b>", card_desc_style)
+        ],
+        [
+            Paragraph("🇦🇷 <b>Argentina (160k Turistas)</b>", card_desc_style),
+            Paragraph("$180.12 M USD", card_desc_style),
+            Paragraph("$56.74 M USD", card_desc_style),
+            Paragraph("<b>$567,400 USD</b>", card_desc_style)
+        ],
+        [
+            Paragraph("🇵🇪 <b>Perú (135k Turistas)</b>", card_desc_style),
+            Paragraph("$132.30 M USD", card_desc_style),
+            Paragraph("$41.67 M USD", card_desc_style),
+            Paragraph("<b>$416,700 USD</b>", card_desc_style)
+        ],
+        [
+            Paragraph("🌎 <b>Otros LATAM (Chile/Uruguay/etc)</b>", card_desc_style),
+            Paragraph("$224.43 M USD", card_desc_style),
+            Paragraph("$70.67 M USD", card_desc_style),
+            Paragraph("<b>$706,700 USD</b>", card_desc_style)
+        ],
+        [
+            Paragraph("<b>TOTAL QUINTANA ROO</b>", card_label_style),
+            Paragraph("<b>$1,113.20 M USD</b>", card_label_style),
+            Paragraph("<b>$350.60 M USD</b>", card_label_style),
+            Paragraph("<b><font color='#00C853'>$3,506,000 USD</font></b>", card_label_style)
+        ]
+    ]
+    
+    t_tss = Table(data_tam_sam_som, colWidths=[180, 110, 110, 120])
+    t_tss.setStyle(TableStyle([
+        ('BACKGROUND', (0,0), (-1,0), colors.HexColor('#1F2A44')),
+        ('TEXTCOLOR', (0,0), (-1,0), colors.HexColor('#FFFFFF')),
+        ('BACKGROUND', (0,1), (-1,-2), colors.HexColor('#F8FAFC')),
+        ('BACKGROUND', (0,-1), (-1,-1), colors.HexColor('#E2E8F0')),
+        ('GRID', (0,0), (-1,-1), 1, colors.HexColor('#CBD5E1')),
+        ('PADDING', (0,0), (-1,-1), 6),
+    ]))
+    
+    story.append(t_tss)
+    story.append(Spacer(1, 10))
+    story.append(Paragraph("📌 <b>DESGLOSE POR MUNICIPIO EN QROO (SOM PISO $3.5M USD):</b> Cancún/Benito Juárez: <b>$1.23M USD (40 txs/día)</b> · Playa del Carmen/Solidaridad: <b>$1.05M USD (35 txs/día)</b> · Tulum: <b>$0.77M USD (25 txs/día)</b> · Cozumel/Isla Mujeres: <b>$0.45M USD (13 txs/día)</b>.", source_style))
+    story.append(PageBreak())
+
+    # ------------------ SLIDE 3: TEMPORALIDADES ------------------
+    story.append(Paragraph("03 · TEMPORALIDADES DE VIAJE Y CONTRA-CICLO ESTACIONAL", tag_style))
     story.append(Paragraph("El turismo sudamericano genera picos de afluencia durante la temporada baja norteamericana (Junio a Agosto)", title_style))
     
     data_s2_season = [
@@ -187,16 +251,16 @@ def generate_pdf():
             Paragraph("<b>🇧🇷 Brasil (150k Turistas)</b><br/><font color='#A855F7'><b>Julio, Diciembre & Feb/Mar</b></font>", card_label_style)
         ],
         [
-            Paragraph("• <b>Vacaciones de mitad de año</b> (Junio/Julio).<br/>• <b>Semana de Receso escolar</b> (Octubre).<br/>• Fiestas de fin de año (Diciembre/Enero).", card_desc_style),
-            Paragraph("• <b>Vacaciones de invierno austral</b> (Julio).<br/>• Fiestas y verano del hemisferio sur (Dic/Ene).<br/>• <b>Semana de Carnaval</b> (Febrero/Marzo).", card_desc_style)
+            Paragraph("• Vacaciones de mitad de año (Junio/Julio).<br/>• Semana de Receso escolar (Octubre).<br/>• Fiestas de fin de año (Diciembre/Enero).", card_desc_style),
+            Paragraph("• Vacaciones de invierno austral (Julio).<br/>• Fiestas y verano del hemisferio sur (Dic/Ene).<br/>• Semana de Carnaval (Febrero/Marzo).", card_desc_style)
         ],
         [
             Paragraph("<b>🇦🇷 Argentina (160k Turistas)</b><br/><font color='#00E5FF'><b>Enero - Febrero & Julio</b></font>", card_label_style),
             Paragraph("<b>🇵🇪 Perú (135k Turistas)</b><br/><font color='#FF9100'><b>Julio - Agosto & Enero/Feb</b></font>", card_label_style)
         ],
         [
-            Paragraph("• <b>Verano austral principal</b> (Enero/Febrero).<br/>• Receso escolar de invierno (Julio).<br/>• Escapadas de fin de año (Nov/Dic).", card_desc_style),
-            Paragraph("• <b>Fiestas Patrias peruanas</b> (28-29 de Julio).<br/>• Vacaciones escolares de invierno (Julio/Ago).<br/>• Receso de verano (Enero/Febrero).", card_desc_style)
+            Paragraph("• Verano austral principal (Enero/Febrero).<br/>• Receso escolar de invierno (Julio).<br/>• Escapadas de fin de año (Nov/Dic).", card_desc_style),
+            Paragraph("• Fiestas Patrias peruanas (28-29 de Julio).<br/>• Vacaciones escolares de invierno (Julio/Ago).<br/>• Receso de verano (Enero/Febrero).", card_desc_style)
         ]
     ]
     
@@ -219,50 +283,6 @@ def generate_pdf():
     story.append(t_season)
     story.append(Spacer(1, 10))
     story.append(Paragraph("📌 <b>IMPACTO ESTRATÉGICO DE ESTACIONALIDAD:</b> Mientras el flujo de EE.UU. cae entre Mayo y Agosto, los 4 mercados sudamericanos tienen sus picos máximos de vacaciones familiares en Junio, Julio y Agosto, equilibrando la ocupación hotelera de Quintana Roo.", source_style))
-    story.append(PageBreak())
-    
-    # ------------------ SLIDE 3 ------------------
-    story.append(Paragraph("03 · HÁBITOS DE PAGO Y SOBRECOSTOS IMPOSITIVOS", tag_style))
-    story.append(Paragraph("El 65% de los turistas sudamericanos evita usar tarjetas tradicionales por comisiones e impuestos en sus países", title_style))
-    
-    data_s2 = [
-        [
-            Paragraph("<b>🇧🇷 Brasil — Red PIX (>65,000M Txs/Año)</b>", card_label_style),
-            Paragraph("<b>🇦🇷 Argentina — eWallets & CBU (62% Adopción)</b>", card_label_style)
-        ],
-        [
-            Paragraph("El 85% prefiere pagar con PIX para eludir el <b>3.5% de Impuesto IOF</b> que cobra su gobierno al usar tarjeta en México.", card_desc_style),
-            Paragraph("Los argentinos evitan la tarjeta de crédito para eludir el <b>15% al 25% de recargo impositivo AFIP</b> ('Dólar Tarjeta').", card_desc_style)
-        ],
-        [
-            Paragraph("<b>🇵🇪 Perú — Yape & Plin (>40M Txs/Día)</b>", card_label_style),
-            Paragraph("<b>🇨🇴 Colombia — Nequi & DaviPlata (>78% Adultos)</b>", card_label_style)
-        ],
-        [
-            Paragraph("El 68% de los viajeros peruanos no utiliza tarjeta de crédito por temor a altas tasas de interés bancarias.", card_desc_style),
-            Paragraph("Prevalencia masiva de pagos mediante llaves digitales y códigos QR de transferencia instantánea.", card_desc_style)
-        ]
-    ]
-    
-    t2 = Table(data_s2, colWidths=[260, 260])
-    t2.setStyle(TableStyle([
-        ('BACKGROUND', (0,0), (-1,-1), colors.HexColor('#F8FAFC')),
-        ('BOX', (0,0), (0,1), 1, colors.HexColor('#E2E8F0')),
-        ('BOX', (1,0), (1,1), 1, colors.HexColor('#E2E8F0')),
-        ('BOX', (0,2), (0,3), 1, colors.HexColor('#E2E8F0')),
-        ('BOX', (1,2), (1,3), 1, colors.HexColor('#E2E8F0')),
-        ('LINELEFT', (0,0), (0,1), 4, colors.HexColor('#00C853')),
-        ('LINELEFT', (1,0), (1,1), 4, colors.HexColor('#3B82F6')),
-        ('LINELEFT', (0,2), (0,3), 4, colors.HexColor('#A855F7')),
-        ('LINELEFT', (1,2), (1,3), 4, colors.HexColor('#EC4899')),
-        ('PADDING', (0,0), (-1,-1), 10),
-        ('BOTTOMPADDING', (0,0), (-1,0), 2),
-        ('BOTTOMPADDING', (0,2), (-1,2), 2),
-    ]))
-    
-    story.append(t2)
-    story.append(Spacer(1, 10))
-    story.append(Paragraph("📌 <b>FUENTES OFICIALES CORROBORABLES:</b> Banco Central do Brasil (BCB - Relatório PIX & IOF Receita Federal) · AFIP Argentina (Régimen Percepción Moneda Extranjera) · BCRP Perú · SFC Colombia.", source_style))
     story.append(PageBreak())
 
     # ------------------ SLIDE 4 ------------------
@@ -395,7 +415,7 @@ def generate_pdf():
         import shutil
         try:
             shutil.copy(target_pdf, target_onedrive_pdf)
-            print(f"PDF con fuentes oficiales y temporalidades exitosamente actualizado en:\n1. {target_pdf}\n2. {target_onedrive_pdf}")
+            print(f"PDF con fuentes oficiales, temporalidades y TAM/SAM/SOM exitosamente actualizado en:\n1. {target_pdf}\n2. {target_onedrive_pdf}")
         except Exception as e:
             print(f"PDF generado exitosamente en:\n1. {target_pdf}\n(OneDrive ocupado por vista previa: {e})")
 
