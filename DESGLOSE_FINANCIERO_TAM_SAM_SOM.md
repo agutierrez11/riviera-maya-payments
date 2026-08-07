@@ -67,7 +67,7 @@ quadrantChart
 
 Asumiendo una tarifa promedio de procesamiento transfronterizo del **2.0% Take Rate** (Spread FX + Fee PSP):
 
-### **1. Ingresos Brutos para el Procesador (Starpago):**
+### **1. Ingresos Brutos para el Procesador (Motor PSP Aliado):**
 * **Año 1:** $50.0M USD procesados × 2.0% = **$1,000,000 USD ($20M MXN) de Revenue Bruto**.
 * **Año 2:** $130.0M USD procesados × 2.0% = **$2,600,000 USD ($52M MXN) de Revenue Bruto**.
 

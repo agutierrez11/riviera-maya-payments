@@ -16,7 +16,7 @@
 
 ## 🔌 2. MAPEO DEL ECOSISTEMA TECNOLÓGICO DE FETUR Y ESTRATEGIA DE INTEGRACIÓN
 
-FETUR ya tiene catalogadas y pre-integradas las herramientas líderes en su hub (`hub.fetur.tech`). Nuestra pasarela (Starpago / APM Engine) se conecta como el **Motor de Cobro Sudamericano** detrás de cada una de estas 3 verticales:
+FETUR ya tiene catalogadas y pre-integradas las herramientas líderes en su hub (`hub.fetur.tech`). Nuestra pasarela (Motor PSP Aliado / APM Engine) se conecta como el **Motor de Cobro Sudamericano** detrás de cada una de estas 3 verticales:
 
 ```mermaid
 flowchart TD
@@ -41,7 +41,7 @@ flowchart TD
 ### 🏨 A. VERTICAL HOTELES & HOSPEDAJE
 
 1. **Duve (Guest App & Digital Check-in):**  
-   Duve es la plataforma de experiencia digital del huésped. Permite que el turista haga Check-in digital antes de llegar. Al integrar el API de Starpago en Duve, el turista sudamericano paga su depósito o consumo adicional directamente con **PIX, Bre-B o Yape** desde su celular.
+   Duve es la plataforma de experiencia digital del huésped. Permite que el turista haga Check-in digital antes de llegar. Al integrar el API de Motor PSP Aliado en Duve, el turista sudamericano paga su depósito o consumo adicional directamente con **PIX, Bre-B o Yape** desde su celular.
 2. **Cloudbeds & SiteMinder:**  
    Sincronizan los motores de reservas de los hoteles boutique de Tulum y Playa del Carmen.
 

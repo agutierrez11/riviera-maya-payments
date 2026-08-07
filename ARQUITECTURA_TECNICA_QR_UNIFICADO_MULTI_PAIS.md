@@ -41,15 +41,15 @@ flowchart TD
 ## 🌐 ESQUEMA B: ESTÁNDAR INTERNACIONAL EMVCo UNIFIED QR PAYLOAD
 
 * **El Estándar Global:** El Banco Central do Brasil (PIX) y las redes interoperables de LATAM operan bajo el estándar **EMVCo QR Code Specification**.
-* **Unified Payload:** El QR de la pasarela (Starpago) empaca múltiples identificadores de merchant dentro de la misma cadena de caracteres. La app bancaria de origen (ej. Itaú en Brasil) reconoce su propia llave de pago dentro del estándar.
+* **Unified Payload:** El QR de la pasarela (Motor PSP Aliado) empaca múltiples identificadores de merchant dentro de la misma cadena de caracteres. La app bancaria de origen (ej. Itaú en Brasil) reconoce su propia llave de pago dentro del estándar.
 
 ---
 
 ## 📋 PREGUNTAS TÉCNICAS PARA FERNANDO / STARPAGO
 
-Para tu próxima reunión con Fernando o con el equipo de tecnología de Starpago, puedes hacerles exactamente estas 3 preguntas de nivel experto:
+Para tu próxima reunión con Fernando o con el equipo de tecnología de Motor PSP Aliado, puedes hacerles exactamente estas 3 preguntas de nivel experto:
 
-1. ❓ *"¿La pasarela de Starpago genera la redirección de 1 solo QR mediante **Smart Web-Landing con detección de User-Agent/IP** o vía **EMVCo Unified Payload**?"*
+1. ❓ *"¿La pasarela de Motor PSP Aliado genera la redirección de 1 solo QR mediante **Smart Web-Landing con detección de User-Agent/IP** o vía **EMVCo Unified Payload**?"*
 2. ❓ *"¿El Smart QR ejecuta **Deep-Linking nativo** a las apps bancarias de origen (`pix://`, `nequi://`, `yape://`) al escanear?"*
 3. ❓ *"¿Si el User-Agent es ambiguo, la Web-Landing despliega el selector limpio de 1-Tap con las 4 banderas (Brasil 🇧🇷, Colombia 🇨🇴, Perú 🇵🇪, Argentina 🇦🇷)?"*
 

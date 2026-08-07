@@ -66,7 +66,7 @@ Para eliminar cualquier duda o escepticismo sobre si el turista "sabrá o querr�
 
 ## 📈 4. MODELADO DE ESCENARIOS DE USO CONSERVADORES (SOM EN QUINTANA ROO)
 
-Para presentar proyecciones financieras realistas y conservadoras ante FETUR y Starpago en Quintana Roo (SAM de **$350.6M USD**):
+Para presentar proyecciones financieras realistas y conservadoras ante FETUR y Motor PSP Aliado en Quintana Roo (SAM de **$350.6M USD**):
 
 | Escenario de Adopción | % Captura del SAM en Año 1 | Volumen Procesado (SOM) | Revenue Bruto PSP (2.0% Take Rate) | Tu Comisión (0.20% BPS) |
 | :--- | :--- | :--- | :--- | :--- |

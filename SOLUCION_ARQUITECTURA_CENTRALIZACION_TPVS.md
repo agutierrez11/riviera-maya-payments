@@ -25,7 +25,7 @@ flowchart TD
     end
 
     subgraph OPCION2 ["OPCIÓN 2: Integración a Nivel Software PMS / POS (Soft Restaurant / Opera)"]
-        D["Software de Caja del Comercio (Soft Restaurant / PMS Hotel)"] --> E["Integración de API Única con Starpago"]
+        D["Software de Caja del Comercio (Soft Restaurant / PMS Hotel)"] --> E["Integración de API Única con Motor PSP Aliado"]
         E --> F["Impresión de QR APM directo en la comanda o pantalla de cobro"]
     end
 
@@ -59,7 +59,7 @@ Hoy más del **60% de las TPVs instaladas en Quintana Roo son Smart POS Android*
 
 #### **Cómo funciona:**
 * No hay que cambiar la terminal.
-* Vía actualización remota (*Over-The-Air*), se instala la App **FETUR Pay / Starpago** en el menú de la terminal.
+* Vía actualización remota (*Over-The-Air*), se instala la App **FETUR Pay / Motor PSP Aliado** en el menú de la terminal.
 * Cuando llega un turista sudamericano, el cajero abre la app en la misma TPV, digita el monto en MXN, se genera el QR de PIX/Bre-B/Yape, el turista paga y la terminal imprime el comprobante habitual.
 
 ---

@@ -16,7 +16,7 @@ Spin NO entra como adquirente transfronterizo. **Spin entra como la Cuenta Desti
 
 ```mermaid
 flowchart LR
-    A["Turista Sudamericano paga en QR Gafete"] --> B["Starpago Engine procesa el cobro (PIX/Bre-B/Yape)"]
+    A["Turista Sudamericano paga en QR Gafete"] --> B["Motor PSP Aliado Engine procesa el cobro (PIX/Bre-B/Yape)"]
     B --> C["Liquidación SPEI en tiempo real (MXN)"]
     C --> D["Tarjeta Spin by OXXO / Mercado Pago / BanCoppel del Lanchero o Artesano"]
 ```

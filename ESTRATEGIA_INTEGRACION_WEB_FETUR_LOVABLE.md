@@ -27,7 +27,7 @@ flowchart TD
 
     subgraph MOTOR ["2. MOTOR INFRAESTRUCTURA (pay.fetur.tech)"]
         B --> C["Landing Web ultrarrápida hospedada en pay.fetur.tech"]
-        C --> D["Motor de Procesamiento Starpago / 8b"]
+        C --> D["Motor de Procesamiento Motor PSP Aliado / 8b"]
     end
 
     subgraph PORTAL ["3. PORTAL DIRECTORIO ACTUAL"]
@@ -41,7 +41,7 @@ flowchart TD
 ## 💡 CÓMO MONTAREMOS LA PASARELA SOBRE SU ECOSISTEMA EN 48 HORAS
 
 ### **1. Subdominio Oficial: `pay.fetur.tech`**
-* En lugar de construir software desde cero, se apunta el subdominio `pay.fetur.tech` hacia el motor de redirección de Starpago.
+* En lugar de construir software desde cero, se apunta el subdominio `pay.fetur.tech` hacia el motor de redirección de Motor PSP Aliado.
 * Cuando el turista escanea el cartel del comercio, la URL que ve en su navegador es oficial: `https://pay.fetur.tech/qr/HOTEL-01`. Esto le da **confianza institucional 100% legítima**.
 
 ### **2. Integración al Directorio Lovable (`hub.fetur.tech`)**

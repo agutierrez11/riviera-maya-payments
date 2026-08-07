@@ -12,7 +12,7 @@
 **¡EXACTO! NO SE NECESITA NINGUNA TPV FÍSICA (CLIP, MERCADO PAGO, NETPAY).**
 
 Al migrar a una **Arquitectura Zero-Hardware impulsada por Software PMS / POS**:
-1. **Se eliminan los agregadores de tarjetas locales** (Clip, Netpay, etc.), reteniendo el 100% del margen de comisión para **Starpago y Antonio**.
+1. **Se eliminan los agregadores de tarjetas locales** (Clip, Netpay, etc.), reteniendo el 100% del margen de comisión para **Motor PSP Aliado y Antonio**.
 2. **Se eliminan los costos y mantenimiento de terminales físicas**.
 3. **Se escala de forma masiva:** Una sola integración API con 3 softwares de gestión habilita al 85% de los hoteles y restaurantes de Quintana Roo.
 
@@ -26,7 +26,7 @@ sequenceDiagram
     actor Turista as ✈️ Turista Sudamericano
     actor Cajero as 👨‍🍳 Cajero / Recepcionista
     participant PMS as 🖥️ Software Caja (Soft Restaurant / SiteMinder)
-    participant API as ⚡ API Starpago (Engine)
+    participant API as ⚡ API Motor PSP Aliado (Engine)
     participant Banco as 🏦 Banco Local Comercio (SPEI MXN)
 
     Cajero->>PMS: Presiona botón "Cobro QR Sudamérica (PIX/Bre-B/Yape)"
@@ -62,7 +62,7 @@ sequenceDiagram
 
 ## 💰 VENTAJAS FINANCIERAS Y COMERCIALES IMBATIBLES
 
-1. **Cero Repartición de Comisión con Agregadores:** Al no usar TPVs de terceros (Clip, Netpay), la tarifa de procesamiento (**2.0% a 3.0%**) se queda **100% entre Starpago y Antonio**.
+1. **Cero Repartición de Comisión con Agregadores:** Al no usar TPVs de terceros (Clip, Netpay), la tarifa de procesamiento (**2.0% a 3.0%**) se queda **100% entre Motor PSP Aliado y Antonio**.
 2. **Cero Fricción para el Comercio:** El hotelero o restaurantero no firma contratos con bancos ni rentas de TPVs. Solo activa el botón en su software de caja que ya usa todos los días.
 3. **Escalabilidad Masiva:** En lugar de afiliar comercios 1 por 1, la alianza estratégica con Soft Restaurant o SiteMinder conecta a **miles de establecimientos de golpe**.
 

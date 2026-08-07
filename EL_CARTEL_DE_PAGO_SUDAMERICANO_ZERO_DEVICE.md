@@ -66,7 +66,7 @@ Un acrílico de alta calidad visual colocado en las cajas de restaurantes, recep
 2. **Cero Desarrollo ERP:** No hay que solicitar permisos de TI ni hacer integraciones complejas con SAP, CONTPAQi o PMS.
 3. **Cero Fricción de Adopción:** El comercio solo coloca el cartel en la caja. El turista ve los logos de su país y escanea de inmediato.
 4. **Despliegue Ultrarrápido (Speed to Ship):** En lugar de meses de desarrollo, se pueden equipar **500 comercios de FETUR en menos de 48 horas** repartiendo la cartelería oficial.
-5. **Cero Comisión a Fabricantes de Hardware:** El margen de ganancia para Starpago y Antonio se maximiza al no haber costos de terminales.
+5. **Cero Comisión a Fabricantes de Hardware:** El margen de ganancia para Motor PSP Aliado y Antonio se maximiza al no haber costos de terminales.
 
 ---
 

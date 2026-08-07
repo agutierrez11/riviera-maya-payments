@@ -11,15 +11,15 @@
 
 Si Spin by OXXO decide no participar o tarda en sus comités, **EL PROYECTO NO SE DETIENE NI UN SOLO DÍA**. 
 
-El sistema de Starpago es **100% agnóstico** a nivel de liquidación por SPEI.
+El sistema de Motor PSP Aliado es **100% agnóstico** a nivel de liquidación por SPEI.
 
 ```mermaid
 flowchart TD
-    A["Turista Sudamericano paga por QR Gafete"] --> B["Motor PSP Starpago procesa y convierte a MXN"]
+    A["Turista Sudamericano paga por QR Gafete"] --> B["Motor PSP Motor PSP Aliado procesa y convierte a MXN"]
     B --> C{"Ruteo de Liquidación SPEI Abierto"}
     C -- "Opción 1" --> D["Cualquier Banco Tradicional (BBVA, BanCoppel, Azteca)"]
     C -- "Opción 2" --> E["Billeteras Digitales (Mercado Pago, Klar, Nu)"]
-    C -- "Opción 3" --> F["Billetera Virtual Nativa FETUR Wallet / Starpago"]
+    C -- "Opción 3" --> F["Billetera Virtual Nativa FETUR Wallet / Motor PSP Aliado"]
     C -- "Opción 4" --> G["Tarjeta Física Pre-Impresa Kit FETUR (Mastercard/Visa)"]
 ```
 
@@ -38,7 +38,7 @@ El comerciante informal simplemente ingresa los 18 dígitos de su CLABE de cualq
 ---
 
 ### **2. Billetera Virtual Nativa (FETUR Pay Web Wallet)**
-* **Cómo funciona:** La Web-App PWA de Starpago incluye un saldo en vivo en Pesos MXN.
+* **Cómo funciona:** La Web-App PWA de Motor PSP Aliado incluye un saldo en vivo en Pesos MXN.
 * **El comercio puede:**
   1. Acumular sus ventas y transferir a cualquier CLABE cuando él quiera.
   2. Utilizar códigos de **Retiro de Efectivo Sin Tarjeta** en cajeros automáticos (BBVA / Banorte).

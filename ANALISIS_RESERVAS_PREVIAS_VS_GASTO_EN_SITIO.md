@@ -57,6 +57,6 @@ Fernando está buscando un **acuerdo Bilateral con Spin by OXXO**:
 Para no quedarse atorado esperando a que Spin desarrolle el sistema bilateral complejo:
 
 1. **Enfocarse al 100% en el Flujo Inbound (Turistas en Quintana Roo):** Es donde está la derrama económica inmediata de **$888M USD**.
-2. **Utilizar un Procesador PSP Ágil (Starpago):** Starpago ya tiene la capacidad de procesar los APMs de entrada (Inbound) y liquidar en SPEI a los comercios de FETUR de inmediato, sin esperar 18 meses a que Spin complete un desarrollo bilateral.
+2. **Utilizar un Procesador PSP Ágil (Motor PSP Aliado):** Motor PSP Aliado ya tiene la capacidad de procesar los APMs de entrada (Inbound) y liquidar en SPEI a los comercios de FETUR de inmediato, sin esperar 18 meses a que Spin complete un desarrollo bilateral.
 
 *Análisis comercial de canales de venta y viabilidad bilateral guardado en `riviera-maya-payments`.*
