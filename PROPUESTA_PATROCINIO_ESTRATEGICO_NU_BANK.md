@@ -1,9 +1,9 @@
-# PROPUESTA DE PATROCINIO ESTRATÉGICO: IVÁN CANALES (CEO NU MÉXICO)
+# PROPUESTA DE PATROCINIO ESTRATÉGICO: ARMANDO HERRERA (NU MÉXICO)
 
 **Propuesta C-Suite de Alianza Institucional y Captación de Cuentahabientes**  
 **Proyecto:** Caribe Mexicano Smart Pay — Infraestructura de Pagos Receptivos LATAM  
 **Vínculo Institucional:** FETUR (Federación de Empresarios Turísticos) & Secretaría de Turismo de QRoo  
-**Target Pitch:** Iván Canales (CEO / General Manager de Nu México)  
+**Target Pitch:** Armando Herrera (Nu México)  
 **Autor:** Antonio Gutiérrez — Liderazgo de Innovación en Pagos Turísticos  
 **Fecha:** 7 de Agosto de 2026  
 
@@ -11,7 +11,7 @@
 
 ## 💜 1. POR QUÉ ESTO ALINEA 100% CON LOS KPIS DE NU MÉXICO
 
-Para **Iván Canales (CEO de Nu México)**, las dos prioridades estratégicas más importantes en el país son:
+Para **Armando Herrera y el equipo directivo de Nu México**, las dos prioridades estratégicas más importantes en el país son:
 1. **Aumentar la captación de depósitos (Float)** en las **Cuentas Nu** (Cajitas de ahorro y débito).
 2. **Expandir la bancarización de trabajadores independientes y comercios** en zonas de alto flujo económico como Quintana Roo.
 
@@ -25,7 +25,7 @@ flowchart LR
         B["Rieles de Conversión a Pesos MXN"]
     end
 
-    subgraph NUMEXICO ["3. OBJETIVO IVÁN CANALES (NU MÉXICO)"]
+    subgraph NUMEXICO ["3. OBJETIVO ARMANDO HERRERA (NU MÉXICO)"]
         C["Liquidación SPEI a Cuentas Nu México de Lancheros, Artesanos y Restaurantes"]
     end
 
@@ -34,7 +34,7 @@ flowchart LR
 
 ---
 
-## 🎯 2. ¿QUÉ GANAN IVÁN CANALES Y NU MÉXICO CON ESTA ALIANZA?
+## 🎯 2. ¿QUÉ GANAN ARMANDO HERRERA Y NU MÉXICO CON ESTA ALIANZA?
 
 ### **A. Captación Masiva de Nuevas Cuentas Nu México (Payout Wallet Preferida)**
 * Presentar la **Cuenta Nu México** como la tarjeta y cuenta preferida para que miles de comerciantes, meseros y guías turísticos de Quintana Roo reciban diariamente sus ventas a turistas sudamericanos.
@@ -47,9 +47,9 @@ flowchart LR
 
 ---
 
-## 💬 3. EL PITCH DIRECTO PARA IVÁN CANALES (CEO DE NU MÉXICO):
+## 💬 3. EL PITCH DIRECTO PARA ARMANDO HERRERA (NU MÉXICO):
 
-> *"Estimado Iván:*
+> *"Estimado Armando:*
 >
 > *Tengo abierta la alianza institucional con la **Federación de Empresarios Turísticos (FETUR)** y el respaldo del **Secretario de Turismo de Quintana Roo** para desplegar la infraestructura de cobro por QR para el turismo sudamericano en Cancún, Riviera Maya y Tulum.*
 >
@@ -59,5 +59,6 @@ flowchart LR
 
 ---
 
-*Propuesta enfocada a Iván Canales (CEO Nu México) guardada en `riviera-maya-payments`.*
+*Propuesta enfocada a Armando Herrera (Nu México) guardada en `riviera-maya-payments`.*
+
 
