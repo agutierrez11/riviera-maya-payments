@@ -1,64 +1,63 @@
-# PROPUESTA DE PATROCINIO ESTRATÉGICO Y SPONSORSHIP: NU BANK (NUBANK / NU MÉXICO)
+# PROPUESTA DE PATROCINIO ESTRATÉGICO: IVÁN CANALES (CEO NU MÉXICO)
 
-**Propuesta C-Suite de Alianza Institucional y Posicionamiento de Marca**  
+**Propuesta C-Suite de Alianza Institucional y Captación de Cuentahabientes**  
 **Proyecto:** Caribe Mexicano Smart Pay — Infraestructura de Pagos Receptivos LATAM  
 **Vínculo Institucional:** FETUR (Federación de Empresarios Turísticos) & Secretaría de Turismo de QRoo  
-**Target Pitch:** CEO / C-Suite Leadership Nu Bank (David Vélez / Ivan Canales)  
+**Target Pitch:** Iván Canales (CEO / General Manager de Nu México)  
 **Autor:** Antonio Gutiérrez — Liderazgo de Innovación en Pagos Turísticos  
 **Fecha:** 7 de Agosto de 2026  
 
 ---
 
-## 💜 1. LA CONEXIÓN PERFECTA: POR QUÉ NU BANK ES EL SPONSOR IDEAL
+## 💜 1. POR QUÉ ESTO ALINEA 100% CON LOS KPIS DE NU MÉXICO
 
-Nu Bank (Nubank) es el **neobanco más grande de América Latina** (+100 Millones de clientes) y posee una posición estratégica trilateral única:
-1. 🇧🇷 **En Brasil (País de Origen de Nu):** Nubank es el líder absoluto en adopción de PIX.
-2. 🇨🇴 **En Colombia:** Nu Colombia registra un crecimiento exponencial en eWallets.
-3. 🇲🇽 **En México:** Nu México es la entidad de finanzas digitales de mayor crecimiento del país.
+Para **Iván Canales (CEO de Nu México)**, las dos prioridades estratégicas más importantes en el país son:
+1. **Aumentar la captación de depósitos (Float)** en las **Cuentas Nu** (Cajitas de ahorro y débito).
+2. **Expandir la bancarización de trabajadores independientes y comercios** en zonas de alto flujo económico como Quintana Roo.
 
 ```mermaid
 flowchart LR
-    subgraph EMISOR ["1. TURISTA EMISOR EN ORIGEN"]
-        A["Turista Brasileño / Colombiano pagando con App de Nubank"]
+    subgraph TURISTA ["1. TURISTA BRASILEÑO / COLOMBIANO"]
+        A["Paga en QR con su app nativa de origen (PIX / Bre-B)"]
     end
 
-    subgraph SPONSOR ["2. SPONSORSHIP NU BANK EN QUINTANA ROO"]
-        B["Cartelería Física & Gafetes QR 'Powered by Nu' en Hoteles/Restaurantes de FETUR"]
+    subgraph PROCESADOR ["2. INFRAESTRUCTURA PROCESAMIENTO"]
+        B["Rieles de Conversión a Pesos MXN"]
     end
 
-    subgraph RECEPTOR ["3. LIQUIDACIÓN RECEPTORA EN MÉXICO"]
-        C["Comerciante/Lanchero recibe dinero en su Cuenta Nu México"]
+    subgraph NUMEXICO ["3. OBJETIVO IVÁN CANALES (NU MÉXICO)"]
+        C["Liquidación SPEI a Cuentas Nu México de Lancheros, Artesanos y Restaurantes"]
     end
 
-    EMISOR --> SPONSOR --> RECEPTOR
+    TURISTA --> PROCESADOR --> NUMEXICO
 ```
 
 ---
 
-## 🎯 2. ¿QUÉ GANA NU BANK AL SER EL SPONSOR DEL PROYECTO?
+## 🎯 2. ¿QUÉ GANAN IVÁN CANALES Y NU MÉXICO CON ESTA ALIANZA?
 
-### **A. Co-Branding de Marca Exclusivo ("Caribe Mexicano Smart Pay powered by Nu")**
-* **Presencia en 1,000+ Comercios:** Los carteles de acrílico y gafetes QR en mostradores de restaurantes, hoteles de FETUR y taquillas de tours llevan el sello institucional morado de Nu.
-* **Familiaridad Instantánea:** El turista brasileño o colombiano que aterriza en Cancún ve el logo de Nu en la caja y escanea con confianza inmediata.
+### **A. Captación Masiva de Nuevas Cuentas Nu México (Payout Wallet Preferida)**
+* Presentar la **Cuenta Nu México** como la tarjeta y cuenta preferida para que miles de comerciantes, meseros y guías turísticos de Quintana Roo reciban diariamente sus ventas a turistas sudamericanos.
 
-### **B. Captura de Cuentahabientes en México (Nu México Payout Wallet)**
-* Promover la **Cuenta Nu México** como la tarjeta predilecta de liquidación para los lancheros, artesanos y meseros de Quintana Roo.
+### **B. Co-Branding de Marca en +1,000 Comercios Turísticos ("Powered by Nu México")**
+* Colocar el sello morado institucional de Nu México en los carteles de acrílico y gafetes QR en restaurantes de la Quinta Avenida, recepciones de hoteles de FETUR y taquillas de tours.
 
-### **C. Posicionamiento ante la Secretaría de Turismo y Gobernación**
-* Nu se consolida ante el Gobierno del Estado de Quintana Roo y ASETUR como el neobanco pionero que financió la digitalización del turismo en el Caribe Mexicano.
-
----
-
-## 💬 3. EL PITCH EJECUTIVO PARA PRESENTAR A LA DIRECCIÓN DE NU
-
-> *"Estimado David / Ivan / Equipo Directivo de Nu:*
->
-> *Tengo abierta la alianza institucional con la **Federación de Empresarios Turísticos (FETUR)** y el apoyo del **Secretario de Turismo de Quintana Roo** para lanzar la infraestructura de pagos por QR para el turismo sudamericano en Cancún, Riviera Maya y Tulum.*
->
-> *Como Nu es el gigante que une a **Brasil, Colombia y México**, queremos invitarlos a ser el **Sponsor Principal Exclusivo de Marca** del programa 'Caribe Mexicano Smart Pay'.*
->
-> *Colocamos la marca Nu en la cartelería física de más de **1,000 comercios turísticos**, capturamos miles de nuevas Cuentas Nu México entre los comerciantes locales y posicionamos a Nu como el motor de inclusión financiera del Caribe Mexicano sin que ustedes tengan que desarrollar software de adquirencia."*
+### **C. Alianza de Alto Nivel con SECTUR Quintana Roo**
+* Posicionar a Nu México ante la Secretaría de Turismo del Estado y el Secretario de Turismo como la entidad Fintech patrocinadora que impulsó la inclusión financiera del Caribe Mexicano.
 
 ---
 
-*Propuesta de patrocinio estratégico con Nu Bank guardada en `riviera-maya-payments`.*
+## 💬 3. EL PITCH DIRECTO PARA IVÁN CANALES (CEO DE NU MÉXICO):
+
+> *"Estimado Iván:*
+>
+> *Tengo abierta la alianza institucional con la **Federación de Empresarios Turísticos (FETUR)** y el respaldo del **Secretario de Turismo de Quintana Roo** para desplegar la infraestructura de cobro por QR para el turismo sudamericano en Cancún, Riviera Maya y Tulum.*
+>
+> *Queremos proponer a **Nu México** como el **Sponsor Principal y Cuenta Receptora Preferida** del programa 'Caribe Mexicano Smart Pay'.*
+>
+> *Les llevamos miles de nuevos cuentahabientes activos en Quintana Roo recibiendo depósitos diarios en sus Cuentas Nu, presencia de marca exclusiva en más de **1,000 comercios turísticos** y el respaldo institucional de la Secretaría de Turismo del Estado, sin que Nu México tenga que desarrollar software de adquirencia."*
+
+---
+
+*Propuesta enfocada a Iván Canales (CEO Nu México) guardada en `riviera-maya-payments`.*
+
