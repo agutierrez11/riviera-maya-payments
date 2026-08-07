@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WS3 — Customer Retention</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>html,body{margin:0;padding:0;overflow:hidden;background:#FFFFFF;font-family:'Inter',sans-serif;color:#1F2A44;}</style>
+</head>
+<body>
+<div class="slide-container" data-screen-label="07 WS3 Retention" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#FFFFFF;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:0;top:0;width:1920px;height:64px;background:#1F2A44;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:80px;top:22px;width:900px;height:24px;z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.28em;color:#FFFFFF;text-transform:uppercase;">07 · WS3 — Customer Retention</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1340px;top:22px;width:520px;height:24px;z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.28em;color:#8A8F9A;text-transform:uppercase;text-align:right;">[MODE: STEERCO #3 · WK06] &nbsp;· 07 / 15</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1600px;top:104px;width:240px;height:64px;background:#C9252D;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1616px;top:114px;width:216px;height:50px;z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#FFFFFF;letter-spacing:0.2em;text-transform:uppercase;">Status</div>
+    <div style="font-family:'Source Serif 4',serif;font-size:18px;font-weight:700;color:#FFFFFF;line-height:1.1;margin-top:2px;">■ RED · ESCALATED</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:80px;top:108px;width:1500px;height:56px;z-index:10;">
+    <div style="font-family:'Source Serif 4',serif;font-size:40px;font-weight:700;color:#1F2A44;letter-spacing:-0.01em;">Customer Retention — NA top-20 NPS down 8 pts since announcement</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:80px;top:170px;width:1540px;height:28px;z-index:10;">
+    <div style="font-family:'Inter',sans-serif;font-size:16px;color:#5A6271;">Consult lead: M. Albu (BCG)  ·  Client lead: S. Albright, CRO, AgroVerde  ·  Decision today: see slide 13, item D-08</div>
+  </div>
+
+  <!-- NPS chart -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:80px;top:228px;width:1180px;height:24px;z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8A8F9A;letter-spacing:0.22em;text-transform:uppercase;">NPS — NA top-20 accounts · weekly · since announcement (Day 0 = 06 Apr 2026)</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:80px;top:260px;width:1180px;height:380px;background:#F4F5F7;z-index:1;"></div>
+  <!-- Y-axis labels -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:90px;top:280px;width:50px;height:340px;z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A8F9A;line-height:1;">
+      <div style="height:60px;">60</div>
+      <div style="height:60px;">55</div>
+      <div style="height:60px;">50</div>
+      <div style="height:60px;">45</div>
+      <div style="height:60px;">40</div>
+      <div style="height:40px;">35</div>
+    </div>
+  </div>
+  <!-- Reference grid lines -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:140px;top:288px;width:1100px;height:1px;background:#D7DAE0;z-index:2;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:140px;top:348px;width:1100px;height:1px;background:#D7DAE0;z-index:2;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:140px;top:408px;width:1100px;height:1px;background:#D7DAE0;z-index:2;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:140px;top:468px;width:1100px;height:1px;background:#D7DAE0;z-index:2;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:140px;top:528px;width:1100px;height:1px;background:#D7DAE0;z-index:2;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:140px;top:588px;width:1100px;height:2px;background:#1F2A44;z-index:2;"></div>
+
+  <!-- Line: 6 dots — NPS 51, 50, 49, 47, 45, 43 across W1..W6 -->
+  <!-- Axis: 60 at y=288, 35 at y=588 → 12px per NPS pt. NPS n → y = 288 + 12*(60-n) -->
+  <!-- 51→396, 50→408, 49→420, 47→444, 45→468, 43→492 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:215px;top:391px;width:11px;height:11px;border-radius:50%;background:#1F2A44;z-index:5;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:375px;top:403px;width:11px;height:11px;border-radius:50%;background:#1F2A44;z-index:5;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:535px;top:415px;width:11px;height:11px;border-radius:50%;background:#1F2A44;z-index:5;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:695px;top:439px;width:11px;height:11px;border-radius:50%;background:#D9881E;z-index:5;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:855px;top:463px;width:11px;height:11px;border-radius:50%;background:#D9881E;z-index:5;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1015px;top:486px;width:13px;height:13px;background:#C9252D;z-index:6;"></div>
+
+  <!-- Trend line segments (rotated bars approximating line) -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:220px;top:396px;width:160px;height:2px;background:#1F2A44;transform:rotate(4.3deg);transform-origin:left center;z-index:4;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:380px;top:408px;width:160px;height:2px;background:#1F2A44;transform:rotate(4.3deg);transform-origin:left center;z-index:4;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:540px;top:420px;width:160px;height:2px;background:#1F2A44;transform:rotate(8.5deg);transform-origin:left center;z-index:4;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:700px;top:444px;width:160px;height:2px;background:#D9881E;transform:rotate(8.5deg);transform-origin:left center;z-index:4;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:860px;top:468px;width:160px;height:2px;background:#C9252D;transform:rotate(8.5deg);transform-origin:left center;z-index:4;"></div>
+
+  <!-- Target NPS 55 horizontal: y = 288 + 12*(60-55) = 348 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:140px;top:348px;width:1100px;height:1px;background:#2E7D34;z-index:3;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1140px;top:332px;width:100px;height:18px;z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#2E7D34;letter-spacing:0.12em;">TARGET · 55</div>
+  </div>
+
+  <!-- X-axis labels -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:140px;top:598px;width:1100px;height:24px;z-index:10;">
+    <div style="display:flex;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A8F9A;letter-spacing:0.12em;text-align:center;">
+      <div style="width:160px;">W1 · 51</div>
+      <div style="width:160px;">W2 · 50</div>
+      <div style="width:160px;">W3 · 49</div>
+      <div style="width:160px;color:#D9881E;">W4 · 47</div>
+      <div style="width:160px;color:#D9881E;">W5 · 45</div>
+      <div style="width:160px;color:#C9252D;font-weight:700;">W6 · 43</div>
+    </div>
+  </div>
+
+  <!-- KPI tiles RIGHT of chart -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1280px;top:260px;width:560px;height:128px;background:#C9252D;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1300px;top:272px;width:520px;height:108px;z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#FFFFFF;letter-spacing:0.22em;text-transform:uppercase;opacity:0.85;">NPS · NA top-20</div>
+    <div style="font-family:'Source Serif 4',serif;font-size:54px;font-weight:700;color:#FFFFFF;line-height:1.02;margin-top:4px;">43 <span style="font-size:22px;">▼ 8 pts</span></div>
+    <div style="font-family:'Inter',sans-serif;font-size:13px;color:#FFFFFF;opacity:0.9;margin-top:6px;">vs 51 at announcement · target 55</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1280px;top:400px;width:560px;height:128px;background:#1F2A44;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1300px;top:412px;width:520px;height:108px;z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A8F9A;letter-spacing:0.22em;text-transform:uppercase;">ARR at risk · 3 accounts flagged</div>
+    <div style="font-family:'Source Serif 4',serif;font-size:54px;font-weight:700;color:#FFFFFF;line-height:1.02;margin-top:4px;">$14.0M</div>
+    <div style="font-family:'Inter',sans-serif;font-size:13px;color:#8A8F9A;margin-top:6px;">3 of 20 NA accounts have escalated pricing</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1280px;top:524px;width:560px;height:116px;background:#F4F5F7;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1300px;top:540px;width:520px;height:90px;z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A8F9A;letter-spacing:0.22em;text-transform:uppercase;">Pricing-exception cost vs churn exposure</div>
+    <div style="font-family:'Source Serif 4',serif;font-size:32px;font-weight:700;color:#1F2A44;line-height:1.1;margin-top:4px;">$2.8M revenue exposure</div>
+    <div style="font-family:'Inter',sans-serif;font-size:13px;color:#5A6271;margin-top:6px;">vs $14M churn risk if not granted — 5× protective</div>
+  </div>
+
+  <!-- Bottom: actions + escalation -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:80px;top:670px;width:1180px;height:328px;background:#FFFFFF;border:1px solid #D7DAE0;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:104px;top:686px;width:1140px;height:28px;z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8A8F9A;letter-spacing:0.22em;text-transform:uppercase;">Top-3 activities · this period</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:104px;top:720px;width:1140px;height:270px;z-index:10;">
+    <div style="font-family:'Inter',sans-serif;font-size:15px;color:#1F2A44;line-height:1.5;">
+      <div style="display:flex;gap:14px;padding:12px 0;border-bottom:1px solid #D7DAE0;">
+        <div style="flex:0 0 40px;font-family:'Source Serif 4',serif;font-size:24px;font-weight:700;color:#1F2A44;">01</div>
+        <div style="flex:1;">
+          <div style="font-weight:600;">Retention war-room (CRO + 4 RVPs) — 30-min daily standup, dedicated NA top-20</div>
+          <div style="color:#5A6271;margin-top:2px;">Owner: S. Albright · Started 07 May · 4 accounts visited in person · 14 of 20 on weekly cadence</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:14px;padding:12px 0;border-bottom:1px solid #D7DAE0;">
+        <div style="flex:0 0 40px;font-family:'Source Serif 4',serif;font-size:24px;font-weight:700;color:#1F2A44;">02</div>
+        <div style="flex:1;">
+          <div style="font-weight:600;">Pricing-exception authority for NA top-20 — Q2, capped at 12% off list</div>
+          <div style="color:#5A6271;margin-top:2px;">Owner: S. Albright + Mei-Lin Chen (Sponsor) · <b style="color:#C9252D;">Decision D-08 today · slide 13</b></div>
+        </div>
+      </div>
+      <div style="display:flex;gap:14px;padding:12px 0;">
+        <div style="flex:0 0 40px;font-family:'Source Serif 4',serif;font-size:24px;font-weight:700;color:#1F2A44;">03</div>
+        <div style="flex:1;">
+          <div style="font-weight:600;">Joint announcement: 12-month price-lock for any contract signed before 30 Jun 2026</div>
+          <div style="color:#5A6271;margin-top:2px;">Owner: M. Albu (BCG) + K. Nair (Comms) · Draft to legal 18 May · Send 22 May</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right escalation card -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1280px;top:670px;width:560px;height:328px;background:#1F2A44;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1300px;top:690px;width:520px;height:290px;z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#C9252D;letter-spacing:0.22em;text-transform:uppercase;font-weight:700;">Escalation · sponsor decision required</div>
+    <div style="margin-top:10px;font-family:'Source Serif 4',serif;font-size:24px;font-weight:700;color:#FFFFFF;line-height:1.25;">Without pricing-exception authority within 7 days, we forecast 2-3 NA top-20 account losses by W10.</div>
+    <div style="margin-top:14px;font-family:'Inter',sans-serif;font-size:14px;color:#FFFFFF;opacity:0.85;line-height:1.5;">
+      Aligns with Bain Results Delivery®<sup style="font-size:9px;">[2]</sup> "delivering the value" test — $14M ARR &gt; $2.8M exposure (5× protective). Recommended action and accountable owner pre-filled on slide 13.
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:80px;top:1056px;width:1760px;height:18px;z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.24em;color:#8A8F9A;text-transform:uppercase;">PROJECT NORTHSTAR · STEERCO #3 · 14 MAY 2026 · CONFIDENTIAL — DRAFT</div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "1.0",
+  "format": "html",
+  "metadata": {
+    "title": "Kickoff & SteerCo Deck — Post-Merger Integration",
+    "description": "Tri-mode governance deck (Kickoff / SteerCo / Monthly Progress) for a 12-week PMI engagement. Sponsor: CFO.",
+    "author": "Liu / EM"
+  },
+  "canvas": {"width": 1920, "height": 1080},
+  "playlist": [
+    "01-cover.html",
+    "02-recap.html",
+    "03-gantt.html",
+    "04-rag-dashboard.html",
+    "05-ws1-org.html",
+    "06-ws2-systems.html",
+    "07-ws3-retention.html",
+    "08-ws4-synergy.html",
+    "09-raid.html",
+    "10-dependencies.html",
+    "11-stakeholder-map.html",
+    "12-findings-value.html",
+    "13-decisions-required.html",
+    "14-decisions-log.html",
+    "15-sources.html"
+  ]
+}

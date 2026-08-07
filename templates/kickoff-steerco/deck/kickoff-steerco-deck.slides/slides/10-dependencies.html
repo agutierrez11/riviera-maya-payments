@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dependencies</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>html,body{margin:0;padding:0;overflow:hidden;background:#FFFFFF;font-family:'Inter',sans-serif;color:#1F2A44;}</style>
+</head>
+<body>
+<div class="slide-container" data-screen-label="10 Dependencies" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#FFFFFF;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:0;top:0;width:1920px;height:64px;background:#1F2A44;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:80px;top:22px;width:900px;height:24px;z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.28em;color:#FFFFFF;text-transform:uppercase;">10 · Dependencies</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1340px;top:22px;width:520px;height:24px;z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.28em;color:#8A8F9A;text-transform:uppercase;text-align:right;">[MODE: STEERCO #3 · WK06] &nbsp;· 10 / 15</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:80px;top:100px;width:1760px;height:48px;z-index:10;">
+    <div style="font-family:'Source Serif 4',serif;font-size:36px;font-weight:700;color:#1F2A44;letter-spacing:-0.01em;">Dependencies — cross-workstream, client-side, vendor-side</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:80px;top:152px;width:1760px;height:28px;z-index:10;">
+    <div style="font-family:'Inter',sans-serif;font-size:15px;color:#5A6271;">7 active dependencies tracked · 4 named owners outside engagement scope · all dates are calendar dates (PMBOK 7th ed.<sup style="font-size:10px;">[1]</sup>).</div>
+  </div>
+
+  <!-- Tabs / category labels -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:80px;top:208px;width:1180px;height:54px;background:#1F2A44;z-index:2;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:108px;top:224px;width:1120px;height:24px;z-index:10;">
+    <div style="display:flex;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#FFFFFF;letter-spacing:0.22em;text-transform:uppercase;">
+      <div style="width:50px;">ID</div>
+      <div style="width:90px;">Cat.</div>
+      <div style="flex:1;">Dependency</div>
+      <div style="width:160px;">Owner</div>
+      <div style="width:110px;">Need-by</div>
+      <div style="width:90px;text-align:right;">Status</div>
+    </div>
+  </div>
+
+  <!-- Rows: 7 rows × ~90px each -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:80px;top:262px;width:1180px;height:660px;background:#FFFFFF;border:1px solid #D7DAE0;z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:108px;top:268px;width:1120px;height:640px;z-index:10;">
+    <div style="font-family:'Inter',sans-serif;font-size:13px;color:#1F2A44;line-height:1.45;">
+
+      <div style="display:flex;padding:12px 0;border-bottom:1px solid #D7DAE0;align-items:flex-start;">
+        <div style="width:50px;font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:700;color:#C9252D;">D-01</div>
+        <div style="width:90px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#5A6271;letter-spacing:0.14em;text-transform:uppercase;">Vendor</div>
+        <div style="flex:1;"><b>SAP S/4HANA sandbox ready for cutover rehearsal</b><div style="color:#5A6271;font-size:12px;margin-top:2px;">SAP AG → WS2 · workaround becomes permanent fallback without this</div></div>
+        <div style="width:160px;font-family:'IBM Plex Mono',monospace;font-size:12px;">K. Wegener<br><span style="color:#5A6271;">SAP CSM</span></div>
+        <div style="width:110px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#C9252D;font-weight:700;">21 May 26</div>
+        <div style="width:90px;text-align:right;"><span style="display:inline-block;padding:2px 8px;background:#C9252D;color:#FFFFFF;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.14em;">AT RISK</span></div>
+      </div>
+
+      <div style="display:flex;padding:12px 0;border-bottom:1px solid #D7DAE0;align-items:flex-start;">
+        <div style="width:50px;font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:700;color:#D9881E;">D-02</div>
+        <div style="width:90px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#5A6271;letter-spacing:0.14em;text-transform:uppercase;">Cross-WS</div>
+        <div style="flex:1;"><b>WS2 SAP cutover lands before WS4 IT-synergy lock-in</b><div style="color:#5A6271;font-size:12px;margin-top:2px;">WS2 → WS4 · $6.8M of $46M target conditional on this</div></div>
+        <div style="width:160px;font-family:'IBM Plex Mono',monospace;font-size:12px;">P. Sharma +<br><span style="color:#5A6271;">L. Beaumont</span></div>
+        <div style="width:110px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#D9881E;font-weight:700;">25 Jun 26</div>
+        <div style="width:90px;text-align:right;"><span style="display:inline-block;padding:2px 8px;background:#D9881E;color:#FFFFFF;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.14em;">AMBER</span></div>
+      </div>
+
+      <div style="display:flex;padding:12px 0;border-bottom:1px solid #D7DAE0;align-items:flex-start;">
+        <div style="width:50px;font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:700;color:#D9881E;">D-03</div>
+        <div style="width:90px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#5A6271;letter-spacing:0.14em;text-transform:uppercase;">Client</div>
+        <div style="flex:1;"><b>Legal sign-off on 12-month price-lock language (NA only)</b><div style="color:#5A6271;font-size:12px;margin-top:2px;">AgroVerde Legal → WS3 · WS3 announcement slips past 22 May without it</div></div>
+        <div style="width:160px;font-family:'IBM Plex Mono',monospace;font-size:12px;">H. Yamamoto<br><span style="color:#5A6271;">Group GC</span></div>
+        <div style="width:110px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#D9881E;font-weight:700;">18 May 26</div>
+        <div style="width:90px;text-align:right;"><span style="display:inline-block;padding:2px 8px;background:#D9881E;color:#FFFFFF;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.14em;">AMBER</span></div>
+      </div>
+
+      <div style="display:flex;padding:12px 0;border-bottom:1px solid #D7DAE0;align-items:flex-start;">
+        <div style="width:50px;font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:700;color:#D9881E;">D-04</div>
+        <div style="width:90px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#5A6271;letter-spacing:0.14em;text-transform:uppercase;">Client</div>
+        <div style="flex:1;"><b>EU DPO clearance on CRM master-data merge</b><div style="color:#5A6271;font-size:12px;margin-top:2px;">AgroVerde DPO → WS2 · 12.4M records · GDPR Article 28 review</div></div>
+        <div style="width:160px;font-family:'IBM Plex Mono',monospace;font-size:12px;">F. Lindberg<br><span style="color:#5A6271;">DPO</span></div>
+        <div style="width:110px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#D9881E;font-weight:700;">26 May 26</div>
+        <div style="width:90px;text-align:right;"><span style="display:inline-block;padding:2px 8px;background:#D9881E;color:#FFFFFF;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.14em;">AMBER</span></div>
+      </div>
+
+      <div style="display:flex;padding:12px 0;border-bottom:1px solid #D7DAE0;align-items:flex-start;">
+        <div style="width:50px;font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:700;color:#2E7D34;">D-05</div>
+        <div style="width:90px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#5A6271;letter-spacing:0.14em;text-transform:uppercase;">Cross-WS</div>
+        <div style="flex:1;"><b>Org-design sign-off (WS1) before procurement Wave-1 (WS4)</b><div style="color:#5A6271;font-size:12px;margin-top:2px;">WS1 → WS4 · signing authority matrix updated when org closes</div></div>
+        <div style="width:160px;font-family:'IBM Plex Mono',monospace;font-size:12px;">A. Tanaka +<br><span style="color:#5A6271;">D. Hoffmann</span></div>
+        <div style="width:110px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#2E7D34;font-weight:700;">22 May 26</div>
+        <div style="width:90px;text-align:right;"><span style="display:inline-block;padding:2px 8px;background:#2E7D34;color:#FFFFFF;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.14em;">ON TRACK</span></div>
+      </div>
+
+      <div style="display:flex;padding:12px 0;border-bottom:1px solid #D7DAE0;align-items:flex-start;">
+        <div style="width:50px;font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:700;color:#2E7D34;">D-06</div>
+        <div style="width:90px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#5A6271;letter-spacing:0.14em;text-transform:uppercase;">Vendor</div>
+        <div style="flex:1;"><b>EDI portal vendor SOW signature</b><div style="color:#5A6271;font-size:12px;margin-top:2px;">Cleo Integration → WS2 · replaces 3 legacy XML feeds at T-0</div></div>
+        <div style="width:160px;font-family:'IBM Plex Mono',monospace;font-size:12px;">B. Olawale +<br><span style="color:#5A6271;">Procurement</span></div>
+        <div style="width:110px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#2E7D34;font-weight:700;">19 May 26</div>
+        <div style="width:90px;text-align:right;"><span style="display:inline-block;padding:2px 8px;background:#2E7D34;color:#FFFFFF;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.14em;">ON TRACK</span></div>
+      </div>
+
+      <div style="display:flex;padding:12px 0;align-items:flex-start;">
+        <div style="width:50px;font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:700;color:#2E7D34;">D-07</div>
+        <div style="width:90px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#5A6271;letter-spacing:0.14em;text-transform:uppercase;">Client</div>
+        <div style="flex:1;"><b>Audit Committee pre-read of synergy register (WS4)</b><div style="color:#5A6271;font-size:12px;margin-top:2px;">WS4 → Audit Cmte · audit-defensible workbook + GL reconciliation</div></div>
+        <div style="width:160px;font-family:'IBM Plex Mono',monospace;font-size:12px;">L. Beaumont +<br><span style="color:#5A6271;">Internal Audit</span></div>
+        <div style="width:110px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#2E7D34;font-weight:700;">28 May 26</div>
+        <div style="width:90px;text-align:right;"><span style="display:inline-block;padding:2px 8px;background:#2E7D34;color:#FFFFFF;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.14em;">ON TRACK</span></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- RIGHT side panel: portfolio breakdown + critical-path callout -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1280px;top:208px;width:560px;height:28px;z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8A8F9A;letter-spacing:0.22em;text-transform:uppercase;">Portfolio breakdown · 7 active</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1280px;top:248px;width:560px;height:200px;background:#F4F5F7;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1300px;top:268px;width:520px;height:160px;z-index:10;">
+    <div style="font-family:'Inter',sans-serif;font-size:14px;color:#1F2A44;line-height:1.55;">
+      <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #D7DAE0;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#5A6271;letter-spacing:0.16em;text-transform:uppercase;">Vendor-side</span>
+        <span><b>2</b> · D-01, D-06</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #D7DAE0;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#5A6271;letter-spacing:0.16em;text-transform:uppercase;">Client-side</span>
+        <span><b>3</b> · D-03, D-04, D-07</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;padding:8px 0;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#5A6271;letter-spacing:0.16em;text-transform:uppercase;">Cross-WS</span>
+        <span><b>2</b> · D-02, D-05</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Critical-path callout -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1280px;top:472px;width:560px;height:280px;background:#1F2A44;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1300px;top:492px;width:520px;height:240px;z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#C9252D;letter-spacing:0.22em;text-transform:uppercase;font-weight:700;">Critical path · 21 May lead-time</div>
+    <div style="margin-top:10px;font-family:'Source Serif 4',serif;font-size:22px;font-weight:600;color:#FFFFFF;line-height:1.3;">D-01 (SAP sandbox) is the earliest at-risk milestone — 7 days from today.</div>
+    <div style="margin-top:12px;font-family:'Inter',sans-serif;font-size:13px;color:#FFFFFF;opacity:0.85;line-height:1.6;">
+      If sandbox slips past 21 May, the cutover-rehearsal window (D-07 / Audit-Cmte pre-read on 28 May) compresses to under 5 working days. Decision D-07 today (slide 13) makes this dependency non-blocking.
+    </div>
+  </div>
+
+  <!-- Status summary tiles -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1280px;top:776px;width:175px;height:132px;background:#C9252D;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1296px;top:790px;width:150px;height:108px;z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#FFFFFF;letter-spacing:0.18em;text-transform:uppercase;opacity:0.85;">At risk</div>
+    <div style="font-family:'Source Serif 4',serif;font-size:48px;font-weight:700;color:#FFFFFF;line-height:1;margin-top:4px;">1</div>
+    <div style="font-family:'Inter',sans-serif;font-size:12px;color:#FFFFFF;opacity:0.85;margin-top:4px;">D-01</div>
+  </div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1473px;top:776px;width:175px;height:132px;background:#D9881E;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1489px;top:790px;width:150px;height:108px;z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#FFFFFF;letter-spacing:0.18em;text-transform:uppercase;opacity:0.9;">Amber</div>
+    <div style="font-family:'Source Serif 4',serif;font-size:48px;font-weight:700;color:#FFFFFF;line-height:1;margin-top:4px;">3</div>
+    <div style="font-family:'Inter',sans-serif;font-size:12px;color:#FFFFFF;opacity:0.9;margin-top:4px;">D-02 · D-03 · D-04</div>
+  </div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1666px;top:776px;width:174px;height:132px;background:#2E7D34;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1682px;top:790px;width:148px;height:108px;z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#FFFFFF;letter-spacing:0.18em;text-transform:uppercase;opacity:0.9;">On track</div>
+    <div style="font-family:'Source Serif 4',serif;font-size:48px;font-weight:700;color:#FFFFFF;line-height:1;margin-top:4px;">3</div>
+    <div style="font-family:'Inter',sans-serif;font-size:12px;color:#FFFFFF;opacity:0.9;margin-top:4px;">D-05 · D-06 · D-07</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:80px;top:1056px;width:1760px;height:18px;z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.24em;color:#8A8F9A;text-transform:uppercase;">PROJECT NORTHSTAR · STEERCO #3 · 14 MAY 2026 · CONFIDENTIAL — DRAFT</div>
+  </div>
+
+</div>
+</body>
+</html>

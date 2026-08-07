@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>12-Week Gantt</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>html,body{margin:0;padding:0;overflow:hidden;background:#FFFFFF;font-family:'Inter',sans-serif;color:#1F2A44;}</style>
+</head>
+<body>
+<div class="slide-container" data-screen-label="03 Gantt" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#FFFFFF;">
+
+  <!-- Top chrome -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:0;top:0;width:1920px;height:64px;background:#1F2A44;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:80px;top:22px;width:900px;height:24px;z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.28em;color:#FFFFFF;text-transform:uppercase;">03 · 12-Week Plan &amp; Decision Gates</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1340px;top:22px;width:520px;height:24px;z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.28em;color:#8A8F9A;text-transform:uppercase;text-align:right;">[MODE: STEERCO #3 · WK06] &nbsp;· 03 / 15</div>
+  </div>
+
+  <!-- Title -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:80px;top:100px;width:1760px;height:48px;z-index:10;">
+    <div style="font-family:'Source Serif 4',serif;font-size:36px;font-weight:700;color:#1F2A44;letter-spacing:-0.01em;">Schedule baseline — 06 Apr → 26 Jun 2026 · 4 workstreams · bilateral leads</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:80px;top:152px;width:1760px;height:28px;z-index:10;">
+    <div style="font-family:'Inter',sans-serif;font-size:15px;color:#5A6271;">Gates at W4 (scope confirmation · passed 30 Apr), W8 (interim findings · 28 May), W12 (final readout · 25 Jun). Stage-Gate® discipline<sup style="font-size:10px;">[3]</sup> · PMBOK 7th ed.<sup style="font-size:10px;">[1]</sup>.</div>
+  </div>
+
+  <!-- Gantt frame -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:80px;top:210px;width:1760px;height:740px;background:#FFFFFF;border:1px solid #D7DAE0;z-index:1;"></div>
+
+  <!-- Column headers: Workstream | Lead | Client lead | weeks 1..12 -->
+  <!-- Left header band -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:80px;top:210px;width:560px;height:60px;background:#1F2A44;z-index:2;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:100px;top:228px;width:200px;height:24px;z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#FFFFFF;letter-spacing:0.22em;text-transform:uppercase;">Workstream</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:316px;top:228px;width:150px;height:24px;z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#FFFFFF;letter-spacing:0.22em;text-transform:uppercase;">Consult lead</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:472px;top:228px;width:150px;height:24px;z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#FFFFFF;letter-spacing:0.22em;text-transform:uppercase;">Client lead</div>
+  </div>
+
+  <!-- Week header band 640..1840 = 1200px / 12 weeks = 100px each -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:640px;top:210px;width:1200px;height:60px;background:#2B3656;z-index:2;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:640px;top:216px;width:1200px;height:50px;z-index:10;">
+    <div style="display:flex;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#FFFFFF;letter-spacing:0.16em;text-align:center;">
+      <div style="width:100px;padding-top:6px;">W1<div style="font-size:10px;color:#8A8F9A;margin-top:2px;">06 Apr</div></div>
+      <div style="width:100px;padding-top:6px;">W2<div style="font-size:10px;color:#8A8F9A;margin-top:2px;">13 Apr</div></div>
+      <div style="width:100px;padding-top:6px;">W3<div style="font-size:10px;color:#8A8F9A;margin-top:2px;">20 Apr</div></div>
+      <div style="width:100px;padding-top:6px;color:#FFFFFF;font-weight:700;">W4<div style="font-size:10px;color:#D9881E;margin-top:2px;">▲ 30 Apr</div></div>
+      <div style="width:100px;padding-top:6px;">W5<div style="font-size:10px;color:#8A8F9A;margin-top:2px;">04 May</div></div>
+      <div style="width:100px;padding-top:6px;background:#C9252D;color:#FFFFFF;font-weight:700;">W6<div style="font-size:10px;color:#FFFFFF;margin-top:2px;">14 May ◀ today</div></div>
+      <div style="width:100px;padding-top:6px;">W7<div style="font-size:10px;color:#8A8F9A;margin-top:2px;">18 May</div></div>
+      <div style="width:100px;padding-top:6px;font-weight:700;">W8<div style="font-size:10px;color:#D9881E;margin-top:2px;">▲ 28 May</div></div>
+      <div style="width:100px;padding-top:6px;">W9<div style="font-size:10px;color:#8A8F9A;margin-top:2px;">01 Jun</div></div>
+      <div style="width:100px;padding-top:6px;">W10<div style="font-size:10px;color:#8A8F9A;margin-top:2px;">08 Jun</div></div>
+      <div style="width:100px;padding-top:6px;">W11<div style="font-size:10px;color:#8A8F9A;margin-top:2px;">15 Jun</div></div>
+      <div style="width:100px;padding-top:6px;font-weight:700;">W12<div style="font-size:10px;color:#D9881E;margin-top:2px;">▲ 25 Jun</div></div>
+    </div>
+  </div>
+
+  <!-- Today vertical line at end of W6 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1240px;top:270px;width:2px;height:680px;background:#C9252D;z-index:3;"></div>
+
+  <!-- Gate vertical lines: W4 end = 1040, W8 end = 1440, W12 end = 1840 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1040px;top:270px;width:1px;height:680px;background:#D9881E;z-index:3;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1440px;top:270px;width:1px;height:680px;background:#D9881E;z-index:3;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1840px;top:270px;width:1px;height:680px;background:#D9881E;z-index:3;"></div>
+
+  <!-- Row 1: WS1 Day-1 Org -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:80px;top:270px;width:1760px;height:1px;background:#D7DAE0;z-index:2;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:100px;top:298px;width:530px;height:120px;z-index:10;">
+    <div style="font-family:'Inter',sans-serif;">
+      <div style="display:flex;align-items:center;">
+        <div style="width:200px;font-size:16px;font-weight:600;color:#1F2A44;">WS1 — Day-1 Org Design</div>
+        <div style="width:156px;font-family:'IBM Plex Mono',monospace;font-size:13px;color:#1F2A44;">A. Tanaka</div>
+        <div style="width:156px;font-family:'IBM Plex Mono',monospace;font-size:13px;color:#1F2A44;">J. Park (CHRO)</div>
+      </div>
+      <div style="margin-top:6px;font-size:12px;color:#5A6271;">37 leadership roles · org charts T-0 ready</div>
+    </div>
+  </div>
+  <!-- Bar W1-W10 (100..1100 from x=640) -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:640px;top:316px;width:1000px;height:24px;background:#2E7D34;z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:660px;top:319px;width:960px;height:24px;z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#FFFFFF;letter-spacing:0.12em;">DESIGN → BACKFILL → T-0 READY</div>
+  </div>
+
+  <!-- Row 2: WS2 Systems -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:80px;top:440px;width:1760px;height:1px;background:#D7DAE0;z-index:2;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:100px;top:468px;width:530px;height:120px;z-index:10;">
+    <div style="font-family:'Inter',sans-serif;">
+      <div style="display:flex;align-items:center;">
+        <div style="width:200px;font-size:16px;font-weight:600;color:#1F2A44;">WS2 — Systems Integration</div>
+        <div style="width:156px;font-family:'IBM Plex Mono',monospace;font-size:13px;color:#1F2A44;">P. Sharma</div>
+        <div style="width:156px;font-family:'IBM Plex Mono',monospace;font-size:13px;color:#1F2A44;">R. Okafor (CIO)</div>
+      </div>
+      <div style="margin-top:6px;font-size:12px;color:#5A6271;">SAP + CRM + EDI cutover · 14 critical apps</div>
+    </div>
+  </div>
+  <!-- Two-phase bar: discovery W1-W6 (100..700) green; cutover W7-W12 amber with 2-week slip -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:640px;top:486px;width:600px;height:24px;background:#2E7D34;z-index:5;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1240px;top:486px;width:600px;height:24px;background:#D9881E;z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:660px;top:489px;width:560px;height:20px;z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#FFFFFF;letter-spacing:0.12em;">DISCOVERY · CUTOVER PLANNING</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1260px;top:489px;width:560px;height:20px;z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#FFFFFF;letter-spacing:0.12em;">SAP CUTOVER · 2-WK SLIP → SEE D-07</div>
+  </div>
+  <!-- Slip diamond at original W10 end (x=1640) -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1632px;top:514px;width:14px;height:14px;background:#C9252D;transform:rotate(45deg);z-index:6;"></div>
+
+  <!-- Row 3: WS3 Retention -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:80px;top:610px;width:1760px;height:1px;background:#D7DAE0;z-index:2;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:100px;top:638px;width:530px;height:120px;z-index:10;">
+    <div style="font-family:'Inter',sans-serif;">
+      <div style="display:flex;align-items:center;">
+        <div style="width:200px;font-size:16px;font-weight:600;color:#1F2A44;">WS3 — Customer Retention</div>
+        <div style="width:156px;font-family:'IBM Plex Mono',monospace;font-size:13px;color:#1F2A44;">M. Albu</div>
+        <div style="width:156px;font-family:'IBM Plex Mono',monospace;font-size:13px;color:#1F2A44;">S. Albright (CRO)</div>
+      </div>
+      <div style="margin-top:6px;font-size:12px;color:#5A6271;">Top-20 NA + Top-30 EMEA · pricing &amp; comms</div>
+    </div>
+  </div>
+  <!-- bar W2-W12 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:740px;top:656px;width:1100px;height:24px;background:#C9252D;z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:760px;top:659px;width:600px;height:20px;z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#FFFFFF;letter-spacing:0.12em;">DIAGNOSTIC · WAR-ROOM · PRICING-EXCEPTION → SEE D-08</div>
+  </div>
+
+  <!-- Row 4: WS4 Synergy -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:80px;top:780px;width:1760px;height:1px;background:#D7DAE0;z-index:2;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:100px;top:808px;width:530px;height:120px;z-index:10;">
+    <div style="font-family:'Inter',sans-serif;">
+      <div style="display:flex;align-items:center;">
+        <div style="width:200px;font-size:16px;font-weight:600;color:#1F2A44;">WS4 — Synergy Tracking</div>
+        <div style="width:156px;font-family:'IBM Plex Mono',monospace;font-size:13px;color:#1F2A44;">L. Beaumont</div>
+        <div style="width:156px;font-family:'IBM Plex Mono',monospace;font-size:13px;color:#1F2A44;">D. Hoffmann (CFO-1)</div>
+      </div>
+      <div style="margin-top:6px;font-size:12px;color:#5A6271;">$46M target · run-rate $42M · bridge weekly</div>
+    </div>
+  </div>
+  <!-- bar full -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:640px;top:826px;width:1200px;height:24px;background:#2E7D34;z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:660px;top:829px;width:600px;height:20px;z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#FFFFFF;letter-spacing:0.12em;">CONTINUOUS — BRIDGE / TRACKER / VALIDATE</div>
+  </div>
+
+  <!-- Bottom gate row -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:640px;top:880px;width:1200px;height:60px;background:#F4F5F7;z-index:4;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:640px;top:898px;width:1200px;height:32px;z-index:10;">
+    <div style="display:flex;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;text-align:center;">
+      <div style="width:400px;color:#D9881E;font-weight:700;">▲ GATE 1 · SCOPE CONFIRMED · 30 APR ✓</div>
+      <div style="width:400px;color:#D9881E;font-weight:700;">▲ GATE 2 · INTERIM FINDINGS · 28 MAY (W8)</div>
+      <div style="width:400px;color:#D9881E;font-weight:700;">▲ GATE 3 · FINAL READOUT · 25 JUN (W12)</div>
+    </div>
+  </div>
+
+  <!-- Legend -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:80px;top:980px;width:1760px;height:48px;z-index:10;">
+    <div style="font-family:'Inter',sans-serif;font-size:13px;color:#5A6271;">
+      <span style="display:inline-block;width:16px;height:10px;background:#2E7D34;vertical-align:1px;margin-right:6px;"></span>On plan &nbsp;·&nbsp;
+      <span style="display:inline-block;width:16px;height:10px;background:#D9881E;vertical-align:1px;margin-right:6px;"></span>At risk &nbsp;·&nbsp;
+      <span style="display:inline-block;width:16px;height:10px;background:#C9252D;vertical-align:1px;margin-right:6px;"></span>Off plan &nbsp;·&nbsp;
+      <span style="display:inline-block;width:10px;height:10px;background:#C9252D;transform:rotate(45deg);vertical-align:1px;margin-right:6px;"></span>Slip marker &nbsp;·&nbsp;
+      ▲ Decision gate (Stage-Gate®<sup style="font-size:10px;">[3]</sup>) &nbsp;·&nbsp;
+      Vertical red = today (end W6, 14 May 2026)
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:80px;top:1056px;width:1760px;height:18px;z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.24em;color:#8A8F9A;text-transform:uppercase;">PROJECT NORTHSTAR · STEERCO #3 · 14 MAY 2026 · CONFIDENTIAL — DRAFT</div>
+  </div>
+
+</div>
+</body>
+</html>

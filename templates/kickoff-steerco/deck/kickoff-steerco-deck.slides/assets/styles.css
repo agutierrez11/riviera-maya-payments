@@ -1,0 +1,13 @@
+/* Shared tokens — reference only; slides use inline styles per editor contract */
+:root {
+  --navy: #1F2A44;
+  --navy-2: #2B3656;
+  --slate: #5A6271;
+  --slate-2: #8A8F9A;
+  --rule: #D7DAE0;
+  --bg: #FFFFFF;
+  --paper: #F4F5F7;
+  --red: #C9252D;
+  --amber: #D9881E;
+  --green: #2E7D34;
+}
