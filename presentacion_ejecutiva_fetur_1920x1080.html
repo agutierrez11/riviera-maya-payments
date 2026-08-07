@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Caribe Mexicano Smart Pay — Mazo Ejecutivo 1920x1080 (FETUR & SECTUR QRoo)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #0B0E14;
+    font-family: 'Inter', sans-serif;
+    color: #1F2A44;
+  }
+
+  .deck-viewport {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .slide-container {
+    position: absolute;
+    width: 1920px;
+    height: 1080px;
+    background: #FFFFFF;
+    box-shadow: 0 30px 90px rgba(0,0,0,0.6);
+    transform-origin: center center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  .slide-container.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Left Rail Layout */
+  .left-rail {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 520px;
+    height: 1080px;
+    background: #1F2A44;
+    z-index: 1;
+  }
+
+  .rail-accent {
+    position: absolute;
+    left: 520px;
+    top: 0;
+    width: 8px;
+    height: 1080px;
+    background: #00E676;
+    z-index: 1;
+  }
+
+  .rail-content {
+    position: absolute;
+    left: 70px;
+    top: 72px;
+    width: 380px;
+    z-index: 10;
+    color: #FFFFFF;
+  }
+
+  .main-canvas {
+    position: absolute;
+    left: 580px;
+    top: 72px;
+    width: 1260px;
+    height: 936px;
+    z-index: 10;
+  }
+
+  .mono-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.22em;
+    color: #8A8F9A;
+    text-transform: uppercase;
+  }
+
+  .slide-title-action {
+    font-family: 'Source Serif 4', serif;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.25;
+    color: #1F2A44;
+    margin-top: 16px;
+    margin-bottom: 40px;
+  }
+
+  .card-grid {
+    display: grid;
+    gap: 24px;
+  }
+
+  .grid-2x2 { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; }
+  .grid-3col { grid-template-columns: 1fr 1fr 1fr; }
+  .grid-4col { grid-template-columns: 1fr 1fr 1fr 1fr; }
+
+  .exec-card {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-left: 6px solid #1F2A44;
+    border-radius: 12px;
+    padding: 32px;
+  }
+
+  .exec-card-green { border-left-color: #00E676; }
+  .exec-card-cyan { border-left-color: #00E5FF; }
+  .exec-card-purple { border-left-color: #A855F7; }
+
+  .stat-val {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 52px;
+    font-weight: 700;
+    color: #1F2A44;
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+
+  .stat-val-accent { color: #00C853; }
+
+  .stat-label {
+    font-size: 20px;
+    font-weight: 700;
+    color: #0F172A;
+    margin-bottom: 8px;
+  }
+
+  .stat-desc {
+    font-size: 16px;
+    color: #475569;
+    line-height: 1.5;
+  }
+
+  /* Fixed Navigation HUD */
+  .controls-hud {
+    position: fixed;
+    bottom: 30px;
+    right: 40px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: rgba(15, 23, 42, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 12px 24px;
+    border-radius: 40px;
+    backdrop-filter: blur(12px);
+  }
+
+  .hud-btn {
+    background: #00E676;
+    color: #0B0E14;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+  }
+
+  .hud-btn:hover { background: #00C853; }
+
+  .hud-counter {
+    font-family: 'IBM Plex Mono', monospace;
+    color: #FFFFFF;
+    font-size: 16px;
+  }
+</style>
+</head>
+<body>
+
+<div class="deck-viewport">
+
+  <!-- SLIDE 1: COVER -->
+  <div class="slide-container active" id="slide-1">
+    <div class="left-rail">
+      <div class="rail-accent"></div>
+      <div class="rail-content">
+        <div class="mono-tag" style="color: #00E676;">FETUR · SECTUR QROO · 2026</div>
+        <div style="font-family: 'Source Serif 4', serif; font-size: 34px; font-weight: 700; margin-top: 240px; line-height: 1.3;">
+          CARIBE MEXICANO<br><span style="color: #00E676;">SMART PAY</span>
+        </div>
+        <div style="font-size: 16px; color: #94A3B8; margin-top: 20px; line-height: 1.6;">
+          Infraestructura Transfronteriza de Pagos Turísticos LATAM (PIX, Nequi, Yape, Mercado Pago)
+        </div>
+        <div style="margin-top: 260px; border-top: 1px solid #334155; padding-top: 24px;">
+          <div class="mono-tag">AUTOR DE LA INICIATIVA</div>
+          <div style="font-size: 18px; font-weight: 700; color: #FFFFFF; margin-top: 4px;">Antonio Gutiérrez</div>
+          <div style="font-size: 14px; color: #94A3B8;">Comisión de Innovación Tecnológica (FETUR)</div>
+        </div>
+      </div>
+    </div>
+    <div class="main-canvas">
+      <div class="mono-tag">01 · SITUACIÓN DE MERCADO Y DERRAMA</div>
+      <div class="slide-title-action">
+        Quintana Roo lidera la recepción de turismo sudamericano en México con una derrama en sitio de $1,113 Millones de Dólares
+      </div>
+      <div class="card-grid grid-2x2" style="height: 640px;">
+        <div class="exec-card exec-card-green">
+          <div class="stat-val stat-val-accent">380,000</div>
+          <div class="stat-label">🇨🇴 Colombia (380k Turistas/Año)</div>
+          <div class="stat-desc">Gasto promedio en sitio: <strong>$1,039.55 USD/estancia</strong>.<br>Derrama económica directa: <strong>$395.0 Millones de USD</strong>.</div>
+        </div>
+        <div class="exec-card exec-card-cyan">
+          <div class="stat-val" style="color: #00E5FF;">160,000</div>
+          <div class="stat-label">🇦🇷 Argentina (160k Turistas/Año)</div>
+          <div class="stat-desc">Gasto promedio en sitio: <strong>$1,125.75 USD/estancia</strong>.<br>Derrama económica directa: <strong>$180.1 Millones de USD</strong>.</div>
+        </div>
+        <div class="exec-card exec-card-purple">
+          <div class="stat-val" style="color: #A855F7;">150,000</div>
+          <div class="stat-label">🇧🇷 Brasil (150k Turistas/Año)</div>
+          <div class="stat-desc">Gasto promedio en sitio: <strong>$1,209.00 USD/estancia</strong>.<br>Derrama económica directa: <strong>$181.35 Millones de USD</strong>.</div>
+        </div>
+        <div class="exec-card">
+          <div class="stat-val" style="color: #FF9100;">135,000</div>
+          <div class="stat-label">🇵🇪 Perú (135k Turistas/Año)</div>
+          <div class="stat-desc">Gasto promedio en sitio: <strong>$980.00 USD/estancia</strong>.<br>Derrama económica directa: <strong>$132.3 Millones de USD</strong>.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 2: MARKET GAP -->
+  <div class="slide-container" id="slide-2">
+    <div class="left-rail">
+      <div class="rail-accent"></div>
+      <div class="rail-content">
+        <div class="mono-tag" style="color: #00E676;">02 · HÁBITOS DE PAGO LATAM</div>
+        <div style="font-family: 'Source Serif 4', serif; font-size: 28px; font-weight: 700; margin-top: 200px; line-height: 1.4;">
+          EL RECHAZO DE LAS TARJETAS TRADICIONALES
+        </div>
+        <div style="font-size: 15px; color: #94A3B8; margin-top: 20px; line-height: 1.7;">
+          El 65% de los turistas sudamericanos no usa tarjeta bancaria en el exterior por sobrecostos impositivos en sus países de origen.
+        </div>
+      </div>
+    </div>
+    <div class="main-canvas">
+      <div class="mono-tag">02 · COMPORTAMIENTO DEL CONSUMIDOR</div>
+      <div class="slide-title-action">
+        El 65% de los turistas sudamericanos evita usar tarjetas tradicionales por comisiones e impuestos en sus países
+      </div>
+      <div class="card-grid grid-2x2" style="height: 640px;">
+        <div class="exec-card">
+          <div class="stat-val" style="color: #00C853;">>65,000M</div>
+          <div class="stat-label">🇧🇷 Brasil (Red PIX BCB)</div>
+          <div class="stat-desc">El 85% de los brasileños prefiere pagar con PIX para eludir el <strong>3.5% de Impuesto IOF</strong> que les cobra su gobierno al usar tarjeta en México.</div>
+        </div>
+        <div class="exec-card">
+          <div class="stat-val" style="color: #3B82F6;">62% Adopción</div>
+          <div class="stat-label">🇦🇷 Argentina (eWallets CBU)</div>
+          <div class="stat-desc">Los argentinos evitan la tarjeta de crédito para eludir el <strong>15% al 25% de recargo impositivo AFIP</strong> ("Dólar Tarjeta").</div>
+        </div>
+        <div class="exec-card">
+          <div class="stat-val" style="color: #A855F7;">>40M Txs/Día</div>
+          <div class="stat-label">🇵🇪 Perú (Yape & Plin)</div>
+          <div class="stat-desc">El 68% de los viajeros peruanos no utiliza tarjeta de crédito por temor a altas tasas de interés bancarias.</div>
+        </div>
+        <div class="exec-card">
+          <div class="stat-val" style="color: #EC4899;">>78% Adultos</div>
+          <div class="stat-label">🇨🇴 Colombia (Nequi / DaviPlata)</div>
+          <div class="stat-desc">Prevalencia masiva de pagos mediante llaves digitales y códigos QR de transferencia instantánea.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 3: SOLUCIÓN Y ARQUITECTURA -->
+  <div class="slide-container" id="slide-3">
+    <div class="left-rail">
+      <div class="rail-accent"></div>
+      <div class="rail-content">
+        <div class="mono-tag" style="color: #00E676;">03 · PRODUCTO Y TECNOLOGÍA</div>
+        <div style="font-family: 'Source Serif 4', serif; font-size: 28px; font-weight: 700; margin-top: 200px; line-height: 1.4;">
+          MODELO ZERO-DEVICE Y ZERO-ERP
+        </div>
+        <div style="font-size: 15px; color: #94A3B8; margin-top: 20px; line-height: 1.7;">
+          Un solo cartel de acrílico QR de mostrador o mesa que se integra directamente al software que los afiliados a FETUR ya utilizan.
+        </div>
+      </div>
+    </div>
+    <div class="main-canvas">
+      <div class="mono-tag">03 · PROPUESTA DE VALOR TECNOLÓGICA</div>
+      <div class="slide-title-action">
+        El modelo elimina la compra de TPVs y se integra directamente al software que los afiliados ya usan
+      </div>
+      <div class="card-grid grid-3col" style="height: 640px;">
+        <div class="exec-card exec-card-green">
+          <div class="stat-val" style="color: #00C853;">1 Solo QR</div>
+          <div class="stat-label">Cartel QR Unificado</div>
+          <div class="stat-desc">Smart QR que detecta en milisegundos si el celular del turista es de Brasil, Colombia, Perú o Argentina y abre su app bancaria nativa.</div>
+        </div>
+        <div class="exec-card exec-card-cyan">
+          <div class="stat-val" style="color: #00E5FF;">Hub FETUR</div>
+          <div class="stat-label">Conexión con Software Actual</div>
+          <div class="stat-desc">Integrado a <strong>Sunday</strong> (mesas), <strong>Duve</strong> (check-in hotel), <strong>FareHarbor</strong> (tours) y <strong>Soft Restaurant / Opera PMS</strong>.</div>
+        </div>
+        <div class="exec-card exec-card-purple">
+          <div class="stat-val" style="color: #A855F7;">&lt;3 Seg. SPEI</div>
+          <div class="stat-label">Liquidación Automática MXN</div>
+          <div class="stat-desc">El comercio recibe Pesos Mexicanos en su tarjeta o cuenta de siempre (Spin OXXO, BanCoppel, Mercado Pago, BBVA).</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 4: PISO FINANCIERO 1% -->
+  <div class="slide-container" id="slide-4">
+    <div class="left-rail">
+      <div class="rail-accent"></div>
+      <div class="rail-content">
+        <div class="mono-tag" style="color: #00E676;">04 · PLAN DE NEGOCIO Y METAS</div>
+        <div style="font-family: 'Source Serif 4', serif; font-size: 28px; font-weight: 700; margin-top: 200px; line-height: 1.4;">
+          EL PISO CONSERVADOR DEL 1% DEL SAM
+        </div>
+        <div style="font-size: 15px; color: #94A3B8; margin-top: 20px; line-height: 1.7;">
+          Modelo de penetración ultra-conservador enfocado en los 175 comercios de mayor densidad turística de Quintana Roo.
+        </div>
+      </div>
+    </div>
+    <div class="main-canvas">
+      <div class="mono-tag">04 · UNIT ECONOMICS Y PARETO 80/20</div>
+      <div class="slide-title-action">
+        Un piso conservador del 1% del mercado ($3.5M USD) se alcanza con solo 113 transacciones diarias en 175 comercios clave
+      </div>
+      <div class="card-grid grid-2x2" style="height: 640px;">
+        <div class="exec-card exec-card-green">
+          <div class="stat-val stat-val-accent">$3.5M USD</div>
+          <div class="stat-label">Volumen Procesado Piso (1% SAM)</div>
+          <div class="stat-desc">Meta mínima garantizada en el primer año de operaciones en Quintana Roo.</div>
+        </div>
+        <div class="exec-card">
+          <div class="stat-val" style="color: #3B82F6;">175 Comercios</div>
+          <div class="stat-label">Afiliados Tier 1 Pareto</div>
+          <div class="stat-desc">Solo el 35% de los 500 asociados actuales de FETUR en los 4 municipios principales.</div>
+        </div>
+        <div class="exec-card">
+          <div class="stat-val" style="color: #A855F7;">113 Txs/Día</div>
+          <div class="stat-label">Distribución Estatal Diaria</div>
+          <div class="stat-desc">40 Cancún + 35 Playa del Carmen + 25 Tulum + 13 Cozumel = 113 pagos al día en todo el estado.</div>
+        </div>
+        <div class="exec-card">
+          <div class="stat-val" style="color: #FF9100;">1 Pago/Día</div>
+          <div class="stat-label">Por Comercio Afiliado</div>
+          <div class="stat-desc">Basta con que cada negocio realice solo 1 cobro promedio de $85 USD al día para cumplir la meta financiera.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 5: CLOSING DASHBOARD -->
+  <div class="slide-container" id="slide-5">
+    <div class="left-rail">
+      <div class="rail-accent"></div>
+      <div class="rail-content">
+        <div class="mono-tag" style="color: #00E676;">05 · EJECUCIÓN Y PRÓXIMOS PASOS</div>
+        <div style="font-family: 'Source Serif 4', serif; font-size: 28px; font-weight: 700; margin-top: 200px; line-height: 1.4;">
+          HOJA DE RUTA A 45 DÍAS
+        </div>
+        <div style="font-size: 15px; color: #94A3B8; margin-top: 20px; line-height: 1.7;">
+          Dashboard de decisiones y cronograma de despliegue institucional listo para aprobación.
+        </div>
+      </div>
+    </div>
+    <div class="main-canvas">
+      <div class="mono-tag">05 · MESA DE TRABAJO Y DECISIONES</div>
+      <div class="slide-title-action">
+        Plan de acción inmediato a 45 días para la circular de adhesión, entrega de kits y lanzamiento en rueda de prensa estatal
+      </div>
+      <div class="card-grid grid-2x2" style="height: 640px;">
+        <div class="exec-card">
+          <div class="stat-val" style="font-size: 36px; color: #00C853;">Días 1 - 15</div>
+          <div class="stat-label">Circular Institucional FETUR</div>
+          <div class="stat-desc">Envío de circular formal de adhesión a los 175 comercios de mayor densidad turística sudamericana.</div>
+        </div>
+        <div class="exec-card">
+          <div class="stat-val" style="font-size: 36px; color: #00E5FF;">Días 16 - 30</div>
+          <div class="stat-label">Entrega de Kits & Integración</div>
+          <div class="stat-desc">Reparto de acrílicos QR de mostrador y activación en el software de caja (Sunday / Soft Restaurant).</div>
+        </div>
+        <div class="exec-card">
+          <div class="stat-val" style="font-size: 36px; color: #A855F7;">Días 31 - 45</div>
+          <div class="stat-label">Rueda de Prensa de Estado</div>
+          <div class="stat-desc">Lanzamiento oficial ante medios con el Secretario de Turismo de Quintana Roo y Presidenta de FETUR.</div>
+        </div>
+        <div class="exec-card">
+          <div class="stat-val" style="font-size: 36px; color: #FF9100;">Días 46+</div>
+          <div class="stat-label">Operación & Escalamiento ASETUR</div>
+          <div class="stat-desc">Auditoría de volumen de procesamiento e inicio de gestión para réplica en Los Cabos y Puerto Vallarta.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Navigation HUD -->
+<div class="controls-hud">
+  <button class="hud-btn" id="prevBtn">← Anterior</button>
+  <div class="hud-counter" id="hudCounter">Diapositiva 1 / 5</div>
+  <button class="hud-btn" id="nextBtn">Siguiente →</button>
+</div>
+
+<script>
+  let currentSlide = 1;
+  const totalSlides = 5;
+
+  function updateSlides() {
+    document.querySelectorAll('.slide-container').forEach(slide => slide.classList.remove('active'));
+    const target = document.getElementById(`slide-${currentSlide}`);
+    if (target) target.classList.add('active');
+    document.getElementById('hudCounter').innerText = `Diapositiva ${currentSlide} / ${totalSlides}`;
+  }
+
+  document.getElementById('nextBtn').addEventListener('click', () => {
+    if (currentSlide < totalSlides) { currentSlide++; updateSlides(); }
+  });
+
+  document.getElementById('prevBtn').addEventListener('click', () => {
+    if (currentSlide > 1) { currentSlide--; updateSlides(); }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === ' ') {
+      if (currentSlide < totalSlides) { currentSlide++; updateSlides(); }
+    } else if (e.key === 'ArrowLeft') {
+      if (currentSlide > 1) { currentSlide--; updateSlides(); }
+    }
+  });
+
+  // Responsive 1920x1080 auto-scale
+  function scaleDeck() {
+    const targetWidth = 1920;
+    const targetHeight = 1080;
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
+    const scale = Math.min(windowWidth / targetWidth, windowHeight / targetHeight) * 0.95;
+    
+    document.querySelectorAll('.slide-container').forEach(slide => {
+      slide.style.transform = `scale(${scale})`;
+    });
+  }
+
+  window.addEventListener('resize', scaleDeck);
+  scaleDeck();
+</script>
+
+</body>
+</html>
