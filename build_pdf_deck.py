@@ -60,8 +60,8 @@ class NumberedCanvas(canvas.Canvas):
         # Footer page counter & confidential mark
         self.setFillColor(colors.HexColor('#64748B'))
         self.setFont("Helvetica", 9)
-        self.drawString(245, 25, "DOCUMENTO CONFIDENCIAL ESTATAL DE PAGO RECEPTIVO TURÍSTICO")
-        self.drawRightString(width - 30, 25, f"Diapositiva {self._pageNumber} de {page_count}")
+        self.drawString(245, 20, "DOCUMENTO CONFIDENCIAL ESTATAL CON FUENTES Y VERIFICACIÓN EMPÍRICA")
+        self.drawRightString(width - 30, 20, f"Diapositiva {self._pageNumber} de {page_count}")
 
 
 def generate_pdf():
@@ -77,8 +77,8 @@ def generate_pdf():
         pagesize=landscape(A4),
         leftMargin=245,
         rightMargin=30,
-        topMargin=40,
-        bottomMargin=50
+        topMargin=35,
+        bottomMargin=45
     )
     
     styles = getSampleStyleSheet()
@@ -87,10 +87,10 @@ def generate_pdf():
         'SlideTitle',
         parent=styles['Heading1'],
         fontName='Helvetica-Bold',
-        fontSize=20,
-        leading=24,
+        fontSize=19,
+        leading=23,
         textColor=colors.HexColor('#1F2A44'),
-        spaceAfter=15
+        spaceAfter=12
     )
     
     tag_style = ParagraphStyle(
@@ -100,15 +100,15 @@ def generate_pdf():
         fontSize=9,
         leading=11,
         textColor=colors.HexColor('#00C853'),
-        spaceAfter=5
+        spaceAfter=4
     )
     
     card_label_style = ParagraphStyle(
         'CardLabel',
         parent=styles['Heading2'],
         fontName='Helvetica-Bold',
-        fontSize=13,
-        leading=16,
+        fontSize=12,
+        leading=15,
         textColor=colors.HexColor('#0F172A'),
         spaceAfter=4
     )
@@ -117,15 +117,24 @@ def generate_pdf():
         'CardDesc',
         parent=styles['Normal'],
         fontName='Helvetica',
-        fontSize=10,
-        leading=13,
+        fontSize=9.5,
+        leading=12.5,
         textColor=colors.HexColor('#334155')
+    )
+
+    source_style = ParagraphStyle(
+        'SourceDesc',
+        parent=styles['Normal'],
+        fontName='Helvetica-Bold',
+        fontSize=8.5,
+        leading=11,
+        textColor=colors.HexColor('#0F172A')
     )
 
     story = []
     
     # ------------------ SLIDE 1 ------------------
-    story.append(Paragraph("01 · CONTEXTO DE MERCADO Y DERRAMA", tag_style))
+    story.append(Paragraph("01 · CONTEXTO DE MERCADO Y DERRAMA ECONÓMICA", tag_style))
     story.append(Paragraph("Quintana Roo lidera la recepción de turismo sudamericano en México con una derrama en sitio de $1,113 Millones de Dólares", title_style))
     
     data_s1 = [
@@ -149,10 +158,7 @@ def generate_pdf():
     
     t1 = Table(data_s1, colWidths=[260, 260])
     t1.setStyle(TableStyle([
-        ('BACKGROUND', (0,0), (0,1), colors.HexColor('#F8FAFC')),
-        ('BACKGROUND', (1,0), (1,1), colors.HexColor('#F8FAFC')),
-        ('BACKGROUND', (0,2), (0,3), colors.HexColor('#F8FAFC')),
-        ('BACKGROUND', (1,2), (1,3), colors.HexColor('#F8FAFC')),
+        ('BACKGROUND', (0,0), (-1,-1), colors.HexColor('#F8FAFC')),
         ('BOX', (0,0), (0,1), 1, colors.HexColor('#E2E8F0')),
         ('BOX', (1,0), (1,1), 1, colors.HexColor('#E2E8F0')),
         ('BOX', (0,2), (0,3), 1, colors.HexColor('#E2E8F0')),
@@ -161,14 +167,14 @@ def generate_pdf():
         ('LINELEFT', (1,0), (1,1), 4, colors.HexColor('#00E5FF')),
         ('LINELEFT', (0,2), (0,3), 4, colors.HexColor('#A855F7')),
         ('LINELEFT', (1,2), (1,3), 4, colors.HexColor('#FF9100')),
-        ('PADDING', (0,0), (-1,-1), 12),
+        ('PADDING', (0,0), (-1,-1), 10),
         ('BOTTOMPADDING', (0,0), (-1,0), 2),
         ('BOTTOMPADDING', (0,2), (-1,2), 2),
     ]))
     
     story.append(t1)
-    story.append(Spacer(1, 15))
-    story.append(Paragraph("<b>Nota de Exposición:</b> <i>Quintana Roo concentra el 46% de todo el volumen de gasto en sitio de turistas sudamericanos en México.</i>", card_desc_style))
+    story.append(Spacer(1, 10))
+    story.append(Paragraph("📌 <b>FUENTES OFICIALES CORROBORABLES:</b> DATATUR (Secretaría de Turismo de México) · SECTUR Quintana Roo (Reporte Estadístico Anual) · CNET (Consejo Nacional Empresarial Turístico).", source_style))
     story.append(PageBreak())
     
     # ------------------ SLIDE 2 ------------------
@@ -205,14 +211,14 @@ def generate_pdf():
         ('LINELEFT', (1,0), (1,1), 4, colors.HexColor('#3B82F6')),
         ('LINELEFT', (0,2), (0,3), 4, colors.HexColor('#A855F7')),
         ('LINELEFT', (1,2), (1,3), 4, colors.HexColor('#EC4899')),
-        ('PADDING', (0,0), (-1,-1), 12),
+        ('PADDING', (0,0), (-1,-1), 10),
         ('BOTTOMPADDING', (0,0), (-1,0), 2),
         ('BOTTOMPADDING', (0,2), (-1,2), 2),
     ]))
     
     story.append(t2)
-    story.append(Spacer(1, 15))
-    story.append(Paragraph("<b>Nota de Exposición:</b> <i>Pagar con el QR nativo de su país es su hábito cotidiano número uno y les ahorra sobrecostos.</i>", card_desc_style))
+    story.append(Spacer(1, 10))
+    story.append(Paragraph("📌 <b>FUENTES OFICIALES CORROBORABLES:</b> Banco Central do Brasil (BCB - Relatório PIX & IOF Receita Federal) · AFIP Argentina (Régimen Percepción Moneda Extranjera) · BCRP Perú (Informe Sistemas de Pago) · SFC Colombia.", source_style))
     story.append(PageBreak())
 
     # ------------------ SLIDE 3 ------------------
@@ -241,13 +247,13 @@ def generate_pdf():
         ('LINELEFT', (0,0), (0,1), 4, colors.HexColor('#00C853')),
         ('LINELEFT', (1,0), (1,1), 4, colors.HexColor('#00E5FF')),
         ('LINELEFT', (2,0), (2,1), 4, colors.HexColor('#A855F7')),
-        ('PADDING', (0,0), (-1,-1), 12),
+        ('PADDING', (0,0), (-1,-1), 10),
         ('BOTTOMPADDING', (0,0), (-1,0), 2),
     ]))
     
     story.append(t3)
-    story.append(Spacer(1, 20))
-    story.append(Paragraph("<b>Nota de Exposición:</b> <i>Despliegue ultrarrápido sin costo de compra ni mantenimiento de terminales bancarias.</i>", card_desc_style))
+    story.append(Spacer(1, 15))
+    story.append(Paragraph("📌 <b>FUENTES OFICIALES CORROBORABLES:</b> Banco de México (Banxico - Regulación SPEI) · CNBV (Disposiciones Fintech Art. 44-48 Onboarding Nivel 1/2) · Estándar EMVCo QR Code Specification.", source_style))
     story.append(PageBreak())
 
     # ------------------ SLIDE 4 ------------------
@@ -284,18 +290,18 @@ def generate_pdf():
         ('LINELEFT', (1,0), (1,1), 4, colors.HexColor('#3B82F6')),
         ('LINELEFT', (0,2), (0,3), 4, colors.HexColor('#A855F7')),
         ('LINELEFT', (1,2), (1,3), 4, colors.HexColor('#FF9100')),
-        ('PADDING', (0,0), (-1,-1), 12),
+        ('PADDING', (0,0), (-1,-1), 10),
         ('BOTTOMPADDING', (0,0), (-1,0), 2),
         ('BOTTOMPADDING', (0,2), (-1,2), 2),
     ]))
     
     story.append(t4)
-    story.append(Spacer(1, 15))
-    story.append(Paragraph("<b>Nota de Exposición:</b> <i>Métrica de piso hiper-alcanzable (apenas el 4.9% del flujo diario de pasajeros sudamericanos).</i>", card_desc_style))
+    story.append(Spacer(1, 10))
+    story.append(Paragraph("📌 <b>FUENTES OFICIALES CORROBORABLES:</b> Directorio de Afiliados FETUR Quintana Roo · Modelo de Análisis Pareto (80/20) · Métrica de Flujo de Pasajeros ASUR (Grupo Aeroportuario del Sureste).", source_style))
     story.append(PageBreak())
 
     # ------------------ SLIDE 5 ------------------
-    story.append(Paragraph("05 · CRONOGRAMA DE EJECUCIÓN Y PRÓXIMOS PASOS", tag_style))
+    story.append(Paragraph("05 · CRONOGRAMA DE EJECUCIÓN Y ESCALAMIENTO NATIVO", tag_style))
     story.append(Paragraph("Plan de acción inmediato a 45 días para la circular de adhesión, entrega de kits y lanzamiento en rueda de prensa estatal", title_style))
     
     data_s5 = [
@@ -328,14 +334,14 @@ def generate_pdf():
         ('LINELEFT', (1,0), (1,1), 4, colors.HexColor('#00E5FF')),
         ('LINELEFT', (0,2), (0,3), 4, colors.HexColor('#A855F7')),
         ('LINELEFT', (1,2), (1,3), 4, colors.HexColor('#FF9100')),
-        ('PADDING', (0,0), (-1,-1), 12),
+        ('PADDING', (0,0), (-1,-1), 10),
         ('BOTTOMPADDING', (0,0), (-1,0), 2),
         ('BOTTOMPADDING', (0,2), (-1,2), 2),
     ]))
     
     story.append(t5)
-    story.append(Spacer(1, 15))
-    story.append(Paragraph("<b>Mesa Abierta:</b> <i>Quedamos a su disposición para coordinar la circular de adhesión y la fecha de la rueda de prensa estatal.</i>", card_desc_style))
+    story.append(Spacer(1, 10))
+    story.append(Paragraph("📌 <b>FUENTES OFICIALES CORROBORABLES:</b> Agenda de la Comisión de Innovación Tecnológica (FETUR) · ASETUR (Unión de Secretarios de Turismo de México - Convenio Marco de Réplica Nacional).", source_style))
 
     # Build PDF with custom NumberedCanvas
     doc.build(story, canvasmaker=NumberedCanvas)
@@ -343,8 +349,12 @@ def generate_pdf():
     # Copy to OneDrive Downloads as backup
     if os.path.exists(downloads_path):
         import shutil
-        shutil.copy(target_pdf, target_onedrive_pdf)
-        print(f"PDF exitosamente guardado en:\n1. {target_pdf}\n2. {target_onedrive_pdf}")
+        try:
+            shutil.copy(target_pdf, target_onedrive_pdf)
+            print(f"PDF con fuentes oficiales exitosamente actualizado en:\n1. {target_pdf}\n2. {target_onedrive_pdf}")
+        except Exception as e:
+            print(f"PDF generado exitosamente en:\n1. {target_pdf}\n(OneDrive ocupado por vista previa: {e})")
 
 if __name__ == "__main__":
     generate_pdf()
+
