@@ -60,7 +60,7 @@ class NumberedCanvas(canvas.Canvas):
         # Footer page counter & confidential mark
         self.setFillColor(colors.HexColor('#64748B'))
         self.setFont("Helvetica", 9)
-        self.drawString(245, 20, "DOCUMENTO CONFIDENCIAL ESTATAL CON FUENTES Y VERIFICACIÓN EMPÍRICA")
+        self.drawString(245, 20, "DOCUMENTO CONFIDENCIAL ESTATAL CON FUENTES Y TEMPORALIDADES DE VIAJE")
         self.drawRightString(width - 30, 20, f"Diapositiva {self._pageNumber} de {page_count}")
 
 
@@ -174,11 +174,55 @@ def generate_pdf():
     
     story.append(t1)
     story.append(Spacer(1, 10))
-    story.append(Paragraph("📌 <b>FUENTES OFICIALES CORROBORABLES:</b> DATATUR (Secretaría de Turismo de México) · SECTUR Quintana Roo (Reporte Estadístico Anual) · CNET (Consejo Nacional Empresarial Turístico).", source_style))
+    story.append(Paragraph("📌 <b>FUENTES OFICIALES CORROBORABLES:</b> DATATUR (Secretaría de Turismo de México) · SECTUR Quintana Roo (Reporte Anual) · CNET.", source_style))
+    story.append(PageBreak())
+
+    # ------------------ SLIDE 2: TEMPORALIDADES Y ESTACIONALIDAD ------------------
+    story.append(Paragraph("02 · TEMPORALIDADES DE VIAJE Y CONTRA-CICLO ESTACIONAL", tag_style))
+    story.append(Paragraph("El turismo sudamericano genera picos de afluencia durante la temporada baja norteamericana (Junio a Agosto)", title_style))
+    
+    data_s2_season = [
+        [
+            Paragraph("<b>🇨🇴 Colombia (380k Turistas)</b><br/><font color='#00C853'><b>Junio - Julio & Octubre</b></font>", card_label_style),
+            Paragraph("<b>🇧🇷 Brasil (150k Turistas)</b><br/><font color='#A855F7'><b>Julio, Diciembre & Feb/Mar</b></font>", card_label_style)
+        ],
+        [
+            Paragraph("• <b>Vacaciones de mitad de año</b> (Junio/Julio).<br/>• <b>Semana de Receso escolar</b> (Octubre).<br/>• Fiestas de fin de año (Diciembre/Enero).", card_desc_style),
+            Paragraph("• <b>Vacaciones de invierno austral</b> (Julio).<br/>• Fiestas y verano del hemisferio sur (Dic/Ene).<br/>• <b>Semana de Carnaval</b> (Febrero/Marzo).", card_desc_style)
+        ],
+        [
+            Paragraph("<b>🇦🇷 Argentina (160k Turistas)</b><br/><font color='#00E5FF'><b>Enero - Febrero & Julio</b></font>", card_label_style),
+            Paragraph("<b>🇵🇪 Perú (135k Turistas)</b><br/><font color='#FF9100'><b>Julio - Agosto & Enero/Feb</b></font>", card_label_style)
+        ],
+        [
+            Paragraph("• <b>Verano austral principal</b> (Enero/Febrero).<br/>• Receso escolar de invierno (Julio).<br/>• Escapadas de fin de año (Nov/Dic).", card_desc_style),
+            Paragraph("• <b>Fiestas Patrias peruanas</b> (28-29 de Julio).<br/>• Vacaciones escolares de invierno (Julio/Ago).<br/>• Receso de verano (Enero/Febrero).", card_desc_style)
+        ]
+    ]
+    
+    t_season = Table(data_s2_season, colWidths=[260, 260])
+    t_season.setStyle(TableStyle([
+        ('BACKGROUND', (0,0), (-1,-1), colors.HexColor('#F8FAFC')),
+        ('BOX', (0,0), (0,1), 1, colors.HexColor('#E2E8F0')),
+        ('BOX', (1,0), (1,1), 1, colors.HexColor('#E2E8F0')),
+        ('BOX', (0,2), (0,3), 1, colors.HexColor('#E2E8F0')),
+        ('BOX', (1,2), (1,3), 1, colors.HexColor('#E2E8F0')),
+        ('LINELEFT', (0,0), (0,1), 4, colors.HexColor('#00C853')),
+        ('LINELEFT', (1,0), (1,1), 4, colors.HexColor('#A855F7')),
+        ('LINELEFT', (0,2), (0,3), 4, colors.HexColor('#00E5FF')),
+        ('LINELEFT', (1,2), (1,3), 4, colors.HexColor('#FF9100')),
+        ('PADDING', (0,0), (-1,-1), 10),
+        ('BOTTOMPADDING', (0,0), (-1,0), 2),
+        ('BOTTOMPADDING', (0,2), (-1,2), 2),
+    ]))
+    
+    story.append(t_season)
+    story.append(Spacer(1, 10))
+    story.append(Paragraph("📌 <b>IMPACTO ESTRATÉGICO DE ESTACIONALIDAD:</b> Mientras el flujo de EE.UU. cae entre Mayo y Agosto, los 4 mercados sudamericanos tienen sus picos máximos de vacaciones familiares en Junio, Julio y Agosto, equilibrando la ocupación hotelera de Quintana Roo.", source_style))
     story.append(PageBreak())
     
-    # ------------------ SLIDE 2 ------------------
-    story.append(Paragraph("02 · HÁBITOS DE PAGO Y SOBRECOSTOS IMPOSITIVOS", tag_style))
+    # ------------------ SLIDE 3 ------------------
+    story.append(Paragraph("03 · HÁBITOS DE PAGO Y SOBRECOSTOS IMPOSITIVOS", tag_style))
     story.append(Paragraph("El 65% de los turistas sudamericanos evita usar tarjetas tradicionales por comisiones e impuestos en sus países", title_style))
     
     data_s2 = [
@@ -218,11 +262,11 @@ def generate_pdf():
     
     story.append(t2)
     story.append(Spacer(1, 10))
-    story.append(Paragraph("📌 <b>FUENTES OFICIALES CORROBORABLES:</b> Banco Central do Brasil (BCB - Relatório PIX & IOF Receita Federal) · AFIP Argentina (Régimen Percepción Moneda Extranjera) · BCRP Perú (Informe Sistemas de Pago) · SFC Colombia.", source_style))
+    story.append(Paragraph("📌 <b>FUENTES OFICIALES CORROBORABLES:</b> Banco Central do Brasil (BCB - Relatório PIX & IOF Receita Federal) · AFIP Argentina (Régimen Percepción Moneda Extranjera) · BCRP Perú · SFC Colombia.", source_style))
     story.append(PageBreak())
 
-    # ------------------ SLIDE 3 ------------------
-    story.append(Paragraph("03 · ARQUITECTURA ZERO-DEVICE & ZERO-ERP", tag_style))
+    # ------------------ SLIDE 4 ------------------
+    story.append(Paragraph("04 · ARQUITECTURA ZERO-DEVICE & ZERO-ERP", tag_style))
     story.append(Paragraph("El modelo elimina la compra de TPVs y se integra directamente al software que los afiliados ya usan", title_style))
     
     data_s3 = [
@@ -256,8 +300,8 @@ def generate_pdf():
     story.append(Paragraph("📌 <b>FUENTES OFICIALES CORROBORABLES:</b> Banco de México (Banxico - Regulación SPEI) · CNBV (Disposiciones Fintech Art. 44-48 Onboarding Nivel 1/2) · Estándar EMVCo QR Code Specification.", source_style))
     story.append(PageBreak())
 
-    # ------------------ SLIDE 4 ------------------
-    story.append(Paragraph("04 · PLAN DE NEGOCIO Y METAS DE PISO FINANCIERO", tag_style))
+    # ------------------ SLIDE 5 ------------------
+    story.append(Paragraph("05 · PLAN DE NEGOCIO Y METAS DE PISO FINANCIERO", tag_style))
     story.append(Paragraph("Un piso conservador del 1% del mercado ($3.5M USD) se alcanza con solo 113 transacciones diarias en 175 comercios clave", title_style))
     
     data_s4 = [
@@ -300,8 +344,8 @@ def generate_pdf():
     story.append(Paragraph("📌 <b>FUENTES OFICIALES CORROBORABLES:</b> Directorio de Afiliados FETUR Quintana Roo · Modelo de Análisis Pareto (80/20) · Métrica de Flujo de Pasajeros ASUR (Grupo Aeroportuario del Sureste).", source_style))
     story.append(PageBreak())
 
-    # ------------------ SLIDE 5 ------------------
-    story.append(Paragraph("05 · CRONOGRAMA DE EJECUCIÓN Y ESCALAMIENTO NATIVO", tag_style))
+    # ------------------ SLIDE 6 ------------------
+    story.append(Paragraph("06 · CRONOGRAMA DE EJECUCIÓN Y ESCALAMIENTO NATIVO", tag_style))
     story.append(Paragraph("Plan de acción inmediato a 45 días para la circular de adhesión, entrega de kits y lanzamiento en rueda de prensa estatal", title_style))
     
     data_s5 = [
@@ -341,7 +385,7 @@ def generate_pdf():
     
     story.append(t5)
     story.append(Spacer(1, 10))
-    story.append(Paragraph("📌 <b>FUENTES OFICIALES CORROBORABLES:</b> Agenda de la Comisión de Innovación Tecnológica (FETUR) · ASETUR (Unión de Secretarios de Turismo de México - Convenio Marco de Réplica Nacional).", source_style))
+    story.append(Paragraph("📌 <b>FUENTES OFICIALES CORROBORABLES:</b> Agenda de la Comisión de Innovación Tecnológica (FETUR) · ASETUR (Unión de Secretarios de Turismo de México - Convenio Marco Nacional).", source_style))
 
     # Build PDF with custom NumberedCanvas
     doc.build(story, canvasmaker=NumberedCanvas)
@@ -351,10 +395,9 @@ def generate_pdf():
         import shutil
         try:
             shutil.copy(target_pdf, target_onedrive_pdf)
-            print(f"PDF con fuentes oficiales exitosamente actualizado en:\n1. {target_pdf}\n2. {target_onedrive_pdf}")
+            print(f"PDF con fuentes oficiales y temporalidades exitosamente actualizado en:\n1. {target_pdf}\n2. {target_onedrive_pdf}")
         except Exception as e:
             print(f"PDF generado exitosamente en:\n1. {target_pdf}\n(OneDrive ocupado por vista previa: {e})")
 
 if __name__ == "__main__":
     generate_pdf()
-
