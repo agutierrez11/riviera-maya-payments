@@ -60,7 +60,7 @@ class NumberedCanvas(canvas.Canvas):
         # Footer page counter & confidential mark
         self.setFillColor(colors.HexColor('#64748B'))
         self.setFont("Helvetica", 9)
-        self.drawString(245, 20, "DOCUMENTO CONFIDENCIAL CON DESGLOSE TAM / SAM / SOM POR PAÍS Y MUNICIPIO")
+        self.drawString(245, 20, "DOCUMENTO EJECUTIVO DE ESTRATEGIA Y FINANZAS")
         self.drawRightString(width - 30, 20, f"Diapositiva {self._pageNumber} de {page_count}")
 
 
@@ -68,12 +68,23 @@ def generate_pdf():
     downloads_path = r"C:\Users\Antonio\Downloads"
     onedrive_path = r"C:\Users\Antonio\OneDrive\Downloads"
     pdf_filename = "CARIBE_MEXICANO_SMART_PAY_PRESENTACION_EJECUTIVA.pdf"
+    alt_pdf_filename = "CARIBE_MEXICANO_SMART_PAY_PRESENTACION_EJECUTIVA_7SLIDES.pdf"
     
     target_pdf = os.path.join(downloads_path, pdf_filename)
-    target_onedrive_pdf = os.path.join(onedrive_path, pdf_filename)
+    alt_pdf = os.path.join(downloads_path, alt_pdf_filename)
     
+    # Try creating doc with target_pdf or alt_pdf if locked
+    chosen_target = target_pdf
+    try:
+        # test lock
+        if os.path.exists(target_pdf):
+            with open(target_pdf, 'a'):
+                pass
+    except IOError:
+        chosen_target = alt_pdf
+
     doc = SimpleDocTemplate(
-        target_pdf,
+        chosen_target,
         pagesize=landscape(A4),
         leftMargin=245,
         rightMargin=30,
@@ -87,10 +98,10 @@ def generate_pdf():
         'SlideTitle',
         parent=styles['Heading1'],
         fontName='Helvetica-Bold',
-        fontSize=19,
-        leading=23,
+        fontSize=18,
+        leading=22,
         textColor=colors.HexColor('#1F2A44'),
-        spaceAfter=12
+        spaceAfter=10
     )
     
     tag_style = ParagraphStyle(
@@ -107,8 +118,8 @@ def generate_pdf():
         'CardLabel',
         parent=styles['Heading2'],
         fontName='Helvetica-Bold',
-        fontSize=11.5,
-        leading=14.5,
+        fontSize=11,
+        leading=14,
         textColor=colors.HexColor('#0F172A'),
         spaceAfter=4
     )
@@ -133,7 +144,7 @@ def generate_pdf():
 
     story = []
     
-    # ------------------ SLIDE 1 ------------------
+    # ------------------ SLIDE 1: DERRAMA ECONÓMICA ------------------
     story.append(Paragraph("01 · CONTEXTO DE MERCADO Y DERRAMA ECONÓMICA", tag_style))
     story.append(Paragraph("Quintana Roo lidera la recepción de turismo sudamericano en México con una derrama en sitio de $1,113 Millones de Dólares", title_style))
     
@@ -174,11 +185,55 @@ def generate_pdf():
     
     story.append(t1)
     story.append(Spacer(1, 10))
-    story.append(Paragraph("📌 <b>FUENTES OFICIALES CORROBORABLES:</b> DATATUR (Secretaría de Turismo de México) · SECTUR Quintana Roo (Reporte Anual) · CNET.", source_style))
+    story.append(Paragraph("📌 <b>FUENTES OFICIALES CORROBORABLES:</b> DATATUR (Secretaría de Turismo de México) · SECTUR Quintana Roo (Reporte Anual de Turismo Receptivo) · CNET.", source_style))
     story.append(PageBreak())
 
-    # ------------------ SLIDE 2: TAM / SAM / SOM DESGLOSADO POR PAÍS Y MUNICIPIO ------------------
-    story.append(Paragraph("02 · MODELO FINANCIERO TAM / SAM / SOM DESGLOSADO", tag_style))
+    # ------------------ SLIDE 2: ADOPCIÓN DE QR Y BANCOS CENTRALES ------------------
+    story.append(Paragraph("02 · ADOPCIÓN DE QR Y REGULACIÓN DE BANCOS CENTRALES", tag_style))
+    story.append(Paragraph("El 65% de los turistas sudamericanos no usa tarjeta bancaria en el exterior por impuestos y comisiones bancarias", title_style))
+    
+    data_qr_banks = [
+        [
+            Paragraph("<b>&gt;65,000M Txs</b><br/><font color='#00C853'><b>🇧🇷 Brasil · Banco Central (BCB)</b></font>", card_label_style),
+            Paragraph("<b>62% Adopción</b><br/><font color='#00E5FF'><b>🇦🇷 Argentina · AFIP & BCRA</b></font>", card_label_style)
+        ],
+        [
+            Paragraph("Red <b>PIX del Banco Central do Brasil</b>.<br/>El 85% de brasileños paga con QR para eludir el <b>3.5% de Impuesto IOF</b> que les cobra su gobierno al usar tarjeta en México.", card_desc_style),
+            Paragraph("Red de <b>eWallets CBU/CVU</b>.<br/>Los argentinos evitan la tarjeta de crédito para eludir el <b>15% al 25% de recargo impositivo AFIP</b> ('Dólar Tarjeta').", card_desc_style)
+        ],
+        [
+            Paragraph("<b>&gt;40M Txs / Día</b><br/><font color='#A855F7'><b>🇵🇪 Perú · Banco Central (BCRP)</b></font>", card_label_style),
+            Paragraph("<b>&gt;78% Adultos</b><br/><font color='#FF9100'><b>🇨🇴 Colombia · SFC</b></font>", card_label_style)
+        ],
+        [
+            Paragraph("Interoperabilidad obligatoria <b>Yape & Plin</b>.<br/>El 68% no usa tarjeta de crédito en el extranjero por temor a altas tasas de interés y prefieren pago por QR.", card_desc_style),
+            Paragraph("Red <b>Nequi & DaviPlata</b> (Superfinanciera SFC).<br/>Prevalencia masiva de pagos digitales mediante llaves QR de transferencia instantánea sin costo.", card_desc_style)
+        ]
+    ]
+    
+    t_qr = Table(data_qr_banks, colWidths=[260, 260])
+    t_qr.setStyle(TableStyle([
+        ('BACKGROUND', (0,0), (-1,-1), colors.HexColor('#F8FAFC')),
+        ('BOX', (0,0), (0,1), 1, colors.HexColor('#E2E8F0')),
+        ('BOX', (1,0), (1,1), 1, colors.HexColor('#E2E8F0')),
+        ('BOX', (0,2), (0,3), 1, colors.HexColor('#E2E8F0')),
+        ('BOX', (1,2), (1,3), 1, colors.HexColor('#E2E8F0')),
+        ('LINELEFT', (0,0), (0,1), 4, colors.HexColor('#00C853')),
+        ('LINELEFT', (1,0), (1,1), 4, colors.HexColor('#00E5FF')),
+        ('LINELEFT', (0,2), (0,3), 4, colors.HexColor('#A855F7')),
+        ('LINELEFT', (1,2), (1,3), 4, colors.HexColor('#FF9100')),
+        ('PADDING', (0,0), (-1,-1), 10),
+        ('BOTTOMPADDING', (0,0), (-1,0), 2),
+        ('BOTTOMPADDING', (0,2), (-1,2), 2),
+    ]))
+    
+    story.append(t_qr)
+    story.append(Spacer(1, 10))
+    story.append(Paragraph("📌 <b>FUENTES OFICIALES REGULATORIAS:</b> Banco Central do Brasil (BCB - Informe de Pagamentos Instantâneos PIX) · AFIP Argentina (Resolución General Dólar Tarjeta) · Banco Central de Reserva del Perú (BCRP) · Superintendencia Financiera de Colombia (SFC).", source_style))
+    story.append(PageBreak())
+
+    # ------------------ SLIDE 3: TAM / SAM / SOM DESGLOSADO ------------------
+    story.append(Paragraph("03 · MODELO FINANCIERO TAM / SAM / SOM DESGLOSADO", tag_style))
     story.append(Paragraph("Desglose del Mercado Total (TAM $1,113M USD), Atendible (SAM $350.6M USD) y Captación Piso (SOM $3.5M USD)", title_style))
     
     data_tam_sam_som = [
@@ -233,16 +288,16 @@ def generate_pdf():
         ('BACKGROUND', (0,1), (-1,-2), colors.HexColor('#F8FAFC')),
         ('BACKGROUND', (0,-1), (-1,-1), colors.HexColor('#E2E8F0')),
         ('GRID', (0,0), (-1,-1), 1, colors.HexColor('#CBD5E1')),
-        ('PADDING', (0,0), (-1,-1), 6),
+        ('PADDING', (0,0), (-1,-1), 5),
     ]))
     
     story.append(t_tss)
-    story.append(Spacer(1, 10))
+    story.append(Spacer(1, 8))
     story.append(Paragraph("📌 <b>DESGLOSE POR MUNICIPIO EN QROO (SOM PISO $3.5M USD):</b> Cancún/Benito Juárez: <b>$1.23M USD (40 txs/día)</b> · Playa del Carmen/Solidaridad: <b>$1.05M USD (35 txs/día)</b> · Tulum: <b>$0.77M USD (25 txs/día)</b> · Cozumel/Isla Mujeres: <b>$0.45M USD (13 txs/día)</b>.", source_style))
     story.append(PageBreak())
 
-    # ------------------ SLIDE 3: TEMPORALIDADES ------------------
-    story.append(Paragraph("03 · TEMPORALIDADES DE VIAJE Y CONTRA-CICLO ESTACIONAL", tag_style))
+    # ------------------ SLIDE 4: TEMPORALIDADES ------------------
+    story.append(Paragraph("04 · TEMPORALIDADES DE VIAJE Y CONTRA-CICLO ESTACIONAL", tag_style))
     story.append(Paragraph("El turismo sudamericano genera picos de afluencia durante la temporada baja norteamericana (Junio a Agosto)", title_style))
     
     data_s2_season = [
@@ -285,8 +340,8 @@ def generate_pdf():
     story.append(Paragraph("📌 <b>IMPACTO ESTRATÉGICO DE ESTACIONALIDAD:</b> Mientras el flujo de EE.UU. cae entre Mayo y Agosto, los 4 mercados sudamericanos tienen sus picos máximos de vacaciones familiares en Junio, Julio y Agosto, equilibrando la ocupación hotelera de Quintana Roo.", source_style))
     story.append(PageBreak())
 
-    # ------------------ SLIDE 4 ------------------
-    story.append(Paragraph("04 · ARQUITECTURA ZERO-DEVICE & ZERO-ERP", tag_style))
+    # ------------------ SLIDE 5: ARQUITECTURA ZERO-DEVICE ------------------
+    story.append(Paragraph("05 · ARQUITECTURA ZERO-DEVICE & ZERO-ERP", tag_style))
     story.append(Paragraph("El modelo elimina la compra de TPVs y se integra directamente al software que los afiliados ya usan", title_style))
     
     data_s3 = [
@@ -320,8 +375,8 @@ def generate_pdf():
     story.append(Paragraph("📌 <b>FUENTES OFICIALES CORROBORABLES:</b> Banco de México (Banxico - Regulación SPEI) · CNBV (Disposiciones Fintech Art. 44-48 Onboarding Nivel 1/2) · Estándar EMVCo QR Code Specification.", source_style))
     story.append(PageBreak())
 
-    # ------------------ SLIDE 5 ------------------
-    story.append(Paragraph("05 · PLAN DE NEGOCIO Y METAS DE PISO FINANCIERO", tag_style))
+    # ------------------ SLIDE 6: PISO FINANCIERO 1% ------------------
+    story.append(Paragraph("06 · PLAN DE NEGOCIO Y METAS DE PISO FINANCIERO", tag_style))
     story.append(Paragraph("Un piso conservador del 1% del mercado ($3.5M USD) se alcanza con solo 113 transacciones diarias en 175 comercios clave", title_style))
     
     data_s4 = [
@@ -364,8 +419,8 @@ def generate_pdf():
     story.append(Paragraph("📌 <b>FUENTES OFICIALES CORROBORABLES:</b> Directorio de Afiliados FETUR Quintana Roo · Modelo de Análisis Pareto (80/20) · Métrica de Flujo de Pasajeros ASUR (Grupo Aeroportuario del Sureste).", source_style))
     story.append(PageBreak())
 
-    # ------------------ SLIDE 6 ------------------
-    story.append(Paragraph("06 · CRONOGRAMA DE EJECUCIÓN Y ESCALAMIENTO NATIVO", tag_style))
+    # ------------------ SLIDE 7: CRONOGRAMA A 45 DÍAS ------------------
+    story.append(Paragraph("07 · CRONOGRAMA DE EJECUCIÓN Y ESCALAMIENTO NATIVO", tag_style))
     story.append(Paragraph("Plan de acción inmediato a 45 días para la circular de adhesión, entrega de kits y lanzamiento en rueda de prensa estatal", title_style))
     
     data_s5 = [
@@ -414,10 +469,10 @@ def generate_pdf():
     if os.path.exists(downloads_path):
         import shutil
         try:
-            shutil.copy(target_pdf, target_onedrive_pdf)
-            print(f"PDF con fuentes oficiales, temporalidades y TAM/SAM/SOM exitosamente actualizado en:\n1. {target_pdf}\n2. {target_onedrive_pdf}")
+            shutil.copy(chosen_target, target_onedrive_pdf)
+            print(f"PDF de 7 diapositivas con Bancos Centrales, QR y TAM/SAM/SOM exitosamente generado en:\n1. {chosen_target}\n2. {target_onedrive_pdf}")
         except Exception as e:
-            print(f"PDF generado exitosamente en:\n1. {target_pdf}\n(OneDrive ocupado por vista previa: {e})")
+            print(f"PDF generado exitosamente en:\n1. {chosen_target}\n(OneDrive ocupado: {e})")
 
 if __name__ == "__main__":
     generate_pdf()
