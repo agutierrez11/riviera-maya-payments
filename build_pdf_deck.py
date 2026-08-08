@@ -1,5 +1,6 @@
 import os
 import sys
+import shutil
 from reportlab.lib.pagesizes import landscape, A4
 from reportlab.lib import colors
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
@@ -26,70 +27,57 @@ class NumberedCanvas(canvas.Canvas):
     def draw_page_decorations(self, page_count):
         width, height = landscape(A4)
         
-        # Draw Navy Chrome Left Rail
+        # Executive Dark Navy Left Panel
         rail_width = 220
-        self.setFillColor(colors.HexColor('#1F2A44'))
+        self.setFillColor(colors.HexColor('#0F172A'))
         self.rect(0, 0, rail_width, height, fill=True, stroke=False)
         
-        # Draw Accent Green Line
-        self.setFillColor(colors.HexColor('#00E676'))
-        self.rect(rail_width, 0, 6, height, fill=True, stroke=False)
+        # Blue Accent Line
+        self.setFillColor(colors.HexColor('#2563EB'))
+        self.rect(rail_width, 0, 3, height, fill=True, stroke=False)
         
-        # Draw Rail Branding Text
-        self.setFillColor(colors.HexColor('#00E676'))
-        self.setFont("Helvetica-Bold", 10)
-        self.drawString(30, height - 50, "FETUR · SECTUR QROO")
+        # Left Panel Branding
+        self.setFillColor(colors.HexColor('#94A3B8'))
+        self.setFont("Helvetica-Bold", 9)
+        self.drawString(28, height - 45, "FETUR · SECTUR QROO")
         
         self.setFillColor(colors.HexColor('#FFFFFF'))
-        self.setFont("Helvetica-Bold", 16)
-        self.drawString(30, height - 90, "CARIBE MEXICANO")
-        self.drawString(30, height - 110, "SMART PAY")
+        self.setFont("Helvetica-Bold", 15)
+        self.drawString(28, height - 85, "CARIBE MEXICANO")
+        self.setFillColor(colors.HexColor('#93C5FD'))
+        self.drawString(28, height - 105, "SMART PAY")
         
         self.setFillColor(colors.HexColor('#94A3B8'))
-        self.setFont("Helvetica", 9)
-        self.drawString(30, height - 135, "Infraestructura LATAM (PIX/Nequi/Yape)")
+        self.setFont("Helvetica", 8.5)
+        self.drawString(28, height - 130, "Infraestructura LATAM (PIX/Nequi/Yape)")
         
-        # Author info bottom left
+        # Author bottom left
         self.setFillColor(colors.HexColor('#FFFFFF'))
-        self.setFont("Helvetica-Bold", 10)
-        self.drawString(30, 60, "Antonio Gutiérrez")
+        self.setFont("Helvetica-Bold", 9.5)
+        self.drawString(28, 55, "Antonio Gutiérrez")
         self.setFillColor(colors.HexColor('#94A3B8'))
-        self.setFont("Helvetica", 9)
-        self.drawString(30, 45, "Comisión Innovación (FETUR)")
+        self.setFont("Helvetica", 8.5)
+        self.drawString(28, 40, "Comisión Innovación (FETUR)")
         
-        # Footer page counter & confidential mark
-        self.setFillColor(colors.HexColor('#64748B'))
-        self.setFont("Helvetica", 9)
-        self.drawString(245, 20, "DOCUMENTO EJECUTIVO DE ESTRATEGIA Y FINANZAS")
-        self.drawRightString(width - 30, 20, f"Diapositiva {self._pageNumber} de {page_count}")
+        # Footer
+        self.setFillColor(colors.HexColor('#475569'))
+        self.setFont("Helvetica", 8.5)
+        self.drawString(245, 18, "DOCUMENTO EJECUTIVO DE ESTRATEGIA Y FINANZAS — CONFIDENCIAL")
+        self.drawRightString(width - 25, 18, f"Diapositiva {self._pageNumber} de {page_count}")
 
 
 def generate_pdf():
-    downloads_path = r"C:\Users\Antonio\Downloads"
     onedrive_path = r"C:\Users\Antonio\OneDrive\Downloads"
-    pdf_filename = "CARIBE_MEXICANO_SMART_PAY_PRESENTACION_EJECUTIVA.pdf"
-    alt_pdf_filename = "CARIBE_MEXICANO_SMART_PAY_PRESENTACION_EJECUTIVA_7SLIDES.pdf"
+    pdf_filename_corp = "PRESENTACION_EJECUTIVA_CORPORATIVA.pdf"
+    target_pdf = os.path.join(onedrive_path, pdf_filename_corp)
     
-    target_pdf = os.path.join(downloads_path, pdf_filename)
-    alt_pdf = os.path.join(downloads_path, alt_pdf_filename)
-    
-    # Try creating doc with target_pdf or alt_pdf if locked
-    chosen_target = target_pdf
-    try:
-        # test lock
-        if os.path.exists(target_pdf):
-            with open(target_pdf, 'a'):
-                pass
-    except IOError:
-        chosen_target = alt_pdf
-
     doc = SimpleDocTemplate(
-        chosen_target,
+        target_pdf,
         pagesize=landscape(A4),
         leftMargin=245,
-        rightMargin=30,
-        topMargin=35,
-        bottomMargin=45
+        rightMargin=25,
+        topMargin=32,
+        bottomMargin=40
     )
     
     styles = getSampleStyleSheet()
@@ -98,19 +86,19 @@ def generate_pdf():
         'SlideTitle',
         parent=styles['Heading1'],
         fontName='Helvetica-Bold',
-        fontSize=18,
-        leading=22,
-        textColor=colors.HexColor('#1F2A44'),
-        spaceAfter=10
+        fontSize=17,
+        leading=21,
+        textColor=colors.HexColor('#0F172A'),
+        spaceAfter=12
     )
     
     tag_style = ParagraphStyle(
         'SlideTag',
         parent=styles['Normal'],
         fontName='Helvetica-Bold',
-        fontSize=9,
-        leading=11,
-        textColor=colors.HexColor('#00C853'),
+        fontSize=8.5,
+        leading=10,
+        textColor=colors.HexColor('#475569'),
         spaceAfter=4
     )
     
@@ -118,8 +106,8 @@ def generate_pdf():
         'CardLabel',
         parent=styles['Heading2'],
         fontName='Helvetica-Bold',
-        fontSize=11,
-        leading=14,
+        fontSize=10.5,
+        leading=13,
         textColor=colors.HexColor('#0F172A'),
         spaceAfter=4
     )
@@ -128,8 +116,8 @@ def generate_pdf():
         'CardDesc',
         parent=styles['Normal'],
         fontName='Helvetica',
-        fontSize=9,
-        leading=12,
+        fontSize=8.5,
+        leading=11.5,
         textColor=colors.HexColor('#334155')
     )
 
@@ -137,9 +125,9 @@ def generate_pdf():
         'SourceDesc',
         parent=styles['Normal'],
         fontName='Helvetica-Bold',
-        fontSize=8.5,
-        leading=11,
-        textColor=colors.HexColor('#0F172A')
+        fontSize=8,
+        leading=10,
+        textColor=colors.HexColor('#475569')
     )
 
     story = []
@@ -150,16 +138,16 @@ def generate_pdf():
     
     data_s1 = [
         [
-            Paragraph("<b>380,000 Turistas</b><br/><font color='#00C853'><b>🇨🇴 Colombia</b></font>", card_label_style),
-            Paragraph("<b>160,000 Turistas</b><br/><font color='#00E5FF'><b>🇦🇷 Argentina</b></font>", card_label_style)
+            Paragraph("<b>380,000 Turistas</b><br/><font color='#1E3A8A'><b>🇨🇴 Colombia</b></font>", card_label_style),
+            Paragraph("<b>160,000 Turistas</b><br/><font color='#0D9488'><b>🇦🇷 Argentina</b></font>", card_label_style)
         ],
         [
             Paragraph("Gasto en sitio: <b>$1,039.55 USD/estancia</b>.<br/>Derrama total: <b>$395.0M USD</b>.", card_desc_style),
             Paragraph("Gasto en sitio: <b>$1,125.75 USD/estancia</b>.<br/>Derrama total: <b>$180.1M USD</b>.", card_desc_style)
         ],
         [
-            Paragraph("<b>150,000 Turistas</b><br/><font color='#A855F7'><b>🇧🇷 Brasil</b></font>", card_label_style),
-            Paragraph("<b>135,000 Turistas</b><br/><font color='#FF9100'><b>🇵🇪 Perú</b></font>", card_label_style)
+            Paragraph("<b>150,000 Turistas</b><br/><font color='#312E81'><b>🇧🇷 Brasil</b></font>", card_label_style),
+            Paragraph("<b>135,000 Turistas</b><br/><font color='#B45309'><b>🇵🇪 Perú</b></font>", card_label_style)
         ],
         [
             Paragraph("Gasto en sitio: <b>$1,209.00 USD/estancia</b>.<br/>Derrama total: <b>$181.35M USD</b>.", card_desc_style),
@@ -169,16 +157,16 @@ def generate_pdf():
     
     t1 = Table(data_s1, colWidths=[260, 260])
     t1.setStyle(TableStyle([
-        ('BACKGROUND', (0,0), (-1,-1), colors.HexColor('#F8FAFC')),
+        ('BACKGROUND', (0,0), (-1,-1), colors.HexColor('#FFFFFF')),
         ('BOX', (0,0), (0,1), 1, colors.HexColor('#E2E8F0')),
         ('BOX', (1,0), (1,1), 1, colors.HexColor('#E2E8F0')),
         ('BOX', (0,2), (0,3), 1, colors.HexColor('#E2E8F0')),
         ('BOX', (1,2), (1,3), 1, colors.HexColor('#E2E8F0')),
-        ('LINELEFT', (0,0), (0,1), 4, colors.HexColor('#00C853')),
-        ('LINELEFT', (1,0), (1,1), 4, colors.HexColor('#00E5FF')),
-        ('LINELEFT', (0,2), (0,3), 4, colors.HexColor('#A855F7')),
-        ('LINELEFT', (1,2), (1,3), 4, colors.HexColor('#FF9100')),
-        ('PADDING', (0,0), (-1,-1), 10),
+        ('LINEABOVE', (0,0), (0,0), 3, colors.HexColor('#1E3A8A')),
+        ('LINEABOVE', (1,0), (1,0), 3, colors.HexColor('#0D9488')),
+        ('LINEABOVE', (0,2), (0,2), 3, colors.HexColor('#312E81')),
+        ('LINEABOVE', (1,2), (1,2), 3, colors.HexColor('#B45309')),
+        ('PADDING', (0,0), (-1,-1), 8),
         ('BOTTOMPADDING', (0,0), (-1,0), 2),
         ('BOTTOMPADDING', (0,2), (-1,2), 2),
     ]))
@@ -194,16 +182,16 @@ def generate_pdf():
     
     data_qr_banks = [
         [
-            Paragraph("<b>&gt;65,000M Txs</b><br/><font color='#00C853'><b>🇧🇷 Brasil · Banco Central (BCB)</b></font>", card_label_style),
-            Paragraph("<b>62% Adopción</b><br/><font color='#00E5FF'><b>🇦🇷 Argentina · AFIP & BCRA</b></font>", card_label_style)
+            Paragraph("<b>&gt;65,000M Txs</b><br/><font color='#1E3A8A'><b>🇧🇷 Brasil · Banco Central (BCB)</b></font>", card_label_style),
+            Paragraph("<b>62% Adopción</b><br/><font color='#0D9488'><b>🇦🇷 Argentina · AFIP & BCRA</b></font>", card_label_style)
         ],
         [
             Paragraph("Red <b>PIX del Banco Central do Brasil</b>.<br/>El 85% de brasileños paga con QR para eludir el <b>3.5% de Impuesto IOF</b> que les cobra su gobierno al usar tarjeta en México.", card_desc_style),
             Paragraph("Red de <b>eWallets CBU/CVU</b>.<br/>Los argentinos evitan la tarjeta de crédito para eludir el <b>15% al 25% de recargo impositivo AFIP</b> ('Dólar Tarjeta').", card_desc_style)
         ],
         [
-            Paragraph("<b>&gt;40M Txs / Día</b><br/><font color='#A855F7'><b>🇵🇪 Perú · Banco Central (BCRP)</b></font>", card_label_style),
-            Paragraph("<b>&gt;78% Adultos</b><br/><font color='#FF9100'><b>🇨🇴 Colombia · SFC</b></font>", card_label_style)
+            Paragraph("<b>&gt;40M Txs / Día</b><br/><font color='#312E81'><b>🇵🇪 Perú · Banco Central (BCRP)</b></font>", card_label_style),
+            Paragraph("<b>&gt;78% Adultos</b><br/><font color='#B45309'><b>🇨🇴 Colombia · SFC</b></font>", card_label_style)
         ],
         [
             Paragraph("Interoperabilidad obligatoria <b>Yape & Plin</b>.<br/>El 68% no usa tarjeta de crédito en el extranjero por temor a altas tasas de interés y prefieren pago por QR.", card_desc_style),
@@ -213,23 +201,23 @@ def generate_pdf():
     
     t_qr = Table(data_qr_banks, colWidths=[260, 260])
     t_qr.setStyle(TableStyle([
-        ('BACKGROUND', (0,0), (-1,-1), colors.HexColor('#F8FAFC')),
+        ('BACKGROUND', (0,0), (-1,-1), colors.HexColor('#FFFFFF')),
         ('BOX', (0,0), (0,1), 1, colors.HexColor('#E2E8F0')),
         ('BOX', (1,0), (1,1), 1, colors.HexColor('#E2E8F0')),
         ('BOX', (0,2), (0,3), 1, colors.HexColor('#E2E8F0')),
         ('BOX', (1,2), (1,3), 1, colors.HexColor('#E2E8F0')),
-        ('LINELEFT', (0,0), (0,1), 4, colors.HexColor('#00C853')),
-        ('LINELEFT', (1,0), (1,1), 4, colors.HexColor('#00E5FF')),
-        ('LINELEFT', (0,2), (0,3), 4, colors.HexColor('#A855F7')),
-        ('LINELEFT', (1,2), (1,3), 4, colors.HexColor('#FF9100')),
-        ('PADDING', (0,0), (-1,-1), 10),
+        ('LINEABOVE', (0,0), (0,0), 3, colors.HexColor('#1E3A8A')),
+        ('LINEABOVE', (1,0), (1,0), 3, colors.HexColor('#0D9488')),
+        ('LINEABOVE', (0,2), (0,2), 3, colors.HexColor('#312E81')),
+        ('LINEABOVE', (1,2), (1,2), 3, colors.HexColor('#B45309')),
+        ('PADDING', (0,0), (-1,-1), 8),
         ('BOTTOMPADDING', (0,0), (-1,0), 2),
         ('BOTTOMPADDING', (0,2), (-1,2), 2),
     ]))
     
     story.append(t_qr)
     story.append(Spacer(1, 10))
-    story.append(Paragraph("📌 <b>FUENTES OFICIALES REGULATORIAS:</b> Banco Central do Brasil (BCB - Informe de Pagamentos Instantâneos PIX) · AFIP Argentina (Resolución General Dólar Tarjeta) · Banco Central de Reserva del Perú (BCRP) · Superintendencia Financiera de Colombia (SFC).", source_style))
+    story.append(Paragraph("📌 <b>FUENTES REGULATORIAS:</b> Banco Central do Brasil (BCB) · AFIP Argentina · Banco Central de Reserva del Perú (BCRP) · Superintendencia Financiera de Colombia (SFC).", source_style))
     story.append(PageBreak())
 
     # ------------------ SLIDE 3: TAM / SAM / SOM DESGLOSADO ------------------
@@ -277,15 +265,15 @@ def generate_pdf():
             Paragraph("<b>TOTAL QUINTANA ROO</b>", card_label_style),
             Paragraph("<b>$1,113.20 M USD</b>", card_label_style),
             Paragraph("<b>$350.60 M USD</b>", card_label_style),
-            Paragraph("<b><font color='#00C853'>$3,506,000 USD</font></b>", card_label_style)
+            Paragraph("<b>$3,506,000 USD</b>", card_label_style)
         ]
     ]
     
     t_tss = Table(data_tam_sam_som, colWidths=[180, 110, 110, 120])
     t_tss.setStyle(TableStyle([
-        ('BACKGROUND', (0,0), (-1,0), colors.HexColor('#1F2A44')),
+        ('BACKGROUND', (0,0), (-1,0), colors.HexColor('#0F172A')),
         ('TEXTCOLOR', (0,0), (-1,0), colors.HexColor('#FFFFFF')),
-        ('BACKGROUND', (0,1), (-1,-2), colors.HexColor('#F8FAFC')),
+        ('BACKGROUND', (0,1), (-1,-2), colors.HexColor('#FFFFFF')),
         ('BACKGROUND', (0,-1), (-1,-1), colors.HexColor('#E2E8F0')),
         ('GRID', (0,0), (-1,-1), 1, colors.HexColor('#CBD5E1')),
         ('PADDING', (0,0), (-1,-1), 5),
@@ -302,16 +290,16 @@ def generate_pdf():
     
     data_s2_season = [
         [
-            Paragraph("<b>🇨🇴 Colombia (380k Turistas)</b><br/><font color='#00C853'><b>Junio - Julio & Octubre</b></font>", card_label_style),
-            Paragraph("<b>🇧🇷 Brasil (150k Turistas)</b><br/><font color='#A855F7'><b>Julio, Diciembre & Feb/Mar</b></font>", card_label_style)
+            Paragraph("<b>🇨🇴 Colombia (380k Turistas)</b><br/><font color='#1E3A8A'><b>Junio - Julio & Octubre</b></font>", card_label_style),
+            Paragraph("<b>🇧🇷 Brasil (150k Turistas)</b><br/><font color='#312E81'><b>Julio, Diciembre & Feb/Mar</b></font>", card_label_style)
         ],
         [
             Paragraph("• Vacaciones de mitad de año (Junio/Julio).<br/>• Semana de Receso escolar (Octubre).<br/>• Fiestas de fin de año (Diciembre/Enero).", card_desc_style),
             Paragraph("• Vacaciones de invierno austral (Julio).<br/>• Fiestas y verano del hemisferio sur (Dic/Ene).<br/>• Semana de Carnaval (Febrero/Marzo).", card_desc_style)
         ],
         [
-            Paragraph("<b>🇦🇷 Argentina (160k Turistas)</b><br/><font color='#00E5FF'><b>Enero - Febrero & Julio</b></font>", card_label_style),
-            Paragraph("<b>🇵🇪 Perú (135k Turistas)</b><br/><font color='#FF9100'><b>Julio - Agosto & Enero/Feb</b></font>", card_label_style)
+            Paragraph("<b>🇦🇷 Argentina (160k Turistas)</b><br/><font color='#0D9488'><b>Enero - Febrero & Julio</b></font>", card_label_style),
+            Paragraph("<b>🇵🇪 Perú (135k Turistas)</b><br/><font color='#B45309'><b>Julio - Agosto & Enero/Feb</b></font>", card_label_style)
         ],
         [
             Paragraph("• Verano austral principal (Enero/Febrero).<br/>• Receso escolar de invierno (Julio).<br/>• Escapadas de fin de año (Nov/Dic).", card_desc_style),
@@ -321,16 +309,16 @@ def generate_pdf():
     
     t_season = Table(data_s2_season, colWidths=[260, 260])
     t_season.setStyle(TableStyle([
-        ('BACKGROUND', (0,0), (-1,-1), colors.HexColor('#F8FAFC')),
+        ('BACKGROUND', (0,0), (-1,-1), colors.HexColor('#FFFFFF')),
         ('BOX', (0,0), (0,1), 1, colors.HexColor('#E2E8F0')),
         ('BOX', (1,0), (1,1), 1, colors.HexColor('#E2E8F0')),
         ('BOX', (0,2), (0,3), 1, colors.HexColor('#E2E8F0')),
         ('BOX', (1,2), (1,3), 1, colors.HexColor('#E2E8F0')),
-        ('LINELEFT', (0,0), (0,1), 4, colors.HexColor('#00C853')),
-        ('LINELEFT', (1,0), (1,1), 4, colors.HexColor('#A855F7')),
-        ('LINELEFT', (0,2), (0,3), 4, colors.HexColor('#00E5FF')),
-        ('LINELEFT', (1,2), (1,3), 4, colors.HexColor('#FF9100')),
-        ('PADDING', (0,0), (-1,-1), 10),
+        ('LINEABOVE', (0,0), (0,0), 3, colors.HexColor('#1E3A8A')),
+        ('LINEABOVE', (1,0), (1,0), 3, colors.HexColor('#312E81')),
+        ('LINEABOVE', (0,2), (0,2), 3, colors.HexColor('#0D9488')),
+        ('LINEABOVE', (1,2), (1,2), 3, colors.HexColor('#B45309')),
+        ('PADDING', (0,0), (-1,-1), 8),
         ('BOTTOMPADDING', (0,0), (-1,0), 2),
         ('BOTTOMPADDING', (0,2), (-1,2), 2),
     ]))
@@ -346,9 +334,9 @@ def generate_pdf():
     
     data_s3 = [
         [
-            Paragraph("<b>1 Solo QR Inteligente</b><br/><font color='#00C853'><b>Cartel/Gafete de Acrílico</b></font>", card_label_style),
-            Paragraph("<b>Hub FETUR Integrado</b><br/><font color='#00E5FF'><b>Conexión con Software Actual</b></font>", card_label_style),
-            Paragraph("<b>&lt;3 Seg. SPEI MXN</b><br/><font color='#A855F7'><b>Liquidación Automática</b></font>", card_label_style)
+            Paragraph("<b>1 Solo QR Inteligente</b><br/><font color='#1E3A8A'><b>Cartel/Gafete de Acrílico</b></font>", card_label_style),
+            Paragraph("<b>Hub FETUR Integrado</b><br/><font color='#0D9488'><b>Conexión con Software Actual</b></font>", card_label_style),
+            Paragraph("<b>&lt;3 Seg. SPEI MXN</b><br/><font color='#312E81'><b>Liquidación Automática</b></font>", card_label_style)
         ],
         [
             Paragraph("Detecta en milisegundos si el celular es de Brasil, Colombia, Perú o Argentina y abre su app bancaria nativa.", card_desc_style),
@@ -359,14 +347,14 @@ def generate_pdf():
     
     t3 = Table(data_s3, colWidths=[173, 173, 173])
     t3.setStyle(TableStyle([
-        ('BACKGROUND', (0,0), (-1,-1), colors.HexColor('#F8FAFC')),
+        ('BACKGROUND', (0,0), (-1,-1), colors.HexColor('#FFFFFF')),
         ('BOX', (0,0), (0,1), 1, colors.HexColor('#E2E8F0')),
         ('BOX', (1,0), (1,1), 1, colors.HexColor('#E2E8F0')),
         ('BOX', (2,0), (2,1), 1, colors.HexColor('#E2E8F0')),
-        ('LINELEFT', (0,0), (0,1), 4, colors.HexColor('#00C853')),
-        ('LINELEFT', (1,0), (1,1), 4, colors.HexColor('#00E5FF')),
-        ('LINELEFT', (2,0), (2,1), 4, colors.HexColor('#A855F7')),
-        ('PADDING', (0,0), (-1,-1), 10),
+        ('LINEABOVE', (0,0), (0,0), 3, colors.HexColor('#1E3A8A')),
+        ('LINEABOVE', (1,0), (1,0), 3, colors.HexColor('#0D9488')),
+        ('LINEABOVE', (2,0), (2,0), 3, colors.HexColor('#312E81')),
+        ('PADDING', (0,0), (-1,-1), 8),
         ('BOTTOMPADDING', (0,0), (-1,0), 2),
     ]))
     
@@ -381,16 +369,16 @@ def generate_pdf():
     
     data_s4 = [
         [
-            Paragraph("<b>$3.5 Millones de USD</b><br/><font color='#00C853'><b>Volumen Piso (1% SAM)</b></font>", card_label_style),
-            Paragraph("<b>175 Comercios</b><br/><font color='#3B82F6'><b>Tier 1 Pareto (35% FETUR)</b></font>", card_label_style)
+            Paragraph("<b>$3.5 Millones de USD</b><br/><font color='#1E3A8A'><b>Volumen Piso (1% SAM)</b></font>", card_label_style),
+            Paragraph("<b>175 Comercios</b><br/><font color='#0D9488'><b>Tier 1 Pareto (35% FETUR)</b></font>", card_label_style)
         ],
         [
             Paragraph("Meta mínima garantizada de volumen procesado en el primer año de operaciones en Quintana Roo.", card_desc_style),
             Paragraph("Solo el 35% de los 500 asociados actuales de FETUR en Cancún, Playa del Carmen, Tulum y Cozumel.", card_desc_style)
         ],
         [
-            Paragraph("<b>113 Txs / Día</b><br/><font color='#A855F7'><b>Distribución en QRoo</b></font>", card_label_style),
-            Paragraph("<b>1 Pago / Día</b><br/><font color='#FF9100'><b>Por Comercio Afiliado</b></font>", card_label_style)
+            Paragraph("<b>113 Txs / Día</b><br/><font color='#312E81'><b>Distribución en QRoo</b></font>", card_label_style),
+            Paragraph("<b>1 Pago / Día</b><br/><font color='#B45309'><b>Por Comercio Afiliado</b></font>", card_label_style)
         ],
         [
             Paragraph("40 Cancún + 35 Playa del Carmen + 25 Tulum + 13 Cozumel = 113 pagos diarios en todo el estado.", card_desc_style),
@@ -400,16 +388,16 @@ def generate_pdf():
     
     t4 = Table(data_s4, colWidths=[260, 260])
     t4.setStyle(TableStyle([
-        ('BACKGROUND', (0,0), (-1,-1), colors.HexColor('#F8FAFC')),
+        ('BACKGROUND', (0,0), (-1,-1), colors.HexColor('#FFFFFF')),
         ('BOX', (0,0), (0,1), 1, colors.HexColor('#E2E8F0')),
         ('BOX', (1,0), (1,1), 1, colors.HexColor('#E2E8F0')),
         ('BOX', (0,2), (0,3), 1, colors.HexColor('#E2E8F0')),
         ('BOX', (1,2), (1,3), 1, colors.HexColor('#E2E8F0')),
-        ('LINELEFT', (0,0), (0,1), 4, colors.HexColor('#00C853')),
-        ('LINELEFT', (1,0), (1,1), 4, colors.HexColor('#3B82F6')),
-        ('LINELEFT', (0,2), (0,3), 4, colors.HexColor('#A855F7')),
-        ('LINELEFT', (1,2), (1,3), 4, colors.HexColor('#FF9100')),
-        ('PADDING', (0,0), (-1,-1), 10),
+        ('LINEABOVE', (0,0), (0,0), 3, colors.HexColor('#1E3A8A')),
+        ('LINEABOVE', (1,0), (1,0), 3, colors.HexColor('#0D9488')),
+        ('LINEABOVE', (0,2), (0,2), 3, colors.HexColor('#312E81')),
+        ('LINEABOVE', (1,2), (1,2), 3, colors.HexColor('#B45309')),
+        ('PADDING', (0,0), (-1,-1), 8),
         ('BOTTOMPADDING', (0,0), (-1,0), 2),
         ('BOTTOMPADDING', (0,2), (-1,2), 2),
     ]))
@@ -425,16 +413,16 @@ def generate_pdf():
     
     data_s5 = [
         [
-            Paragraph("<b>Días 1 - 15</b><br/><font color='#00C853'><b>Circular Institucional FETUR</b></font>", card_label_style),
-            Paragraph("<b>Días 16 - 30</b><br/><font color='#00E5FF'><b>Entrega de Kits & Integración</b></font>", card_label_style)
+            Paragraph("<b>Días 1 - 15</b><br/><font color='#1E3A8A'><b>Circular Institucional FETUR</b></font>", card_label_style),
+            Paragraph("<b>Días 16 - 30</b><br/><font color='#0D9488'><b>Entrega de Kits & Integración</b></font>", card_label_style)
         ],
         [
             Paragraph("Envío de circular formal de adhesión a los 175 comercios de mayor densidad turística sudamericana.", card_desc_style),
             Paragraph("Reparto de acrílicos QR de mostrador y activación en el software de caja (Sunday / Soft Restaurant).", card_desc_style)
         ],
         [
-            Paragraph("<b>Días 31 - 45</b><br/><font color='#A855F7'><b>Rueda de Prensa de Estado</b></font>", card_label_style),
-            Paragraph("<b>Días 46+</b><br/><font color='#FF9100'><b>Operación & Escalamiento ASETUR</b></font>", card_label_style)
+            Paragraph("<b>Días 31 - 45</b><br/><font color='#312E81'><b>Rueda de Prensa de Estado</b></font>", card_label_style),
+            Paragraph("<b>Días 46+</b><br/><font color='#B45309'><b>Operación & Escalamiento ASETUR</b></font>", card_label_style)
         ],
         [
             Paragraph("Lanzamiento oficial ante medios con el Secretario de Turismo de QRoo y Presidenta de FETUR.", card_desc_style),
@@ -444,16 +432,16 @@ def generate_pdf():
     
     t5 = Table(data_s5, colWidths=[260, 260])
     t5.setStyle(TableStyle([
-        ('BACKGROUND', (0,0), (-1,-1), colors.HexColor('#F8FAFC')),
+        ('BACKGROUND', (0,0), (-1,-1), colors.HexColor('#FFFFFF')),
         ('BOX', (0,0), (0,1), 1, colors.HexColor('#E2E8F0')),
         ('BOX', (1,0), (1,1), 1, colors.HexColor('#E2E8F0')),
         ('BOX', (0,2), (0,3), 1, colors.HexColor('#E2E8F0')),
         ('BOX', (1,2), (1,3), 1, colors.HexColor('#E2E8F0')),
-        ('LINELEFT', (0,0), (0,1), 4, colors.HexColor('#00C853')),
-        ('LINELEFT', (1,0), (1,1), 4, colors.HexColor('#00E5FF')),
-        ('LINELEFT', (0,2), (0,3), 4, colors.HexColor('#A855F7')),
-        ('LINELEFT', (1,2), (1,3), 4, colors.HexColor('#FF9100')),
-        ('PADDING', (0,0), (-1,-1), 10),
+        ('LINEABOVE', (0,0), (0,0), 3, colors.HexColor('#1E3A8A')),
+        ('LINEABOVE', (1,0), (1,0), 3, colors.HexColor('#0D9488')),
+        ('LINEABOVE', (0,2), (0,2), 3, colors.HexColor('#312E81')),
+        ('LINEABOVE', (1,2), (1,2), 3, colors.HexColor('#B45309')),
+        ('PADDING', (0,0), (-1,-1), 8),
         ('BOTTOMPADDING', (0,0), (-1,0), 2),
         ('BOTTOMPADDING', (0,2), (-1,2), 2),
     ]))
@@ -462,17 +450,9 @@ def generate_pdf():
     story.append(Spacer(1, 10))
     story.append(Paragraph("📌 <b>FUENTES OFICIALES CORROBORABLES:</b> Agenda de la Comisión de Innovación Tecnológica (FETUR) · ASETUR (Unión de Secretarios de Turismo de México - Convenio Marco Nacional).", source_style))
 
-    # Build PDF with custom NumberedCanvas
+    # Build PDF
     doc.build(story, canvasmaker=NumberedCanvas)
-    
-    # Copy to OneDrive Downloads as backup
-    if os.path.exists(downloads_path):
-        import shutil
-        try:
-            shutil.copy(chosen_target, target_onedrive_pdf)
-            print(f"PDF de 7 diapositivas con Bancos Centrales, QR y TAM/SAM/SOM exitosamente generado en:\n1. {chosen_target}\n2. {target_onedrive_pdf}")
-        except Exception as e:
-            print(f"PDF generado exitosamente en:\n1. {chosen_target}\n(OneDrive ocupado: {e})")
+    print(f"PDF Corporativo sobrio generado en: {target_pdf}")
 
 if __name__ == "__main__":
     generate_pdf()

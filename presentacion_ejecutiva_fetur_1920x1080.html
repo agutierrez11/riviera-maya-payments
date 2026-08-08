@@ -2,32 +2,33 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<title>Caribe Mexicano Smart Pay — TypeUI Executive Deck (FETUR & SECTUR QRoo)</title>
+<title>Caribe Mexicano Smart Pay — Presentación Ejecutiva (FETUR & SECTUR QRoo)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,600;0,8..60,700;1,8..60,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,600;0,8..60,700;1,8..60,600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg-dark: #07090E;
-    --card-bg: rgba(15, 23, 42, 0.75);
-    --card-border: rgba(255, 255, 255, 0.1);
-    --card-hover-border: rgba(0, 230, 118, 0.4);
-    --text-primary: #F8FAFC;
-    --text-secondary: #94A3B8;
-    --accent-green: #00E676;
-    --accent-cyan: #00E5FF;
-    --accent-purple: #C084FC;
-    --accent-amber: #FBBF24;
-    --rail-bg: #0B0F19;
+    --navy-dark: #0F172A;
+    --navy-header: #1E293B;
+    --bg-canvas: #F8FAFC;
+    --card-bg: #FFFFFF;
+    --card-border: #E2E8F0;
+    --text-main: #0F172A;
+    --text-muted: #475569;
+    --accent-navy: #1E3A8A;
+    --accent-teal: #0D9488;
+    --accent-blue: #2563EB;
+    --accent-amber: #D97706;
+    --accent-slate: #64748B;
   }
 
   html, body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background: var(--bg-dark);
-    font-family: 'Inter', sans-serif;
-    color: var(--text-primary);
+    background: #090D16;
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: var(--text-main);
     -webkit-font-smoothing: antialiased;
   }
 
@@ -38,21 +39,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: radial-gradient(circle at 50% 0%, rgba(0, 230, 118, 0.08) 0%, rgba(7, 9, 14, 1) 70%);
+    background: #090D16;
   }
 
   .slide-container {
     position: absolute;
     width: 1920px;
     height: 1080px;
-    background: #0D121F;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 24px;
-    box-shadow: 0 40px 120px rgba(0, 0, 0, 0.8), 0 0 60px rgba(0, 230, 118, 0.05);
+    background: var(--bg-canvas);
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
     transform-origin: center center;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: opacity 0.3s ease, transform 0.3s ease;
     display: flex;
     overflow: hidden;
   }
@@ -62,50 +62,41 @@
     visibility: visible;
   }
 
-  /* Left Rail Glass Panel */
+  /* Executive Left Rail */
   .left-rail {
-    width: 420px;
+    width: 400px;
     height: 100%;
-    background: var(--rail-bg);
-    border-right: 1px solid var(--card-border);
+    background: var(--navy-dark);
     padding: 60px 48px;
     box-sizing: border-box;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    color: #FFFFFF;
   }
 
-  .rail-accent-bar {
+  .rail-accent-line {
     position: absolute;
     top: 0;
-    right: -1px;
-    width: 4px;
+    right: 0;
+    width: 3px;
     height: 100%;
-    background: linear-gradient(180deg, var(--accent-green) 0%, var(--accent-cyan) 100%);
-    box-shadow: 0 0 15px var(--accent-green);
+    background: var(--accent-blue);
   }
 
-  .typeui-chip {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 6px 14px;
-    border-radius: 30px;
-    background: rgba(0, 230, 118, 0.1);
-    border: 1px solid rgba(0, 230, 118, 0.3);
-    color: var(--accent-green);
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 12px;
+  .exec-tag-pill {
+    display: inline-block;
+    padding: 6px 12px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+    color: #E2E8F0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
     font-weight: 600;
     letter-spacing: 1px;
     text-transform: uppercase;
-  }
-
-  .typeui-chip-cyan {
-    background: rgba(0, 229, 255, 0.1);
-    border-color: rgba(0, 229, 255, 0.3);
-    color: var(--accent-cyan);
   }
 
   .main-canvas {
@@ -115,32 +106,30 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    background: radial-gradient(circle at 100% 100%, rgba(15, 23, 42, 0.8) 0%, rgba(13, 18, 31, 0.95) 100%);
+    background: var(--bg-canvas);
   }
 
   .mono-tag {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 13px;
-    letter-spacing: 2px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
-    color: #64748B;
-    margin-bottom: 14px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    color: var(--accent-slate);
+    margin-bottom: 12px;
+    font-weight: 600;
   }
 
   .slide-title-action {
-    font-family: 'Outfit', sans-serif;
-    font-size: 34px;
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 32px;
     font-weight: 700;
-    color: #FFFFFF;
-    line-height: 1.3;
-    margin-bottom: 36px;
-    letter-spacing: -0.5px;
+    color: var(--navy-dark);
+    line-height: 1.35;
+    margin-bottom: 32px;
+    letter-spacing: -0.3px;
   }
 
-  /* TypeUI Bento Grid System */
+  /* Executive Corporate Grid */
   .card-grid {
     display: grid;
     gap: 24px;
@@ -150,163 +139,133 @@
   .grid-2x2 { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; }
   .grid-3col { grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 1fr; }
 
-  .bento-card {
+  .exec-card {
     background: var(--card-bg);
     border: 1px solid var(--card-border);
-    border-radius: 20px;
-    padding: 36px;
-    backdrop-filter: blur(16px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    padding: 32px;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease;
+    border-top: 4px solid var(--accent-slate);
   }
 
-  .bento-card:hover {
-    border-color: var(--card-hover-border);
-    transform: translateY(-2px);
-    box-shadow: 0 15px 40px rgba(0, 230, 118, 0.1);
-  }
-
-  .bento-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  }
-
-  .bento-card-green::before { background: var(--accent-green); box-shadow: 0 0 10px var(--accent-green); }
-  .bento-card-cyan::before { background: var(--accent-cyan); box-shadow: 0 0 10px var(--accent-cyan); }
-  .bento-card-purple::before { background: var(--accent-purple); box-shadow: 0 0 10px var(--accent-purple); }
-  .bento-card-amber::before { background: var(--accent-amber); box-shadow: 0 0 10px var(--accent-amber); }
+  .exec-card-navy { border-top-color: var(--accent-navy); }
+  .exec-card-teal { border-top-color: var(--accent-teal); }
+  .exec-card-blue { border-top-color: var(--accent-blue); }
+  .exec-card-amber { border-top-color: var(--accent-amber); }
 
   .stat-val {
-    font-family: 'Outfit', sans-serif;
-    font-size: 46px;
+    font-family: 'Inter', sans-serif;
+    font-size: 42px;
     font-weight: 800;
-    color: #FFFFFF;
-    line-height: 1.05;
-    margin-bottom: 10px;
-    letter-spacing: -1px;
+    color: var(--navy-dark);
+    line-height: 1.1;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
   }
 
-  .stat-val-green { color: var(--accent-green); text-shadow: 0 0 20px rgba(0, 230, 118, 0.3); }
-  .stat-val-cyan { color: var(--accent-cyan); text-shadow: 0 0 20px rgba(0, 229, 255, 0.3); }
-  .stat-val-purple { color: var(--accent-purple); text-shadow: 0 0 20px rgba(192, 132, 252, 0.3); }
-  .stat-val-amber { color: var(--accent-amber); text-shadow: 0 0 20px rgba(251, 191, 36, 0.3); }
-
   .stat-label {
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 700;
-    color: #E2E8F0;
-    margin-bottom: 12px;
+    color: var(--navy-header);
+    margin-bottom: 10px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
   }
 
   .stat-desc {
-    font-size: 15px;
-    color: var(--text-secondary);
-    line-height: 1.6;
+    font-size: 14.5px;
+    color: var(--text-muted);
+    line-height: 1.55;
   }
 
   .sources-box {
     margin-top: auto;
-    padding: 16px 20px;
-    background: rgba(15, 23, 42, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 12px;
-    font-size: 13px;
-    color: #94A3B8;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    padding-top: 16px;
+    border-top: 1px solid var(--card-border);
+    font-size: 12.5px;
+    color: var(--text-muted);
   }
 
-  /* TypeUI Glass Table */
-  .typeui-table {
+  /* Executive Table */
+  .exec-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 10px;
-    background: rgba(15, 23, 42, 0.8);
-    border-radius: 16px;
+    margin-top: 8px;
+    background: #FFFFFF;
+    border-radius: 8px;
     overflow: hidden;
     border: 1px solid var(--card-border);
-    backdrop-filter: blur(16px);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
   }
 
-  .typeui-table th {
-    background: rgba(30, 41, 59, 0.9);
-    color: #F8FAFC;
-    font-family: 'Outfit', sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    padding: 16px 20px;
-    text-align: left;
-    border-bottom: 1px solid var(--card-border);
-  }
-
-  .typeui-table td {
-    padding: 14px 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    font-size: 14px;
-    color: #CBD5E1;
-  }
-
-  .typeui-table tr:last-child td {
-    background: rgba(30, 41, 59, 0.6);
-    font-weight: 700;
-    border-bottom: none;
+  .exec-table th {
+    background: var(--navy-dark);
     color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+    font-size: 13.5px;
+    font-weight: 700;
+    padding: 14px 18px;
+    text-align: left;
+  }
+
+  .exec-table td {
+    padding: 13px 18px;
+    border-bottom: 1px solid var(--card-border);
+    font-size: 14px;
+    color: var(--text-main);
+  }
+
+  .exec-table tr:nth-child(even) td {
+    background: #F8FAFC;
+  }
+
+  .exec-table tr:last-child td {
+    background: #E2E8F0;
+    font-weight: 700;
+    color: var(--navy-dark);
+    border-bottom: none;
   }
 
   .controls-hud {
     position: fixed;
-    bottom: 36px;
-    right: 48px;
+    bottom: 30px;
+    right: 40px;
     z-index: 1000;
     display: flex;
     align-items: center;
     gap: 16px;
-    background: rgba(15, 23, 42, 0.85);
+    background: var(--navy-dark);
     border: 1px solid rgba(255, 255, 255, 0.15);
-    padding: 12px 28px;
-    border-radius: 40px;
-    backdrop-filter: blur(20px);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    padding: 10px 24px;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
   }
 
   .hud-btn {
-    background: linear-gradient(135deg, var(--accent-green) 0%, #00C853 100%);
-    color: #07090E;
+    background: #FFFFFF;
+    color: var(--navy-dark);
     border: none;
-    padding: 10px 24px;
-    border-radius: 24px;
-    font-family: 'Outfit', sans-serif;
+    padding: 8px 18px;
+    border-radius: 18px;
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
-    font-size: 15px;
+    font-size: 14px;
     cursor: pointer;
-    transition: all 0.2s ease;
-    box-shadow: 0 4px 15px rgba(0, 230, 118, 0.3);
+    transition: background 0.2s ease;
   }
 
   .hud-btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 20px rgba(0, 230, 118, 0.5);
+    background: #E2E8F0;
   }
 
   .hud-counter {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'JetBrains Mono', monospace;
     color: #FFFFFF;
-    font-size: 15px;
-    font-weight: 600;
+    font-size: 14px;
+    font-weight: 500;
   }
 </style>
 </head>
@@ -317,19 +276,19 @@
   <!-- SLIDE 1: DERRAMA ECONÓMICA -->
   <div class="slide-container active" id="slide-1">
     <div class="left-rail">
-      <div class="rail-accent-bar"></div>
+      <div class="rail-accent-line"></div>
       <div class="rail-content">
-        <div class="typeui-chip">FETUR · SECTUR QROO</div>
-        <div style="font-family: 'Source Serif 4', serif; font-size: 36px; font-weight: 700; margin-top: 180px; line-height: 1.2; color: #FFFFFF;">
-          CARIBE MEXICANO<br><span style="color: var(--accent-green);">SMART PAY</span>
+        <div class="exec-tag-pill">FETUR · SECTUR QROO</div>
+        <div style="font-family: 'Source Serif 4', serif; font-size: 34px; font-weight: 700; margin-top: 160px; line-height: 1.25; color: #FFFFFF;">
+          CARIBE MEXICANO<br><span style="color: #93C5FD;">SMART PAY</span>
         </div>
-        <div style="font-size: 15px; color: var(--text-secondary); margin-top: 20px; line-height: 1.6;">
+        <div style="font-size: 14.5px; color: #94A3B8; margin-top: 20px; line-height: 1.6;">
           Infraestructura Transfronteriza de Pagos Turísticos LATAM (PIX, Nequi, Yape, DaviPlata)
         </div>
-        <div style="margin-top: 200px; border-top: 1px solid var(--card-border); padding-top: 24px;">
-          <div class="mono-tag" style="margin-bottom: 4px;">AUTOR DE LA INICIATIVA</div>
-          <div style="font-size: 18px; font-weight: 700; color: #FFFFFF;">Antonio Gutiérrez</div>
-          <div style="font-size: 14px; color: var(--text-secondary);">Comisión de Innovación Tecnológica (FETUR)</div>
+        <div style="margin-top: 180px; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 20px;">
+          <div class="mono-tag" style="color: #94A3B8; margin-bottom: 4px;">AUTOR DE LA INICIATIVA</div>
+          <div style="font-size: 17px; font-weight: 700; color: #FFFFFF;">Antonio Gutiérrez</div>
+          <div style="font-size: 13.5px; color: #94A3B8;">Comisión de Innovación Tecnológica (FETUR)</div>
         </div>
       </div>
     </div>
@@ -339,23 +298,23 @@
         Quintana Roo lidera la recepción de turismo sudamericano en México con una derrama en sitio de $1,113 Millones de Dólares
       </div>
       <div class="card-grid grid-2x2" style="height: 560px;">
-        <div class="bento-card bento-card-green">
-          <div class="stat-val stat-val-green">380,000</div>
+        <div class="exec-card exec-card-blue">
+          <div class="stat-val" style="color: #1E3A8A;">380,000</div>
           <div class="stat-label">🇨🇴 Colombia (380k Turistas/Año)</div>
           <div class="stat-desc">Gasto promedio en sitio: <strong>$1,039.55 USD/estancia</strong>.<br>Derrama económica directa: <strong>$395.0 Millones de USD</strong>.</div>
         </div>
-        <div class="bento-card bento-card-cyan">
-          <div class="stat-val stat-val-cyan">160,000</div>
+        <div class="exec-card exec-card-teal">
+          <div class="stat-val" style="color: #0D9488;">160,000</div>
           <div class="stat-label">🇦🇷 Argentina (160k Turistas/Año)</div>
           <div class="stat-desc">Gasto promedio en sitio: <strong>$1,125.75 USD/estancia</strong>.<br>Derrama económica directa: <strong>$180.1 Millones de USD</strong>.</div>
         </div>
-        <div class="bento-card bento-card-purple">
-          <div class="stat-val stat-val-purple">150,000</div>
+        <div class="exec-card exec-card-navy">
+          <div class="stat-val" style="color: #312E81;">150,000</div>
           <div class="stat-label">🇧🇷 Brasil (150k Turistas/Año)</div>
           <div class="stat-desc">Gasto promedio en sitio: <strong>$1,209.00 USD/estancia</strong>.<br>Derrama económica directa: <strong>$181.35 Millones de USD</strong>.</div>
         </div>
-        <div class="bento-card bento-card-amber">
-          <div class="stat-val stat-val-amber">135,000</div>
+        <div class="exec-card exec-card-amber">
+          <div class="stat-val" style="color: #B45309;">135,000</div>
           <div class="stat-label">🇵🇪 Perú (135k Turistas/Año)</div>
           <div class="stat-desc">Gasto promedio en sitio: <strong>$980.00 USD/estancia</strong>.<br>Derrama económica directa: <strong>$132.3 Millones de USD</strong>.</div>
         </div>
@@ -369,13 +328,13 @@
   <!-- SLIDE 2: ADOPCIÓN DE QR Y BANCOS CENTRALES -->
   <div class="slide-container" id="slide-2">
     <div class="left-rail">
-      <div class="rail-accent-bar"></div>
+      <div class="rail-accent-line"></div>
       <div class="rail-content">
-        <div class="typeui-chip typeui-chip-cyan">02 · REGULACIÓN & QR</div>
-        <div style="font-family: 'Source Serif 4', serif; font-size: 30px; font-weight: 700; margin-top: 180px; line-height: 1.3; color: #FFFFFF;">
+        <div class="exec-tag-pill">02 · REGULACIÓN & QR</div>
+        <div style="font-family: 'Source Serif 4', serif; font-size: 28px; font-weight: 700; margin-top: 160px; line-height: 1.3; color: #FFFFFF;">
           ADOPCIÓN DE QR Y BANCOS CENTRALES
         </div>
-        <div style="font-size: 15px; color: var(--text-secondary); margin-top: 20px; line-height: 1.6;">
+        <div style="font-size: 14.5px; color: #94A3B8; margin-top: 20px; line-height: 1.6;">
           El 65% de los turistas sudamericanos evita usar tarjetas bancarias tradicionales por impuestos y recargos en sus países de origen.
         </div>
       </div>
@@ -386,23 +345,23 @@
         El 65% de los turistas sudamericanos prefiere pagar por QR para eludir impuestos bancarios de sus países de origen
       </div>
       <div class="card-grid grid-2x2" style="height: 560px;">
-        <div class="bento-card bento-card-green">
-          <div class="stat-val stat-val-green">&gt;65,000M</div>
+        <div class="exec-card exec-card-blue">
+          <div class="stat-val" style="color: #1E3A8A;">&gt;65,000M</div>
           <div class="stat-label">🇧🇷 Brasil · Red PIX (Banco Central do Brasil)</div>
           <div class="stat-desc">El 85% de los brasileños prefiere pagar con PIX para eludir el <strong>3.5% de Impuesto IOF</strong> que les cobra su gobierno al usar tarjeta en México.</div>
         </div>
-        <div class="bento-card bento-card-cyan">
-          <div class="stat-val stat-val-cyan">62% Adopción</div>
+        <div class="exec-card exec-card-teal">
+          <div class="stat-val" style="color: #0D9488;">62% Adopción</div>
           <div class="stat-label">🇦🇷 Argentina · eWallets (AFIP & BCRA)</div>
           <div class="stat-desc">Los argentinos evitan la tarjeta de crédito para eludir el <strong>15% al 25% de recargo impositivo AFIP</strong> ("Dólar Tarjeta").</div>
         </div>
-        <div class="bento-card bento-card-purple">
-          <div class="stat-val stat-val-purple">&gt;40M Txs/Día</div>
+        <div class="exec-card exec-card-navy">
+          <div class="stat-val" style="color: #312E81;">&gt;40M Txs/Día</div>
           <div class="stat-label">🇵🇪 Perú · Yape & Plin (BCRP)</div>
           <div class="stat-desc">Interoperabilidad obligatoria impulsada por el Banco Central del Perú. El 68% elude tarjetas por altas tasas de interés.</div>
         </div>
-        <div class="bento-card bento-card-amber">
-          <div class="stat-val stat-val-amber">&gt;78% Adultos</div>
+        <div class="exec-card exec-card-amber">
+          <div class="stat-val" style="color: #B45309;">&gt;78% Adultos</div>
           <div class="stat-label">🇨🇴 Colombia · Nequi & DaviPlata (SFC)</div>
           <div class="stat-desc">Prevalencia masiva de pagos digitales mediante llaves QR de transferencia instantánea supervisadas por la SFC.</div>
         </div>
@@ -416,13 +375,13 @@
   <!-- SLIDE 3: TAM / SAM / SOM DESGLOSADO -->
   <div class="slide-container" id="slide-3">
     <div class="left-rail">
-      <div class="rail-accent-bar"></div>
+      <div class="rail-accent-line"></div>
       <div class="rail-content">
-        <div class="typeui-chip">03 · MODELO FINANCIERO</div>
-        <div style="font-family: 'Source Serif 4', serif; font-size: 30px; font-weight: 700; margin-top: 180px; line-height: 1.3; color: #FFFFFF;">
+        <div class="exec-tag-pill">03 · MODELO FINANCIERO</div>
+        <div style="font-family: 'Source Serif 4', serif; font-size: 28px; font-weight: 700; margin-top: 160px; line-height: 1.3; color: #FFFFFF;">
           TAM, SAM Y SOM DESGLOSADO
         </div>
-        <div style="font-size: 15px; color: var(--text-secondary); margin-top: 20px; line-height: 1.6;">
+        <div style="font-size: 14.5px; color: #94A3B8; margin-top: 20px; line-height: 1.6;">
           Desglose detallado del Mercado Total ($1,113M USD), Atendible ($350.6M USD) y Captación Piso ($3.5M USD) por país y por municipio.
         </div>
       </div>
@@ -433,7 +392,7 @@
         Desglose de Derrama (TAM $1,113M USD), Mercado Atendible (SAM $350.6M USD) y Captación Piso (SOM $3.5M USD)
       </div>
       
-      <table class="typeui-table">
+      <table class="exec-table">
         <thead>
           <tr>
             <th>País de Origen / Mercado</th>
@@ -447,44 +406,44 @@
             <td>🇨🇴 <strong>Colombia (380,000 Turistas)</strong></td>
             <td>$395.00 M USD</td>
             <td>$124.40 M USD</td>
-            <td><strong style="color: var(--accent-green);">$1,244,000 USD</strong></td>
+            <td><strong>$1,244,000 USD</strong></td>
           </tr>
           <tr>
             <td>🇧🇷 <strong>Brasil (150,000 Turistas)</strong></td>
             <td>$181.35 M USD</td>
             <td>$57.12 M USD</td>
-            <td><strong style="color: var(--accent-green);">$571,200 USD</strong></td>
+            <td><strong>$571,200 USD</strong></td>
           </tr>
           <tr>
             <td>🇦🇷 <strong>Argentina (160,000 Turistas)</strong></td>
             <td>$180.12 M USD</td>
             <td>$56.74 M USD</td>
-            <td><strong style="color: var(--accent-green);">$567,400 USD</strong></td>
+            <td><strong>$567,400 USD</strong></td>
           </tr>
           <tr>
             <td>🇵🇪 <strong>Perú (135,000 Turistas)</strong></td>
             <td>$132.30 M USD</td>
             <td>$41.67 M USD</td>
-            <td><strong style="color: var(--accent-green);">$416,700 USD</strong></td>
+            <td><strong>$416,700 USD</strong></td>
           </tr>
           <tr>
             <td>🌎 <strong>Otros LATAM (Chile/Uruguay/etc)</strong></td>
             <td>$224.43 M USD</td>
             <td>$70.67 M USD</td>
-            <td><strong style="color: var(--accent-green);">$706,700 USD</strong></td>
+            <td><strong>$706,700 USD</strong></td>
           </tr>
           <tr>
             <td><strong>TOTAL QUINTANA ROO</strong></td>
             <td><strong>$1,113.20 M USD</strong></td>
             <td><strong>$350.60 M USD</strong></td>
-            <td><strong><span style="color: var(--accent-green);">$3,506,000 USD</span> (~$3.5M USD)</strong></td>
+            <td><strong>$3,506,000 USD (~$3.5M USD)</strong></td>
           </tr>
         </tbody>
       </table>
 
-      <div style="margin-top: 18px; background: rgba(15, 23, 42, 0.8); border: 1px solid var(--card-border); padding: 18px; border-radius: 12px; border-left: 6px solid var(--accent-green);">
-        <div style="font-weight: 700; font-size: 14px; color: #FFFFFF; margin-bottom: 4px;">📍 DESGLOSE DE CAPTACIÓN SOM ($3.5M USD) POR MUNICIPIO DE DESTINO:</div>
-        <div style="font-size: 13.5px; color: var(--text-secondary); line-height: 1.5;">
+      <div style="margin-top: 18px; background: #FFFFFF; border: 1px solid var(--card-border); padding: 18px; border-radius: 8px; border-left: 5px solid var(--accent-navy);">
+        <div style="font-weight: 700; font-size: 14px; color: var(--navy-dark); margin-bottom: 4px;">📍 DESGLOSE DE CAPTACIÓN SOM ($3.5M USD) POR MUNICIPIO DE DESTINO:</div>
+        <div style="font-size: 13.5px; color: var(--text-muted); line-height: 1.5;">
           • <strong>Cancún / Benito Juárez (35%):</strong> SOM <strong>$1.23M USD</strong> (40 transacciones/día en 60 comercios).<br>
           • <strong>Playa del Carmen / Solidaridad (30%):</strong> SOM <strong>$1.05M USD</strong> (35 transacciones/día en 52 comercios).<br>
           • <strong>Tulum (22%):</strong> SOM <strong>$0.77M USD</strong> (25 transacciones/día en 38 comercios).<br>
@@ -501,13 +460,13 @@
   <!-- SLIDE 4: TEMPORALIDADES Y CONTRA-CICLO -->
   <div class="slide-container" id="slide-4">
     <div class="left-rail">
-      <div class="rail-accent-bar"></div>
+      <div class="rail-accent-line"></div>
       <div class="rail-content">
-        <div class="typeui-chip typeui-chip-cyan">04 · ESTACIONALIDAD</div>
-        <div style="font-family: 'Source Serif 4', serif; font-size: 30px; font-weight: 700; margin-top: 180px; line-height: 1.3; color: #FFFFFF;">
+        <div class="exec-tag-pill">04 · ESTACIONALIDAD</div>
+        <div style="font-family: 'Source Serif 4', serif; font-size: 28px; font-weight: 700; margin-top: 160px; line-height: 1.3; color: #FFFFFF;">
           TEMPORALIDADES DE VIAJE SUDAMERICANAS
         </div>
-        <div style="font-size: 15px; color: var(--text-secondary); margin-top: 20px; line-height: 1.6;">
+        <div style="font-size: 14.5px; color: #94A3B8; margin-top: 20px; line-height: 1.6;">
           El turismo sudamericano llena la temporada baja norteamericana mediante picos de vacaciones familiares en Junio, Julio y Agosto.
         </div>
       </div>
@@ -518,23 +477,23 @@
         El turismo sudamericano genera picos de afluencia durante la temporada baja norteamericana (Junio a Agosto)
       </div>
       <div class="card-grid grid-2x2" style="height: 560px;">
-        <div class="bento-card bento-card-green">
-          <div class="stat-val stat-val-green" style="font-size: 34px;">Junio - Julio & Oct</div>
+        <div class="exec-card exec-card-blue">
+          <div class="stat-val" style="font-size: 32px; color: #1E3A8A;">Junio - Julio & Oct</div>
           <div class="stat-label">🇨🇴 Colombia (380,000 Turistas)</div>
           <div class="stat-desc">• Vacaciones de mitad de año (Junio/Julio).<br>• Semana de Receso escolar (Octubre).<br>• Fiestas de fin de año (Diciembre/Enero).</div>
         </div>
-        <div class="bento-card bento-card-purple">
-          <div class="stat-val stat-val-purple" style="font-size: 34px;">Julio, Dic & Feb/Mar</div>
+        <div class="exec-card exec-card-navy">
+          <div class="stat-val" style="font-size: 32px; color: #312E81;">Julio, Dic & Feb/Mar</div>
           <div class="stat-label">🇧🇷 Brasil (150,000 Turistas)</div>
           <div class="stat-desc">• Vacaciones de invierno austral (Julio).<br>• Fiestas y verano del hemisferio sur (Dic/Ene).<br>• Semana de Carnaval (Febrero/Marzo).</div>
         </div>
-        <div class="bento-card bento-card-cyan">
-          <div class="stat-val stat-val-cyan" style="font-size: 34px;">Enero - Feb & Julio</div>
+        <div class="exec-card exec-card-teal">
+          <div class="stat-val" style="font-size: 32px; color: #0D9488;">Enero - Feb & Julio</div>
           <div class="stat-label">🇦🇷 Argentina (160,000 Turistas)</div>
           <div class="stat-desc">• Verano austral principal (Enero/Febrero).<br>• Receso escolar de invierno (Julio).<br>• Escapadas de fin de año (Nov/Dic).</div>
         </div>
-        <div class="bento-card bento-card-amber">
-          <div class="stat-val stat-val-amber" style="font-size: 34px;">Julio - Ago & Ene/Feb</div>
+        <div class="exec-card exec-card-amber">
+          <div class="stat-val" style="font-size: 32px; color: #B45309;">Julio - Ago & Ene/Feb</div>
           <div class="stat-label">🇵🇪 Perú (135,000 Turistas)</div>
           <div class="stat-desc">• Fiestas Patrias peruanas (28-29 de Julio).<br>• Vacaciones escolares de invierno (Julio/Ago).<br>• Receso de verano (Enero/Febrero).</div>
         </div>
@@ -548,13 +507,13 @@
   <!-- SLIDE 5: ARQUITECTURA ZERO-DEVICE -->
   <div class="slide-container" id="slide-5">
     <div class="left-rail">
-      <div class="rail-accent-bar"></div>
+      <div class="rail-accent-line"></div>
       <div class="rail-content">
-        <div class="typeui-chip">05 · TECNOLOGÍA</div>
-        <div style="font-family: 'Source Serif 4', serif; font-size: 30px; font-weight: 700; margin-top: 180px; line-height: 1.3; color: #FFFFFF;">
+        <div class="exec-tag-pill">05 · TECNOLOGÍA</div>
+        <div style="font-family: 'Source Serif 4', serif; font-size: 28px; font-weight: 700; margin-top: 160px; line-height: 1.3; color: #FFFFFF;">
           MODELO ZERO-DEVICE Y ZERO-ERP
         </div>
-        <div style="font-size: 15px; color: var(--text-secondary); margin-top: 20px; line-height: 1.6;">
+        <div style="font-size: 14.5px; color: #94A3B8; margin-top: 20px; line-height: 1.6;">
           Un solo cartel de acrílico QR de mostrador o mesa que se integra directamente al software que los afiliados a FETUR ya utilizan.
         </div>
       </div>
@@ -565,18 +524,18 @@
         El modelo elimina la compra de TPVs y se integra directamente al software que los afiliados ya usan
       </div>
       <div class="card-grid grid-3col" style="height: 560px;">
-        <div class="bento-card bento-card-green">
-          <div class="stat-val stat-val-green">1 Solo QR</div>
+        <div class="exec-card exec-card-blue">
+          <div class="stat-val" style="color: #1E3A8A;">1 Solo QR</div>
           <div class="stat-label">Cartel QR Unificado</div>
           <div class="stat-desc">Smart QR que detecta en milisegundos si el celular del turista es de Brasil, Colombia, Perú o Argentina y abre su app bancaria nativa.</div>
         </div>
-        <div class="bento-card bento-card-cyan">
-          <div class="stat-val stat-val-cyan">Hub FETUR</div>
+        <div class="exec-card exec-card-teal">
+          <div class="stat-val" style="color: #0D9488;">Hub FETUR</div>
           <div class="stat-label">Conexión con Software Actual</div>
           <div class="stat-desc">Integrado a <strong>Sunday</strong> (mesas), <strong>Duve</strong> (check-in hotel), <strong>FareHarbor</strong> (tours) y <strong>Soft Restaurant / Opera PMS</strong>.</div>
         </div>
-        <div class="bento-card bento-card-purple">
-          <div class="stat-val stat-val-purple">&lt;3 Seg. SPEI</div>
+        <div class="exec-card exec-card-navy">
+          <div class="stat-val" style="color: #312E81;">&lt;3 Seg. SPEI</div>
           <div class="stat-label">Liquidación Automática MXN</div>
           <div class="stat-desc">El comercio recibe Pesos Mexicanos en su tarjeta o cuenta de siempre (Spin OXXO, BanCoppel, Mercado Pago, BBVA).</div>
         </div>
@@ -590,13 +549,13 @@
   <!-- SLIDE 6: PISO FINANCIERO 1% -->
   <div class="slide-container" id="slide-6">
     <div class="left-rail">
-      <div class="rail-accent-bar"></div>
+      <div class="rail-accent-line"></div>
       <div class="rail-content">
-        <div class="typeui-chip typeui-chip-cyan">06 · PLAN DE NEGOCIO</div>
-        <div style="font-family: 'Source Serif 4', serif; font-size: 30px; font-weight: 700; margin-top: 180px; line-height: 1.3; color: #FFFFFF;">
+        <div class="exec-tag-pill">06 · PLAN DE NEGOCIO</div>
+        <div style="font-family: 'Source Serif 4', serif; font-size: 28px; font-weight: 700; margin-top: 160px; line-height: 1.3; color: #FFFFFF;">
           EL PISO CONSERVADOR DEL 1% DEL SAM
         </div>
-        <div style="font-size: 15px; color: var(--text-secondary); margin-top: 20px; line-height: 1.6;">
+        <div style="font-size: 14.5px; color: #94A3B8; margin-top: 20px; line-height: 1.6;">
           Modelo de penetración ultra-conservador enfocado en los 175 comercios de mayor densidad turística de Quintana Roo.
         </div>
       </div>
@@ -607,23 +566,23 @@
         Un piso conservador del 1% del mercado ($3.5M USD) se alcanza con solo 113 transacciones diarias en 175 comercios clave
       </div>
       <div class="card-grid grid-2x2" style="height: 560px;">
-        <div class="bento-card bento-card-green">
-          <div class="stat-val stat-val-green">$3.5M USD</div>
+        <div class="exec-card exec-card-blue">
+          <div class="stat-val" style="color: #1E3A8A;">$3.5M USD</div>
           <div class="stat-label">Volumen Procesado Piso (1% SAM)</div>
           <div class="stat-desc">Meta mínima garantizada en el primer año de operaciones en Quintana Roo.</div>
         </div>
-        <div class="bento-card bento-card-cyan">
-          <div class="stat-val stat-val-cyan">175 Comercios</div>
+        <div class="exec-card exec-card-teal">
+          <div class="stat-val" style="color: #0D9488;">175 Comercios</div>
           <div class="stat-label">Afiliados Tier 1 Pareto</div>
           <div class="stat-desc">Solo el 35% de los 500 asociados actuales de FETUR en los 4 municipios principales.</div>
         </div>
-        <div class="bento-card bento-card-purple">
-          <div class="stat-val stat-val-purple">113 Txs/Día</div>
+        <div class="exec-card exec-card-navy">
+          <div class="stat-val" style="color: #312E81;">113 Txs/Día</div>
           <div class="stat-label">Distribución Estatal Diaria</div>
           <div class="stat-desc">40 Cancún + 35 Playa del Carmen + 25 Tulum + 13 Cozumel = 113 pagos al día en todo el estado.</div>
         </div>
-        <div class="bento-card bento-card-amber">
-          <div class="stat-val stat-val-amber">1 Pago/Día</div>
+        <div class="exec-card exec-card-amber">
+          <div class="stat-val" style="color: #B45309;">1 Pago/Día</div>
           <div class="stat-label">Por Comercio Afiliado</div>
           <div class="stat-desc">Basta con que cada negocio realice solo 1 cobro promedio de $85 USD al día para cumplir la meta financiera.</div>
         </div>
@@ -637,13 +596,13 @@
   <!-- SLIDE 7: CRONOGRAMA A 45 DÍAS -->
   <div class="slide-container" id="slide-7">
     <div class="left-rail">
-      <div class="rail-accent-bar"></div>
+      <div class="rail-accent-line"></div>
       <div class="rail-content">
-        <div class="typeui-chip">07 · EJECUCIÓN</div>
-        <div style="font-family: 'Source Serif 4', serif; font-size: 30px; font-weight: 700; margin-top: 180px; line-height: 1.3; color: #FFFFFF;">
+        <div class="exec-tag-pill">07 · EJECUCIÓN</div>
+        <div style="font-family: 'Source Serif 4', serif; font-size: 28px; font-weight: 700; margin-top: 160px; line-height: 1.3; color: #FFFFFF;">
           HOJA DE RUTA A 45 DÍAS
         </div>
-        <div style="font-size: 15px; color: var(--text-secondary); margin-top: 20px; line-height: 1.6;">
+        <div style="font-size: 14.5px; color: #94A3B8; margin-top: 20px; line-height: 1.6;">
           Dashboard de decisiones y cronograma de despliegue institucional listo para aprobación.
         </div>
       </div>
@@ -654,23 +613,23 @@
         Plan de acción inmediato a 45 días para la circular de adhesión, entrega de kits y lanzamiento en rueda de prensa estatal
       </div>
       <div class="card-grid grid-2x2" style="height: 560px;">
-        <div class="bento-card bento-card-green">
-          <div class="stat-val stat-val-green" style="font-size: 38px;">Días 1 - 15</div>
+        <div class="exec-card exec-card-blue">
+          <div class="stat-val" style="font-size: 36px; color: #1E3A8A;">Días 1 - 15</div>
           <div class="stat-label">Circular Institucional FETUR</div>
           <div class="stat-desc">Envío de circular formal de adhesión a los 175 comercios de mayor densidad turística sudamericana.</div>
         </div>
-        <div class="bento-card bento-card-cyan">
-          <div class="stat-val stat-val-cyan" style="font-size: 38px;">Días 16 - 30</div>
+        <div class="exec-card exec-card-teal">
+          <div class="stat-val" style="font-size: 36px; color: #0D9488;">Días 16 - 30</div>
           <div class="stat-label">Entrega de Kits & Integración</div>
           <div class="stat-desc">Reparto de acrílicos QR de mostrador y activación en el software de caja (Sunday / Soft Restaurant).</div>
         </div>
-        <div class="bento-card bento-card-purple">
-          <div class="stat-val stat-val-purple" style="font-size: 38px;">Días 31 - 45</div>
+        <div class="exec-card exec-card-navy">
+          <div class="stat-val" style="font-size: 36px; color: #312E81;">Días 31 - 45</div>
           <div class="stat-label">Rueda de Prensa de Estado</div>
           <div class="stat-desc">Lanzamiento oficial ante medios con el Secretario de Turismo de QRoo y Presidenta de FETUR.</div>
         </div>
-        <div class="bento-card bento-card-amber">
-          <div class="stat-val stat-val-amber" style="font-size: 38px;">Días 46+</div>
+        <div class="exec-card exec-card-amber">
+          <div class="stat-val" style="font-size: 36px; color: #B45309;">Días 46+</div>
           <div class="stat-label">Operación & Escalamiento ASETUR</div>
           <div class="stat-desc">Auditoría de volumen de procesamiento e inicio de gestión para réplica en Los Cabos y Puerto Vallarta.</div>
         </div>
