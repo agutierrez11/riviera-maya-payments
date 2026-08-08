@@ -142,7 +142,6 @@
 
   .grid-2x2 { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; }
   .grid-3col { grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 1fr; }
-  .grid-3x2 { grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 1fr 1fr; }
 
   .exec-card {
     background: var(--card-bg);
@@ -238,18 +237,18 @@
   .diagram-pipeline-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 60px 1fr;
-    gap: 20px;
+    grid-template-rows: 1fr 54px 1fr;
+    gap: 18px;
     flex: 1;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 12px;
+    margin-bottom: 12px;
   }
 
   .pipeline-card {
     background: #FFFFFF;
     border: 1px solid var(--card-border);
     border-radius: 10px;
-    padding: 24px;
+    padding: 22px;
     box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
     display: flex;
     flex-direction: column;
@@ -262,17 +261,17 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
 
   .pipeline-badge {
-    width: 32px;
-    height: 32px;
+    width: 30px;
+    height: 30px;
     border-radius: 6px;
     background: var(--navy-dark);
     color: #FFFFFF;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 14px;
+    font-size: 13.5px;
     font-weight: 700;
     display: flex;
     align-items: center;
@@ -281,7 +280,7 @@
 
   .pipeline-tag {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
+    font-size: 10.5px;
     font-weight: 700;
     padding: 4px 8px;
     border-radius: 4px;
@@ -289,24 +288,24 @@
   }
 
   .pipeline-title {
-    font-size: 17px;
+    font-size: 16.5px;
     font-weight: 800;
     color: var(--navy-dark);
-    margin-bottom: 8px;
+    margin-bottom: 6px;
   }
 
   .pipeline-desc {
-    font-size: 14px;
+    font-size: 13.5px;
     color: var(--text-muted);
-    line-height: 1.5;
+    line-height: 1.45;
   }
 
   .pipeline-footer-metric {
-    margin-top: 12px;
-    padding-top: 10px;
+    margin-top: 10px;
+    padding-top: 8px;
     border-top: 1px dashed #E2E8F0;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
+    font-size: 11.5px;
     font-weight: 700;
     color: var(--navy-dark);
     display: flex;
@@ -322,20 +321,20 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 30px;
+    padding: 0 28px;
     box-shadow: 0 4px 16px rgba(15, 23, 42, 0.15);
   }
 
   .hub-banner-title {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 13.5px;
+    font-size: 13px;
     font-weight: 700;
     letter-spacing: 1px;
     color: #93C5FD;
   }
 
   .hub-banner-sub {
-    font-size: 13.5px;
+    font-size: 13px;
     color: #E2E8F0;
   }
 
@@ -844,17 +843,17 @@
     </div>
   </div>
 
-  <!-- SLIDE 6: MODELO DE ESCENARIOS Y SUPUESTOS DE ADOPCIÓN (FULL CANVAS RICH GRID) -->
+  <!-- SLIDE 6: MODELO DE ESCENARIOS Y EFECTO CABALLO DE TROYA CoDi / DiMo -->
   <div class="slide-container" id="slide-6">
     <div class="left-rail">
       <div class="rail-accent-line"></div>
       <div class="rail-content">
         <div class="exec-tag-pill">06 · MODELO FINANCIERO</div>
         <div style="font-family: 'Source Serif 4', serif; font-size: 28px; font-weight: 700; margin-top: 120px; line-height: 1.3; color: #FFFFFF;">
-          ESCENARIOS Y SUPUESTOS DE ADOPCIÓN
+          ESCENARIOS & EFECTO CABALLO DE TROYA
         </div>
         <div style="font-size: 14px; color: #94A3B8; margin-top: 16px; line-height: 1.5;">
-          Análisis de sensibilidad sobre la base de 500 comercios de FETUR para proyectar el volumen anual según la adopción.
+          Análisis de sensibilidad sobre 500 comercios de FETUR y la inclusión masiva e indirecta de CoDi/DiMo (Banxico).
         </div>
       </div>
       
@@ -868,44 +867,35 @@
     </div>
     <div class="main-canvas">
       <div>
-        <div class="mono-tag">06 · PROYECCIÓN ESTRATÉGICA BASADA EN ESCENARIOS</div>
+        <div class="mono-tag">06 · PROYECCIÓN ESTRATÉGICA BASADA EN ESCENARIOS & IMPACTO NACIONAL</div>
         <div class="slide-title-action">
-          Análisis de Sensibilidad: El proyecto genera desde $3.1M USD (piso) hasta $23.25M USD en función de la adopción
+          Análisis de Sensibilidad ($3.1M a $23.2M USD) y Activación Orgánica de CoDi / DiMo (Banxico)
         </div>
       </div>
       
-      <div style="display: flex; flex-direction: column; gap: 24px; flex: 1; justify-content: center;">
+      <div style="display: flex; flex-direction: column; gap: 20px; flex: 1; justify-content: center;">
         <!-- Top Scenario Summary Bento Cards -->
-        <div class="card-grid grid-3col" style="height: 200px; margin: 0;">
-          <div class="exec-card exec-card-blue" style="padding: 24px;">
+        <div class="card-grid grid-3col" style="height: 170px; margin: 0;">
+          <div class="exec-card exec-card-blue" style="padding: 20px;">
             <div>
-              <div class="stat-val" style="font-size: 36px; color: #1E3A8A;">$3.10M USD</div>
+              <div class="stat-val" style="font-size: 32px; color: #1E3A8A;">$3.10M USD</div>
               <div class="stat-label">🟢 Escenario Conservador</div>
             </div>
             <div class="stat-desc">20% Afiliación FETUR (100 Comercios) · 1 cobro/día ($85 USD Ticket).</div>
-            <div style="margin-top: 10px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #1E3A8A; font-weight: 700;">
-              • VOLUMEN DIARIO ESTADO: 100 TXS/DÍA
-            </div>
           </div>
-          <div class="exec-card exec-card-teal" style="padding: 24px;">
+          <div class="exec-card exec-card-teal" style="padding: 20px;">
             <div>
               <div class="stat-val" style="font-size: 36px; color: #0D9488;">$10.85M USD</div>
               <div class="stat-label">🔵 Escenario Moderado</div>
             </div>
             <div class="stat-desc">35% Afiliación FETUR (175 Comercios) · 2 cobros/día ($85 USD Ticket).</div>
-            <div style="margin-top: 10px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #0D9488; font-weight: 700;">
-              • VOLUMEN DIARIO ESTADO: 350 TXS/DÍA
-            </div>
           </div>
-          <div class="exec-card exec-card-navy" style="padding: 24px;">
+          <div class="exec-card exec-card-navy" style="padding: 20px;">
             <div>
               <div class="stat-val" style="font-size: 36px; color: #312E81;">$23.25M USD</div>
               <div class="stat-label">🟣 Escenario Optimista</div>
             </div>
             <div class="stat-desc">50% Afiliación FETUR (250 Comercios) · 3 cobros/día ($85 USD Ticket).</div>
-            <div style="margin-top: 10px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #312E81; font-weight: 700;">
-              • VOLUMEN DIARIO ESTADO: 750 TXS/DÍA
-            </div>
           </div>
         </div>
 
@@ -945,13 +935,14 @@
           </tbody>
         </table>
 
-        <!-- Key Assumptions Box -->
-        <div style="background: #FFFFFF; border: 1px solid var(--card-border); padding: 24px; border-radius: 10px; border-left: 5px solid var(--accent-blue); box-shadow: 0 4px 16px rgba(15,23,42,0.04);">
-          <div style="font-weight: 700; font-size: 15px; color: var(--navy-dark); margin-bottom: 6px;">📌 SUPUESTOS CLAVE DEL MODELO DE NEGOCIO:</div>
-          <div style="font-size: 14.5px; color: var(--text-muted); line-height: 1.6;">
-            • <strong>Base de Afiliados FETUR:</strong> 500 comercios turísticos en Cancún, Playa del Carmen, Tulum y Cozumel.<br>
-            • <strong>Ticket Promedio Turístico LATAM:</strong> $85 USD por transacción en restaurantes, tours, boutiques y transporte.<br>
-            • <strong>Riesgo Cero para Afiliados:</strong> El modelo no requiere inversión de capital en terminales (Zero-Device).
+        <!-- Zero-Bullshit Trojan Horse CoDi / DiMo Box -->
+        <div style="background: #FFFFFF; border: 1px solid var(--card-border); padding: 22px; border-radius: 10px; border-left: 5px solid var(--accent-emerald); box-shadow: 0 4px 16px rgba(15,23,42,0.04);">
+          <div style="font-weight: 800; font-size: 15px; color: var(--navy-dark); margin-bottom: 6px;">
+            🇲🇽 EL "CABALLO DE TROYA" NATIVO DE BANXICO (CoDi / DiMo EN COMERCIO LOCAL):
+          </div>
+          <div style="font-size: 14px; color: var(--text-muted); line-height: 1.55;">
+            • <strong>Despliegue Orgánico por Ganancia Comercial:</strong> El comercio coloca el QR de mostrador atraído por el ticket en dólares del turista sudamericano. Al estar conectado a SPEI, el mismo QR activa <strong>CoDi y DiMo para cobros nacionales</strong> sin depender de subsidios gubernamentales.<br>
+            • <strong>Ahorro en Comisiones TPV Nacional:</strong> En pagos de turistas de CDMX/Jalisco/NL vía CoDi/DiMo, la comisión interbancaria es <strong>$0 MXN</strong>, ahorrando al comercio local el 2.5% al 3.5% de comisión de TPV.
           </div>
         </div>
       </div>

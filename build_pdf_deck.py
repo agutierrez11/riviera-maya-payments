@@ -380,9 +380,9 @@ def generate_pdf():
     story.append(Paragraph("📌 <b>ESTÁNDARES DE ARQUITECTURA:</b> Estándar de Comunicación EMVCo QR Code · Regulación de Pagos Electrónicos Banco de México (SPEI) · Enrutamiento Certificado ISO 8583.", source_style))
     story.append(PageBreak())
 
-    # ------------------ SLIDE 6: MATRIZ DE ESCENARIOS Y SUPUESTOS ------------------
-    story.append(Paragraph("06 · MODELO DE ESCENARIOS Y SUPUESTOS DE ADOPCIÓN", tag_style))
-    story.append(Paragraph("Análisis de Sensibilidad: El proyecto genera desde $3.1M USD (piso) hasta $23.25M USD en función de la adopción", title_style))
+    # ------------------ SLIDE 6: MATRIZ DE ESCENARIOS Y EFECTO CABALLO DE TROYA ------------------
+    story.append(Paragraph("06 · MODELO DE ESCENARIOS & EFECTO CABALLO DE TROYA CoDi / DiMo", tag_style))
+    story.append(Paragraph("Análisis de Sensibilidad ($3.1M a $23.25M USD) y Activación Orgánica de CoDi / DiMo (Banxico)", title_style))
     
     data_scenarios_cards = [
         [
@@ -406,7 +406,7 @@ def generate_pdf():
         ('PADDING', (0,0), (-1,-1), 6),
     ]))
     story.append(t_scen_cards)
-    story.append(Spacer(1, 10))
+    story.append(Spacer(1, 8))
 
     data_scenarios = [
         [
@@ -450,7 +450,26 @@ def generate_pdf():
     
     story.append(t_scen)
     story.append(Spacer(1, 8))
-    story.append(Paragraph("📌 <b>SUPUESTOS CLAVE DEL MODELO DE NEGOCIO:</b> Base de 500 comercios de FETUR en Cancún, Playa del Carmen, Tulum y Cozumel · Ticket promedio de $85 USD · Modelo Zero-Device sin costo de infraestructura para el afiliado.", source_style))
+
+    trojan_data = [
+        [
+            Paragraph("<b>🇲🇽 EFECTO CABALLO DE TROYA: ACTIVACIÓN ORGANICA DE CoDi / DiMo (BANXICO)</b>", card_label_style)
+        ],
+        [
+            Paragraph("• <b>Adopción por Ganancia Comercial:</b> El comercio instala el QR atraído por los dólares del turista sudamericano. Al estar conectado a SPEI, el mismo QR activa <b>CoDi y DiMo para cobros nacionales</b> sin costo de subsidio.<br/>• <b>Ahorro de Comisiones TPV Nacional:</b> En cobros a turistas locales vía CoDi/DiMo, la comisión interbancaria es <b>$0 MXN</b>, ahorrando al comercio el 2.5% a 3.5% de TPV.", card_desc_style)
+        ]
+    ]
+    t_trojan = Table(trojan_data, colWidths=[520])
+    t_trojan.setStyle(TableStyle([
+        ('BACKGROUND', (0,0), (-1,-1), colors.HexColor('#FFFFFF')),
+        ('BOX', (0,0), (-1,-1), 1, colors.HexColor('#E2E8F0')),
+        ('LINELEFT', (0,0), (0,-1), 4, colors.HexColor('#059669')),
+        ('PADDING', (0,0), (-1,-1), 6),
+    ]))
+    story.append(t_trojan)
+    story.append(Spacer(1, 6))
+
+    story.append(Paragraph("📌 <b>SUPUESTOS CLAVE Y PROYECCIÓN:</b> Base de 500 comercios de FETUR · Ticket promedio de $85 USD · Modelo Zero-Device sin costo de infraestructura.", source_style))
     story.append(PageBreak())
 
     # ------------------ SLIDE 7: PROPUESTA DE FASES DE DESPLIEGUE ------------------
