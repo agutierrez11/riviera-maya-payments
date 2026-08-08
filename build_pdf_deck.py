@@ -173,7 +173,7 @@ def generate_pdf():
     
     story.append(t1)
     story.append(Spacer(1, 10))
-    story.append(Paragraph("📌 <b>FUENTES OFICIALES CORROBORABLES:</b> DATATUR (Secretaría de Turismo de México) · SECTUR Quintana Roo (Reporte Anual de Turismo Receptivo) · CNET.", source_style))
+    story.append(Paragraph("📌 <b>FUENTES OFICIALES CORROBORABLES:</b> DATATUR (Secretaría de Turismo de México) · SECTUR Quintana Roo · 8B World PTE (Market Report 2025) · Statista Oct 2024.", source_style))
     story.append(PageBreak())
 
     # ------------------ SLIDE 2: ADOPCIÓN DE QR Y BANCOS CENTRALES ------------------
@@ -182,12 +182,12 @@ def generate_pdf():
     
     data_qr_banks = [
         [
-            Paragraph("<b>&gt;65,000M Txs</b><br/><font color='#1E3A8A'><b>🇧🇷 Brasil · Banco Central (BCB)</b></font>", card_label_style),
-            Paragraph("<b>62% Adopción</b><br/><font color='#0D9488'><b>🇦🇷 Argentina · AFIP & BCRA</b></font>", card_label_style)
+            Paragraph("<b>155 Millones Users</b><br/><font color='#1E3A8A'><b>🇧🇷 Brasil · Banco Central (BCB)</b></font>", card_label_style),
+            Paragraph("<b>31% e-Wallets</b><br/><font color='#0D9488'><b>🇦🇷 Argentina · AFIP & BCRA</b></font>", card_label_style)
         ],
         [
-            Paragraph("Red <b>PIX del Banco Central do Brasil</b>.<br/>El 85% de brasileños paga con QR para eludir el <b>3.5% de Impuesto IOF</b> que les cobra su gobierno al usar tarjeta en México.", card_desc_style),
-            Paragraph("Red de <b>eWallets CBU/CVU</b>.<br/>Los argentinos evitan la tarjeta de crédito para eludir el <b>15% al 25% de recargo impositivo AFIP</b> ('Dólar Tarjeta').", card_desc_style)
+            Paragraph("Red <b>PIX del Banco Central do Brasil</b> (155M usuarios activos).<br/>El 85% de brasileños paga con QR para eludir el <b>3.5% de Impuesto IOF</b> que les cobra su gobierno. Proyección 2029: <b>$862.5B USD (CAGR 28.9%)</b>.", card_desc_style),
+            Paragraph("Red de <b>eWallets CBU/CVU</b> (31% adopción eWallets, 10% transferencias).<br/>Evitan tarjeta de crédito para eludir el <b>15% al 25% AFIP</b> ('Dólar Tarjeta'). Proyección 2028: <b>$140.8B USD (CAGR 15.9%)</b>.", card_desc_style)
         ],
         [
             Paragraph("<b>&gt;40M Txs / Día</b><br/><font color='#312E81'><b>🇵🇪 Perú · Banco Central (BCRP)</b></font>", card_label_style),
@@ -217,7 +217,7 @@ def generate_pdf():
     
     story.append(t_qr)
     story.append(Spacer(1, 10))
-    story.append(Paragraph("📌 <b>FUENTES REGULATORIAS:</b> Banco Central do Brasil (BCB) · AFIP Argentina · Banco Central de Reserva del Perú (BCRP) · Superintendencia Financiera de Colombia (SFC).", source_style))
+    story.append(Paragraph("📌 <b>FUENTES REGULATORIAS & CONSULTORÍA:</b> Banco Central do Brasil (BCB) · AFIP Argentina · 8B World PTE (LPM Adoption Report 2025) · Statista (Oct 2024).", source_style))
     story.append(PageBreak())
 
     # ------------------ SLIDE 3: TAM / SAM / SOM DESGLOSADO ------------------
@@ -363,70 +363,75 @@ def generate_pdf():
     story.append(Paragraph("📌 <b>FUENTES OFICIALES CORROBORABLES:</b> Banco de México (Banxico - Regulación SPEI) · CNBV (Disposiciones Fintech Art. 44-48 Onboarding Nivel 1/2) · Estándar EMVCo QR Code Specification.", source_style))
     story.append(PageBreak())
 
-    # ------------------ SLIDE 6: PISO FINANCIERO 1% ------------------
-    story.append(Paragraph("06 · PLAN DE NEGOCIO Y METAS DE PISO FINANCIERO", tag_style))
-    story.append(Paragraph("Un piso conservador del 1% del mercado ($3.5M USD) se alcanza con solo 113 transacciones diarias en 175 comercios clave", title_style))
+    # ------------------ SLIDE 6: MATRIZ DE ESCENARIOS Y SUPUESTOS ------------------
+    story.append(Paragraph("06 · MODELO DE ESCENARIOS Y SUPUESTOS DE ADOPCIÓN", tag_style))
+    story.append(Paragraph("Análisis de Sensibilidad: El proyecto genera desde $3.1M USD (piso) hasta $23.25M USD en función de la adopción", title_style))
     
-    data_s4 = [
+    data_scenarios = [
         [
-            Paragraph("<b>$3.5 Millones de USD</b><br/><font color='#1E3A8A'><b>Volumen Piso (1% SAM)</b></font>", card_label_style),
-            Paragraph("<b>175 Comercios</b><br/><font color='#0D9488'><b>Tier 1 Pareto (35% FETUR)</b></font>", card_label_style)
+            Paragraph("<b>Escenario de Adopción</b>", card_label_style),
+            Paragraph("<b>% Afiliación (Base 500)</b>", card_label_style),
+            Paragraph("<b>Txs / Día / Comercio ($85 Ticket)</b>", card_label_style),
+            Paragraph("<b>Txs Diarias Estado</b>", card_label_style),
+            Paragraph("<b>Volumen Anual (USD)</b>", card_label_style)
         ],
         [
-            Paragraph("Meta mínima garantizada de volumen procesado en el primer año de operaciones en Quintana Roo.", card_desc_style),
-            Paragraph("Solo el 35% de los 500 asociados actuales de FETUR en Cancún, Playa del Carmen, Tulum y Cozumel.", card_desc_style)
+            Paragraph("🟢 <b>Conservador (Piso 1% SAM)</b>", card_desc_style),
+            Paragraph("<b>20% (100 Comercios)</b>", card_desc_style),
+            Paragraph("1 cobro / día", card_desc_style),
+            Paragraph("100 txs / día", card_desc_style),
+            Paragraph("<b>$3,102,500 USD (~$3.1M)</b>", card_desc_style)
         ],
         [
-            Paragraph("<b>113 Txs / Día</b><br/><font color='#312E81'><b>Distribución en QRoo</b></font>", card_label_style),
-            Paragraph("<b>1 Pago / Día</b><br/><font color='#B45309'><b>Por Comercio Afiliado</b></font>", card_label_style)
+            Paragraph("🔵 <b>Moderado (Base 2.5% SAM)</b>", card_desc_style),
+            Paragraph("<b>35% (175 Comercios)</b>", card_desc_style),
+            Paragraph("2 cobros / día", card_desc_style),
+            Paragraph("350 txs / día", card_desc_style),
+            Paragraph("<b>$10,858,750 USD (~$10.8M)</b>", card_desc_style)
         ],
         [
-            Paragraph("40 Cancún + 35 Playa del Carmen + 25 Tulum + 13 Cozumel = 113 pagos diarios en todo el estado.", card_desc_style),
-            Paragraph("Basta con que cada negocio realice solo 1 cobro promedio de $85 USD al día para cumplir la meta.", card_desc_style)
+            Paragraph("🟣 <b>Optimista (Escalado 5% SAM)</b>", card_desc_style),
+            Paragraph("<b>50% (250 Comercios)</b>", card_desc_style),
+            Paragraph("3 cobros / día", card_desc_style),
+            Paragraph("750 txs / día", card_desc_style),
+            Paragraph("<b>$23,268,750 USD (~$23.2M)</b>", card_desc_style)
         ]
     ]
     
-    t4 = Table(data_s4, colWidths=[260, 260])
-    t4.setStyle(TableStyle([
-        ('BACKGROUND', (0,0), (-1,-1), colors.HexColor('#FFFFFF')),
-        ('BOX', (0,0), (0,1), 1, colors.HexColor('#E2E8F0')),
-        ('BOX', (1,0), (1,1), 1, colors.HexColor('#E2E8F0')),
-        ('BOX', (0,2), (0,3), 1, colors.HexColor('#E2E8F0')),
-        ('BOX', (1,2), (1,3), 1, colors.HexColor('#E2E8F0')),
-        ('LINEABOVE', (0,0), (0,0), 3, colors.HexColor('#1E3A8A')),
-        ('LINEABOVE', (1,0), (1,0), 3, colors.HexColor('#0D9488')),
-        ('LINEABOVE', (0,2), (0,2), 3, colors.HexColor('#312E81')),
-        ('LINEABOVE', (1,2), (1,2), 3, colors.HexColor('#B45309')),
-        ('PADDING', (0,0), (-1,-1), 8),
-        ('BOTTOMPADDING', (0,0), (-1,0), 2),
-        ('BOTTOMPADDING', (0,2), (-1,2), 2),
+    t_scen = Table(data_scenarios, colWidths=[140, 95, 105, 80, 100])
+    t_scen.setStyle(TableStyle([
+        ('BACKGROUND', (0,0), (-1,0), colors.HexColor('#0F172A')),
+        ('TEXTCOLOR', (0,0), (-1,0), colors.HexColor('#FFFFFF')),
+        ('BACKGROUND', (0,1), (-1,-1), colors.HexColor('#FFFFFF')),
+        ('GRID', (0,0), (-1,-1), 1, colors.HexColor('#CBD5E1')),
+        ('PADDING', (0,0), (-1,-1), 6),
     ]))
     
-    story.append(t4)
+    story.append(t_scen)
     story.append(Spacer(1, 10))
-    story.append(Paragraph("📌 <b>FUENTES OFICIALES CORROBORABLES:</b> Directorio de Afiliados FETUR Quintana Roo · Modelo de Análisis Pareto (80/20) · Métrica de Flujo de Pasajeros ASUR (Grupo Aeroportuario del Sureste).", source_style))
+    story.append(Paragraph("📌 <b>SUPUESTOS CLAVE DEL MODELO DE NEGOCIO:</b> Base de 500 comercios de FETUR en Cancún, Playa del Carmen, Tulum y Cozumel · Ticket promedio de $85 USD · Modelo Zero-Device sin costo de infraestructura para el afiliado.", source_style))
     story.append(PageBreak())
 
-    # ------------------ SLIDE 7: CRONOGRAMA A 45 DÍAS ------------------
-    story.append(Paragraph("07 · CRONOGRAMA DE EJECUCIÓN Y ESCALAMIENTO NATIVO", tag_style))
-    story.append(Paragraph("Plan de acción inmediato a 45 días para la circular de adhesión, entrega de kits y lanzamiento en rueda de prensa estatal", title_style))
+    # ------------------ SLIDE 7: PROPUESTA DE FASES DE DESPLIEGUE ------------------
+    story.append(Paragraph("07 · PROPUESTA DE FASES Y OPCIONES DE DESPLIEGUE", tag_style))
+    story.append(Paragraph("Propuesta de implementación gradual a 45 días para la validación, prueba piloto y lanzamiento oficial", title_style))
     
     data_s5 = [
         [
-            Paragraph("<b>Días 1 - 15</b><br/><font color='#1E3A8A'><b>Circular Institucional FETUR</b></font>", card_label_style),
-            Paragraph("<b>Días 16 - 30</b><br/><font color='#0D9488'><b>Entrega de Kits & Integración</b></font>", card_label_style)
+            Paragraph("<b>Fase 1 (Días 1 - 15)</b><br/><font color='#1E3A8A'><b>Convocatoria & Afiliación Voluntaria</b></font>", card_label_style),
+            Paragraph("<b>Fase 2 (Días 16 - 30)</b><br/><font color='#0D9488'><b>Piloto Técnico & Integración Software</b></font>", card_label_style)
         ],
         [
-            Paragraph("Envío de circular formal de adhesión a los 175 comercios de mayor densidad turística sudamericana.", card_desc_style),
-            Paragraph("Reparto de acrílicos QR de mostrador y activación en el software de caja (Sunday / Soft Restaurant).", card_desc_style)
+            Paragraph("Presentación de la circular de adhesión a los primeros 100 comercios de mayor afluencia sudamericana.", card_desc_style),
+            Paragraph("Despliegue de señalética QR de mostrador y pruebas de integración con el software de caja de los comercios.", card_desc_style)
         ],
         [
-            Paragraph("<b>Días 31 - 45</b><br/><font color='#312E81'><b>Rueda de Prensa de Estado</b></font>", card_label_style),
-            Paragraph("<b>Días 46+</b><br/><font color='#B45309'><b>Operación & Escalamiento ASETUR</b></font>", card_label_style)
+            Paragraph("<b>Fase 3 (Días 31 - 45)</b><br/><font color='#312E81'><b>Lanzamiento Institucional Estatal</b></font>", card_label_style),
+            Paragraph("<b>Fase 4 (Días 46+)</b><br/><font color='#B45309'><b>Evaluación & Réplica ASETUR</b></font>", card_label_style)
         ],
         [
-            Paragraph("Lanzamiento oficial ante medios con el Secretario de Turismo de QRoo y Presidenta de FETUR.", card_desc_style),
-            Paragraph("Auditoría de volumen de procesamiento e inicio de gestión para réplica en Los Cabos y Puerto Vallarta.", card_desc_style)
+            Paragraph("Presentación formal ante medios con SECTUR Quintana Roo y la Comisión de Innovación de FETUR.", card_desc_style),
+            Paragraph("Revisión del volumen procesado y análisis de expansión a otros polos turísticos (Los Cabos / Puerto Vallarta).", card_desc_style)
         ]
     ]
     
@@ -448,11 +453,11 @@ def generate_pdf():
     
     story.append(t5)
     story.append(Spacer(1, 10))
-    story.append(Paragraph("📌 <b>FUENTES OFICIALES CORROBORABLES:</b> Agenda de la Comisión de Innovación Tecnológica (FETUR) · ASETUR (Unión de Secretarios de Turismo de México - Convenio Marco Nacional).", source_style))
+    story.append(Paragraph("📌 <b>HOJA DE RUTA PROPUESTA:</b> Plan sujeto a retroalimentación y aprobación de la Asamblea Directiva de FETUR y SECTUR Quintana Roo.", source_style))
 
     # Build PDF
     doc.build(story, canvasmaker=NumberedCanvas)
-    print(f"PDF Corporativo sobrio generado en: {target_pdf}")
+    print(f"PDF Corporativo sobrio con escenarios generado en: {target_pdf}")
 
 if __name__ == "__main__":
     generate_pdf()
