@@ -22,6 +22,7 @@
     --emerald-400: #34D399;
     --amber-500: #F59E0B;
     --amber-400: #FBBF24;
+    --rose-500: #F43F5E;
     --slate-100: #F1F5F9;
     --slate-200: #E2E8F0;
     --slate-400: #94A3B8;
@@ -31,7 +32,6 @@
     --card-border: #E2E8F0;
     --text-primary: #0F172A;
     --text-secondary: #475569;
-    --accent-glow: rgba(37, 99, 235, 0.12);
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -250,288 +250,7 @@
     letter-spacing: -0.3px;
   }
 
-  /* Interactive Simulator Toolbar on Slide 5 */
-  .sim-toolbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #FFFFFF;
-    border: 1px solid var(--slate-200);
-    border-radius: 12px;
-    padding: 12px 24px;
-    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
-    margin-top: 10px;
-  }
-
-  .sim-currency-pills {
-    display: flex;
-    gap: 8px;
-  }
-
-  .sim-pill {
-    padding: 8px 16px;
-    border-radius: 6px;
-    border: 1px solid var(--slate-200);
-    background: var(--slate-100);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--slate-600);
-    cursor: pointer;
-    transition: all 0.2s ease;
-  }
-
-  .sim-pill.active, .sim-pill:hover {
-    background: var(--navy-950);
-    color: #FFFFFF;
-    border-color: var(--navy-950);
-  }
-
-  .sim-trigger-btn {
-    background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
-    color: #FFFFFF;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 8px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    font-size: 13.5px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
-    transition: all 0.2s ease;
-  }
-
-  .sim-trigger-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.45);
-  }
-
-  .sim-trigger-btn:active {
-    transform: translateY(0);
-  }
-
-  /* Live Animated Diagram Canvas (Slide 5) */
-  .diagram-interactive-stage {
-    flex: 1;
-    margin: 14px 0;
-    position: relative;
-    background: #FFFFFF;
-    border: 1px solid var(--card-border);
-    border-radius: 14px;
-    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 24px 30px;
-    overflow: hidden;
-  }
-
-  .nodes-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    position: relative;
-    z-index: 2;
-  }
-
-  .flow-node {
-    background: #FFFFFF;
-    border: 1.5px solid var(--card-border);
-    border-radius: 12px;
-    padding: 20px 22px;
-    position: relative;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.02);
-  }
-
-  .flow-node.active-step {
-    border-color: var(--blue-500);
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15), 0 12px 24px rgba(37, 99, 235, 0.1);
-    transform: translateY(-3px);
-  }
-
-  .flow-node.completed-step {
-    border-color: var(--emerald-500);
-    background: #F0FDF4;
-  }
-
-  .node-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10px;
-  }
-
-  .node-badge {
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
-    background: var(--navy-950);
-    color: #FFFFFF;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 13px;
-    font-weight: 800;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.3s ease;
-  }
-
-  .flow-node.active-step .node-badge {
-    background: var(--blue-500);
-    animation: badge-pulse 1s infinite alternate;
-  }
-
-  @keyframes badge-pulse {
-    0% { transform: scale(1); }
-    100% { transform: scale(1.1); box-shadow: 0 0 12px rgba(37, 99, 235, 0.6); }
-  }
-
-  .flow-node.completed-step .node-badge {
-    background: var(--emerald-500);
-  }
-
-  .node-status-tag {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10.5px;
-    font-weight: 700;
-    padding: 3px 8px;
-    border-radius: 4px;
-    text-transform: uppercase;
-    background: var(--slate-100);
-    color: var(--slate-600);
-  }
-
-  .flow-node.active-step .node-status-tag {
-    background: #DBEAFE;
-    color: var(--blue-500);
-  }
-
-  .flow-node.completed-step .node-status-tag {
-    background: #D1FAE5;
-    color: var(--emerald-500);
-  }
-
-  .node-title {
-    font-size: 16.5px;
-    font-weight: 800;
-    color: var(--navy-950);
-    margin-bottom: 6px;
-  }
-
-  .node-desc {
-    font-size: 13.5px;
-    color: var(--text-secondary);
-    line-height: 1.45;
-  }
-
-  .node-meta {
-    margin-top: 12px;
-    padding-top: 10px;
-    border-top: 1px dashed var(--slate-200);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11.5px;
-    font-weight: 700;
-    color: var(--slate-600);
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-
-  /* Center Stream Cable Banner */
-  .center-stream-banner {
-    background: var(--navy-950);
-    border-radius: 10px;
-    padding: 16px 28px;
-    color: #FFFFFF;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.15);
-    margin: 8px 0;
-  }
-
-  .stream-particle-track {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-  }
-
-  .stream-beam {
-    position: absolute;
-    height: 2px;
-    width: 150px;
-    top: 50%;
-    background: linear-gradient(90deg, transparent, #38BDF8, #5EEAD4, transparent);
-    animation: beam-flow 2.5s infinite linear;
-  }
-
-  @keyframes beam-flow {
-    0% { left: -150px; }
-    100% { left: 100%; }
-  }
-
-  .banner-left {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    z-index: 2;
-  }
-
-  .pulse-indicator {
-    width: 10px;
-    height: 10px;
-    background: #38BDF8;
-    border-radius: 50%;
-    box-shadow: 0 0 10px #38BDF8;
-    animation: pulse-dot 1.5s infinite;
-  }
-
-  .banner-text-main {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 13.5px;
-    font-weight: 800;
-    color: #FFFFFF;
-    letter-spacing: 0.5px;
-  }
-
-  .banner-right-meta {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    color: #93C5FD;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-
-  /* Live Telemetry Progress Bar */
-  .telemetry-progress-wrap {
-    height: 8px;
-    background: #E2E8F0;
-    border-radius: 4px;
-    overflow: hidden;
-    position: relative;
-    margin-top: 8px;
-  }
-
-  .telemetry-bar-fill {
-    height: 100%;
-    width: 0%;
-    background: linear-gradient(90deg, #2563EB 0%, #0D9488 50%, #10B981 100%);
-    border-radius: 4px;
-    transition: width 0.1s linear;
-  }
-
-  /* Card Grid for Other Slides */
+  /* Card Grid for Static Slides */
   .card-grid {
     display: grid;
     gap: 22px;
@@ -634,6 +353,416 @@
     background: #E2E8F0;
     font-weight: 800;
     color: var(--navy-950);
+  }
+
+  /* ------------------ SLIDE 5: LIVE ANIMATED SIMULATOR ------------------ */
+  .sim-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #FFFFFF;
+    border: 1px solid var(--slate-200);
+    border-radius: 12px;
+    padding: 12px 24px;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
+    margin-top: 10px;
+  }
+
+  .sim-currency-pills {
+    display: flex;
+    gap: 8px;
+  }
+
+  .sim-pill {
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid var(--slate-200);
+    background: var(--slate-100);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--slate-600);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .sim-pill.active, .sim-pill:hover {
+    background: var(--navy-950);
+    color: #FFFFFF;
+    border-color: var(--navy-950);
+  }
+
+  .sim-trigger-btn {
+    background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+    color: #FFFFFF;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 13.5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+    transition: all 0.2s ease;
+  }
+
+  .sim-trigger-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.45);
+  }
+
+  .diagram-interactive-stage {
+    flex: 1;
+    margin: 14px 0;
+    position: relative;
+    background: #FFFFFF;
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 24px 30px;
+    overflow: hidden;
+  }
+
+  .nodes-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .flow-node {
+    background: #FFFFFF;
+    border: 1.5px solid var(--card-border);
+    border-radius: 12px;
+    padding: 20px 22px;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.02);
+  }
+
+  .flow-node.active-step {
+    border-color: var(--blue-500);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15), 0 12px 24px rgba(37, 99, 235, 0.1);
+    transform: translateY(-3px);
+  }
+
+  .flow-node.completed-step {
+    border-color: var(--emerald-500);
+    background: #F0FDF4;
+  }
+
+  .node-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .node-badge {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: var(--navy-950);
+    color: #FFFFFF;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .flow-node.active-step .node-badge {
+    background: var(--blue-500);
+    animation: badge-pulse 1s infinite alternate;
+  }
+
+  @keyframes badge-pulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); box-shadow: 0 0 12px rgba(37, 99, 235, 0.6); }
+  }
+
+  .flow-node.completed-step .node-badge {
+    background: var(--emerald-500);
+  }
+
+  .node-status-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    background: var(--slate-100);
+    color: var(--slate-600);
+  }
+
+  .flow-node.active-step .node-status-tag {
+    background: #DBEAFE;
+    color: var(--blue-500);
+  }
+
+  .flow-node.completed-step .node-status-tag {
+    background: #D1FAE5;
+    color: var(--emerald-500);
+  }
+
+  .node-title {
+    font-size: 16.5px;
+    font-weight: 800;
+    color: var(--navy-950);
+    margin-bottom: 6px;
+  }
+
+  .node-desc {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    line-height: 1.45;
+  }
+
+  .node-meta {
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--slate-200);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11.5px;
+    font-weight: 700;
+    color: var(--slate-600);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .center-stream-banner {
+    background: var(--navy-950);
+    border-radius: 10px;
+    padding: 16px 28px;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.15);
+    margin: 8px 0;
+  }
+
+  .stream-particle-track {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .stream-beam {
+    position: absolute;
+    height: 2px;
+    width: 150px;
+    top: 50%;
+    background: linear-gradient(90deg, transparent, #38BDF8, #5EEAD4, transparent);
+    animation: beam-flow 2.5s infinite linear;
+  }
+
+  @keyframes beam-flow {
+    0% { left: -150px; }
+    100% { left: 100%; }
+  }
+
+  .pulse-indicator {
+    width: 10px;
+    height: 10px;
+    background: #38BDF8;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #38BDF8;
+    animation: pulse-dot 1.5s infinite;
+  }
+
+  .banner-text-main {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13.5px;
+    font-weight: 800;
+    color: #FFFFFF;
+    letter-spacing: 0.5px;
+  }
+
+  .banner-right-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: #93C5FD;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .telemetry-progress-wrap {
+    height: 8px;
+    background: #E2E8F0;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    margin-top: 8px;
+  }
+
+  .telemetry-bar-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #2563EB 0%, #0D9488 50%, #10B981 100%);
+    border-radius: 4px;
+    transition: width 0.1s linear;
+  }
+
+  /* ------------------ SLIDE 6: INTERACTIVE ROI & COMMISSIONS SIMULATOR ------------------ */
+  .roi-sim-container {
+    display: grid;
+    grid-template-columns: 460px 1fr;
+    gap: 26px;
+    flex: 1;
+    margin: 12px 0;
+  }
+
+  .roi-controls-card {
+    background: #FFFFFF;
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 26px;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .slider-group {
+    margin-bottom: 20px;
+  }
+
+  .slider-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+
+  .slider-title {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--navy-950);
+  }
+
+  .slider-display-val {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--blue-500);
+    background: #EFF6FF;
+    padding: 3px 10px;
+    border-radius: 6px;
+    border: 1px solid #DBEAFE;
+  }
+
+  .custom-slider {
+    width: 100%;
+    -webkit-appearance: none;
+    height: 7px;
+    border-radius: 4px;
+    background: #E2E8F0;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .custom-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--blue-500);
+    box-shadow: 0 0 10px rgba(37, 99, 235, 0.5);
+    cursor: pointer;
+    transition: transform 0.1s ease;
+  }
+
+  .custom-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+  }
+
+  .roi-results-grid {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 18px;
+  }
+
+  .roi-kpi-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .roi-kpi-card {
+    background: #FFFFFF;
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 18px 22px;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.03);
+    border-top: 4px solid var(--blue-500);
+  }
+
+  .roi-kpi-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--navy-950);
+    margin-top: 4px;
+  }
+
+  .roi-compare-box {
+    background: #FFFFFF;
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 22px 26px;
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.04);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .compare-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--slate-200);
+    font-size: 14px;
+  }
+
+  .compare-row:last-child {
+    border-bottom: none;
+  }
+
+  .badge-cost-trad {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    color: var(--rose-500);
+    background: #FFE4E6;
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+
+  .badge-cost-smart {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    color: var(--emerald-500);
+    background: #D1FAE5;
+    padding: 3px 8px;
+    border-radius: 4px;
   }
 </style>
 </head>
@@ -1126,18 +1255,18 @@
     </div>
   </div>
 
-  <!-- SLIDE 6: MODELO DE ESCENARIOS Y EFECTO CABALLO DE TROYA CoDi / DiMo -->
+  <!-- SLIDE 6: INTERACTIVE SIMULATOR OF OPERATIONS, COSTS & COMMISSIONS -->
   <div class="slide-container" id="slide-6">
     <div class="left-rail">
       <div class="rail-glow"></div>
       <div class="rail-accent-line"></div>
       <div>
-        <div class="exec-tag-pill">06 · MODELO FINANCIERO</div>
+        <div class="exec-tag-pill">06 · SIMULADOR DE ROI</div>
         <div class="rail-brand-title">
-          ESCENARIOS & EFECTO CABALLO DE TROYA
+          SIMULADOR DE OPERACIONES Y COMISIONES
         </div>
         <div class="rail-desc">
-          Análisis de sensibilidad sobre 500 comercios de FETUR y la inclusión masiva e indirecta de CoDi/DiMo (Banxico).
+          Calculadora interactiva en tiempo real: Ajusta comercios, cobros y ticket promedio para calcular el ahorro neto contra el modelo tradicional de tarjeta.
         </div>
       </div>
       
@@ -1151,88 +1280,144 @@
     </div>
     <div class="main-canvas">
       <div>
-        <div class="mono-tag">06 · PROYECCIÓN ESTRATÉGICA BASADA EN ESCENARIOS & IMPACTO NACIONAL</div>
+        <div class="mono-tag">06 · SIMULADOR INTERACTIVO DE OPERACIONES, COSTOS Y COMISIONES</div>
         <div class="slide-title-action">
-          Análisis de Sensibilidad ($3.1M a $23.2M USD) y Activación Orgánica de CoDi / DiMo (Banxico)
+          Calculadora Dinámica de Unit Economics y Ahorro en Comisiones para los Comercios de Quintana Roo
         </div>
       </div>
       
-      <div style="display: flex; flex-direction: column; gap: 18px; flex: 1; justify-content: center;">
-        <!-- Top Scenario Summary Bento Cards -->
-        <div class="card-grid grid-3col" style="height: 160px; margin: 0;">
-          <div class="exec-card exec-card-blue" style="padding: 20px;">
-            <div>
-              <div class="stat-val" style="font-size: 32px; color: #1E3A8A;">$3.10M USD</div>
-              <div class="stat-label">🟢 Escenario Conservador</div>
+      <!-- Interactive ROI Simulator Layout -->
+      <div class="roi-sim-container">
+        
+        <!-- Controls Column -->
+        <div class="roi-controls-card">
+          <div>
+            <div style="font-weight: 800; font-size: 16px; color: var(--navy-950); margin-bottom: 18px; border-bottom: 2px solid var(--slate-200); padding-bottom: 10px;">
+              🎛️ PARÁMETROS OPERATIVOS
             </div>
-            <div class="stat-desc">20% Afiliación FETUR (100 Comercios) · 1 cobro/día ($85 USD Ticket).</div>
+
+            <!-- Slider 1: Comercios -->
+            <div class="slider-group">
+              <div class="slider-header">
+                <span class="slider-title">Comercios Afiliados (FETUR)</span>
+                <span class="slider-display-val" id="valMerchants">150 Comercios</span>
+              </div>
+              <input type="range" min="20" max="500" step="10" value="150" class="custom-slider" id="inputMerchants" oninput="calculateROI()">
+            </div>
+
+            <!-- Slider 2: Cobros por Día -->
+            <div class="slider-group">
+              <div class="slider-header">
+                <span class="slider-title">Transacciones / Día / Comercio</span>
+                <span class="slider-display-val" id="valTxs">2.0 Cobros</span>
+              </div>
+              <input type="range" min="0.5" max="8.0" step="0.5" value="2.0" class="custom-slider" id="inputTxs" oninput="calculateROI()">
+            </div>
+
+            <!-- Slider 3: Ticket Promedio -->
+            <div class="slider-group">
+              <div class="slider-header">
+                <span class="slider-title">Ticket Promedio Turístico</span>
+                <span class="slider-display-val" id="valTicket">$85 USD</span>
+              </div>
+              <input type="range" min="30" max="250" step="5" value="85" class="custom-slider" id="inputTicket" oninput="calculateROI()">
+            </div>
+
+            <!-- Slider 4: Comisión Smart Pay -->
+            <div class="slider-group" style="margin-bottom: 0;">
+              <div class="slider-header">
+                <span class="slider-title">Tarifa Smart Pay (vs 4.5% TPV Tradicional)</span>
+                <span class="slider-display-val" style="color: var(--emerald-500); background: #ECFDF5; border-color: #A7F3D0;" id="valFee">1.5% Fijo</span>
+              </div>
+              <input type="range" min="1.0" max="2.2" step="0.1" value="1.5" class="custom-slider" id="inputFee" oninput="calculateROI()">
+            </div>
           </div>
-          <div class="exec-card exec-card-teal" style="padding: 20px;">
-            <div>
-              <div class="stat-val" style="font-size: 32px; color: #0D9488;">$10.85M USD</div>
-              <div class="stat-label">🔵 Escenario Moderado</div>
-            </div>
-            <div class="stat-desc">35% Afiliación FETUR (175 Comercios) · 2 cobros/día ($85 USD Ticket).</div>
-          </div>
-          <div class="exec-card exec-card-navy" style="padding: 20px;">
-            <div>
-              <div class="stat-val" style="font-size: 32px; color: #312E81;">$23.25M USD</div>
-              <div class="stat-label">🟣 Escenario Optimista</div>
-            </div>
-            <div class="stat-desc">50% Afiliación FETUR (250 Comercios) · 3 cobros/día ($85 USD Ticket).</div>
+
+          <div style="background: #F8FAFC; border: 1px solid var(--card-border); padding: 12px 14px; border-radius: 8px; font-size: 12px; color: var(--slate-600); line-height: 1.4;">
+            💡 <strong>DATO CLAVE:</strong> El modelo tradicional retiene 3.5% TPV + 1.0% Cross-border + $35 USD/mes por renta de terminal bancaria.
           </div>
         </div>
 
-        <!-- Sensitivity Table -->
-        <table class="exec-table">
-          <thead>
-            <tr>
-              <th>Escenario de Adopción</th>
-              <th>% Afiliación FETUR (Base 500)</th>
-              <th>Txs Diarias por Comercio ($85 USD Ticket)</th>
-              <th>Transacciones Totales Diarias (Estado)</th>
-              <th>Volumen Anual Procesado (USD)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>🟢 <strong>Conservador (Piso 1% SAM)</strong></td>
-              <td><strong>20% (100 Comercios)</strong></td>
-              <td>1 cobro / día</td>
-              <td>100 txs / día</td>
-              <td><strong style="color: #1E3A8A;">$3,102,500 USD (~$3.1M USD)</strong></td>
-            </tr>
-            <tr>
-              <td>🔵 <strong>Moderado (Base 2.5% SAM)</strong></td>
-              <td><strong>35% (175 Comercios)</strong></td>
-              <td>2 cobros / día</td>
-              <td>350 txs / día</td>
-              <td><strong style="color: #0D9488;">$10,858,750 USD (~$10.8M USD)</strong></td>
-            </tr>
-            <tr>
-              <td>🟣 <strong>Optimista (Escalado 5% SAM)</strong></td>
-              <td><strong>50% (250 Comercios)</strong></td>
-              <td>3 cobros / día</td>
-              <td>750 txs / día</td>
-              <td><strong style="color: #312E81;">$23,268,750 USD (~$23.2M USD)</strong></td>
-            </tr>
-          </tbody>
-        </table>
+        <!-- Live Results Column -->
+        <div class="roi-results-grid">
+          
+          <!-- Top KPI Output Row -->
+          <div class="roi-kpi-row">
+            <div class="roi-kpi-card" style="border-top-color: var(--blue-500);">
+              <div class="mono-tag" style="font-size: 11px; margin-bottom: 2px;">VOLUMEN ANUAL TOTAL</div>
+              <div class="roi-kpi-num" id="kpiVolUSD">$9.30M USD</div>
+              <div style="font-size: 12px; color: var(--slate-500); margin-top: 4px;" id="kpiTxsCount">109,500 transacciones/año</div>
+            </div>
 
-        <!-- Zero-Bullshit Trojan Horse CoDi / DiMo Box -->
-        <div style="background: #FFFFFF; border: 1px solid var(--card-border); padding: 20px 24px; border-radius: 12px; border-left: 5px solid var(--emerald-500); box-shadow: 0 4px 16px rgba(15,23,42,0.03);">
-          <div style="font-weight: 800; font-size: 15px; color: var(--navy-950); margin-bottom: 6px;">
-            🇲🇽 EL "CABALLO DE TROYA" NATIVO DE BANXICO (CoDi / DiMo EN COMERCIO LOCAL):
+            <div class="roi-kpi-card" style="border-top-color: var(--emerald-500);">
+              <div class="mono-tag" style="font-size: 11px; color: var(--emerald-500); margin-bottom: 2px;">AHORRO NETO COMISIONES</div>
+              <div class="roi-kpi-num" style="color: var(--emerald-500);" id="kpiSavingsUSD">$279,225 USD</div>
+              <div style="font-size: 12px; color: var(--slate-500); margin-top: 4px;" id="kpiSavingsMXN">~$5.02 Millones MXN / año</div>
+            </div>
+
+            <div class="roi-kpi-card" style="border-top-color: var(--navy-800);">
+              <div class="mono-tag" style="font-size: 11px; color: var(--navy-800); margin-bottom: 2px;">AHORRO TERMINALES (TPV)</div>
+              <div class="roi-kpi-num" style="color: var(--navy-800);" id="kpiTerminalSavings">$63,000 USD</div>
+              <div style="font-size: 12px; color: var(--slate-500); margin-top: 4px;">100% Cero Renta Hardware</div>
+            </div>
           </div>
-          <div style="font-size: 14px; color: var(--text-secondary); line-height: 1.55;">
-            • <strong>Despliegue Orgánico por Ganancia Comercial:</strong> El comercio coloca el QR de mostrador atraído por el ticket en dólares del turista sudamericano. Al estar conectado a SPEI, el mismo QR activa <strong>CoDi y DiMo para cobros nacionales</strong> sin depender de subsidios gubernamentales.<br>
-            • <strong>Ahorro en Comisiones TPV Nacional:</strong> En pagos de turistas de CDMX/Jalisco/NL vía CoDi/DiMo, la comisión interbancaria es <strong>$0 MXN</strong>, ahorrando al comercio local el 2.5% al 3.5% de comisión de TPV.
+
+          <!-- Comparison Table Box -->
+          <div class="roi-compare-box">
+            <div style="font-weight: 800; font-size: 15px; color: var(--navy-950); margin-bottom: 8px;">
+              📊 COMPARATIVA DIRECTA: MODELO TRADICIONAL VS CARIBE MEXICANO SMART PAY
+            </div>
+            
+            <div class="compare-row">
+              <span><strong>Comisión por Procesamiento Internacional:</strong></span>
+              <div>
+                <span class="badge-cost-trad">4.5% (3.5% + 1% Cross-Border)</span> ➔ 
+                <span class="badge-cost-smart" id="smartFeeLabel">1.5% Tarifa Plana</span>
+              </div>
+            </div>
+
+            <div class="compare-row">
+              <span><strong>Costo de Terminal POS / Renta Mensual:</strong></span>
+              <div>
+                <span class="badge-cost-trad">$35 USD / Mes / Negocio</span> ➔ 
+                <span class="badge-cost-smart">$0.00 (Zero-Device QR Acrílico)</span>
+              </div>
+            </div>
+
+            <div class="compare-row">
+              <span><strong>Impuesto al Turista en su País de Origen:</strong></span>
+              <div>
+                <span class="badge-cost-trad">3.5% IOF (Brasil) / 25% AFIP (Arg)</span> ➔ 
+                <span class="badge-cost-smart">$0.00 (Débito Local Transfronterizo)</span>
+              </div>
+            </div>
+
+            <div class="compare-row">
+              <span><strong>Tiempo de Liquidación a la Cuenta del Negocio:</strong></span>
+              <div>
+                <span class="badge-cost-trad">24 a 48 Horas Hábiles</span> ➔ 
+                <span class="badge-cost-smart">&lt;3 Segundos vía SPEI (Banxico)</span>
+              </div>
+            </div>
           </div>
+
+          <!-- Trojan Horse Summary Banner -->
+          <div style="background: #ECFDF5; border: 1px solid #A7F3D0; border-radius: 10px; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span style="font-size: 18px;">🐴</span>
+              <span style="font-size: 13.5px; font-weight: 700; color: #065F46;">
+                Activación CoDi / DiMo: En cobros a turistas nacionales, la comisión interbancaria es $0 MXN (100% de ahorro TPV).
+              </span>
+            </div>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 800; color: #047857;">CERO COMISIÓN NACIONAL</span>
+          </div>
+
         </div>
+
       </div>
 
       <div class="sources-box">
-        📌 <strong>MODELO DE SENSIBILIDAD FINANCIERA:</strong> Basado en el Censo Comercial FETUR Quintana Roo y métricas de Ticket Promedio de Gasto Receptivo Sudamericano (DATATUR 2025).
+        📌 <strong>MODELO DE SENSIBILIDAD FINANCIERA:</strong> Algoritmo dinámico de cálculo de Unit Economics para afiliados de FETUR Quintana Roo.
       </div>
     </div>
   </div>
@@ -1367,7 +1552,7 @@
   window.addEventListener('resize', scaleDeck);
   scaleDeck();
 
-  // Interactive Live Payment Simulator Engine (Slide 5)
+  // ------------------ SLIDE 5: LIVE PAYMENT SIMULATOR ENGINE ------------------
   let activeApp = 'pix';
   let isSimulating = false;
 
@@ -1410,7 +1595,6 @@
     btn.disabled = true;
     btn.style.opacity = '0.6';
 
-    // Reset Nodes
     for (let i = 1; i <= 6; i++) {
       const node = document.getElementById(`node-${i}`);
       const tag = document.getElementById(`tag-${i}`);
@@ -1435,7 +1619,6 @@
 
     steps.forEach((step, index) => {
       setTimeout(() => {
-        // Mark previous as completed
         if (index > 0) {
           const prev = document.getElementById(`node-${steps[index - 1].node}`);
           prev.classList.remove('active-step');
@@ -1465,6 +1648,50 @@
       }, step.time);
     });
   }
+
+  // ------------------ SLIDE 6: REAL-TIME ROI & COMMISSIONS CALCULATOR ------------------
+  function calculateROI() {
+    const merchants = parseInt(document.getElementById('inputMerchants').value);
+    const txsPerDay = parseFloat(document.getElementById('inputTxs').value);
+    const ticketUSD = parseFloat(document.getElementById('inputTicket').value);
+    const feeRate = parseFloat(document.getElementById('inputFee').value) / 100;
+
+    // Update Slider Displays
+    document.getElementById('valMerchants').innerText = `${merchants} Comercios`;
+    document.getElementById('valTxs').innerText = `${txsPerDay.toFixed(1)} Cobros/Día`;
+    document.getElementById('valTicket').innerText = `$${ticketUSD.toFixed(0)} USD`;
+    document.getElementById('valFee').innerText = `${(feeRate * 100).toFixed(1)}% Fijo`;
+    document.getElementById('smartFeeLabel').innerText = `${(feeRate * 100).toFixed(1)}% Tarifa Plana`;
+
+    // Calculations
+    const dailyTxsTotal = merchants * txsPerDay;
+    const annualTxsTotal = dailyTxsTotal * 365;
+    const annualVolumeUSD = annualTxsTotal * ticketUSD;
+
+    // Traditional Costs: 4.5% fee (3.5% interchange + 1.0% cross border) + $35 USD/mo terminal rent
+    const tradFeeCost = annualVolumeUSD * 0.045;
+    const tradTerminalRent = merchants * 35 * 12;
+    const tradTotalCost = tradFeeCost + tradTerminalRent;
+
+    // Smart Pay Costs: feeRate (e.g. 1.5%) + $0 terminal rent
+    const smartPayTotalCost = annualVolumeUSD * feeRate;
+
+    // Net Savings
+    const netSavingsUSD = tradTotalCost - smartPayTotalCost;
+    const netSavingsMXN = netSavingsUSD * 18.0; // Tipo de cambio estimado
+
+    // Formatted Outputs
+    document.getElementById('kpiVolUSD').innerText = `$${(annualVolumeUSD / 1000000).toFixed(2)}M USD`;
+    document.getElementById('kpiTxsCount').innerText = `${annualTxsTotal.toLocaleString('es-MX')} transacciones/año`;
+
+    document.getElementById('kpiSavingsUSD').innerText = `$${Math.round(netSavingsUSD).toLocaleString('es-MX')} USD`;
+    document.getElementById('kpiSavingsMXN').innerText = `~$${(netSavingsMXN / 1000000).toFixed(2)} Millones MXN / año`;
+
+    document.getElementById('kpiTerminalSavings').innerText = `$${tradTerminalRent.toLocaleString('es-MX')} USD`;
+  }
+
+  // Initial Run of Simulator on load
+  calculateROI();
 </script>
 
 </body>
