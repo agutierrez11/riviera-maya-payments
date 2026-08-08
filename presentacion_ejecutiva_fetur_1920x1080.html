@@ -5,14 +5,14 @@
 <title>Caribe Mexicano Smart Pay — Presentación Ejecutiva (FETUR & SECTUR QRoo)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,600;0,8..60,700;1,8..60,600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,600;0,8..60,700;1,8..60,600&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --navy-dark: #0F172A;
     --navy-header: #1E293B;
     --bg-canvas: #F8FAFC;
     --card-bg: #FFFFFF;
-    --card-border: #E2E8F0;
+    --card-border: #CBD5E1;
     --text-main: #0F172A;
     --text-muted: #475569;
     --accent-navy: #1E3A8A;
@@ -20,6 +20,7 @@
     --accent-blue: #2563EB;
     --accent-amber: #D97706;
     --accent-slate: #64748B;
+    --accent-emerald: #059669;
   }
 
   html, body {
@@ -48,7 +49,7 @@
     height: 1080px;
     background: var(--bg-canvas);
     border-radius: 12px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.5);
     transform-origin: center center;
     opacity: 0;
     visibility: hidden;
@@ -64,10 +65,10 @@
 
   /* Executive Left Rail */
   .left-rail {
-    width: 380px;
+    width: 400px;
     height: 100%;
     background: var(--navy-dark);
-    padding: 50px 40px;
+    padding: 55px 45px;
     box-sizing: border-box;
     position: relative;
     display: flex;
@@ -81,29 +82,29 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: 3px;
+    width: 4px;
     height: 100%;
-    background: var(--accent-blue);
+    background: linear-gradient(180deg, var(--accent-blue) 0%, var(--accent-teal) 100%);
   }
 
   .exec-tag-pill {
     display: inline-block;
-    padding: 6px 12px;
+    padding: 6px 14px;
     background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.18);
     border-radius: 4px;
     color: #E2E8F0;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 1px;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
     text-transform: uppercase;
   }
 
   .main-canvas {
     flex: 1;
     height: 100%;
-    padding: 50px 65px;
+    padding: 55px 75px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -113,54 +114,57 @@
 
   .mono-tag {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
+    font-size: 12.5px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
     color: var(--accent-slate);
     margin-bottom: 8px;
-    font-weight: 600;
+    font-weight: 700;
   }
 
   .slide-title-action {
     font-family: 'Source Serif 4', Georgia, serif;
-    font-size: 32px;
+    font-size: 33px;
     font-weight: 700;
     color: var(--navy-dark);
     line-height: 1.3;
-    margin-bottom: 24px;
     letter-spacing: -0.3px;
   }
 
-  /* Executive Corporate Grid */
+  /* Bento Cards System */
   .card-grid {
     display: grid;
-    gap: 20px;
+    gap: 24px;
     flex: 1;
+    margin-top: 15px;
+    margin-bottom: 15px;
   }
 
   .grid-2x2 { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; }
   .grid-3col { grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 1fr; }
+  .grid-3x2 { grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 1fr 1fr; }
 
   .exec-card {
     background: var(--card-bg);
     border: 1px solid var(--card-border);
-    border-radius: 8px;
-    padding: 30px;
-    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
+    border-radius: 10px;
+    padding: 32px;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    border-top: 4px solid var(--accent-slate);
+    justify-content: space-between;
+    border-top: 5px solid var(--accent-slate);
   }
 
   .exec-card-navy { border-top-color: var(--accent-navy); }
   .exec-card-teal { border-top-color: var(--accent-teal); }
   .exec-card-blue { border-top-color: var(--accent-blue); }
   .exec-card-amber { border-top-color: var(--accent-amber); }
+  .exec-card-emerald { border-top-color: var(--accent-emerald); }
 
   .stat-val {
     font-family: 'Inter', sans-serif;
-    font-size: 42px;
+    font-size: 44px;
     font-weight: 800;
     color: var(--navy-dark);
     line-height: 1.1;
@@ -169,7 +173,7 @@
   }
 
   .stat-label {
-    font-size: 15px;
+    font-size: 15.5px;
     font-weight: 700;
     color: var(--navy-header);
     margin-bottom: 10px;
@@ -178,45 +182,44 @@
   }
 
   .stat-desc {
-    font-size: 14.5px;
+    font-size: 15px;
     color: var(--text-muted);
-    line-height: 1.55;
+    line-height: 1.6;
   }
 
   .sources-box {
-    margin-top: 20px;
-    padding-top: 14px;
+    padding-top: 16px;
     border-top: 1px solid var(--card-border);
-    font-size: 12.5px;
+    font-size: 13px;
     color: var(--text-muted);
     flex-shrink: 0;
   }
 
-  /* Executive Table */
+  /* Executive Table System */
   .exec-table {
     width: 100%;
     border-collapse: collapse;
     background: #FFFFFF;
-    border-radius: 8px;
+    border-radius: 10px;
     overflow: hidden;
     border: 1px solid var(--card-border);
-    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
   }
 
   .exec-table th {
     background: var(--navy-dark);
     color: #FFFFFF;
     font-family: 'Inter', sans-serif;
-    font-size: 14px;
+    font-size: 14.5px;
     font-weight: 700;
-    padding: 16px 20px;
+    padding: 18px 22px;
     text-align: left;
   }
 
   .exec-table td {
-    padding: 16px 20px;
+    padding: 18px 22px;
     border-bottom: 1px solid var(--card-border);
-    font-size: 14.5px;
+    font-size: 15px;
     color: var(--text-main);
   }
 
@@ -231,72 +234,109 @@
     border-bottom: none;
   }
 
-  /* Visual Diagram Flow Canvas (Slide 5) */
-  .visual-diagram-canvas {
+  /* High-Impact Visual Diagram Pipeline System (Slide 5) */
+  .diagram-pipeline-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 60px 1fr;
+    gap: 20px;
+    flex: 1;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  .pipeline-card {
     background: #FFFFFF;
     border: 1px solid var(--card-border);
     border-radius: 10px;
-    padding: 32px;
+    padding: 24px;
     box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    flex: 1;
-  }
-
-  .diagram-node {
-    background: #F8FAFC;
-    border: 1px solid #CBD5E1;
-    border-radius: 8px;
-    padding: 20px;
+    border-top: 5px solid var(--accent-slate);
     position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
   }
 
-  .diagram-node-header {
+  .pipeline-header {
     display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+
+  .pipeline-badge {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    background: var(--navy-dark);
+    color: #FFFFFF;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .pipeline-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+
+  .pipeline-title {
+    font-size: 17px;
+    font-weight: 800;
+    color: var(--navy-dark);
     margin-bottom: 8px;
   }
 
-  .node-badge {
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
-    background: var(--navy-dark);
-    color: #FFFFFF;
-    font-size: 12px;
-    font-weight: 800;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .node-title {
-    font-weight: 700;
+  .pipeline-desc {
     font-size: 14px;
-    color: var(--navy-dark);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-
-  .node-text {
-    font-size: 13.5px;
     color: var(--text-muted);
-    line-height: 1.45;
+    line-height: 1.5;
   }
 
-  .diagram-arrow-horizontal {
+  .pipeline-footer-metric {
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px dashed #E2E8F0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--navy-dark);
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    color: var(--accent-blue);
-    font-weight: 800;
+    gap: 6px;
+  }
+
+  .hub-banner-row {
+    grid-column: 1 / -1;
+    background: var(--navy-dark);
+    border-radius: 8px;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.15);
+  }
+
+  .hub-banner-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13.5px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #93C5FD;
+  }
+
+  .hub-banner-sub {
+    font-size: 13.5px;
+    color: #E2E8F0;
   }
 
   /* Rail Navigation Controls */
@@ -380,26 +420,46 @@
           Quintana Roo lidera la recepción de turismo sudamericano en México con una derrama en sitio de $1,113 Millones de Dólares
         </div>
       </div>
-      <div class="card-grid grid-2x2" style="height: 680px;">
+      <div class="card-grid grid-2x2">
         <div class="exec-card exec-card-blue">
-          <div class="stat-val" style="color: #1E3A8A;">380,000</div>
-          <div class="stat-label">🇨🇴 Colombia (380k Turistas/Año)</div>
+          <div>
+            <div class="stat-val" style="color: #1E3A8A;">380,000</div>
+            <div class="stat-label">🇨🇴 Colombia (380k Turistas/Año)</div>
+          </div>
           <div class="stat-desc">Gasto promedio en sitio: <strong>$1,039.55 USD/estancia</strong>.<br>Derrama económica directa: <strong>$395.0 Millones de USD</strong>.</div>
+          <div style="margin-top: 15px; padding-top: 12px; border-top: 1px solid #E2E8F0; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #1E3A8A; font-weight: 700;">
+            • DENSIDAD: 35.5% DEL TOTAL LATAM EN QROO
+          </div>
         </div>
         <div class="exec-card exec-card-teal">
-          <div class="stat-val" style="color: #0D9488;">160,000</div>
-          <div class="stat-label">🇦🇷 Argentina (160k Turistas/Año)</div>
+          <div>
+            <div class="stat-val" style="color: #0D9488;">160,000</div>
+            <div class="stat-label">🇦🇷 Argentina (160k Turistas/Año)</div>
+          </div>
           <div class="stat-desc">Gasto promedio en sitio: <strong>$1,125.75 USD/estancia</strong>.<br>Derrama económica directa: <strong>$180.1 Millones de USD</strong>.</div>
+          <div style="margin-top: 15px; padding-top: 12px; border-top: 1px solid #E2E8F0; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #0D9488; font-weight: 700;">
+            • PREFERENCIA: 31% eWALLETS CBU/CVU
+          </div>
         </div>
         <div class="exec-card exec-card-navy">
-          <div class="stat-val" style="color: #312E81;">150,000</div>
-          <div class="stat-label">🇧🇷 Brasil (150k Turistas/Año)</div>
+          <div>
+            <div class="stat-val" style="color: #312E81;">150,000</div>
+            <div class="stat-label">🇧🇷 Brasil (150k Turistas/Año)</div>
+          </div>
           <div class="stat-desc">Gasto promedio en sitio: <strong>$1,209.00 USD/estancia</strong>.<br>Derrama económica directa: <strong>$181.35 Millones de USD</strong>.</div>
+          <div style="margin-top: 15px; padding-top: 12px; border-top: 1px solid #E2E8F0; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #312E81; font-weight: 700;">
+            • ADOPCIÓN: 85% PAGO POR QR (RED PIX)
+          </div>
         </div>
         <div class="exec-card exec-card-amber">
-          <div class="stat-val" style="color: #B45309;">135,000</div>
-          <div class="stat-label">🇵🇪 Perú (135k Turistas/Año)</div>
+          <div>
+            <div class="stat-val" style="color: #B45309;">135,000</div>
+            <div class="stat-label">🇵🇪 Perú (135k Turistas/Año)</div>
+          </div>
           <div class="stat-desc">Gasto promedio en sitio: <strong>$980.00 USD/estancia</strong>.<br>Derrama económica directa: <strong>$132.3 Millones de USD</strong>.</div>
+          <div style="margin-top: 15px; padding-top: 12px; border-top: 1px solid #E2E8F0; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #B45309; font-weight: 700;">
+            • INTEROPERABILIDAD: YAPE & PLIN (BCRP)
+          </div>
         </div>
       </div>
       <div class="sources-box">
@@ -437,26 +497,46 @@
           El 65% de los turistas sudamericanos prefiere pagar por QR para eludir impuestos bancarios de sus países de origen
         </div>
       </div>
-      <div class="card-grid grid-2x2" style="height: 680px;">
+      <div class="card-grid grid-2x2">
         <div class="exec-card exec-card-blue">
-          <div class="stat-val" style="color: #1E3A8A;">155 Millones</div>
-          <div class="stat-label">🇧🇷 Brasil · Red PIX (Banco Central do Brasil)</div>
+          <div>
+            <div class="stat-val" style="color: #1E3A8A;">155 Millones</div>
+            <div class="stat-label">🇧🇷 Brasil · Red PIX (Banco Central do Brasil)</div>
+          </div>
           <div class="stat-desc"><strong>155M de usuarios activos</strong> (70%+ población). El 85% prefiere PIX para eludir el <strong>3.5% de Impuesto IOF</strong> de tarjeta. Proyección Mercado Digital 2029: <strong>$862.5B USD (CAGR 28.9%)</strong>.</div>
+          <div style="margin-top: 15px; padding-top: 12px; border-top: 1px solid #E2E8F0; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #1E3A8A; font-weight: 700;">
+            • REGULADOR: BANCO CENTRAL DO BRASIL (BCB)
+          </div>
         </div>
         <div class="exec-card exec-card-teal">
-          <div class="stat-val" style="color: #0D9488;">31% e-Wallets</div>
-          <div class="stat-label">🇦🇷 Argentina · eWallets & CBU/DEBIN (AFIP)</div>
+          <div>
+            <div class="stat-val" style="color: #0D9488;">31% e-Wallets</div>
+            <div class="stat-label">🇦🇷 Argentina · eWallets & CBU/DEBIN (AFIP)</div>
+          </div>
           <div class="stat-desc">31% usa e-Wallets y 10% transferencias CBU/Alias para eludir el <strong>15% a 25% de recargo AFIP</strong> ("Dólar Tarjeta"). Proyección Mercado Digital 2028: <strong>$140.8B USD (CAGR 15.9%)</strong>.</div>
+          <div style="margin-top: 15px; padding-top: 12px; border-top: 1px solid #E2E8F0; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #0D9488; font-weight: 700;">
+            • REGULADOR: AFIP & BANCO CENTRAL ARGENTINA (BCRA)
+          </div>
         </div>
         <div class="exec-card exec-card-navy">
-          <div class="stat-val" style="color: #312E81;">&gt;40M Txs/Día</div>
-          <div class="stat-label">🇵🇪 Perú · Yape & Plin (BCRP)</div>
+          <div>
+            <div class="stat-val" style="color: #312E81;">&gt;40M Txs/Día</div>
+            <div class="stat-label">🇵🇪 Perú · Yape & Plin (BCRP)</div>
+          </div>
           <div class="stat-desc">Interoperabilidad obligatoria impulsada por el Banco Central del Perú. El 68% elude tarjetas por altas tasas de interés.</div>
+          <div style="margin-top: 15px; padding-top: 12px; border-top: 1px solid #E2E8F0; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #312E81; font-weight: 700;">
+            • REGULADOR: BANCO CENTRAL DE RESERVA DEL PERÚ (BCRP)
+          </div>
         </div>
         <div class="exec-card exec-card-amber">
-          <div class="stat-val" style="color: #B45309;">&gt;78% Adultos</div>
-          <div class="stat-label">🇨🇴 Colombia · Nequi & DaviPlata (SFC)</div>
+          <div>
+            <div class="stat-val" style="color: #B45309;">&gt;78% Adultos</div>
+            <div class="stat-label">🇨🇴 Colombia · Nequi & DaviPlata (SFC)</div>
+          </div>
           <div class="stat-desc">Prevalencia masiva de pagos digitales mediante llaves QR de transferencia instantánea supervisadas por la SFC.</div>
+          <div style="margin-top: 15px; padding-top: 12px; border-top: 1px solid #E2E8F0; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #B45309; font-weight: 700;">
+            • REGULADOR: SUPERINTENDENCIA FINANCIERA COLOMBIA (SFC)
+          </div>
         </div>
       </div>
       <div class="sources-box">
@@ -495,7 +575,7 @@
         </div>
       </div>
       
-      <div style="display: flex; flex-direction: column; gap: 20px; flex: 1; justify-content: center;">
+      <div style="display: flex; flex-direction: column; gap: 24px; flex: 1; justify-content: center;">
         <table class="exec-table">
           <thead>
             <tr>
@@ -545,9 +625,9 @@
           </tbody>
         </table>
 
-        <div style="background: #FFFFFF; border: 1px solid var(--card-border); padding: 22px; border-radius: 8px; border-left: 5px solid var(--accent-navy);">
-          <div style="font-weight: 700; font-size: 14.5px; color: var(--navy-dark); margin-bottom: 6px;">📍 DESGLOSE DE CAPTACIÓN SOM ($3.5M USD) POR MUNICIPIO DE DESTINO:</div>
-          <div style="font-size: 14px; color: var(--text-muted); line-height: 1.55;">
+        <div style="background: #FFFFFF; border: 1px solid var(--card-border); padding: 24px; border-radius: 10px; border-left: 5px solid var(--accent-navy); box-shadow: 0 4px 16px rgba(15,23,42,0.04);">
+          <div style="font-weight: 700; font-size: 15px; color: var(--navy-dark); margin-bottom: 8px;">📍 DESGLOSE DE CAPTACIÓN SOM ($3.5M USD) POR MUNICIPIO DE DESTINO:</div>
+          <div style="font-size: 14.5px; color: var(--text-muted); line-height: 1.6;">
             • <strong>Cancún / Benito Juárez (35%):</strong> SOM <strong>$1.23M USD</strong> (40 transacciones/día en 60 comercios).<br>
             • <strong>Playa del Carmen / Solidaridad (30%):</strong> SOM <strong>$1.05M USD</strong> (35 transacciones/día en 52 comercios).<br>
             • <strong>Tulum (22%):</strong> SOM <strong>$0.77M USD</strong> (25 transacciones/día en 38 comercios).<br>
@@ -591,26 +671,46 @@
           El turismo sudamericano genera picos de afluencia durante la temporada baja norteamericana (Junio a Agosto)
         </div>
       </div>
-      <div class="card-grid grid-2x2" style="height: 680px;">
+      <div class="card-grid grid-2x2">
         <div class="exec-card exec-card-blue">
-          <div class="stat-val" style="font-size: 32px; color: #1E3A8A;">Junio - Julio & Oct</div>
-          <div class="stat-label">🇨🇴 Colombia (380,000 Turistas)</div>
+          <div>
+            <div class="stat-val" style="font-size: 34px; color: #1E3A8A;">Junio - Julio & Oct</div>
+            <div class="stat-label">🇨🇴 Colombia (380,000 Turistas)</div>
+          </div>
           <div class="stat-desc">• Vacaciones de mitad de año (Junio/Julio).<br>• Semana de Receso escolar (Octubre).<br>• Fiestas de fin de año (Diciembre/Enero).</div>
+          <div style="margin-top: 15px; padding-top: 12px; border-top: 1px solid #E2E8F0; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #1E3A8A; font-weight: 700;">
+            • IMPACTO: COBERTURA DE VERANO Y RECESO ESCOLAR
+          </div>
         </div>
         <div class="exec-card exec-card-navy">
-          <div class="stat-val" style="font-size: 32px; color: #312E81;">Julio, Dic & Feb/Mar</div>
-          <div class="stat-label">🇧🇷 Brasil (150,000 Turistas)</div>
+          <div>
+            <div class="stat-val" style="font-size: 34px; color: #312E81;">Julio, Dic & Feb/Mar</div>
+            <div class="stat-label">🇧🇷 Brasil (150,000 Turistas)</div>
+          </div>
           <div class="stat-desc">• Vacaciones de invierno austral (Julio).<br>• Fiestas y verano del hemisferio sur (Dic/Ene).<br>• Semana de Carnaval (Febrero/Marzo).</div>
+          <div style="margin-top: 15px; padding-top: 12px; border-top: 1px solid #E2E8F0; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #312E81; font-weight: 700;">
+            • IMPACTO: INVIERNO AUSTRAL Y CARNAVAL
+          </div>
         </div>
         <div class="exec-card exec-card-teal">
-          <div class="stat-val" style="font-size: 32px; color: #0D9488;">Enero - Feb & Julio</div>
-          <div class="stat-label">🇦🇷 Argentina (160,000 Turistas)</div>
+          <div>
+            <div class="stat-val" style="font-size: 34px; color: #0D9488;">Enero - Feb & Julio</div>
+            <div class="stat-label">🇦🇷 Argentina (160,000 Turistas)</div>
+          </div>
           <div class="stat-desc">• Verano austral principal (Enero/Febrero).<br>• Receso escolar de invierno (Julio).<br>• Escapadas de fin de año (Nov/Dic).</div>
+          <div style="margin-top: 15px; padding-top: 12px; border-top: 1px solid #E2E8F0; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #0D9488; font-weight: 700;">
+            • IMPACTO: PICO DE VERANO AUSTRAL Y JULIO
+          </div>
         </div>
         <div class="exec-card exec-card-amber">
-          <div class="stat-val" style="font-size: 32px; color: #B45309;">Julio - Ago & Ene/Feb</div>
-          <div class="stat-label">🇵🇪 Perú (135,000 Turistas)</div>
+          <div>
+            <div class="stat-val" style="font-size: 34px; color: #B45309;">Julio - Ago & Ene/Feb</div>
+            <div class="stat-label">🇵🇪 Perú (135,000 Turistas)</div>
+          </div>
           <div class="stat-desc">• Fiestas Patrias peruanas (28-29 de Julio).<br>• Vacaciones escolares de invierno (Julio/Ago).<br>• Receso de verano (Enero/Febrero).</div>
+          <div style="margin-top: 15px; padding-top: 12px; border-top: 1px solid #E2E8F0; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #B45309; font-weight: 700;">
+            • IMPACTO: FIESTAS PATRIAS Y VACACIONES DE INVIERNO
+          </div>
         </div>
       </div>
       <div class="sources-box">
@@ -619,17 +719,17 @@
     </div>
   </div>
 
-  <!-- SLIDE 5: DIAGRAMA VISUAL COMPLETO DE FLUJO DE PAGO -->
+  <!-- SLIDE 5: HIGH-IMPACT ARQUITECTURA VISUAL DE DIAGRAMA DE PAGO PIPELINE -->
   <div class="slide-container" id="slide-5">
     <div class="left-rail">
       <div class="rail-accent-line"></div>
       <div class="rail-content">
-        <div class="exec-tag-pill">05 · DIAGRAMA DE PAGO</div>
+        <div class="exec-tag-pill">05 · ARQUITECTURA DE PAGO</div>
         <div style="font-family: 'Source Serif 4', serif; font-size: 28px; font-weight: 700; margin-top: 120px; line-height: 1.3; color: #FFFFFF;">
           DIAGRAMA DE FLUJO DE PAGO TRANSFRONTERIZO
         </div>
         <div style="font-size: 14px; color: #94A3B8; margin-top: 16px; line-height: 1.5;">
-          Ciclo de transacción punta a punta: Desde el mostrador en Quintana Roo hasta la acreditación SPEI en MXN.
+          Arquitectura visual de transacción punta a punta: Desde el mostrador en Quintana Roo hasta la acreditación SPEI en Pesos Mexicanos.
         </div>
       </div>
       
@@ -649,90 +749,93 @@
         </div>
       </div>
       
-      <!-- Visual Flow Chart Diagram -->
-      <div class="visual-diagram-canvas" style="height: 660px;">
-        <!-- Top Row Steps (1 -> 2 -> 3) -->
-        <div style="display: grid; grid-template-columns: 1fr 50px 1fr 50px 1fr; gap: 10px; align-items: center;">
-          
-          <div class="diagram-node" style="border-top: 4px solid #1E3A8A; background: #F1F5F9;">
-            <div class="diagram-node-header">
-              <div class="node-badge" style="background: #1E3A8A;">1</div>
-              <div class="node-title" style="color: #1E3A8A;">Comercio (QROO)</div>
-            </div>
-            <div class="node-text">
-              Muestra el <strong>QR de Mostrador/Mesa</strong> (Dinámico con monto de la orden o Estático de caja).
-            </div>
+      <!-- Rich Bento Diagram Pipeline Grid -->
+      <div class="diagram-pipeline-grid">
+        
+        <!-- Step 1 -->
+        <div class="pipeline-card" style="border-top-color: #1E3A8A;">
+          <div class="pipeline-header">
+            <div class="pipeline-badge" style="background: #1E3A8A;">01</div>
+            <div class="pipeline-tag" style="background: #EFF6FF; color: #1E3A8A;">INICIO DE ORDEN</div>
           </div>
-
-          <div class="diagram-arrow-horizontal">➔</div>
-
-          <div class="diagram-node" style="border-top: 4px solid #0D9488; background: #F1F5F9;">
-            <div class="diagram-node-header">
-              <div class="node-badge" style="background: #0D9488;">2</div>
-              <div class="node-title" style="color: #0D9488;">Turista LATAM</div>
-            </div>
-            <div class="node-text">
-              Escanea el QR usando su <strong>App Bancaria Nativa</strong> (PIX 🇧🇷, Nequi 🇨🇴, Yape 🇵🇪, Mercado Pago 🇦🇷).
-            </div>
+          <div class="pipeline-title">1. Comercio (QROO)</div>
+          <div class="pipeline-desc">Muestra el <strong>QR de Mostrador/Mesa</strong> (Dinámico con monto de la orden o Estático de caja en acrílico).</div>
+          <div class="pipeline-footer-metric" style="color: #1E3A8A;">
+            ⚡ INTERFAZ: ZERO-DEVICE / ZERO-TPV
           </div>
-
-          <div class="diagram-arrow-horizontal">➔</div>
-
-          <div class="diagram-node" style="border-top: 4px solid #2563EB; background: #F1F5F9;">
-            <div class="diagram-node-header">
-              <div class="node-badge" style="background: #2563EB;">3</div>
-              <div class="node-title" style="color: #2563EB;">Smart QR Hub (FETUR)</div>
-            </div>
-            <div class="node-text">
-              Enruta la solicitud a la red bancaria internacional de origen y calcula el tipo de cambio FX instantáneo.
-            </div>
-          </div>
-
         </div>
 
-        <!-- Middle Transfer Connector -->
-        <div style="display: flex; justify-content: flex-end; padding-right: 140px; margin: 10px 0;">
-          <div style="font-size: 28px; color: var(--accent-blue); font-weight: 800;">🠗</div>
+        <!-- Step 2 -->
+        <div class="pipeline-card" style="border-top-color: #0D9488;">
+          <div class="pipeline-header">
+            <div class="pipeline-badge" style="background: #0D9488;">02</div>
+            <div class="pipeline-tag" style="background: #CCFBF1; color: #0D9488;">CAPTURA QR</div>
+          </div>
+          <div class="pipeline-title">2. Turista LATAM</div>
+          <div class="pipeline-desc">Escanea el QR usando su <strong>App Bancaria Nativa</strong> (PIX 🇧🇷, Nequi 🇨🇴, Yape 🇵🇪, eWallet 🇦🇷).</div>
+          <div class="pipeline-footer-metric" style="color: #0D9488;">
+            📲 APP NATIVA: SOBERANÍA MONEDERO
+          </div>
         </div>
 
-        <!-- Bottom Row Steps (6 <- 5 <- 4) -->
-        <div style="display: grid; grid-template-columns: 1fr 50px 1fr 50px 1fr; gap: 10px; align-items: center;">
-
-          <div class="diagram-node" style="border-top: 4px solid #059669; background: #ECFDF5;">
-            <div class="diagram-node-header">
-              <div class="node-badge" style="background: #059669;">6</div>
-              <div class="node-title" style="color: #059669;">Notificación Instantánea</div>
-            </div>
-            <div class="node-text">
-              Comercio recibe <strong>confirmación inmediata (&lt;3 seg)</strong> vía WhatsApp, SMS o ticket de comanda.
-            </div>
+        <!-- Step 3 -->
+        <div class="pipeline-card" style="border-top-color: #2563EB;">
+          <div class="pipeline-header">
+            <div class="pipeline-badge" style="background: #2563EB;">03</div>
+            <div class="pipeline-tag" style="background: #DBEAFE; color: #2563EB;">ENRUTAMIENTO FX</div>
           </div>
-
-          <div class="diagram-arrow-horizontal">🠔</div>
-
-          <div class="diagram-node" style="border-top: 4px solid #312E81; background: #F1F5F9;">
-            <div class="diagram-node-header">
-              <div class="node-badge" style="background: #312E81;">5</div>
-              <div class="node-title" style="color: #312E81;">Banco del Comercio</div>
-            </div>
-            <div class="node-text">
-              Acreditación directa en <strong>Pesos Mexicanos (MXN)</strong> vía SPEI a la cuenta bancaria del negocio.
-            </div>
+          <div class="pipeline-title">3. Smart QR Hub (FETUR)</div>
+          <div class="pipeline-desc">Enruta la solicitud a la red bancaria internacional de origen y calcula el tipo de cambio FX instantáneo.</div>
+          <div class="pipeline-footer-metric" style="color: #2563EB;">
+            ⏱ LATENCIA: &lt;100 MILISEGUNDOS
           </div>
-
-          <div class="diagram-arrow-horizontal">🠔</div>
-
-          <div class="diagram-node" style="border-top: 4px solid #B45309; background: #F1F5F9;">
-            <div class="diagram-node-header">
-              <div class="node-badge" style="background: #B45309;">4</div>
-              <div class="node-title" style="color: #B45309;">Banco de Origen</div>
-            </div>
-            <div class="node-text">
-              Debita automáticamente en la cuenta local del turista (Reales, Pesos Col/Arg, Soles) sin recargos extra.
-            </div>
-          </div>
-
         </div>
+
+        <!-- Central Hub Banner Row -->
+        <div class="hub-banner-row">
+          <div class="hub-banner-title">⚡ SMART PAY TRANSBORDER ENGINE · CONVERSIÓN ARS/BRL/COP/PEN ➔ PESOS MEXICANOS (MXN)</div>
+          <div class="hub-banner-sub">🔒 REGULADO BANXICO & CNBV · CERTIFICACIÓN ISO 8583 · LIQUIDACIÓN SPEI</div>
+        </div>
+
+        <!-- Step 6 -->
+        <div class="pipeline-card" style="border-top-color: #059669; background: #F0FDF4;">
+          <div class="pipeline-header">
+            <div class="pipeline-badge" style="background: #059669;">06</div>
+            <div class="pipeline-tag" style="background: #D1FAE5; color: #059669;">CONFIRMACIÓN</div>
+          </div>
+          <div class="pipeline-title">6. Notificación Instantánea</div>
+          <div class="pipeline-desc">Comercio recibe <strong>confirmación inmediata (&lt;3 seg)</strong> vía WhatsApp, SMS o impresión de comanda.</div>
+          <div class="pipeline-footer-metric" style="color: #059669;">
+            ✅ TIEMPO TOTAL: &lt;3 SEGUNDOS
+          </div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="pipeline-card" style="border-top-color: #312E81;">
+          <div class="pipeline-header">
+            <div class="pipeline-badge" style="background: #312E81;">05</div>
+            <div class="pipeline-tag" style="background: #E0E7FF; color: #312E81;">SPEI LIQUIDACIÓN</div>
+          </div>
+          <div class="pipeline-title">5. Banco del Comercio</div>
+          <div class="pipeline-desc">Acreditación directa en <strong>Pesos Mexicanos (MXN)</strong> vía SPEI a la cuenta bancaria del negocio.</div>
+          <div class="pipeline-footer-metric" style="color: #312E81;">
+            🏦 MONEDA: 100% MXN LÍQUIDO
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="pipeline-card" style="border-top-color: #B45309;">
+          <div class="pipeline-header">
+            <div class="pipeline-badge" style="background: #B45309;">04</div>
+            <div class="pipeline-tag" style="background: #FEF3C7; color: #B45309;">DÉBITO LOCAL</div>
+          </div>
+          <div class="pipeline-title">4. Banco de Origen</div>
+          <div class="pipeline-desc">Debita automáticamente en la cuenta local del turista (Reales, Pesos Col/Arg, Soles) sin recargos extra.</div>
+          <div class="pipeline-footer-metric" style="color: #B45309;">
+            💳 CERO TAX: ELUDE RECARGO TARJETA
+          </div>
+        </div>
+
       </div>
 
       <div class="sources-box">
@@ -741,7 +844,7 @@
     </div>
   </div>
 
-  <!-- SLIDE 6: MODELO DE ESCENARIOS Y SUPUESTOS DE ADOPCIÓN (FULL CANVAS SPACING) -->
+  <!-- SLIDE 6: MODELO DE ESCENARIOS Y SUPUESTOS DE ADOPCIÓN (FULL CANVAS RICH GRID) -->
   <div class="slide-container" id="slide-6">
     <div class="left-rail">
       <div class="rail-accent-line"></div>
@@ -772,22 +875,37 @@
       </div>
       
       <div style="display: flex; flex-direction: column; gap: 24px; flex: 1; justify-content: center;">
-        <!-- Top Scenario Summary Cards -->
-        <div class="card-grid grid-3col" style="height: 180px;">
-          <div class="exec-card exec-card-blue" style="padding: 20px;">
-            <div class="stat-val" style="font-size: 32px; color: #1E3A8A;">$3.10M USD</div>
-            <div class="stat-label">🟢 Escenario Conservador</div>
-            <div class="stat-desc">20% Afiliación FETUR (100 Comercios) · 1 cobro/día.</div>
+        <!-- Top Scenario Summary Bento Cards -->
+        <div class="card-grid grid-3col" style="height: 200px; margin: 0;">
+          <div class="exec-card exec-card-blue" style="padding: 24px;">
+            <div>
+              <div class="stat-val" style="font-size: 36px; color: #1E3A8A;">$3.10M USD</div>
+              <div class="stat-label">🟢 Escenario Conservador</div>
+            </div>
+            <div class="stat-desc">20% Afiliación FETUR (100 Comercios) · 1 cobro/día ($85 USD Ticket).</div>
+            <div style="margin-top: 10px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #1E3A8A; font-weight: 700;">
+              • VOLUMEN DIARIO ESTADO: 100 TXS/DÍA
+            </div>
           </div>
-          <div class="exec-card exec-card-teal" style="padding: 20px;">
-            <div class="stat-val" style="font-size: 32px; color: #0D9488;">$10.85M USD</div>
-            <div class="stat-label">🔵 Escenario Moderado</div>
-            <div class="stat-desc">35% Afiliación FETUR (175 Comercios) · 2 cobros/día.</div>
+          <div class="exec-card exec-card-teal" style="padding: 24px;">
+            <div>
+              <div class="stat-val" style="font-size: 36px; color: #0D9488;">$10.85M USD</div>
+              <div class="stat-label">🔵 Escenario Moderado</div>
+            </div>
+            <div class="stat-desc">35% Afiliación FETUR (175 Comercios) · 2 cobros/día ($85 USD Ticket).</div>
+            <div style="margin-top: 10px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #0D9488; font-weight: 700;">
+              • VOLUMEN DIARIO ESTADO: 350 TXS/DÍA
+            </div>
           </div>
-          <div class="exec-card exec-card-navy" style="padding: 20px;">
-            <div class="stat-val" style="font-size: 32px; color: #312E81;">$23.25M USD</div>
-            <div class="stat-label">🟣 Escenario Optimista</div>
-            <div class="stat-desc">50% Afiliación FETUR (250 Comercios) · 3 cobros/día.</div>
+          <div class="exec-card exec-card-navy" style="padding: 24px;">
+            <div>
+              <div class="stat-val" style="font-size: 36px; color: #312E81;">$23.25M USD</div>
+              <div class="stat-label">🟣 Escenario Optimista</div>
+            </div>
+            <div class="stat-desc">50% Afiliación FETUR (250 Comercios) · 3 cobros/día ($85 USD Ticket).</div>
+            <div style="margin-top: 10px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #312E81; font-weight: 700;">
+              • VOLUMEN DIARIO ESTADO: 750 TXS/DÍA
+            </div>
           </div>
         </div>
 
@@ -828,9 +946,9 @@
         </table>
 
         <!-- Key Assumptions Box -->
-        <div style="background: #FFFFFF; border: 1px solid var(--card-border); padding: 22px; border-radius: 8px; border-left: 5px solid var(--accent-blue);">
-          <div style="font-weight: 700; font-size: 14.5px; color: var(--navy-dark); margin-bottom: 6px;">📌 SUPUESTOS CLAVE DEL MODELO DE NEGOCIO:</div>
-          <div style="font-size: 14px; color: var(--text-muted); line-height: 1.55;">
+        <div style="background: #FFFFFF; border: 1px solid var(--card-border); padding: 24px; border-radius: 10px; border-left: 5px solid var(--accent-blue); box-shadow: 0 4px 16px rgba(15,23,42,0.04);">
+          <div style="font-weight: 700; font-size: 15px; color: var(--navy-dark); margin-bottom: 6px;">📌 SUPUESTOS CLAVE DEL MODELO DE NEGOCIO:</div>
+          <div style="font-size: 14.5px; color: var(--text-muted); line-height: 1.6;">
             • <strong>Base de Afiliados FETUR:</strong> 500 comercios turísticos en Cancún, Playa del Carmen, Tulum y Cozumel.<br>
             • <strong>Ticket Promedio Turístico LATAM:</strong> $85 USD por transacción en restaurantes, tours, boutiques y transporte.<br>
             • <strong>Riesgo Cero para Afiliados:</strong> El modelo no requiere inversión de capital en terminales (Zero-Device).
@@ -873,26 +991,46 @@
           Propuesta de implementación gradual a 45 días para la validación, prueba piloto y lanzamiento oficial
         </div>
       </div>
-      <div class="card-grid grid-2x2" style="height: 680px;">
+      <div class="card-grid grid-2x2">
         <div class="exec-card exec-card-blue">
-          <div class="stat-val" style="font-size: 34px; color: #1E3A8A;">Fase 1 (Días 1 - 15)</div>
-          <div class="stat-label">Convocatoria & Afiliación Voluntaria</div>
+          <div>
+            <div class="stat-val" style="font-size: 34px; color: #1E3A8A;">Fase 1 (Días 1 - 15)</div>
+            <div class="stat-label">Convocatoria & Afiliación Voluntaria</div>
+          </div>
           <div class="stat-desc">Presentación de la circular de adhesión a los primeros 100 comercios de mayor afluencia sudamericana.</div>
+          <div style="margin-top: 15px; padding-top: 12px; border-top: 1px solid #E2E8F0; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #1E3A8A; font-weight: 700;">
+            • ENTREGABLE: CIRCULAR DE ADHESIÓN Y PADRÓN INICIAL
+          </div>
         </div>
         <div class="exec-card exec-card-teal">
-          <div class="stat-val" style="font-size: 34px; color: #0D9488;">Fase 2 (Días 16 - 30)</div>
-          <div class="stat-label">Piloto Técnico & Integración Software</div>
+          <div>
+            <div class="stat-val" style="font-size: 34px; color: #0D9488;">Fase 2 (Días 16 - 30)</div>
+            <div class="stat-label">Piloto Técnico & Integración Software</div>
+          </div>
           <div class="stat-desc">Despliegue de señalética QR de mostrador y pruebas de integración con el software de caja de los comercios.</div>
+          <div style="margin-top: 15px; padding-top: 12px; border-top: 1px solid #E2E8F0; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #0D9488; font-weight: 700;">
+            • ENTREGABLE: KITS DE CAJA Y PRUEBAS SPEI
+          </div>
         </div>
         <div class="exec-card exec-card-navy">
-          <div class="stat-val" style="font-size: 34px; color: #312E81;">Fase 3 (Días 31 - 45)</div>
-          <div class="stat-label">Lanzamiento Institucional Estatal</div>
+          <div>
+            <div class="stat-val" style="font-size: 34px; color: #312E81;">Fase 3 (Días 31 - 45)</div>
+            <div class="stat-label">Lanzamiento Institucional Estatal</div>
+          </div>
           <div class="stat-desc">Presentación formal ante medios con SECTUR Quintana Roo y la Comisión de Innovación de FETUR.</div>
+          <div style="margin-top: 15px; padding-top: 12px; border-top: 1px solid #E2E8F0; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #312E81; font-weight: 700;">
+            • ENTREGABLE: BOLETÍN DE PRENSA Y RUEDA INSTITUCIONAL
+          </div>
         </div>
         <div class="exec-card exec-card-amber">
-          <div class="stat-val" style="font-size: 34px; color: #B45309;">Fase 4 (Días 46+)</div>
-          <div class="stat-label">Evaluación & Réplica ASETUR</div>
+          <div>
+            <div class="stat-val" style="font-size: 34px; color: #B45309;">Fase 4 (Días 46+)</div>
+            <div class="stat-label">Evaluación & Réplica ASETUR</div>
+          </div>
           <div class="stat-desc">Revisión del volumen procesado y análisis de expansión a otros polos turísticos (Los Cabos / Puerto Vallarta).</div>
+          <div style="margin-top: 15px; padding-top: 12px; border-top: 1px solid #E2E8F0; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #B45309; font-weight: 700;">
+            • ENTREGABLE: INFORME MENSUAL TPV Y ESCALADO
+          </div>
         </div>
       </div>
       <div class="sources-box">
