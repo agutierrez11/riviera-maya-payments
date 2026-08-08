@@ -166,13 +166,13 @@ def generate_pdf():
         ('LINEABOVE', (1,0), (1,0), 3, colors.HexColor('#0D9488')),
         ('LINEABOVE', (0,2), (0,2), 3, colors.HexColor('#312E81')),
         ('LINEABOVE', (1,2), (1,2), 3, colors.HexColor('#B45309')),
-        ('PADDING', (0,0), (-1,-1), 8),
+        ('PADDING', (0,0), (-1,-1), 10),
         ('BOTTOMPADDING', (0,0), (-1,0), 2),
         ('BOTTOMPADDING', (0,2), (-1,2), 2),
     ]))
     
     story.append(t1)
-    story.append(Spacer(1, 10))
+    story.append(Spacer(1, 15))
     story.append(Paragraph("📌 <b>FUENTES OFICIALES CORROBORABLES:</b> DATATUR (Secretaría de Turismo de México) · SECTUR Quintana Roo · 8B World PTE (Market Report 2025) · Statista Oct 2024.", source_style))
     story.append(PageBreak())
 
@@ -210,13 +210,13 @@ def generate_pdf():
         ('LINEABOVE', (1,0), (1,0), 3, colors.HexColor('#0D9488')),
         ('LINEABOVE', (0,2), (0,2), 3, colors.HexColor('#312E81')),
         ('LINEABOVE', (1,2), (1,2), 3, colors.HexColor('#B45309')),
-        ('PADDING', (0,0), (-1,-1), 8),
+        ('PADDING', (0,0), (-1,-1), 10),
         ('BOTTOMPADDING', (0,0), (-1,0), 2),
         ('BOTTOMPADDING', (0,2), (-1,2), 2),
     ]))
     
     story.append(t_qr)
-    story.append(Spacer(1, 10))
+    story.append(Spacer(1, 15))
     story.append(Paragraph("📌 <b>FUENTES REGULATORIAS & CONSULTORÍA:</b> Banco Central do Brasil (BCB) · AFIP Argentina · 8B World PTE (LPM Adoption Report 2025) · Statista (Oct 2024).", source_style))
     story.append(PageBreak())
 
@@ -276,11 +276,11 @@ def generate_pdf():
         ('BACKGROUND', (0,1), (-1,-2), colors.HexColor('#FFFFFF')),
         ('BACKGROUND', (0,-1), (-1,-1), colors.HexColor('#E2E8F0')),
         ('GRID', (0,0), (-1,-1), 1, colors.HexColor('#CBD5E1')),
-        ('PADDING', (0,0), (-1,-1), 5),
+        ('PADDING', (0,0), (-1,-1), 6),
     ]))
     
     story.append(t_tss)
-    story.append(Spacer(1, 8))
+    story.append(Spacer(1, 12))
     story.append(Paragraph("📌 <b>DESGLOSE POR MUNICIPIO EN QROO (SOM PISO $3.5M USD):</b> Cancún/Benito Juárez: <b>$1.23M USD (40 txs/día)</b> · Playa del Carmen/Solidaridad: <b>$1.05M USD (35 txs/día)</b> · Tulum: <b>$0.77M USD (25 txs/día)</b> · Cozumel/Isla Mujeres: <b>$0.45M USD (13 txs/día)</b>.", source_style))
     story.append(PageBreak())
 
@@ -318,55 +318,96 @@ def generate_pdf():
         ('LINEABOVE', (1,0), (1,0), 3, colors.HexColor('#312E81')),
         ('LINEABOVE', (0,2), (0,2), 3, colors.HexColor('#0D9488')),
         ('LINEABOVE', (1,2), (1,2), 3, colors.HexColor('#B45309')),
-        ('PADDING', (0,0), (-1,-1), 8),
+        ('PADDING', (0,0), (-1,-1), 10),
         ('BOTTOMPADDING', (0,0), (-1,0), 2),
         ('BOTTOMPADDING', (0,2), (-1,2), 2),
     ]))
     
     story.append(t_season)
-    story.append(Spacer(1, 10))
+    story.append(Spacer(1, 15))
     story.append(Paragraph("📌 <b>IMPACTO ESTRATÉGICO DE ESTACIONALIDAD:</b> Mientras el flujo de EE.UU. cae entre Mayo y Agosto, los 4 mercados sudamericanos tienen sus picos máximos de vacaciones familiares en Junio, Julio y Agosto, equilibrando la ocupación hotelera de Quintana Roo.", source_style))
     story.append(PageBreak())
 
-    # ------------------ SLIDE 5: ARQUITECTURA ZERO-DEVICE ------------------
-    story.append(Paragraph("05 · ARQUITECTURA ZERO-DEVICE & ZERO-ERP", tag_style))
-    story.append(Paragraph("El modelo elimina la compra de TPVs y se integra directamente al software que los afiliados ya usan", title_style))
+    # ------------------ SLIDE 5: DIAGRAMA DE FLUJO DE PAGO EN 6 PASOS ------------------
+    story.append(Paragraph("05 · ARQUITECTURA Y DIAGRAMA DE TRANSACCIÓN EN 6 PASOS", tag_style))
+    story.append(Paragraph("Diagrama de Pago QR: Transacción iniciada en sitio por el comercio y procesada en &lt;3 segundos vía SPEI", title_style))
     
-    data_s3 = [
+    data_diagram_flow = [
         [
-            Paragraph("<b>1 Solo QR Inteligente</b><br/><font color='#1E3A8A'><b>Cartel/Gafete de Acrílico</b></font>", card_label_style),
-            Paragraph("<b>Hub FETUR Integrado</b><br/><font color='#0D9488'><b>Conexión con Software Actual</b></font>", card_label_style),
-            Paragraph("<b>&lt;3 Seg. SPEI MXN</b><br/><font color='#312E81'><b>Liquidación Automática</b></font>", card_label_style)
+            Paragraph("<b>PASO 1: COMERCIO (QROO)</b>", card_label_style),
+            Paragraph("<b>PASO 2: TURISTA LATAM</b>", card_label_style),
+            Paragraph("<b>PASO 3: SMART HUB (FETUR)</b>", card_label_style)
         ],
         [
-            Paragraph("Detecta en milisegundos si el celular es de Brasil, Colombia, Perú o Argentina y abre su app bancaria nativa.", card_desc_style),
-            Paragraph("Conectado a <b>Sunday</b> (mesas), <b>Duve</b> (check-in), <b>FareHarbor</b> (tours) y <b>Soft Restaurant / Opera PMS</b>.", card_desc_style),
-            Paragraph("El comercio recibe Pesos Mexicanos en su tarjeta o cuenta de siempre (Spin OXXO, BanCoppel, Mercado Pago, BBVA).", card_desc_style)
+            Paragraph("Muestra el <b>QR de Mostrador/Mesa</b> (Dinámico con monto o Estático de caja).", card_desc_style),
+            Paragraph("Escanea el QR usando su <b>App Bancaria Nativa</b> (PIX, Nequi, Yape, eWallet).", card_desc_style),
+            Paragraph("Enruta a la red bancaria de origen y calcula el tipo de cambio FX instantáneo.", card_desc_style)
+        ],
+        [
+            Paragraph("<b>PASO 6: NOTIFICACIÓN (&lt;3s)</b>", card_label_style),
+            Paragraph("<b>PASO 5: BANCO COMERCIO</b>", card_label_style),
+            Paragraph("<b>PASO 4: BANCO ORIGEN</b>", card_label_style)
+        ],
+        [
+            Paragraph("Comercio recibe <b>confirmación en &lt;3 seg</b> vía WhatsApp/SMS o ticket impreso.", card_desc_style),
+            Paragraph("Acreditación automática en <b>Pesos Mexicanos (MXN)</b> vía SPEI en su cuenta.", card_desc_style),
+            Paragraph("Debita automáticamente en la cuenta local del turista (Reales/Pesos Col/Soles).", card_desc_style)
         ]
     ]
     
-    t3 = Table(data_s3, colWidths=[173, 173, 173])
-    t3.setStyle(TableStyle([
+    t_diag = Table(data_diagram_flow, colWidths=[173, 173, 173])
+    t_diag.setStyle(TableStyle([
         ('BACKGROUND', (0,0), (-1,-1), colors.HexColor('#FFFFFF')),
         ('BOX', (0,0), (0,1), 1, colors.HexColor('#E2E8F0')),
         ('BOX', (1,0), (1,1), 1, colors.HexColor('#E2E8F0')),
         ('BOX', (2,0), (2,1), 1, colors.HexColor('#E2E8F0')),
+        ('BOX', (0,2), (0,3), 1, colors.HexColor('#E2E8F0')),
+        ('BOX', (1,2), (1,3), 1, colors.HexColor('#E2E8F0')),
+        ('BOX', (2,2), (2,3), 1, colors.HexColor('#E2E8F0')),
         ('LINEABOVE', (0,0), (0,0), 3, colors.HexColor('#1E3A8A')),
         ('LINEABOVE', (1,0), (1,0), 3, colors.HexColor('#0D9488')),
-        ('LINEABOVE', (2,0), (2,0), 3, colors.HexColor('#312E81')),
+        ('LINEABOVE', (2,0), (2,0), 3, colors.HexColor('#2563EB')),
+        ('LINEABOVE', (0,2), (0,2), 3, colors.HexColor('#059669')),
+        ('LINEABOVE', (1,2), (1,2), 3, colors.HexColor('#312E81')),
+        ('LINEABOVE', (2,2), (2,2), 3, colors.HexColor('#B45309')),
         ('PADDING', (0,0), (-1,-1), 8),
         ('BOTTOMPADDING', (0,0), (-1,0), 2),
+        ('BOTTOMPADDING', (0,2), (-1,2), 2),
     ]))
     
-    story.append(t3)
-    story.append(Spacer(1, 15))
-    story.append(Paragraph("📌 <b>FUENTES OFICIALES CORROBORABLES:</b> Banco de México (Banxico - Regulación SPEI) · CNBV (Disposiciones Fintech Art. 44-48 Onboarding Nivel 1/2) · Estándar EMVCo QR Code Specification.", source_style))
+    story.append(t_diag)
+    story.append(Spacer(1, 12))
+    story.append(Paragraph("📌 <b>ESTÁNDARES DE ARQUITECTURA:</b> Estándar de Comunicación EMVCo QR Code · Regulación de Pagos Electrónicos Banco de México (SPEI) · Enrutamiento Certificado ISO 8583.", source_style))
     story.append(PageBreak())
 
     # ------------------ SLIDE 6: MATRIZ DE ESCENARIOS Y SUPUESTOS ------------------
     story.append(Paragraph("06 · MODELO DE ESCENARIOS Y SUPUESTOS DE ADOPCIÓN", tag_style))
     story.append(Paragraph("Análisis de Sensibilidad: El proyecto genera desde $3.1M USD (piso) hasta $23.25M USD en función de la adopción", title_style))
     
+    data_scenarios_cards = [
+        [
+            Paragraph("<b>$3.10M USD</b><br/><font color='#1E3A8A'><b>🟢 Escenario Conservador</b></font>", card_label_style),
+            Paragraph("<b>$10.85M USD</b><br/><font color='#0D9488'><b>🔵 Escenario Moderado</b></font>", card_label_style),
+            Paragraph("<b>$23.25M USD</b><br/><font color='#312E81'><b>🟣 Escenario Optimista</b></font>", card_label_style)
+        ],
+        [
+            Paragraph("20% Afiliación FETUR (100 Comercios) · 1 cobro/día.", card_desc_style),
+            Paragraph("35% Afiliación FETUR (175 Comercios) · 2 cobros/día.", card_desc_style),
+            Paragraph("50% Afiliación FETUR (250 Comercios) · 3 cobros/día.", card_desc_style)
+        ]
+    ]
+    t_scen_cards = Table(data_scenarios_cards, colWidths=[173, 173, 173])
+    t_scen_cards.setStyle(TableStyle([
+        ('BACKGROUND', (0,0), (-1,-1), colors.HexColor('#FFFFFF')),
+        ('GRID', (0,0), (-1,-1), 1, colors.HexColor('#E2E8F0')),
+        ('LINEABOVE', (0,0), (0,0), 3, colors.HexColor('#1E3A8A')),
+        ('LINEABOVE', (1,0), (1,0), 3, colors.HexColor('#0D9488')),
+        ('LINEABOVE', (2,0), (2,0), 3, colors.HexColor('#312E81')),
+        ('PADDING', (0,0), (-1,-1), 6),
+    ]))
+    story.append(t_scen_cards)
+    story.append(Spacer(1, 10))
+
     data_scenarios = [
         [
             Paragraph("<b>Escenario de Adopción</b>", card_label_style),
@@ -404,11 +445,11 @@ def generate_pdf():
         ('TEXTCOLOR', (0,0), (-1,0), colors.HexColor('#FFFFFF')),
         ('BACKGROUND', (0,1), (-1,-1), colors.HexColor('#FFFFFF')),
         ('GRID', (0,0), (-1,-1), 1, colors.HexColor('#CBD5E1')),
-        ('PADDING', (0,0), (-1,-1), 6),
+        ('PADDING', (0,0), (-1,-1), 5),
     ]))
     
     story.append(t_scen)
-    story.append(Spacer(1, 10))
+    story.append(Spacer(1, 8))
     story.append(Paragraph("📌 <b>SUPUESTOS CLAVE DEL MODELO DE NEGOCIO:</b> Base de 500 comercios de FETUR en Cancún, Playa del Carmen, Tulum y Cozumel · Ticket promedio de $85 USD · Modelo Zero-Device sin costo de infraestructura para el afiliado.", source_style))
     story.append(PageBreak())
 
@@ -446,18 +487,18 @@ def generate_pdf():
         ('LINEABOVE', (1,0), (1,0), 3, colors.HexColor('#0D9488')),
         ('LINEABOVE', (0,2), (0,2), 3, colors.HexColor('#312E81')),
         ('LINEABOVE', (1,2), (1,2), 3, colors.HexColor('#B45309')),
-        ('PADDING', (0,0), (-1,-1), 8),
+        ('PADDING', (0,0), (-1,-1), 10),
         ('BOTTOMPADDING', (0,0), (-1,0), 2),
         ('BOTTOMPADDING', (0,2), (-1,2), 2),
     ]))
     
     story.append(t5)
-    story.append(Spacer(1, 10))
+    story.append(Spacer(1, 15))
     story.append(Paragraph("📌 <b>HOJA DE RUTA PROPUESTA:</b> Plan sujeto a retroalimentación y aprobación de la Asamblea Directiva de FETUR y SECTUR Quintana Roo.", source_style))
 
     # Build PDF
     doc.build(story, canvasmaker=NumberedCanvas)
-    print(f"PDF Corporativo sobrio con escenarios generado en: {target_pdf}")
+    print(f"PDF Corporativo sobrio con escenarios y espacio optimizado generado en: {target_pdf}")
 
 if __name__ == "__main__":
     generate_pdf()

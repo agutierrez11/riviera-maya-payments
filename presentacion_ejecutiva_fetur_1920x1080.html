@@ -64,7 +64,7 @@
 
   /* Executive Left Rail */
   .left-rail {
-    width: 400px;
+    width: 380px;
     height: 100%;
     background: var(--navy-dark);
     padding: 50px 40px;
@@ -74,6 +74,7 @@
     flex-direction: column;
     justify-content: space-between;
     color: #FFFFFF;
+    flex-shrink: 0;
   }
 
   .rail-accent-line {
@@ -102,10 +103,11 @@
   .main-canvas {
     flex: 1;
     height: 100%;
-    padding: 50px 70px 40px 70px;
+    padding: 50px 65px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     background: var(--bg-canvas);
   }
 
@@ -115,13 +117,13 @@
     letter-spacing: 1.5px;
     text-transform: uppercase;
     color: var(--accent-slate);
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     font-weight: 600;
   }
 
   .slide-title-action {
     font-family: 'Source Serif 4', Georgia, serif;
-    font-size: 30px;
+    font-size: 32px;
     font-weight: 700;
     color: var(--navy-dark);
     line-height: 1.3;
@@ -143,7 +145,7 @@
     background: var(--card-bg);
     border: 1px solid var(--card-border);
     border-radius: 8px;
-    padding: 24px;
+    padding: 30px;
     box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
     display: flex;
     flex-direction: column;
@@ -158,42 +160,42 @@
 
   .stat-val {
     font-family: 'Inter', sans-serif;
-    font-size: 36px;
+    font-size: 42px;
     font-weight: 800;
     color: var(--navy-dark);
     line-height: 1.1;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     letter-spacing: -0.5px;
   }
 
   .stat-label {
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 700;
     color: var(--navy-header);
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
   }
 
   .stat-desc {
-    font-size: 13.5px;
+    font-size: 14.5px;
     color: var(--text-muted);
-    line-height: 1.5;
+    line-height: 1.55;
   }
 
   .sources-box {
-    margin-top: 16px;
-    padding-top: 12px;
+    margin-top: 20px;
+    padding-top: 14px;
     border-top: 1px solid var(--card-border);
-    font-size: 12px;
+    font-size: 12.5px;
     color: var(--text-muted);
+    flex-shrink: 0;
   }
 
   /* Executive Table */
   .exec-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 4px;
     background: #FFFFFF;
     border-radius: 8px;
     overflow: hidden;
@@ -205,16 +207,16 @@
     background: var(--navy-dark);
     color: #FFFFFF;
     font-family: 'Inter', sans-serif;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 700;
-    padding: 12px 16px;
+    padding: 16px 20px;
     text-align: left;
   }
 
   .exec-table td {
-    padding: 12px 16px;
+    padding: 16px 20px;
     border-bottom: 1px solid var(--card-border);
-    font-size: 13.5px;
+    font-size: 14.5px;
     color: var(--text-main);
   }
 
@@ -229,52 +231,75 @@
     border-bottom: none;
   }
 
-  /* Diagram Flow Grid */
-  .diagram-flow-container {
+  /* Visual Diagram Flow Canvas (Slide 5) */
+  .visual-diagram-canvas {
     background: #FFFFFF;
     border: 1px solid var(--card-border);
-    border-radius: 8px;
-    padding: 24px;
-    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
+    border-radius: 10px;
+    padding: 32px;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    justify-content: space-between;
     flex: 1;
   }
 
-  .flow-step-box {
+  .diagram-node {
     background: #F8FAFC;
-    border: 1px solid #E2E8F0;
-    border-radius: 6px;
-    padding: 16px;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 20px;
     position: relative;
-    border-left: 4px solid var(--accent-blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
   }
 
-  .flow-step-num {
-    display: inline-block;
-    width: 24px;
-    height: 24px;
+  .diagram-node-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+
+  .node-badge {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
     background: var(--navy-dark);
     color: #FFFFFF;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 24px;
-    font-weight: 700;
     font-size: 12px;
-    margin-right: 8px;
-  }
-
-  .flow-arrow {
+    font-weight: 800;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
+  }
+
+  .node-title {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--navy-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .node-text {
+    font-size: 13.5px;
+    color: var(--text-muted);
+    line-height: 1.45;
+  }
+
+  .diagram-arrow-horizontal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
     color: var(--accent-blue);
     font-weight: 800;
   }
 
-  /* Rail Navigation Controls (No Screen Obstruction) */
+  /* Rail Navigation Controls */
   .rail-nav-controls {
     margin-top: 24px;
     padding-top: 20px;
@@ -295,18 +320,18 @@
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
     color: #FFFFFF;
-    padding: 10px 14px;
+    padding: 12px 14px;
     border-radius: 6px;
     font-family: 'Inter', sans-serif;
     font-weight: 600;
-    font-size: 13px;
+    font-size: 13.5px;
     cursor: pointer;
     transition: background 0.2s ease;
     text-align: center;
   }
 
   .rail-nav-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.25);
   }
 
   .rail-nav-counter {
@@ -349,11 +374,13 @@
       </div>
     </div>
     <div class="main-canvas">
-      <div class="mono-tag">01 · SITUACIÓN DE MERCADO Y DERRAMA ECONÓMICA</div>
-      <div class="slide-title-action">
-        Quintana Roo lidera la recepción de turismo sudamericano en México con una derrama en sitio de $1,113 Millones de Dólares
+      <div>
+        <div class="mono-tag">01 · SITUACIÓN DE MERCADO Y DERRAMA ECONÓMICA</div>
+        <div class="slide-title-action">
+          Quintana Roo lidera la recepción de turismo sudamericano en México con una derrama en sitio de $1,113 Millones de Dólares
+        </div>
       </div>
-      <div class="card-grid grid-2x2" style="height: 520px;">
+      <div class="card-grid grid-2x2" style="height: 680px;">
         <div class="exec-card exec-card-blue">
           <div class="stat-val" style="color: #1E3A8A;">380,000</div>
           <div class="stat-label">🇨🇴 Colombia (380k Turistas/Año)</div>
@@ -404,11 +431,13 @@
       </div>
     </div>
     <div class="main-canvas">
-      <div class="mono-tag">02 · ADOPCIÓN MASIVA DE QR Y REGULACIÓN REGIONAL</div>
-      <div class="slide-title-action">
-        El 65% de los turistas sudamericanos prefiere pagar por QR para eludir impuestos bancarios de sus países de origen
+      <div>
+        <div class="mono-tag">02 · ADOPCIÓN MASIVA DE QR Y REGULACIÓN REGIONAL</div>
+        <div class="slide-title-action">
+          El 65% de los turistas sudamericanos prefiere pagar por QR para eludir impuestos bancarios de sus países de origen
+        </div>
       </div>
-      <div class="card-grid grid-2x2" style="height: 520px;">
+      <div class="card-grid grid-2x2" style="height: 680px;">
         <div class="exec-card exec-card-blue">
           <div class="stat-val" style="color: #1E3A8A;">155 Millones</div>
           <div class="stat-label">🇧🇷 Brasil · Red PIX (Banco Central do Brasil)</div>
@@ -459,67 +488,71 @@
       </div>
     </div>
     <div class="main-canvas">
-      <div class="mono-tag">03 · MODELO FINANCIERO REGIONAL DESGLOSADO</div>
-      <div class="slide-title-action">
-        Desglose de Derrama (TAM $1,113M USD), Mercado Atendible (SAM $350.6M USD) y Captación Piso (SOM $3.5M USD)
+      <div>
+        <div class="mono-tag">03 · MODELO FINANCIERO REGIONAL DESGLOSADO</div>
+        <div class="slide-title-action">
+          Desglose de Derrama (TAM $1,113M USD), Mercado Atendible (SAM $350.6M USD) y Captación Piso (SOM $3.5M USD)
+        </div>
       </div>
       
-      <table class="exec-table">
-        <thead>
-          <tr>
-            <th>País de Origen / Mercado</th>
-            <th>TAM (Gasto Total en Sitio)</th>
-            <th>SAM (31.5% Penetración Digital)</th>
-            <th>SOM Piso Conservador (1% SAM / Año 1)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>🇨🇴 <strong>Colombia (380,000 Turistas)</strong></td>
-            <td>$395.00 M USD</td>
-            <td>$124.40 M USD</td>
-            <td><strong>$1,244,000 USD</strong></td>
-          </tr>
-          <tr>
-            <td>🇧🇷 <strong>Brasil (150,000 Turistas)</strong></td>
-            <td>$181.35 M USD</td>
-            <td>$57.12 M USD</td>
-            <td><strong>$571,200 USD</strong></td>
-          </tr>
-          <tr>
-            <td>🇦🇷 <strong>Argentina (160,000 Turistas)</strong></td>
-            <td>$180.12 M USD</td>
-            <td>$56.74 M USD</td>
-            <td><strong>$567,400 USD</strong></td>
-          </tr>
-          <tr>
-            <td>🇵🇪 <strong>Perú (135,000 Turistas)</strong></td>
-            <td>$132.30 M USD</td>
-            <td>$41.67 M USD</td>
-            <td><strong>$416,700 USD</strong></td>
-          </tr>
-          <tr>
-            <td>🌎 <strong>Otros LATAM (Chile/Uruguay/etc)</strong></td>
-            <td>$224.43 M USD</td>
-            <td>$70.67 M USD</td>
-            <td><strong>$706,700 USD</strong></td>
-          </tr>
-          <tr>
-            <td><strong>TOTAL QUINTANA ROO</strong></td>
-            <td><strong>$1,113.20 M USD</strong></td>
-            <td><strong>$350.60 M USD</strong></td>
-            <td><strong>$3,506,000 USD (~$3.5M USD)</strong></td>
-          </tr>
-        </tbody>
-      </table>
+      <div style="display: flex; flex-direction: column; gap: 20px; flex: 1; justify-content: center;">
+        <table class="exec-table">
+          <thead>
+            <tr>
+              <th>País de Origen / Mercado</th>
+              <th>TAM (Gasto Total en Sitio)</th>
+              <th>SAM (31.5% Penetración Digital)</th>
+              <th>SOM Piso Conservador (1% SAM / Año 1)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>🇨🇴 <strong>Colombia (380,000 Turistas)</strong></td>
+              <td>$395.00 M USD</td>
+              <td>$124.40 M USD</td>
+              <td><strong>$1,244,000 USD</strong></td>
+            </tr>
+            <tr>
+              <td>🇧🇷 <strong>Brasil (150,000 Turistas)</strong></td>
+              <td>$181.35 M USD</td>
+              <td>$57.12 M USD</td>
+              <td><strong>$571,200 USD</strong></td>
+            </tr>
+            <tr>
+              <td>🇦🇷 <strong>Argentina (160,000 Turistas)</strong></td>
+              <td>$180.12 M USD</td>
+              <td>$56.74 M USD</td>
+              <td><strong>$567,400 USD</strong></td>
+            </tr>
+            <tr>
+              <td>🇵🇪 <strong>Perú (135,000 Turistas)</strong></td>
+              <td>$132.30 M USD</td>
+              <td>$41.67 M USD</td>
+              <td><strong>$416,700 USD</strong></td>
+            </tr>
+            <tr>
+              <td>🌎 <strong>Otros LATAM (Chile/Uruguay/etc)</strong></td>
+              <td>$224.43 M USD</td>
+              <td>$70.67 M USD</td>
+              <td><strong>$706,700 USD</strong></td>
+            </tr>
+            <tr>
+              <td><strong>TOTAL QUINTANA ROO</strong></td>
+              <td><strong>$1,113.20 M USD</strong></td>
+              <td><strong>$350.60 M USD</strong></td>
+              <td><strong>$3,506,000 USD (~$3.5M USD)</strong></td>
+            </tr>
+          </tbody>
+        </table>
 
-      <div style="margin-top: 16px; background: #FFFFFF; border: 1px solid var(--card-border); padding: 16px; border-radius: 8px; border-left: 5px solid var(--accent-navy);">
-        <div style="font-weight: 700; font-size: 13.5px; color: var(--navy-dark); margin-bottom: 4px;">📍 DESGLOSE DE CAPTACIÓN SOM ($3.5M USD) POR MUNICIPIO DE DESTINO:</div>
-        <div style="font-size: 13px; color: var(--text-muted); line-height: 1.45;">
-          • <strong>Cancún / Benito Juárez (35%):</strong> SOM <strong>$1.23M USD</strong> (40 transacciones/día en 60 comercios).<br>
-          • <strong>Playa del Carmen / Solidaridad (30%):</strong> SOM <strong>$1.05M USD</strong> (35 transacciones/día en 52 comercios).<br>
-          • <strong>Tulum (22%):</strong> SOM <strong>$0.77M USD</strong> (25 transacciones/día en 38 comercios).<br>
-          • <strong>Cozumel / Isla Mujeres (13%):</strong> SOM <strong>$0.45M USD</strong> (13 transacciones/día en 25 comercios).
+        <div style="background: #FFFFFF; border: 1px solid var(--card-border); padding: 22px; border-radius: 8px; border-left: 5px solid var(--accent-navy);">
+          <div style="font-weight: 700; font-size: 14.5px; color: var(--navy-dark); margin-bottom: 6px;">📍 DESGLOSE DE CAPTACIÓN SOM ($3.5M USD) POR MUNICIPIO DE DESTINO:</div>
+          <div style="font-size: 14px; color: var(--text-muted); line-height: 1.55;">
+            • <strong>Cancún / Benito Juárez (35%):</strong> SOM <strong>$1.23M USD</strong> (40 transacciones/día en 60 comercios).<br>
+            • <strong>Playa del Carmen / Solidaridad (30%):</strong> SOM <strong>$1.05M USD</strong> (35 transacciones/día en 52 comercios).<br>
+            • <strong>Tulum (22%):</strong> SOM <strong>$0.77M USD</strong> (25 transacciones/día en 38 comercios).<br>
+            • <strong>Cozumel / Isla Mujeres (13%):</strong> SOM <strong>$0.45M USD</strong> (13 transacciones/día en 25 comercios).
+          </div>
         </div>
       </div>
 
@@ -552,28 +585,30 @@
       </div>
     </div>
     <div class="main-canvas">
-      <div class="mono-tag">04 · CONTRA-CICLO DE TEMPORADA BAJA EN QUINTANA ROO</div>
-      <div class="slide-title-action">
-        El turismo sudamericano genera picos de afluencia durante la temporada baja norteamericana (Junio a Agosto)
+      <div>
+        <div class="mono-tag">04 · CONTRA-CICLO DE TEMPORADA BAJA EN QUINTANA ROO</div>
+        <div class="slide-title-action">
+          El turismo sudamericano genera picos de afluencia durante la temporada baja norteamericana (Junio a Agosto)
+        </div>
       </div>
-      <div class="card-grid grid-2x2" style="height: 520px;">
+      <div class="card-grid grid-2x2" style="height: 680px;">
         <div class="exec-card exec-card-blue">
-          <div class="stat-val" style="font-size: 30px; color: #1E3A8A;">Junio - Julio & Oct</div>
+          <div class="stat-val" style="font-size: 32px; color: #1E3A8A;">Junio - Julio & Oct</div>
           <div class="stat-label">🇨🇴 Colombia (380,000 Turistas)</div>
           <div class="stat-desc">• Vacaciones de mitad de año (Junio/Julio).<br>• Semana de Receso escolar (Octubre).<br>• Fiestas de fin de año (Diciembre/Enero).</div>
         </div>
         <div class="exec-card exec-card-navy">
-          <div class="stat-val" style="font-size: 30px; color: #312E81;">Julio, Dic & Feb/Mar</div>
+          <div class="stat-val" style="font-size: 32px; color: #312E81;">Julio, Dic & Feb/Mar</div>
           <div class="stat-label">🇧🇷 Brasil (150,000 Turistas)</div>
           <div class="stat-desc">• Vacaciones de invierno austral (Julio).<br>• Fiestas y verano del hemisferio sur (Dic/Ene).<br>• Semana de Carnaval (Febrero/Marzo).</div>
         </div>
         <div class="exec-card exec-card-teal">
-          <div class="stat-val" style="font-size: 30px; color: #0D9488;">Enero - Feb & Julio</div>
+          <div class="stat-val" style="font-size: 32px; color: #0D9488;">Enero - Feb & Julio</div>
           <div class="stat-label">🇦🇷 Argentina (160,000 Turistas)</div>
           <div class="stat-desc">• Verano austral principal (Enero/Febrero).<br>• Receso escolar de invierno (Julio).<br>• Escapadas de fin de año (Nov/Dic).</div>
         </div>
         <div class="exec-card exec-card-amber">
-          <div class="stat-val" style="font-size: 30px; color: #B45309;">Julio - Ago & Ene/Feb</div>
+          <div class="stat-val" style="font-size: 32px; color: #B45309;">Julio - Ago & Ene/Feb</div>
           <div class="stat-label">🇵🇪 Perú (135,000 Turistas)</div>
           <div class="stat-desc">• Fiestas Patrias peruanas (28-29 de Julio).<br>• Vacaciones escolares de invierno (Julio/Ago).<br>• Receso de verano (Enero/Febrero).</div>
         </div>
@@ -584,7 +619,7 @@
     </div>
   </div>
 
-  <!-- SLIDE 5: DIAGRAMA DE FLUJO DE PAGO Y ARQUITECTURA -->
+  <!-- SLIDE 5: DIAGRAMA VISUAL COMPLETO DE FLUJO DE PAGO -->
   <div class="slide-container" id="slide-5">
     <div class="left-rail">
       <div class="rail-accent-line"></div>
@@ -594,7 +629,7 @@
           DIAGRAMA DE FLUJO DE PAGO TRANSFRONTERIZO
         </div>
         <div style="font-size: 14px; color: #94A3B8; margin-top: 16px; line-height: 1.5;">
-          Ciclo punta a punta del cobro por QR: Desde el mostrador del afiliado en Quintana Roo hasta la liquidación SPEI en Pesos Mexicanos.
+          Ciclo de transacción punta a punta: Desde el mostrador en Quintana Roo hasta la acreditación SPEI en MXN.
         </div>
       </div>
       
@@ -607,76 +642,96 @@
       </div>
     </div>
     <div class="main-canvas">
-      <div class="mono-tag">05 · ARQUITECTURA Y DIAGRAMA DE TRANSACCIÓN EN 6 PASOS</div>
-      <div class="slide-title-action">
-        Diagrama de Pago QR: Transacción iniciada en sitio por el comercio y procesada en &lt;3 segundos vía SPEI
+      <div>
+        <div class="mono-tag">05 · ARQUITECTURA Y DIAGRAMA DE TRANSACCIÓN EN 6 PASOS</div>
+        <div class="slide-title-action">
+          Diagrama de Pago QR: Transacción iniciada en sitio por el comercio y procesada en &lt;3 segundos vía SPEI
+        </div>
       </div>
       
-      <!-- Exec Flow Diagram Grid -->
-      <div class="diagram-flow-container">
-        <!-- Row 1: Steps 1, 2, 3 -->
-        <div style="display: grid; grid-template-columns: 1fr 40px 1fr 40px 1fr; align-items: center;">
-          <div class="flow-step-box" style="border-left-color: #1E3A8A;">
-            <div style="font-weight: 700; font-size: 14px; color: #1E3A8A; margin-bottom: 4px;">
-              <span class="flow-step-num" style="background: #1E3A8A;">1</span> COMERCIO AFILIADO (QROO)
+      <!-- Visual Flow Chart Diagram -->
+      <div class="visual-diagram-canvas" style="height: 660px;">
+        <!-- Top Row Steps (1 -> 2 -> 3) -->
+        <div style="display: grid; grid-template-columns: 1fr 50px 1fr 50px 1fr; gap: 10px; align-items: center;">
+          
+          <div class="diagram-node" style="border-top: 4px solid #1E3A8A; background: #F1F5F9;">
+            <div class="diagram-node-header">
+              <div class="node-badge" style="background: #1E3A8A;">1</div>
+              <div class="node-title" style="color: #1E3A8A;">Comercio (QROO)</div>
             </div>
-            <div style="font-size: 13px; color: var(--text-muted); line-height: 1.4;">
-              Muestra el <strong>QR de Mostrador/Mesa</strong> (Dinámico con monto o Estático para introducir importe).
-            </div>
-          </div>
-          <div class="flow-arrow">➔</div>
-          <div class="flow-step-box" style="border-left-color: #0D9488;">
-            <div style="font-weight: 700; font-size: 14px; color: #0D9488; margin-bottom: 4px;">
-              <span class="flow-step-num" style="background: #0D9488;">2</span> TURISTA SUDAMERICANO
-            </div>
-            <div style="font-size: 13px; color: var(--text-muted); line-height: 1.4;">
-              Escanea el QR usando su <strong>app bancaria nativa</strong> (PIX 🇧🇷, Nequi 🇨🇴, Yape 🇵🇪, eWallet 🇦🇷).
+            <div class="node-text">
+              Muestra el <strong>QR de Mostrador/Mesa</strong> (Dinámico con monto de la orden o Estático de caja).
             </div>
           </div>
-          <div class="flow-arrow">➔</div>
-          <div class="flow-step-box" style="border-left-color: #2563EB;">
-            <div style="font-weight: 700; font-size: 14px; color: #2563EB; margin-bottom: 4px;">
-              <span class="flow-step-num" style="background: #2563EB;">3</span> SMART QR HUB (FETUR)
+
+          <div class="diagram-arrow-horizontal">➔</div>
+
+          <div class="diagram-node" style="border-top: 4px solid #0D9488; background: #F1F5F9;">
+            <div class="diagram-node-header">
+              <div class="node-badge" style="background: #0D9488;">2</div>
+              <div class="node-title" style="color: #0D9488;">Turista LATAM</div>
             </div>
-            <div style="font-size: 13px; color: var(--text-muted); line-height: 1.4;">
-              Enruta la solicitud a la red bancaria internacional de origen y calcula el tipo de cambio oficial al instante.
+            <div class="node-text">
+              Escanea el QR usando su <strong>App Bancaria Nativa</strong> (PIX 🇧🇷, Nequi 🇨🇴, Yape 🇵🇪, Mercado Pago 🇦🇷).
             </div>
           </div>
+
+          <div class="diagram-arrow-horizontal">➔</div>
+
+          <div class="diagram-node" style="border-top: 4px solid #2563EB; background: #F1F5F9;">
+            <div class="diagram-node-header">
+              <div class="node-badge" style="background: #2563EB;">3</div>
+              <div class="node-title" style="color: #2563EB;">Smart QR Hub (FETUR)</div>
+            </div>
+            <div class="node-text">
+              Enruta la solicitud a la red bancaria internacional de origen y calcula el tipo de cambio FX instantáneo.
+            </div>
+          </div>
+
         </div>
 
-        <!-- Connection Row Downward -->
-        <div style="display: flex; justify-content: flex-end; padding-right: 120px;">
-          <div class="flow-arrow" style="font-size: 24px;">🠗</div>
+        <!-- Middle Transfer Connector -->
+        <div style="display: flex; justify-content: flex-end; padding-right: 140px; margin: 10px 0;">
+          <div style="font-size: 28px; color: var(--accent-blue); font-weight: 800;">🠗</div>
         </div>
 
-        <!-- Row 2: Steps 6, 5, 4 (Reverse direction) -->
-        <div style="display: grid; grid-template-columns: 1fr 40px 1fr 40px 1fr; align-items: center;">
-          <div class="flow-step-box" style="border-left-color: #059669;">
-            <div style="font-weight: 700; font-size: 14px; color: #059669; margin-bottom: 4px;">
-              <span class="flow-step-num" style="background: #059669;">6</span> NOTIFICACIÓN INSTANTÁNEA
+        <!-- Bottom Row Steps (6 <- 5 <- 4) -->
+        <div style="display: grid; grid-template-columns: 1fr 50px 1fr 50px 1fr; gap: 10px; align-items: center;">
+
+          <div class="diagram-node" style="border-top: 4px solid #059669; background: #ECFDF5;">
+            <div class="diagram-node-header">
+              <div class="node-badge" style="background: #059669;">6</div>
+              <div class="node-title" style="color: #059669;">Notificación Instantánea</div>
             </div>
-            <div style="font-size: 13px; color: var(--text-muted); line-height: 1.4;">
-              Comercio recibe <strong>confirmación inmediata (&lt;3 seg)</strong> vía WhatsApp, SMS o impresión en su comanda actual.
-            </div>
-          </div>
-          <div class="flow-arrow">🠔</div>
-          <div class="flow-step-box" style="border-left-color: #312E81;">
-            <div style="font-weight: 700; font-size: 14px; color: #312E81; margin-bottom: 4px;">
-              <span class="flow-step-num" style="background: #312E81;">5</span> LIQUIDACIÓN BANCO COMERCIO
-            </div>
-            <div style="font-size: 13px; color: var(--text-muted); line-height: 1.4;">
-              Acreditación automática en <strong>Pesos Mexicanos (MXN)</strong> vía SPEI a la cuenta de banco o tarjeta del comercio.
+            <div class="node-text">
+              Comercio recibe <strong>confirmación inmediata (&lt;3 seg)</strong> vía WhatsApp, SMS o ticket de comanda.
             </div>
           </div>
-          <div class="flow-arrow">🠔</div>
-          <div class="flow-step-box" style="border-left-color: #B45309;">
-            <div style="font-weight: 700; font-size: 14px; color: #B45309; margin-bottom: 4px;">
-              <span class="flow-step-num" style="background: #B45309;">4</span> DÉBITO BANCO ORIGEN
+
+          <div class="diagram-arrow-horizontal">🠔</div>
+
+          <div class="diagram-node" style="border-top: 4px solid #312E81; background: #F1F5F9;">
+            <div class="diagram-node-header">
+              <div class="node-badge" style="background: #312E81;">5</div>
+              <div class="node-title" style="color: #312E81;">Banco del Comercio</div>
             </div>
-            <div style="font-size: 13px; color: var(--text-muted); line-height: 1.4;">
-              El Banco de Origen autoriza el pago y debita en la moneda local del turista (Reales, Pesos Col/Arg, Soles).
+            <div class="node-text">
+              Acreditación directa en <strong>Pesos Mexicanos (MXN)</strong> vía SPEI a la cuenta bancaria del negocio.
             </div>
           </div>
+
+          <div class="diagram-arrow-horizontal">🠔</div>
+
+          <div class="diagram-node" style="border-top: 4px solid #B45309; background: #F1F5F9;">
+            <div class="diagram-node-header">
+              <div class="node-badge" style="background: #B45309;">4</div>
+              <div class="node-title" style="color: #B45309;">Banco de Origen</div>
+            </div>
+            <div class="node-text">
+              Debita automáticamente en la cuenta local del turista (Reales, Pesos Col/Arg, Soles) sin recargos extra.
+            </div>
+          </div>
+
         </div>
       </div>
 
@@ -686,7 +741,7 @@
     </div>
   </div>
 
-  <!-- SLIDE 6: MODELO DE ESCENARIOS Y SUPUESTOS DE ADOPCIÓN -->
+  <!-- SLIDE 6: MODELO DE ESCENARIOS Y SUPUESTOS DE ADOPCIÓN (FULL CANVAS SPACING) -->
   <div class="slide-container" id="slide-6">
     <div class="left-rail">
       <div class="rail-accent-line"></div>
@@ -709,52 +764,77 @@
       </div>
     </div>
     <div class="main-canvas">
-      <div class="mono-tag">06 · PROYECCIÓN ESTRATÉGICA BASADA EN ESCENARIOS</div>
-      <div class="slide-title-action">
-        Análisis de Sensibilidad: El proyecto genera desde $3.1M USD (piso) hasta $23.25M USD en función de la adopción
+      <div>
+        <div class="mono-tag">06 · PROYECCIÓN ESTRATÉGICA BASADA EN ESCENARIOS</div>
+        <div class="slide-title-action">
+          Análisis de Sensibilidad: El proyecto genera desde $3.1M USD (piso) hasta $23.25M USD en función de la adopción
+        </div>
       </div>
       
-      <table class="exec-table">
-        <thead>
-          <tr>
-            <th>Escenario de Adopción</th>
-            <th>% Afiliación FETUR (Base 500)</th>
-            <th>Txs Diarias por Comercio ($85 USD Ticket)</th>
-            <th>Transacciones Totales Diarias (Estado)</th>
-            <th>Volumen Anual Procesado (USD)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>🟢 <strong>Conservador (Piso 1% SAM)</strong></td>
-            <td><strong>20% (100 Comercios)</strong></td>
-            <td>1 cobro / día</td>
-            <td>100 txs / día</td>
-            <td><strong style="color: #1E3A8A;">$3,102,500 USD (~$3.1M USD)</strong></td>
-          </tr>
-          <tr>
-            <td>🔵 <strong>Moderado (Base 2.5% SAM)</strong></td>
-            <td><strong>35% (175 Comercios)</strong></td>
-            <td>2 cobros / día</td>
-            <td>350 txs / día</td>
-            <td><strong style="color: #0D9488;">$10,858,750 USD (~$10.8M USD)</strong></td>
-          </tr>
-          <tr>
-            <td>🟣 <strong>Optimista (Escalado 5% SAM)</strong></td>
-            <td><strong>50% (250 Comercios)</strong></td>
-            <td>3 cobros / día</td>
-            <td>750 txs / día</td>
-            <td><strong style="color: #312E81;">$23,268,750 USD (~$23.2M USD)</strong></td>
-          </tr>
-        </tbody>
-      </table>
+      <div style="display: flex; flex-direction: column; gap: 24px; flex: 1; justify-content: center;">
+        <!-- Top Scenario Summary Cards -->
+        <div class="card-grid grid-3col" style="height: 180px;">
+          <div class="exec-card exec-card-blue" style="padding: 20px;">
+            <div class="stat-val" style="font-size: 32px; color: #1E3A8A;">$3.10M USD</div>
+            <div class="stat-label">🟢 Escenario Conservador</div>
+            <div class="stat-desc">20% Afiliación FETUR (100 Comercios) · 1 cobro/día.</div>
+          </div>
+          <div class="exec-card exec-card-teal" style="padding: 20px;">
+            <div class="stat-val" style="font-size: 32px; color: #0D9488;">$10.85M USD</div>
+            <div class="stat-label">🔵 Escenario Moderado</div>
+            <div class="stat-desc">35% Afiliación FETUR (175 Comercios) · 2 cobros/día.</div>
+          </div>
+          <div class="exec-card exec-card-navy" style="padding: 20px;">
+            <div class="stat-val" style="font-size: 32px; color: #312E81;">$23.25M USD</div>
+            <div class="stat-label">🟣 Escenario Optimista</div>
+            <div class="stat-desc">50% Afiliación FETUR (250 Comercios) · 3 cobros/día.</div>
+          </div>
+        </div>
 
-      <div style="margin-top: 16px; background: #FFFFFF; border: 1px solid var(--card-border); padding: 16px; border-radius: 8px; border-left: 5px solid var(--accent-blue);">
-        <div style="font-weight: 700; font-size: 13.5px; color: var(--navy-dark); margin-bottom: 4px;">📌 SUPUESTOS CLAVE DEL MODELO DE NEGOCIO:</div>
-        <div style="font-size: 13px; color: var(--text-muted); line-height: 1.45;">
-          • <strong>Base de Afiliados FETUR:</strong> 500 comercios turísticos en Cancún, Playa del Carmen, Tulum y Cozumel.<br>
-          • <strong>Ticket Promedio Turístico LATAM:</strong> $85 USD por transacción en restaurantes, tours, boutiques y transporte.<br>
-          • <strong>Riesgo Cero para Afiliados:</strong> El modelo no requiere inversión de capital en terminales (Zero-Device).
+        <!-- Sensitivity Table -->
+        <table class="exec-table">
+          <thead>
+            <tr>
+              <th>Escenario de Adopción</th>
+              <th>% Afiliación FETUR (Base 500)</th>
+              <th>Txs Diarias por Comercio ($85 USD Ticket)</th>
+              <th>Transacciones Totales Diarias (Estado)</th>
+              <th>Volumen Anual Procesado (USD)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>🟢 <strong>Conservador (Piso 1% SAM)</strong></td>
+              <td><strong>20% (100 Comercios)</strong></td>
+              <td>1 cobro / día</td>
+              <td>100 txs / día</td>
+              <td><strong style="color: #1E3A8A;">$3,102,500 USD (~$3.1M USD)</strong></td>
+            </tr>
+            <tr>
+              <td>🔵 <strong>Moderado (Base 2.5% SAM)</strong></td>
+              <td><strong>35% (175 Comercios)</strong></td>
+              <td>2 cobros / día</td>
+              <td>350 txs / día</td>
+              <td><strong style="color: #0D9488;">$10,858,750 USD (~$10.8M USD)</strong></td>
+            </tr>
+            <tr>
+              <td>🟣 <strong>Optimista (Escalado 5% SAM)</strong></td>
+              <td><strong>50% (250 Comercios)</strong></td>
+              <td>3 cobros / día</td>
+              <td>750 txs / día</td>
+              <td><strong style="color: #312E81;">$23,268,750 USD (~$23.2M USD)</strong></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Key Assumptions Box -->
+        <div style="background: #FFFFFF; border: 1px solid var(--card-border); padding: 22px; border-radius: 8px; border-left: 5px solid var(--accent-blue);">
+          <div style="font-weight: 700; font-size: 14.5px; color: var(--navy-dark); margin-bottom: 6px;">📌 SUPUESTOS CLAVE DEL MODELO DE NEGOCIO:</div>
+          <div style="font-size: 14px; color: var(--text-muted); line-height: 1.55;">
+            • <strong>Base de Afiliados FETUR:</strong> 500 comercios turísticos en Cancún, Playa del Carmen, Tulum y Cozumel.<br>
+            • <strong>Ticket Promedio Turístico LATAM:</strong> $85 USD por transacción en restaurantes, tours, boutiques y transporte.<br>
+            • <strong>Riesgo Cero para Afiliados:</strong> El modelo no requiere inversión de capital en terminales (Zero-Device).
+          </div>
         </div>
       </div>
 
@@ -787,28 +867,30 @@
       </div>
     </div>
     <div class="main-canvas">
-      <div class="mono-tag">07 · MESA DE TRABAJO Y DECISIONES ESTRATÉGICAS</div>
-      <div class="slide-title-action">
-        Propuesta de implementación gradual a 45 días para la validación, prueba piloto y lanzamiento oficial
+      <div>
+        <div class="mono-tag">07 · MESA DE TRABAJO Y DECISIONES ESTRATÉGICAS</div>
+        <div class="slide-title-action">
+          Propuesta de implementación gradual a 45 días para la validación, prueba piloto y lanzamiento oficial
+        </div>
       </div>
-      <div class="card-grid grid-2x2" style="height: 520px;">
+      <div class="card-grid grid-2x2" style="height: 680px;">
         <div class="exec-card exec-card-blue">
-          <div class="stat-val" style="font-size: 32px; color: #1E3A8A;">Fase 1 (Días 1 - 15)</div>
+          <div class="stat-val" style="font-size: 34px; color: #1E3A8A;">Fase 1 (Días 1 - 15)</div>
           <div class="stat-label">Convocatoria & Afiliación Voluntaria</div>
           <div class="stat-desc">Presentación de la circular de adhesión a los primeros 100 comercios de mayor afluencia sudamericana.</div>
         </div>
         <div class="exec-card exec-card-teal">
-          <div class="stat-val" style="font-size: 32px; color: #0D9488;">Fase 2 (Días 16 - 30)</div>
+          <div class="stat-val" style="font-size: 34px; color: #0D9488;">Fase 2 (Días 16 - 30)</div>
           <div class="stat-label">Piloto Técnico & Integración Software</div>
           <div class="stat-desc">Despliegue de señalética QR de mostrador y pruebas de integración con el software de caja de los comercios.</div>
         </div>
         <div class="exec-card exec-card-navy">
-          <div class="stat-val" style="font-size: 32px; color: #312E81;">Fase 3 (Días 31 - 45)</div>
+          <div class="stat-val" style="font-size: 34px; color: #312E81;">Fase 3 (Días 31 - 45)</div>
           <div class="stat-label">Lanzamiento Institucional Estatal</div>
           <div class="stat-desc">Presentación formal ante medios con SECTUR Quintana Roo y la Comisión de Innovación de FETUR.</div>
         </div>
         <div class="exec-card exec-card-amber">
-          <div class="stat-val" style="font-size: 32px; color: #B45309;">Fase 4 (Días 46+)</div>
+          <div class="stat-val" style="font-size: 34px; color: #B45309;">Fase 4 (Días 46+)</div>
           <div class="stat-label">Evaluación & Réplica ASETUR</div>
           <div class="stat-desc">Revisión del volumen procesado y análisis de expansión a otros polos turísticos (Los Cabos / Puerto Vallarta).</div>
         </div>
