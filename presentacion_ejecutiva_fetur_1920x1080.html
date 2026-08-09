@@ -272,7 +272,6 @@
     overflow: hidden;
   }
 
-  /* Left Vertical Pill matching reference image */
   .topology-left-banner {
     width: 65px;
     background: var(--navy-950);
@@ -289,7 +288,7 @@
     writing-mode: vertical-rl;
     transform: rotate(180deg);
     font-family: 'Inter', sans-serif;
-    font-size: 14px;
+    font-size: 13.5px;
     font-weight: 800;
     letter-spacing: 1.5px;
     color: #E2E8F0;
@@ -303,10 +302,9 @@
     overflow: hidden;
   }
 
-  /* Toolbar inside Stage */
   .topology-toolbar {
     position: absolute;
-    top: 14px;
+    top: 12px;
     left: 20px;
     right: 20px;
     display: flex;
@@ -366,7 +364,7 @@
     box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
   }
 
-  /* Animated Moving SVG Dashes & Particles */
+  /* Continuous Moving SVG Dashes */
   .animated-flow-path {
     stroke-dasharray: 8, 8;
     animation: flow-dash 1.2s linear infinite;
@@ -377,27 +375,17 @@
     animation: flow-dash 0.8s linear infinite;
   }
 
-  .animated-flow-path-reverse {
-    stroke-dasharray: 8, 8;
-    animation: flow-dash-rev 1.2s linear infinite;
-  }
-
   @keyframes flow-dash {
     from { stroke-dashoffset: 32; }
     to { stroke-dashoffset: 0; }
   }
 
-  @keyframes flow-dash-rev {
-    from { stroke-dashoffset: 0; }
-    to { stroke-dashoffset: 32; }
-  }
-
-  /* Actor Cards styling within SVG Overlay */
+  /* Actor Cards styling */
   .actor-card {
     background: #FFFFFF;
     border: 1.5px solid var(--slate-200);
     border-radius: 12px;
-    padding: 12px 16px;
+    padding: 12px 18px;
     box-shadow: 0 6px 16px rgba(15, 23, 42, 0.04);
     position: absolute;
     display: flex;
@@ -414,9 +402,9 @@
   }
 
   .actor-icon {
-    font-size: 30px;
-    width: 46px;
-    height: 46px;
+    font-size: 28px;
+    width: 44px;
+    height: 44px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -476,7 +464,7 @@
     background: #FFFFFF;
     border: 2px solid var(--blue-500);
     border-radius: 14px;
-    padding: 14px 20px;
+    padding: 12px 18px;
     box-shadow: 0 8px 24px rgba(37, 99, 235, 0.08);
     display: flex;
     flex-direction: column;
@@ -488,15 +476,15 @@
   .switch-logos-row {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 6px;
+    gap: 8px;
+    margin-bottom: 4px;
   }
 
   .switch-badge {
-    padding: 4px 8px;
+    padding: 3px 6px;
     border-radius: 4px;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
+    font-size: 10.5px;
     font-weight: 800;
   }
 
@@ -519,7 +507,7 @@
     box-shadow: 0 4px 16px rgba(15, 23, 42, 0.2);
   }
 
-  /* Other Slides Components */
+  /* Card Grid for Static Slides */
   .card-grid {
     display: grid;
     gap: 22px;
@@ -1097,7 +1085,7 @@
     </div>
   </div>
 
-  <!-- SLIDE 5: TOPOLOGY NETWORK ARCHITECTURE WITH CONTINUOUS MOVEMENT -->
+  <!-- SLIDE 5: TOPOLOGY NETWORK ARCHITECTURE WITH PERFECT GEOMETRIC ALIGNMENT -->
   <div class="slide-container" id="slide-5">
     <div class="left-rail">
       <div class="rail-glow"></div>
@@ -1155,24 +1143,6 @@
           <!-- Dynamic SVG Vector Canvas with Animated Traveling Light Pulses -->
           <svg width="100%" height="100%" viewBox="0 0 1380 540" style="position: absolute; top: 0; left: 0; pointer-events: none;" id="topoSvg">
             <defs>
-              <linearGradient id="gradBlue" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#2563EB" />
-                <stop offset="100%" stop-color="#3B82F6" />
-              </linearGradient>
-              <linearGradient id="gradTeal" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stop-color="#3B82F6" />
-                <stop offset="100%" stop-color="#0D9488" />
-              </linearGradient>
-              <linearGradient id="gradPurple" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#0D9488" />
-                <stop offset="100%" stop-color="#8B5CF6" />
-              </linearGradient>
-              <linearGradient id="gradGreen" x1="100%" y1="0%" x2="0%" y2="0%">
-                <stop offset="0%" stop-color="#2563EB" />
-                <stop offset="100%" stop-color="#10B981" />
-              </linearGradient>
-
-              <!-- Arrow Markers -->
               <marker id="arrowBlue" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
                 <path d="M 0 0 L 8 4 L 0 8 z" fill="#2563EB" />
               </marker>
@@ -1191,74 +1161,74 @@
             </defs>
 
             <!-- 1. Flow line Comercio to Tourist via QR -->
-            <path id="path1" d="M 270 140 L 780 140" fill="none" stroke="#2563EB" stroke-width="3" stroke-linecap="round" class="animated-flow-path" marker-end="url(#arrowBlue)" />
-            <text x="350" y="125" fill="#1E3A8A" font-family="Inter" font-weight="700" font-size="12.5">1. El comercio inicia código QR Dinámico o Estático</text>
+            <path id="path1" d="M 280 120 L 760 120" fill="none" stroke="#2563EB" stroke-width="3" stroke-linecap="round" class="animated-flow-path" marker-end="url(#arrowBlue)" />
+            <text x="330" y="105" fill="#1E3A8A" font-family="Inter" font-weight="700" font-size="12.5">1. El comercio inicia código QR Dinámico o Estático</text>
 
             <!-- Branch to 2A (Dinámico) -->
-            <path id="path2A" d="M 980 130 L 1090 100" fill="none" stroke="#059669" stroke-width="2.5" class="animated-flow-path-fast" marker-end="url(#arrowGreen)" />
-            <text x="1000" y="90" fill="#059669" font-family="JetBrains Mono" font-weight="800" font-size="11.5">2A. Dinámico</text>
+            <path id="path2A" d="M 990 110 L 1080 85" fill="none" stroke="#059669" stroke-width="2.5" class="animated-flow-path-fast" marker-end="url(#arrowGreen)" />
+            <text x="1005" y="78" fill="#059669" font-family="JetBrains Mono" font-weight="800" font-size="11.5">2A. Dinámico</text>
 
             <!-- Branch to 2B (Estático) -->
-            <path id="path2B" d="M 980 150 L 1090 180" fill="none" stroke="#DC2626" stroke-width="2.5" class="animated-flow-path-fast" marker-end="url(#arrowRed)" />
-            <text x="1000" y="195" fill="#DC2626" font-family="JetBrains Mono" font-weight="800" font-size="11.5">2B. Estático</text>
+            <path id="path2B" d="M 990 135 L 1080 160" fill="none" stroke="#DC2626" stroke-width="2.5" class="animated-flow-path-fast" marker-end="url(#arrowRed)" />
+            <text x="1005" y="175" fill="#DC2626" font-family="JetBrains Mono" font-weight="800" font-size="11.5">2B. Estático</text>
 
             <!-- 3. Tourist to Origin Bank -->
-            <path id="path3" d="M 870 200 L 870 370" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" class="animated-flow-path" marker-end="url(#arrowTeal)" />
-            <text x="885" y="280" fill="#0D9488" font-family="Inter" font-weight="700" font-size="12">3. Enviar datos para iniciar pago QR</text>
+            <path id="path3" d="M 885 160 L 885 305" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" class="animated-flow-path" marker-end="url(#arrowTeal)" />
+            <text x="895" y="240" fill="#0D9488" font-family="Inter" font-weight="700" font-size="12">3. Enviar datos para iniciar pago QR</text>
 
             <!-- 10. Notification to Tourist -->
-            <path id="path10" d="M 840 370 L 840 200" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" class="animated-flow-path-fast" marker-end="url(#arrowGreen)" />
-            <text x="730" y="280" fill="#10B981" font-family="Inter" font-weight="800" font-size="12">10. Notificación</text>
+            <path id="path10" d="M 845 305 L 845 160" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" class="animated-flow-path-fast" marker-end="url(#arrowGreen)" />
+            <text x="735" y="240" fill="#10B981" font-family="Inter" font-weight="800" font-size="12">10. Notificación</text>
 
             <!-- 4. Debit Tourist Account Branch -->
-            <path id="path4" d="M 990 415 L 1100 415" fill="none" stroke="#8B5CF6" stroke-width="2.5" class="animated-flow-path" marker-end="url(#arrowPurple)" />
-            <text x="1005" y="405" fill="#8B5CF6" font-family="Inter" font-weight="700" font-size="11.5">4. Autorización</text>
+            <path id="path4" d="M 1005 345 L 1095 345" fill="none" stroke="#8B5CF6" stroke-width="2.5" class="animated-flow-path" marker-end="url(#arrowPurple)" />
+            <text x="1015" y="335" fill="#8B5CF6" font-family="Inter" font-weight="700" font-size="11.5">4. Autorización</text>
 
             <!-- 5. Origin Bank to Central Switch -->
-            <path id="path5" d="M 750 415 L 610 415" fill="none" stroke="#2563EB" stroke-width="3" class="animated-flow-path" marker-end="url(#arrowBlue)" />
-            <text x="635" y="400" fill="#1E3A8A" font-family="Inter" font-weight="700" font-size="12">5. Solicitud de pago</text>
+            <path id="path5" d="M 760 340 L 635 340" fill="none" stroke="#2563EB" stroke-width="3" class="animated-flow-path" marker-end="url(#arrowBlue)" />
+            <text x="650" y="325" fill="#1E3A8A" font-family="Inter" font-weight="700" font-size="12">5. Solicitud de pago</text>
 
             <!-- 9. Return Response to Origin Bank -->
-            <path id="path9" d="M 610 440 L 750 440" fill="none" stroke="#0D9488" stroke-width="2.5" class="animated-flow-path-fast" marker-end="url(#arrowTeal)" />
-            <text x="625" y="465" fill="#0D9488" font-family="Inter" font-weight="700" font-size="11.5">9. Respuesta de pago</text>
+            <path id="path9" d="M 635 365 L 760 365" fill="none" stroke="#0D9488" stroke-width="2.5" class="animated-flow-path-fast" marker-end="url(#arrowTeal)" />
+            <text x="645" y="390" fill="#0D9488" font-family="Inter" font-weight="700" font-size="11.5">9. Respuesta de pago</text>
 
             <!-- 6. Switch to Merchant Bank (SPEI) -->
-            <path id="path6" d="M 390 415 L 260 415" fill="none" stroke="#2563EB" stroke-width="3" class="animated-flow-path" marker-end="url(#arrowBlue)" />
-            <text x="275" y="400" fill="#1E3A8A" font-family="Inter" font-weight="700" font-size="12">6. Solicitud SPEI</text>
+            <path id="path6" d="M 435 340 L 270 340" fill="none" stroke="#2563EB" stroke-width="3" class="animated-flow-path" marker-end="url(#arrowBlue)" />
+            <text x="290" y="325" fill="#1E3A8A" font-family="Inter" font-weight="700" font-size="12">6. Solicitud SPEI</text>
 
             <!-- 8. Return Response Merchant Bank -->
-            <path id="path8" d="M 260 440 L 390 440" fill="none" stroke="#10B981" stroke-width="2.5" class="animated-flow-path-fast" marker-end="url(#arrowGreen)" />
-            <text x="275" y="465" fill="#10B981" font-family="Inter" font-weight="700" font-size="11.5">8. Acreditación MXN</text>
+            <path id="path8" d="M 270 365 L 435 365" fill="none" stroke="#10B981" stroke-width="2.5" class="animated-flow-path-fast" marker-end="url(#arrowGreen)" />
+            <text x="290" y="390" fill="#10B981" font-family="Inter" font-weight="700" font-size="11.5">8. Acreditación MXN</text>
 
             <!-- 7. Merchant Bank to Store Approval Notification -->
-            <path id="path7" d="M 170 360 L 170 195" fill="none" stroke="#10B981" stroke-width="3.5" class="animated-flow-path-fast" marker-end="url(#arrowGreen)" />
-            <text x="25" y="270" fill="#059669" font-family="Inter" font-weight="800" font-size="12.5" style="transform: rotate(-90deg); transform-origin: 160px 270px;">7. Se aprueba y notifica al comercio (&lt;3s)</text>
+            <path id="path7" d="M 155 305 L 155 160" fill="none" stroke="#10B981" stroke-width="3.5" class="animated-flow-path-fast" marker-end="url(#arrowGreen)" />
+            <text x="18" y="240" fill="#059669" font-family="Inter" font-weight="800" font-size="12.5" style="transform: rotate(-90deg); transform-origin: 145px 240px;">7. Se aprueba y notifica al comercio (&lt;3s)</text>
           </svg>
 
           <!-- ACTOR 1: COMERCIO (Top Left) -->
-          <div class="actor-card" id="actorStore" style="top: 100px; left: 40px; width: 220px;">
+          <div class="actor-card" id="actorStore" style="top: 85px; left: 45px; width: 225px;">
             <div class="actor-icon" style="background: #EFF6FF;">🏪</div>
             <div>
-              <div class="actor-info-title">Comercio (QROO)</div>
+              <div class="actor-info-title">1. Comercio (QROO)</div>
               <div class="actor-info-sub">Restaurante / Boutique</div>
             </div>
           </div>
 
           <!-- FLOATING QR (Top Center) -->
-          <div style="position: absolute; top: 75px; left: 470px; display: flex; flex-direction: column; align-items: center; z-index: 6;">
+          <div style="position: absolute; top: 65px; left: 495px; display: flex; flex-direction: column; align-items: center; z-index: 6;">
             <div style="background: #FFFFFF; border: 2px solid var(--navy-950); padding: 8px; border-radius: 8px; box-shadow: 0 6px 16px rgba(0,0,0,0.1);">
-              <svg width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="2">
+              <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="2">
                 <rect x="3" y="3" width="6" height="6" rx="1" fill="#0F172A" />
                 <rect x="15" y="3" width="6" height="6" rx="1" fill="#0F172A" />
                 <rect x="3" y="15" width="6" height="6" rx="1" fill="#0F172A" />
                 <path d="M15 15h2v2h-2zM19 19h2v2h-2zM15 19h2v2h-2zM19 15h2v2h-2zM10 3v4M3 10h4M10 10h4v4h-4z" />
               </svg>
             </div>
-            <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 800; color: var(--navy-950); margin-top: 4px;">QR PAY</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 800; color: var(--navy-950); margin-top: 3px;">QR PAY</span>
           </div>
 
           <!-- ACTOR 2: TURISTA (Top Right) -->
-          <div class="actor-card" id="actorTourist" style="top: 100px; left: 790px; width: 220px;">
+          <div class="actor-card" id="actorTourist" style="top: 85px; left: 770px; width: 220px;">
             <div class="actor-icon" style="background: #ECFDF5;">📱</div>
             <div>
               <div class="actor-info-title">2. Cliente Escanea</div>
@@ -1267,17 +1237,17 @@
           </div>
 
           <!-- BRANCH 2A: DINÁMICO (Far Right Top) -->
-          <div class="branch-pill branch-2a" id="pill2A" style="top: 85px; left: 1100px;">
+          <div class="branch-pill branch-2a" id="pill2A" style="top: 65px; left: 1090px;">
             <span>🟢 Visualiza importe y confirma</span>
           </div>
 
           <!-- BRANCH 2B: ESTÁTICO (Far Right Bottom) -->
-          <div class="branch-pill branch-2b dimmed" id="pill2B" style="top: 165px; left: 1100px;">
+          <div class="branch-pill branch-2b dimmed" id="pill2B" style="top: 145px; left: 1090px;">
             <span>🔴 Introduce importe y confirma</span>
           </div>
 
           <!-- ACTOR 4: BANCO ORIGEN (Bottom Right) -->
-          <div class="actor-card" id="actorOriginBank" style="top: 380px; left: 760px; width: 230px;">
+          <div class="actor-card" id="actorOriginBank" style="top: 315px; left: 770px; width: 235px;">
             <div class="actor-icon" style="background: #F5F3FF;">🏛️</div>
             <div>
               <div class="actor-info-title">Originador / Banco Turista</div>
@@ -1286,12 +1256,12 @@
           </div>
 
           <!-- DEBIT IN ACCOUNT PILL (Far Right Bottom) -->
-          <div class="branch-pill" style="top: 395px; left: 1110px; background: #8B5CF6; color: #FFFFFF; border: 1.5px solid #7C3AED;">
+          <div class="branch-pill" style="top: 325px; left: 1105px; background: #8B5CF6; color: #FFFFFF; border: 1.5px solid #7C3AED;">
             <span>🟣 Debitar en cuenta del cliente</span>
           </div>
 
           <!-- CENTRAL SWITCH HUB (Bottom Center) -->
-          <div class="switch-hub-card" id="actorSwitch" style="top: 360px; left: 400px; width: 200px;">
+          <div class="switch-hub-card" id="actorSwitch" style="top: 305px; left: 445px; width: 185px;">
             <div class="switch-logos-row">
               <span class="switch-badge" style="background: #EFF6FF; color: #1E3A8A;">🇧🇷 PIX</span>
               <span class="switch-badge" style="background: #CCFBF1; color: #0D9488;">🇨🇴 NEQUI</span>
@@ -1306,7 +1276,7 @@
           </div>
 
           <!-- ACTOR 5: BANCO DEL COMERCIO (Bottom Left) -->
-          <div class="actor-card" id="actorMerchantBank" style="top: 380px; left: 40px; width: 210px;">
+          <div class="actor-card" id="actorMerchantBank" style="top: 315px; left: 45px; width: 215px;">
             <div class="actor-icon" style="background: #ECFDF5;">🏦</div>
             <div>
               <div class="actor-info-title">Banco del Comercio</div>
