@@ -24,6 +24,7 @@
     --amber-400: #FBBF24;
     --rose-500: #F43F5E;
     --purple-500: #8B5CF6;
+    --purple-400: #A78BFA;
     --slate-100: #F1F5F9;
     --slate-200: #E2E8F0;
     --slate-400: #94A3B8;
@@ -259,255 +260,341 @@
     flex-shrink: 0;
   }
 
-  /* ------------------ SLIDE 5: VISUAL NETWORK TOPOLOGY WITH REAL MOVEMENT ------------------ */
-  .topology-stage-wrapper {
+  /* -------------------------------------------------------------
+     SLIDE 5: ORIGINAL "SMART TRANSIT DIGITAL TWIN" (ORIGINAL COCKPIT)
+     ------------------------------------------------------------- */
+  .cockpit-stage-container {
     flex: 1;
     margin: 10px 0;
+    display: grid;
+    grid-template-rows: 58px 1fr 68px;
+    gap: 12px;
+    background: #0B132B;
+    border: 1px solid #1E293B;
+    border-radius: 16px;
+    padding: 16px 22px;
     position: relative;
-    background: #FFFFFF;
-    border: 1px solid var(--card-border);
-    border-radius: 14px;
-    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
-    display: flex;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.1);
     overflow: hidden;
   }
 
-  .topology-left-banner {
-    width: 65px;
-    background: var(--navy-950);
-    color: #FFFFFF;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    position: relative;
-    border-right: 1px solid var(--card-border);
-  }
-
-  .topology-left-text {
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-    font-family: 'Inter', sans-serif;
-    font-size: 13.5px;
-    font-weight: 800;
-    letter-spacing: 1.5px;
-    color: #E2E8F0;
-    text-transform: uppercase;
-  }
-
-  .topology-canvas-area {
-    flex: 1;
-    position: relative;
-    background: #FFFFFF;
-    overflow: hidden;
-  }
-
-  .topology-toolbar {
+  .cockpit-ambient-glow {
     position: absolute;
-    top: 12px;
-    left: 20px;
-    right: 20px;
+    width: 600px;
+    height: 300px;
+    top: 20%;
+    left: 30%;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, rgba(13, 148, 136, 0.08) 50%, transparent 70%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Cockpit Top Bar */
+  .cockpit-header-bar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    z-index: 10;
-    background: rgba(248, 250, 252, 0.95);
-    backdrop-filter: blur(8px);
-    border: 1px solid var(--slate-200);
-    padding: 8px 18px;
+    background: rgba(15, 23, 42, 0.75);
+    border: 1px solid rgba(255,255,255,0.08);
     border-radius: 10px;
+    padding: 0 18px;
+    z-index: 3;
   }
 
-  .topology-mode-selector {
+  .cockpit-origin-pills {
     display: flex;
+    align-items: center;
     gap: 8px;
   }
 
-  .topo-btn {
-    padding: 6px 14px;
-    border-radius: 6px;
-    border: 1px solid var(--slate-200);
-    background: #FFFFFF;
+  .origin-pill-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #CBD5E1;
     font-family: 'JetBrains Mono', monospace;
     font-size: 11.5px;
     font-weight: 700;
-    color: var(--slate-600);
-    cursor: pointer;
-    transition: all 0.2s ease;
-  }
-
-  .topo-btn.active, .topo-btn:hover {
-    background: var(--navy-950);
-    color: #FFFFFF;
-    border-color: var(--navy-950);
-  }
-
-  .topo-action-btn {
-    background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
-    color: #FFFFFF;
-    border: none;
-    padding: 8px 18px;
+    padding: 6px 14px;
     border-radius: 6px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    font-size: 12.5px;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
     transition: all 0.2s ease;
-  }
-
-  .topo-action-btn:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
-  }
-
-  /* Continuous Moving SVG Dashes */
-  .animated-flow-path {
-    stroke-dasharray: 8, 8;
-    animation: flow-dash 1.2s linear infinite;
-  }
-
-  .animated-flow-path-fast {
-    stroke-dasharray: 6, 6;
-    animation: flow-dash 0.8s linear infinite;
-  }
-
-  @keyframes flow-dash {
-    from { stroke-dashoffset: 32; }
-    to { stroke-dashoffset: 0; }
-  }
-
-  /* Actor Cards styling */
-  .actor-card {
-    background: #FFFFFF;
-    border: 1.5px solid var(--slate-200);
-    border-radius: 12px;
-    padding: 12px 18px;
-    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.04);
-    position: absolute;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    z-index: 5;
-  }
-
-  .actor-card.highlight {
-    border-color: var(--blue-500);
-    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15), 0 10px 25px rgba(37, 99, 235, 0.12);
-    transform: scale(1.04);
-  }
-
-  .actor-icon {
-    font-size: 28px;
-    width: 44px;
-    height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--slate-100);
-    border-radius: 10px;
-    flex-shrink: 0;
-  }
-
-  .actor-info-title {
-    font-size: 13.5px;
-    font-weight: 800;
-    color: var(--navy-950);
-  }
-
-  .actor-info-sub {
-    font-size: 11.5px;
-    color: var(--text-secondary);
-    margin-top: 2px;
-  }
-
-  /* Branching Pills 2A and 2B */
-  .branch-pill {
-    position: absolute;
-    padding: 8px 14px;
-    border-radius: 20px;
-    font-family: 'Inter', sans-serif;
-    font-size: 11.5px;
-    font-weight: 700;
     display: flex;
     align-items: center;
     gap: 6px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-    transition: all 0.3s ease;
-    z-index: 6;
   }
 
-  .branch-2a {
-    background: #059669;
+  .origin-pill-btn.active, .origin-pill-btn:hover {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.4) 0%, rgba(13, 148, 136, 0.4) 100%);
+    border-color: #38BDF8;
     color: #FFFFFF;
-    border: 1.5px solid #10B981;
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.3);
   }
 
-  .branch-2b {
-    background: #DC2626;
-    color: #FFFFFF;
-    border: 1.5px solid #EF4444;
+  .cockpit-telemetry-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11.5px;
+    color: #94A3B8;
+    display: flex;
+    align-items: center;
+    gap: 12px;
   }
 
-  .branch-pill.dimmed {
-    opacity: 0.35;
-    transform: scale(0.95);
+  /* Cockpit 3-Column Core Grid */
+  .cockpit-core-grid {
+    display: grid;
+    grid-template-columns: 360px 1fr 360px;
+    gap: 20px;
+    position: relative;
+    z-index: 2;
+    align-items: stretch;
   }
 
-  /* Central Switch Hub */
-  .switch-hub-card {
-    position: absolute;
-    background: #FFFFFF;
-    border: 2px solid var(--blue-500);
+  /* Left Deck: Point of Sale & Acrylic Standee */
+  .cockpit-deck-card {
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 14px;
-    padding: 12px 18px;
-    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.08);
+    padding: 20px 22px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 5;
+    justify-content: space-between;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
   }
 
-  .switch-logos-row {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 4px;
-  }
-
-  .switch-badge {
-    padding: 3px 6px;
-    border-radius: 4px;
+  .deck-section-tag {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 10.5px;
+    font-size: 11px;
     font-weight: 800;
-  }
-
-  /* Live Flow Step Toast */
-  .step-toast-box {
-    position: absolute;
-    bottom: 12px;
-    left: 20px;
-    right: 20px;
-    background: var(--navy-950);
-    color: #FFFFFF;
-    padding: 10px 20px;
-    border-radius: 8px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12.5px;
-    z-index: 10;
-    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.2);
+    margin-bottom: 12px;
   }
 
-  /* Card Grid for Static Slides */
+  /* Realistic Glass QR Standee */
+  .glass-standee-box {
+    background: linear-gradient(145deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%);
+    border: 1.5px solid rgba(56, 189, 248, 0.3);
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .laser-scanner-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #38BDF8, #5EEAD4, transparent);
+    box-shadow: 0 0 8px #38BDF8;
+    animation: scan-laser 2s infinite ease-in-out;
+  }
+
+  @keyframes scan-laser {
+    0% { top: 10%; opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { top: 90%; opacity: 0; }
+  }
+
+  .qr-live-svg {
+    background: #FFFFFF;
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+  }
+
+  /* Center Deck: ORION-FX™ Cloud Routing Core */
+  .center-core-deck {
+    background: radial-gradient(circle at 50% 50%, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.95) 100%);
+    border: 1.5px solid rgba(56, 189, 248, 0.4);
+    border-radius: 14px;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    box-shadow: 0 0 30px rgba(37, 99, 235, 0.2);
+  }
+
+  .orion-brand-badge {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 10px;
+  }
+
+  .fx-conversion-rack {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 14px;
+    margin: 12px 0;
+    background: rgba(6, 11, 20, 0.7);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    padding: 14px 18px;
+  }
+
+  .fx-currency-box {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .fx-cur-code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--slate-400);
+  }
+
+  .fx-cur-amount {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 22px;
+    font-weight: 800;
+    color: #FFFFFF;
+    margin-top: 2px;
+  }
+
+  .fx-arrow-icon {
+    font-size: 22px;
+    color: #38BDF8;
+    animation: pulse-arrow 1.5s infinite;
+  }
+
+  @keyframes pulse-arrow {
+    0%, 100% { transform: translateX(0); opacity: 0.7; }
+    50% { transform: translateX(4px); opacity: 1; text-shadow: 0 0 10px #38BDF8; }
+  }
+
+  /* Dual-Rail Engine: Domestic vs International */
+  .dual-rail-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .rail-pod {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    padding: 10px 14px;
+  }
+
+  .rail-pod-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .rail-pod-meta {
+    font-size: 12px;
+    color: #94A3B8;
+    margin-top: 4px;
+    line-height: 1.4;
+  }
+
+  /* Real-time Cryptographic Packet Log Stream */
+  .packet-stream-log {
+    background: #060B14;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    color: #5EEAD4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  /* Right Deck: Treasury & SPEI Settlement */
+  .treasury-vault-box {
+    background: linear-gradient(145deg, rgba(16, 185, 129, 0.1) 0%, rgba(15, 23, 42, 0.8) 100%);
+    border: 1.5px solid rgba(16, 185, 129, 0.4);
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .settlement-balance-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 26px;
+    font-weight: 900;
+    color: #34D399;
+    letter-spacing: -0.5px;
+  }
+
+  .spei-hash-badge {
+    background: rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: #94A3B8;
+    word-break: break-all;
+  }
+
+  /* Cockpit Bottom Control Dock */
+  .cockpit-control-dock {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(15, 23, 42, 0.9);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 0 20px;
+    z-index: 3;
+  }
+
+  .dock-status-msg {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12.5px;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .cinematic-trigger-btn {
+    background: linear-gradient(135deg, #2563EB 0%, #0D9488 100%);
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.5);
+    transition: all 0.2s ease;
+  }
+
+  .cinematic-trigger-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(56, 189, 248, 0.8);
+  }
+
+  /* Other Slides Components */
   .card-grid {
     display: grid;
     gap: 22px;
@@ -1085,18 +1172,18 @@
     </div>
   </div>
 
-  <!-- SLIDE 5: TOPOLOGY NETWORK ARCHITECTURE WITH PERFECT GEOMETRIC ALIGNMENT -->
+  <!-- SLIDE 5: ORIGINAL "SMART TRANSIT DIGITAL TWIN" (ORION-FX COCKPIT) -->
   <div class="slide-container" id="slide-5">
     <div class="left-rail">
       <div class="rail-glow"></div>
       <div class="rail-accent-line"></div>
       <div>
-        <div class="exec-tag-pill">05 · TOPOLOGÍA ACTIVA</div>
+        <div class="exec-tag-pill">05 · GEMELO DIGITAL</div>
         <div class="rail-brand-title">
-          DIAGRAMA DE RED CON MOVIMIENTO
+          MOTOR DE ENRUTAMIENTO SMART PAY
         </div>
         <div class="rail-desc">
-          Topología interactiva en tiempo real: Flujo animado de datos, autorización y liquidación SPEI punto a punto.
+          Cockpit de Telemetría Transfronteriza: Monitoreo en vivo de conversión FX, enrutamiento EMVCo y liquidación bancaria SPEI.
         </div>
       </div>
       
@@ -1110,190 +1197,154 @@
     </div>
     <div class="main-canvas">
       <div>
-        <div class="mono-tag">05 · TOPOLOGÍA DE TRANSACCIÓN EN VIVO (CÓDIGO QR INICIADO POR EL COMERCIO)</div>
+        <div class="mono-tag">05 · INFRAESTRUCTURA PROPIETARIA DE ENRUTAMIENTO Y CONVERSIÓN FX</div>
         <div class="slide-title-action">
-          Flujo Animado en 10 Pasos: Desde el Mostrador hasta la Liquidación SPEI & Notificación
+          Cockpit de Telemetría: Procesamiento Transfronterizo de Paquetes Criptográficos ISO 8583
         </div>
       </div>
 
-      <!-- Main Graphical Topology Stage with Continuous Movement -->
-      <div class="topology-stage-wrapper">
-        
-        <!-- Left Vertical Indicator Banner matching user reference -->
-        <div class="topology-left-banner">
-          <div class="topology-left-text">Código QR iniciado por el comercio</div>
+      <!-- ORIGINAL HIGH-TECH COCKPIT STAGE -->
+      <div class="cockpit-stage-container">
+        <div class="cockpit-ambient-glow"></div>
+
+        <!-- Cockpit Header Navigation / Origin Selector -->
+        <div class="cockpit-header-bar">
+          <div class="cockpit-origin-pills">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 800; color: #94A3B8; margin-right: 4px;">ORIGEN DEL TURISTA:</span>
+            <button class="origin-pill-btn active" onclick="setOrigin('br', '425.00 BRL', 'R$ 425.00', '🇧🇷 BANCO CENTRAL DO BRASIL (PIX)', '0.00% IOF')">🇧🇷 Brasil (PIX)</button>
+            <button class="origin-pill-btn" onclick="setOrigin('co', '340,000 COP', '$340k COP', '🇨🇴 SUPERFINANCIERA (NEQUI)', '0.00% FX MARKUP')">🇨🇴 Colombia (Nequi)</button>
+            <button class="origin-pill-btn" onclick="setOrigin('pe', '315.00 PEN', 'S/ 315.00', '🇵🇪 BCRP INTEROPERABLE (YAPE)', '0.00% FEE')">🇵🇪 Perú (Yape)</button>
+            <button class="origin-pill-btn" onclick="setOrigin('ar', '105,000 ARS', '$105k ARS', '🇦🇷 BCRA DEBIN / CBU', '25% AFIP EVITADO')">🇦🇷 Argentina (CBU)</button>
+            <button class="origin-pill-btn" onclick="setOrigin('mx', '1,700.00 MXN', '$1,700 MXN', '🇲🇽 BANCO DE MÉXICO (CoDi / DiMo)', '0% COMISIÓN TPV')">🇲🇽 México (CoDi / DiMo)</button>
+          </div>
+          <div class="cockpit-telemetry-badge">
+            <span>LATENCIA FX: <strong style="color: #5EEAD4;" id="lblLatency">38ms</strong></span>
+            <span>ESTÁNDAR: <strong style="color: #93C5FD;">EMVCo / ISO 20022</strong></span>
+            <span>STATUS: <strong style="color: #34D399;">CANAL ACTIVO 🟢</strong></span>
+          </div>
         </div>
 
-        <div class="topology-canvas-area" id="topoArea">
-          
-          <!-- Top Interactive Control Bar -->
-          <div class="topology-toolbar">
-            <div class="topology-mode-selector">
-              <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; font-weight: 700; color: var(--slate-600); margin-right: 6px; display: flex; align-items: center;">MODALIDAD QR:</span>
-              <button class="topo-btn active" id="btnModeDin" onclick="setQRMode('dinamico')">2A. QR Dinámico (Monto Fijo)</button>
-              <button class="topo-btn" id="btnModeEst" onclick="setQRMode('estatico')">2B. QR Estático (Monto Manual)</button>
-            </div>
-            
-            <div style="display: flex; gap: 10px;">
-              <button class="topo-btn" id="btnAutoPlay" onclick="toggleAutoPlayLoop()">⏸ Pausar Movimiento</button>
-              <button class="topo-action-btn" onclick="triggerSingleStepCycle()">⚡ Disparar Transacción ($85 USD)</button>
-            </div>
-          </div>
+        <!-- 3-Column Core Interactive Glass Grid -->
+        <div class="cockpit-core-grid">
 
-          <!-- Dynamic SVG Vector Canvas with Animated Traveling Light Pulses -->
-          <svg width="100%" height="100%" viewBox="0 0 1380 540" style="position: absolute; top: 0; left: 0; pointer-events: none;" id="topoSvg">
-            <defs>
-              <marker id="arrowBlue" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-                <path d="M 0 0 L 8 4 L 0 8 z" fill="#2563EB" />
-              </marker>
-              <marker id="arrowTeal" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-                <path d="M 0 0 L 8 4 L 0 8 z" fill="#0D9488" />
-              </marker>
-              <marker id="arrowGreen" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-                <path d="M 0 0 L 8 4 L 0 8 z" fill="#10B981" />
-              </marker>
-              <marker id="arrowPurple" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-                <path d="M 0 0 L 8 4 L 0 8 z" fill="#8B5CF6" />
-              </marker>
-              <marker id="arrowRed" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-                <path d="M 0 0 L 8 4 L 0 8 z" fill="#DC2626" />
-              </marker>
-            </defs>
-
-            <!-- 1. Flow line Comercio to Tourist via QR -->
-            <path id="path1" d="M 280 120 L 760 120" fill="none" stroke="#2563EB" stroke-width="3" stroke-linecap="round" class="animated-flow-path" marker-end="url(#arrowBlue)" />
-            <text x="330" y="105" fill="#1E3A8A" font-family="Inter" font-weight="700" font-size="12.5">1. El comercio inicia código QR Dinámico o Estático</text>
-
-            <!-- Branch to 2A (Dinámico) -->
-            <path id="path2A" d="M 990 110 L 1080 85" fill="none" stroke="#059669" stroke-width="2.5" class="animated-flow-path-fast" marker-end="url(#arrowGreen)" />
-            <text x="1005" y="78" fill="#059669" font-family="JetBrains Mono" font-weight="800" font-size="11.5">2A. Dinámico</text>
-
-            <!-- Branch to 2B (Estático) -->
-            <path id="path2B" d="M 990 135 L 1080 160" fill="none" stroke="#DC2626" stroke-width="2.5" class="animated-flow-path-fast" marker-end="url(#arrowRed)" />
-            <text x="1005" y="175" fill="#DC2626" font-family="JetBrains Mono" font-weight="800" font-size="11.5">2B. Estático</text>
-
-            <!-- 3. Tourist to Origin Bank -->
-            <path id="path3" d="M 885 160 L 885 305" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" class="animated-flow-path" marker-end="url(#arrowTeal)" />
-            <text x="895" y="240" fill="#0D9488" font-family="Inter" font-weight="700" font-size="12">3. Enviar datos para iniciar pago QR</text>
-
-            <!-- 10. Notification to Tourist -->
-            <path id="path10" d="M 845 305 L 845 160" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" class="animated-flow-path-fast" marker-end="url(#arrowGreen)" />
-            <text x="735" y="240" fill="#10B981" font-family="Inter" font-weight="800" font-size="12">10. Notificación</text>
-
-            <!-- 4. Debit Tourist Account Branch -->
-            <path id="path4" d="M 1005 345 L 1095 345" fill="none" stroke="#8B5CF6" stroke-width="2.5" class="animated-flow-path" marker-end="url(#arrowPurple)" />
-            <text x="1015" y="335" fill="#8B5CF6" font-family="Inter" font-weight="700" font-size="11.5">4. Autorización</text>
-
-            <!-- 5. Origin Bank to Central Switch -->
-            <path id="path5" d="M 760 340 L 635 340" fill="none" stroke="#2563EB" stroke-width="3" class="animated-flow-path" marker-end="url(#arrowBlue)" />
-            <text x="650" y="325" fill="#1E3A8A" font-family="Inter" font-weight="700" font-size="12">5. Solicitud de pago</text>
-
-            <!-- 9. Return Response to Origin Bank -->
-            <path id="path9" d="M 635 365 L 760 365" fill="none" stroke="#0D9488" stroke-width="2.5" class="animated-flow-path-fast" marker-end="url(#arrowTeal)" />
-            <text x="645" y="390" fill="#0D9488" font-family="Inter" font-weight="700" font-size="11.5">9. Respuesta de pago</text>
-
-            <!-- 6. Switch to Merchant Bank (SPEI) -->
-            <path id="path6" d="M 435 340 L 270 340" fill="none" stroke="#2563EB" stroke-width="3" class="animated-flow-path" marker-end="url(#arrowBlue)" />
-            <text x="290" y="325" fill="#1E3A8A" font-family="Inter" font-weight="700" font-size="12">6. Solicitud SPEI</text>
-
-            <!-- 8. Return Response Merchant Bank -->
-            <path id="path8" d="M 270 365 L 435 365" fill="none" stroke="#10B981" stroke-width="2.5" class="animated-flow-path-fast" marker-end="url(#arrowGreen)" />
-            <text x="290" y="390" fill="#10B981" font-family="Inter" font-weight="700" font-size="11.5">8. Acreditación MXN</text>
-
-            <!-- 7. Merchant Bank to Store Approval Notification -->
-            <path id="path7" d="M 155 305 L 155 160" fill="none" stroke="#10B981" stroke-width="3.5" class="animated-flow-path-fast" marker-end="url(#arrowGreen)" />
-            <text x="18" y="240" fill="#059669" font-family="Inter" font-weight="800" font-size="12.5" style="transform: rotate(-90deg); transform-origin: 145px 240px;">7. Se aprueba y notifica al comercio (&lt;3s)</text>
-          </svg>
-
-          <!-- ACTOR 1: COMERCIO (Top Left) -->
-          <div class="actor-card" id="actorStore" style="top: 85px; left: 45px; width: 225px;">
-            <div class="actor-icon" style="background: #EFF6FF;">🏪</div>
+          <!-- DECK 1: Point of Sale & Acrylic Standee -->
+          <div class="cockpit-deck-card">
             <div>
-              <div class="actor-info-title">1. Comercio (QROO)</div>
-              <div class="actor-info-sub">Restaurante / Boutique</div>
+              <div class="deck-section-tag" style="color: #38BDF8;">
+                <span>01 · MOSTRADOR / COMANDERA</span>
+                <span>Cancún, QROO</span>
+              </div>
+              
+              <div class="glass-standee-box">
+                <div class="laser-scanner-line"></div>
+                <div class="qr-live-svg">
+                  <svg width="110" height="110" viewBox="0 0 24 24" fill="none" stroke="#060B14" stroke-width="2.2">
+                    <rect x="2" y="2" width="7" height="7" rx="1.5" fill="#060B14" />
+                    <rect x="15" y="2" width="7" height="7" rx="1.5" fill="#060B14" />
+                    <rect x="2" y="15" width="7" height="7" rx="1.5" fill="#060B14" />
+                    <path d="M15 15h2v2h-2zM19 19h2v2h-2zM15 19h2v2h-2zM19 15h2v2h-2zM10 2v5M2 10h5M10 10h4v4h-4z" />
+                  </svg>
+                </div>
+                <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 800; color: #E2E8F0; margin-top: 10px;">
+                  STAND DINÁMICO EMVCo
+                </div>
+              </div>
+            </div>
+
+            <div style="background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 10px; font-size: 12px; color: #94A3B8;">
+              <div>ORDEN COMERCIAL: <strong>#QROO-8841</strong></div>
+              <div style="color: #38BDF8; font-weight: 700; margin-top: 2px;">CERO HARDWARE TPV ($0 RENTA)</div>
             </div>
           </div>
 
-          <!-- FLOATING QR (Top Center) -->
-          <div style="position: absolute; top: 65px; left: 495px; display: flex; flex-direction: column; align-items: center; z-index: 6;">
-            <div style="background: #FFFFFF; border: 2px solid var(--navy-950); padding: 8px; border-radius: 8px; box-shadow: 0 6px 16px rgba(0,0,0,0.1);">
-              <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="2">
-                <rect x="3" y="3" width="6" height="6" rx="1" fill="#0F172A" />
-                <rect x="15" y="3" width="6" height="6" rx="1" fill="#0F172A" />
-                <rect x="3" y="15" width="6" height="6" rx="1" fill="#0F172A" />
-                <path d="M15 15h2v2h-2zM19 19h2v2h-2zM15 19h2v2h-2zM19 15h2v2h-2zM10 3v4M3 10h4M10 10h4v4h-4z" />
-              </svg>
+          <!-- DECK 2: ORION-FX™ Cloud Routing Core -->
+          <div class="center-core-deck">
+            <div class="orion-brand-badge">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <div style="width: 10px; height: 10px; background: #38BDF8; border-radius: 50%; box-shadow: 0 0 10px #38BDF8;"></div>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 14px; font-weight: 900; color: #FFFFFF; letter-spacing: 1px;">ORION-FX™ ROUTING ENGINE</span>
+              </div>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #5EEAD4;" id="lblSubRouting">PIX ➔ SPEI CONVERTER</span>
             </div>
-            <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 800; color: var(--navy-950); margin-top: 3px;">QR PAY</span>
+
+            <!-- Currency Conversion Telemetry Rack -->
+            <div class="fx-conversion-rack">
+              <div class="fx-currency-box">
+                <span class="fx-cur-code" id="lblOriginCode">DÉBITO ORIGEN (BRL)</span>
+                <span class="fx-cur-amount" id="lblOriginAmount">R$ 425.00</span>
+              </div>
+              <div class="fx-arrow-icon">➔</div>
+              <div class="fx-currency-box" style="text-align: right;">
+                <span class="fx-cur-code">ACREDITACIÓN DESTINO (MXN)</span>
+                <span class="fx-cur-amount" style="color: #34D399;" id="lblDestAmount">$1,700.00 MXN</span>
+              </div>
+            </div>
+
+            <!-- Dual-Rail Engine: Domestic vs International -->
+            <div class="dual-rail-container">
+              <div class="rail-pod" style="border-color: rgba(56, 189, 248, 0.4);">
+                <div class="rail-pod-title" style="color: #38BDF8;">
+                  <span>🌐 RIEL LATAM INTERNACIONAL</span>
+                </div>
+                <div class="rail-pod-meta" id="lblLatinRailMeta">
+                  Enrutamiento directo a cuenta bancaria en Brasil (BCB) eludiendo impuestos de tarjeta.
+                </div>
+              </div>
+
+              <div class="rail-pod" style="border-color: rgba(16, 185, 129, 0.4);">
+                <div class="rail-pod-title" style="color: #34D399;">
+                  <span>🇲🇽 RIEL NACIONAL (CoDi / DiMo)</span>
+                </div>
+                <div class="rail-pod-meta">
+                  Efecto Caballo de Troya: Transacciones nacionales a <strong>$0 MXN comisión</strong> interbancaria.
+                </div>
+              </div>
+            </div>
+
+            <!-- Cryptographic Packet Telemetry Stream -->
+            <div class="packet-stream-log">
+              <span id="lblPacketLog">ISO_8583: [PKG_REQ_AUTH #9821] · SHA256: 7f8b9...e2a1 · FX_LOCK: 1.000s</span>
+              <span style="color: #38BDF8;">SYNC 100%</span>
+            </div>
           </div>
 
-          <!-- ACTOR 2: TURISTA (Top Right) -->
-          <div class="actor-card" id="actorTourist" style="top: 85px; left: 770px; width: 220px;">
-            <div class="actor-icon" style="background: #ECFDF5;">📱</div>
+          <!-- DECK 3: Treasury & SPEI Settlement -->
+          <div class="cockpit-deck-card">
             <div>
-              <div class="actor-info-title">2. Cliente Escanea</div>
-              <div class="actor-info-sub">Turista con App Bancaria</div>
-            </div>
-          </div>
+              <div class="deck-section-tag" style="color: #34D399;">
+                <span>03 · BANCO DEL COMERCIO</span>
+                <span>SPEI Liquidado</span>
+              </div>
 
-          <!-- BRANCH 2A: DINÁMICO (Far Right Top) -->
-          <div class="branch-pill branch-2a" id="pill2A" style="top: 65px; left: 1090px;">
-            <span>🟢 Visualiza importe y confirma</span>
-          </div>
-
-          <!-- BRANCH 2B: ESTÁTICO (Far Right Bottom) -->
-          <div class="branch-pill branch-2b dimmed" id="pill2B" style="top: 145px; left: 1090px;">
-            <span>🔴 Introduce importe y confirma</span>
-          </div>
-
-          <!-- ACTOR 4: BANCO ORIGEN (Bottom Right) -->
-          <div class="actor-card" id="actorOriginBank" style="top: 315px; left: 770px; width: 235px;">
-            <div class="actor-icon" style="background: #F5F3FF;">🏛️</div>
-            <div>
-              <div class="actor-info-title">Originador / Banco Turista</div>
-              <div class="actor-info-sub">PIX / Nequi / Yape / CBU</div>
+              <div class="treasury-vault-box">
+                <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #94A3B8;">FONDO LÍQUIDO DISPONIBLE</div>
+                <div class="settlement-balance-num" id="lblVaultBalance">+ $1,700.00 MXN</div>
+                <div style="font-size: 11.5px; color: #E2E8F0; line-height: 1.4;">
+                  Acreditación bancaria irrevocable en cuenta de BBVA / Santander México.
+                </div>
+              </div>
             </div>
-          </div>
 
-          <!-- DEBIT IN ACCOUNT PILL (Far Right Bottom) -->
-          <div class="branch-pill" style="top: 325px; left: 1105px; background: #8B5CF6; color: #FFFFFF; border: 1.5px solid #7C3AED;">
-            <span>🟣 Debitar en cuenta del cliente</span>
-          </div>
-
-          <!-- CENTRAL SWITCH HUB (Bottom Center) -->
-          <div class="switch-hub-card" id="actorSwitch" style="top: 305px; left: 445px; width: 185px;">
-            <div class="switch-logos-row">
-              <span class="switch-badge" style="background: #EFF6FF; color: #1E3A8A;">🇧🇷 PIX</span>
-              <span class="switch-badge" style="background: #CCFBF1; color: #0D9488;">🇨🇴 NEQUI</span>
-              <span class="switch-badge" style="background: #EDE9FE; color: #6D28D9;">🇵🇪 YAPE</span>
+            <div class="spei-hash-badge">
+              <div>CLAVE RASTREO BANXICO:</div>
+              <div style="color: #5EEAD4; margin-top: 2px;" id="lblSpeiHash">SPEI-20260808-88419204-QROO</div>
             </div>
-            <div style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; font-weight: 800; color: var(--navy-950); margin: 2px 0;">
-              SMART PAY HUB
-            </div>
-            <div style="font-size: 10px; color: var(--slate-500); text-align: center;">
-              Switch FX + Red CoDi / Banxico
-            </div>
-          </div>
-
-          <!-- ACTOR 5: BANCO DEL COMERCIO (Bottom Left) -->
-          <div class="actor-card" id="actorMerchantBank" style="top: 315px; left: 45px; width: 215px;">
-            <div class="actor-icon" style="background: #ECFDF5;">🏦</div>
-            <div>
-              <div class="actor-info-title">Banco del Comercio</div>
-              <div class="actor-info-sub">Liquidación SPEI (MXN)</div>
-            </div>
-          </div>
-
-          <!-- Bottom Live Status Notification Toast -->
-          <div class="step-toast-box">
-            <div style="display: flex; align-items: center; gap: 10px;">
-              <span style="display: inline-block; width: 8px; height: 8px; background: #10B981; border-radius: 50%; box-shadow: 0 0 8px #10B981;"></span>
-              <span id="liveStatusText">ESTADO: CICLO ACTIVO CONTINUO · FLUJO TRANSFRONTERIZO BIDIRECCIONAL EN TIEMPO REAL</span>
-            </div>
-            <div style="color: #93C5FD;" id="liveStepCounter">VELOCIDAD: 100% (SPEI &lt;3 SEG)</div>
           </div>
 
         </div>
+
+        <!-- Cockpit Bottom Control Dock -->
+        <div class="cockpit-control-dock">
+          <div class="dock-status-msg">
+            <span style="width: 8px; height: 8px; background: #34D399; border-radius: 50%; box-shadow: 0 0 8px #34D399;"></span>
+            <span id="lblDockStatus">SISTEMA LISTO: MONITOREO ACTIVO DEL FLUJO PUNTO A PUNTO (TIEMPO TOTAL ESTIMADO: 1.8 SEG)</span>
+          </div>
+
+          <button class="cinematic-trigger-btn" id="btnRunCinematic" onclick="runCinematicTransaction()">
+            <span>⚡ Lanzar Transacción en Vivo ($85 USD)</span>
+          </button>
+        </div>
+
       </div>
 
       <div class="sources-box">
@@ -1599,82 +1650,86 @@
   window.addEventListener('resize', scaleDeck);
   scaleDeck();
 
-  // ------------------ SLIDE 5: TOPOLOGY ANIMATION CONTROLS ------------------
-  let isAutoPlay = true;
-  let qrMode = 'dinamico';
+  // -------------------------------------------------------------
+  // SLIDE 5: ORION-FX™ DIGITAL TWIN COCKPIT ENGINE
+  // -------------------------------------------------------------
+  let currentOrigin = 'br';
 
-  function setQRMode(mode) {
-    qrMode = mode;
-    const btnDin = document.getElementById('btnModeDin');
-    const btnEst = document.getElementById('btnModeEst');
-    const pill2A = document.getElementById('pill2A');
-    const pill2B = document.getElementById('pill2B');
-    const path2A = document.getElementById('path2A');
-    const path2B = document.getElementById('path2B');
+  function setOrigin(code, originAmount, displayAmount, bankTitle, feeSaved) {
+    currentOrigin = code;
+    document.querySelectorAll('.origin-pill-btn').forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
 
-    if (mode === 'dinamico') {
-      btnDin.classList.add('active');
-      btnEst.classList.remove('active');
-      pill2A.classList.remove('dimmed');
-      pill2B.classList.add('dimmed');
-      path2A.style.opacity = '1';
-      path2B.style.opacity = '0.2';
-    } else {
-      btnEst.classList.add('active');
-      btnDin.classList.remove('active');
-      pill2B.classList.remove('dimmed');
-      pill2A.classList.add('dimmed');
-      path2B.style.opacity = '1';
-      path2A.style.opacity = '0.2';
-    }
-  }
-
-  function toggleAutoPlayLoop() {
-    isAutoPlay = !isAutoPlay;
-    const btn = document.getElementById('btnAutoPlay');
-    const paths = document.querySelectorAll('#topoSvg path');
+    document.getElementById('lblOriginCode').innerText = `DÉBITO ORIGEN (${code.toUpperCase()})`;
+    document.getElementById('lblOriginAmount').innerText = displayAmount;
+    document.getElementById('lblSubRouting').innerText = `${code.toUpperCase()} ➔ SPEI CONVERTER`;
+    document.getElementById('lblLatency').innerText = `${Math.floor(Math.random() * 20 + 25)}ms`;
     
-    if (isAutoPlay) {
-      btn.innerText = '⏸ Pausar Movimiento';
-      paths.forEach(p => p.style.animationPlayState = 'running');
-      document.getElementById('liveStatusText').innerText = 'ESTADO: CICLO ACTIVO CONTINUO · FLUJO TRANSFRONTERIZO BIDIRECCIONAL EN TIEMPO REAL';
-    } else {
-      btn.innerText = '▶ Reanudar Movimiento';
-      paths.forEach(p => p.style.animationPlayState = 'paused');
-      document.getElementById('liveStatusText').innerText = 'ESTADO: MOVIMIENTO PAUSADO · LISTO PARA DISPARO MANUAL';
+    if (code === 'br') {
+      document.getElementById('lblLatinRailMeta').innerHTML = `Enrutamiento directo a cuenta bancaria en Brasil (BCB) eludiendo <strong>3.5% IOF</strong>.`;
+      document.getElementById('lblSpeiHash').innerText = `SPEI-BCB-PIX-20260808-8841-BR`;
+    } else if (code === 'co') {
+      document.getElementById('lblLatinRailMeta').innerHTML = `Enrutamiento SFC vía llaves Nequi / DaviPlata con <strong>cero recargo cambiario</strong>.`;
+      document.getElementById('lblSpeiHash').innerText = `SPEI-SFC-NEQUI-20260808-3391-CO`;
+    } else if (code === 'pe') {
+      document.getElementById('lblLatinRailMeta').innerHTML = `Interoperabilidad BCRP (Yape / Plin) con compensación instantánea.`;
+      document.getElementById('lblSpeiHash').innerText = `SPEI-BCRP-YAPE-20260808-5521-PE`;
+    } else if (code === 'ar') {
+      document.getElementById('lblLatinRailMeta').innerHTML = `Transferencia CBU / DEBIN eludiendo el <strong>25% de retención AFIP</strong>.`;
+      document.getElementById('lblSpeiHash').innerText = `SPEI-BCRA-DEBIN-20260808-1102-AR`;
+    } else if (code === 'mx') {
+      document.getElementById('lblLatinRailMeta').innerHTML = `CoDi / DiMo nacional Banxico directo con <strong>0.0% de comisión TPV</strong>.`;
+      document.getElementById('lblSpeiHash').innerText = `SPEI-BANXICO-CODI-20260808-9901-MX`;
     }
+
+    document.getElementById('lblPacketLog').innerText = `ISO_8583: [PKG_ROUTE #${Math.floor(Math.random()*9000+1000)}] · SHA256: ${Math.random().toString(36).substring(2, 10)}... · FX_LOCKED`;
   }
 
-  function triggerSingleStepCycle() {
-    const actors = [
-      { id: 'actorStore', text: '1. COMERCIO EMITE QR' },
-      { id: 'actorTourist', text: '2. TURISTA ESCANEA Y AUTORIZA EN SU APP' },
-      { id: 'actorOriginBank', text: '3 & 4. BANCO ORIGEN AUTORIZA Y DEBITA MONEDA LOCAL' },
-      { id: 'actorSwitch', text: '5 & 9. SMART PAY HUB ENRUTA Y CONVIERTE FX' },
-      { id: 'actorMerchantBank', text: '6 & 8. BANCO DEL COMERCIO ACREDITA SPEI MXN' },
-      { id: 'actorStore', text: '7 & 10. NOTIFICACIÓN EXITOSA EN MOSTRADOR (<3s)' }
+  let isCinematicRunning = false;
+
+  function runCinematicTransaction() {
+    if (isCinematicRunning) return;
+    isCinematicRunning = true;
+
+    const btn = document.getElementById('btnRunCinematic');
+    const statusLabel = document.getElementById('lblDockStatus');
+    const packetLog = document.getElementById('lblPacketLog');
+    const balance = document.getElementById('lblVaultBalance');
+
+    btn.disabled = true;
+    btn.style.opacity = '0.5';
+
+    const phases = [
+      { time: 300, msg: '1/4: QR EMVCo ESCANEADO · AUTORIZACIÓN BIOMÉTRICA (FACE ID APROBADA)', log: 'EMVCo_QR: SCAN_SUCCESS · TOKEN_GEN: valid · 38ms' },
+      { time: 800, msg: '2/4: ORION-FX™ CONGELA TIPO DE CAMBIO SPOT · ENRUTAMIENTO TRANSFRONTERIZO', log: 'ORION_FX: SPOT_LOCKED (1 USD = 20.00 MXN) · AES-256' },
+      { time: 1300, msg: '3/4: DÉBITO CONFIRMADO EN BANCO DE ORIGEN · TRANSMISIÓN A RED BANXICO (SPEI)', log: 'BANXICO_SPEI: INCOMING_PACKET_VERIFIED · CEP_GENERATED' },
+      { time: 1800, msg: '4/4: LIQUIDADO CON ÉXITO · $1,700.00 MXN DISPONIBLES EN CUENTA DEL COMERCIO', log: 'SETTLEMENT: SUCCESS · CONFIRMATION_PUSH_SENT · TOTAL: 1.8s' }
     ];
 
-    actors.forEach((act, index) => {
+    phases.forEach((p, idx) => {
       setTimeout(() => {
-        document.querySelectorAll('.actor-card').forEach(a => a.classList.remove('highlight'));
-        const el = document.getElementById(act.id);
-        if (el) el.classList.add('highlight');
-        document.getElementById('liveStatusText').innerText = `⚡ ${act.text}`;
-        document.getElementById('liveStepCounter').innerText = `PASO ${index + 1} DE 6`;
+        statusLabel.innerText = `⚡ ${p.msg}`;
+        packetLog.innerText = p.log;
 
-        if (index === actors.length - 1) {
+        if (idx === phases.length - 1) {
+          balance.style.color = '#5EEAD4';
+          balance.style.transform = 'scale(1.1)';
+          setTimeout(() => { balance.style.transform = 'scale(1)'; }, 300);
+
           setTimeout(() => {
-            el.classList.remove('highlight');
-            document.getElementById('liveStatusText').innerText = '✅ TRANSACCIÓN COMPLETADA EXITOSAMENTE · $85 USD LIQUIDADOS VÍA SPEI';
-            document.getElementById('liveStepCounter').innerText = 'TIEMPO TOTAL: 1.8s';
-          }, 800);
+            statusLabel.innerText = '🎉 TRANSACCIÓN APROBADA · REPORTE SAT CONCILIADO · SPEI LIQUIDADO EN 1.8 SEG';
+            btn.disabled = false;
+            btn.style.opacity = '1';
+            isCinematicRunning = false;
+          }, 600);
         }
-      }, index * 600);
+      }, p.time);
     });
   }
 
-  // ------------------ SLIDE 6: REAL-TIME ROI & COMMISSIONS CALCULATOR ------------------
+  // -------------------------------------------------------------
+  // SLIDE 6: REAL-TIME ROI & COMMISSIONS CALCULATOR
+  // -------------------------------------------------------------
   function calculateROI() {
     const merchants = parseInt(document.getElementById('inputMerchants').value);
     const txsPerDay = parseFloat(document.getElementById('inputTxs').value);
