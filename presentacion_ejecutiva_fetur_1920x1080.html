@@ -23,6 +23,7 @@
     --amber-500: #F59E0B;
     --amber-400: #FBBF24;
     --rose-500: #F43F5E;
+    --purple-500: #8B5CF6;
     --slate-100: #F1F5F9;
     --slate-200: #E2E8F0;
     --slate-400: #94A3B8;
@@ -220,7 +221,7 @@
   .main-canvas {
     flex: 1;
     height: 100%;
-    padding: 50px 70px;
+    padding: 45px 65px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -242,15 +243,283 @@
 
   .slide-title-action {
     font-family: 'Source Serif 4', Georgia, serif;
-    font-size: 32px;
+    font-size: 30px;
     font-weight: 700;
     color: var(--navy-950);
     line-height: 1.3;
-    margin-top: 6px;
+    margin-top: 4px;
     letter-spacing: -0.3px;
   }
 
-  /* Card Grid for Static Slides */
+  .sources-box {
+    padding-top: 12px;
+    border-top: 1px solid var(--card-border);
+    font-size: 12.5px;
+    color: var(--slate-500);
+    flex-shrink: 0;
+  }
+
+  /* ------------------ SLIDE 5: VISUAL NETWORK TOPOLOGY WITH REAL MOVEMENT ------------------ */
+  .topology-stage-wrapper {
+    flex: 1;
+    margin: 10px 0;
+    position: relative;
+    background: #FFFFFF;
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+    display: flex;
+    overflow: hidden;
+  }
+
+  /* Left Vertical Pill matching reference image */
+  .topology-left-banner {
+    width: 65px;
+    background: var(--navy-950);
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    border-right: 1px solid var(--card-border);
+  }
+
+  .topology-left-text {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: #E2E8F0;
+    text-transform: uppercase;
+  }
+
+  .topology-canvas-area {
+    flex: 1;
+    position: relative;
+    background: #FFFFFF;
+    overflow: hidden;
+  }
+
+  /* Toolbar inside Stage */
+  .topology-toolbar {
+    position: absolute;
+    top: 14px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;
+    background: rgba(248, 250, 252, 0.95);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--slate-200);
+    padding: 8px 18px;
+    border-radius: 10px;
+  }
+
+  .topology-mode-selector {
+    display: flex;
+    gap: 8px;
+  }
+
+  .topo-btn {
+    padding: 6px 14px;
+    border-radius: 6px;
+    border: 1px solid var(--slate-200);
+    background: #FFFFFF;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11.5px;
+    font-weight: 700;
+    color: var(--slate-600);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .topo-btn.active, .topo-btn:hover {
+    background: var(--navy-950);
+    color: #FFFFFF;
+    border-color: var(--navy-950);
+  }
+
+  .topo-action-btn {
+    background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+    color: #FFFFFF;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 12.5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    transition: all 0.2s ease;
+  }
+
+  .topo-action-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+  }
+
+  /* Animated Moving SVG Dashes & Particles */
+  .animated-flow-path {
+    stroke-dasharray: 8, 8;
+    animation: flow-dash 1.2s linear infinite;
+  }
+
+  .animated-flow-path-fast {
+    stroke-dasharray: 6, 6;
+    animation: flow-dash 0.8s linear infinite;
+  }
+
+  .animated-flow-path-reverse {
+    stroke-dasharray: 8, 8;
+    animation: flow-dash-rev 1.2s linear infinite;
+  }
+
+  @keyframes flow-dash {
+    from { stroke-dashoffset: 32; }
+    to { stroke-dashoffset: 0; }
+  }
+
+  @keyframes flow-dash-rev {
+    from { stroke-dashoffset: 0; }
+    to { stroke-dashoffset: 32; }
+  }
+
+  /* Actor Cards styling within SVG Overlay */
+  .actor-card {
+    background: #FFFFFF;
+    border: 1.5px solid var(--slate-200);
+    border-radius: 12px;
+    padding: 12px 16px;
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.04);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 5;
+  }
+
+  .actor-card.highlight {
+    border-color: var(--blue-500);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15), 0 10px 25px rgba(37, 99, 235, 0.12);
+    transform: scale(1.04);
+  }
+
+  .actor-icon {
+    font-size: 30px;
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--slate-100);
+    border-radius: 10px;
+    flex-shrink: 0;
+  }
+
+  .actor-info-title {
+    font-size: 13.5px;
+    font-weight: 800;
+    color: var(--navy-950);
+  }
+
+  .actor-info-sub {
+    font-size: 11.5px;
+    color: var(--text-secondary);
+    margin-top: 2px;
+  }
+
+  /* Branching Pills 2A and 2B */
+  .branch-pill {
+    position: absolute;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 11.5px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    transition: all 0.3s ease;
+    z-index: 6;
+  }
+
+  .branch-2a {
+    background: #059669;
+    color: #FFFFFF;
+    border: 1.5px solid #10B981;
+  }
+
+  .branch-2b {
+    background: #DC2626;
+    color: #FFFFFF;
+    border: 1.5px solid #EF4444;
+  }
+
+  .branch-pill.dimmed {
+    opacity: 0.35;
+    transform: scale(0.95);
+  }
+
+  /* Central Switch Hub */
+  .switch-hub-card {
+    position: absolute;
+    background: #FFFFFF;
+    border: 2px solid var(--blue-500);
+    border-radius: 14px;
+    padding: 14px 20px;
+    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+  }
+
+  .switch-logos-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 6px;
+  }
+
+  .switch-badge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 800;
+  }
+
+  /* Live Flow Step Toast */
+  .step-toast-box {
+    position: absolute;
+    bottom: 12px;
+    left: 20px;
+    right: 20px;
+    background: var(--navy-950);
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12.5px;
+    z-index: 10;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.2);
+  }
+
+  /* Other Slides Components */
   .card-grid {
     display: grid;
     gap: 22px;
@@ -310,15 +579,6 @@
     line-height: 1.6;
   }
 
-  .sources-box {
-    padding-top: 14px;
-    border-top: 1px solid var(--card-border);
-    font-size: 13px;
-    color: var(--slate-500);
-    flex-shrink: 0;
-  }
-
-  /* Table Style */
   .exec-table {
     width: 100%;
     border-collapse: collapse;
@@ -355,273 +615,7 @@
     color: var(--navy-950);
   }
 
-  /* ------------------ SLIDE 5: LIVE ANIMATED SIMULATOR ------------------ */
-  .sim-toolbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #FFFFFF;
-    border: 1px solid var(--slate-200);
-    border-radius: 12px;
-    padding: 12px 24px;
-    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
-    margin-top: 10px;
-  }
-
-  .sim-currency-pills {
-    display: flex;
-    gap: 8px;
-  }
-
-  .sim-pill {
-    padding: 8px 16px;
-    border-radius: 6px;
-    border: 1px solid var(--slate-200);
-    background: var(--slate-100);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--slate-600);
-    cursor: pointer;
-    transition: all 0.2s ease;
-  }
-
-  .sim-pill.active, .sim-pill:hover {
-    background: var(--navy-950);
-    color: #FFFFFF;
-    border-color: var(--navy-950);
-  }
-
-  .sim-trigger-btn {
-    background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
-    color: #FFFFFF;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 8px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    font-size: 13.5px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
-    transition: all 0.2s ease;
-  }
-
-  .sim-trigger-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.45);
-  }
-
-  .diagram-interactive-stage {
-    flex: 1;
-    margin: 14px 0;
-    position: relative;
-    background: #FFFFFF;
-    border: 1px solid var(--card-border);
-    border-radius: 14px;
-    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 24px 30px;
-    overflow: hidden;
-  }
-
-  .nodes-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    position: relative;
-    z-index: 2;
-  }
-
-  .flow-node {
-    background: #FFFFFF;
-    border: 1.5px solid var(--card-border);
-    border-radius: 12px;
-    padding: 20px 22px;
-    position: relative;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.02);
-  }
-
-  .flow-node.active-step {
-    border-color: var(--blue-500);
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15), 0 12px 24px rgba(37, 99, 235, 0.1);
-    transform: translateY(-3px);
-  }
-
-  .flow-node.completed-step {
-    border-color: var(--emerald-500);
-    background: #F0FDF4;
-  }
-
-  .node-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10px;
-  }
-
-  .node-badge {
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
-    background: var(--navy-950);
-    color: #FFFFFF;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 13px;
-    font-weight: 800;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .flow-node.active-step .node-badge {
-    background: var(--blue-500);
-    animation: badge-pulse 1s infinite alternate;
-  }
-
-  @keyframes badge-pulse {
-    0% { transform: scale(1); }
-    100% { transform: scale(1.1); box-shadow: 0 0 12px rgba(37, 99, 235, 0.6); }
-  }
-
-  .flow-node.completed-step .node-badge {
-    background: var(--emerald-500);
-  }
-
-  .node-status-tag {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10.5px;
-    font-weight: 700;
-    padding: 3px 8px;
-    border-radius: 4px;
-    text-transform: uppercase;
-    background: var(--slate-100);
-    color: var(--slate-600);
-  }
-
-  .flow-node.active-step .node-status-tag {
-    background: #DBEAFE;
-    color: var(--blue-500);
-  }
-
-  .flow-node.completed-step .node-status-tag {
-    background: #D1FAE5;
-    color: var(--emerald-500);
-  }
-
-  .node-title {
-    font-size: 16.5px;
-    font-weight: 800;
-    color: var(--navy-950);
-    margin-bottom: 6px;
-  }
-
-  .node-desc {
-    font-size: 13.5px;
-    color: var(--text-secondary);
-    line-height: 1.45;
-  }
-
-  .node-meta {
-    margin-top: 12px;
-    padding-top: 10px;
-    border-top: 1px dashed var(--slate-200);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11.5px;
-    font-weight: 700;
-    color: var(--slate-600);
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-
-  .center-stream-banner {
-    background: var(--navy-950);
-    border-radius: 10px;
-    padding: 16px 28px;
-    color: #FFFFFF;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.15);
-    margin: 8px 0;
-  }
-
-  .stream-particle-track {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-  }
-
-  .stream-beam {
-    position: absolute;
-    height: 2px;
-    width: 150px;
-    top: 50%;
-    background: linear-gradient(90deg, transparent, #38BDF8, #5EEAD4, transparent);
-    animation: beam-flow 2.5s infinite linear;
-  }
-
-  @keyframes beam-flow {
-    0% { left: -150px; }
-    100% { left: 100%; }
-  }
-
-  .pulse-indicator {
-    width: 10px;
-    height: 10px;
-    background: #38BDF8;
-    border-radius: 50%;
-    box-shadow: 0 0 10px #38BDF8;
-    animation: pulse-dot 1.5s infinite;
-  }
-
-  .banner-text-main {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 13.5px;
-    font-weight: 800;
-    color: #FFFFFF;
-    letter-spacing: 0.5px;
-  }
-
-  .banner-right-meta {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    color: #93C5FD;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-
-  .telemetry-progress-wrap {
-    height: 8px;
-    background: #E2E8F0;
-    border-radius: 4px;
-    overflow: hidden;
-    position: relative;
-    margin-top: 8px;
-  }
-
-  .telemetry-bar-fill {
-    height: 100%;
-    width: 0%;
-    background: linear-gradient(90deg, #2563EB 0%, #0D9488 50%, #10B981 100%);
-    border-radius: 4px;
-    transition: width 0.1s linear;
-  }
-
-  /* ------------------ SLIDE 6: INTERACTIVE ROI & COMMISSIONS SIMULATOR ------------------ */
+  /* Slide 6 ROI Simulator Components */
   .roi-sim-container {
     display: grid;
     grid-template-columns: 460px 1fr;
@@ -688,10 +682,6 @@
     box-shadow: 0 0 10px rgba(37, 99, 235, 0.5);
     cursor: pointer;
     transition: transform 0.1s ease;
-  }
-
-  .custom-slider::-webkit-slider-thumb:hover {
-    transform: scale(1.2);
   }
 
   .roi-results-grid {
@@ -1107,18 +1097,18 @@
     </div>
   </div>
 
-  <!-- SLIDE 5: LIVE ANIMATED SIMULATOR OF PAYMENT PIPELINE -->
+  <!-- SLIDE 5: TOPOLOGY NETWORK ARCHITECTURE WITH CONTINUOUS MOVEMENT -->
   <div class="slide-container" id="slide-5">
     <div class="left-rail">
       <div class="rail-glow"></div>
       <div class="rail-accent-line"></div>
       <div>
-        <div class="exec-tag-pill">05 · ARQUITECTURA VIVA</div>
+        <div class="exec-tag-pill">05 · TOPOLOGÍA ACTIVA</div>
         <div class="rail-brand-title">
-          SIMULADOR DE PAGO TRANSFRONTERIZO
+          DIAGRAMA DE RED CON MOVIMIENTO
         </div>
         <div class="rail-desc">
-          Arquitectura en tiempo real: Transmisión de paquetes de pago desde la app internacional hasta la liquidación SPEI en Pesos Mexicanos.
+          Topología interactiva en tiempo real: Flujo animado de datos, autorización y liquidación SPEI punto a punto.
         </div>
       </div>
       
@@ -1132,121 +1122,208 @@
     </div>
     <div class="main-canvas">
       <div>
-        <div class="mono-tag">05 · ARQUITECTURA DE TRANSACCIÓN Y SIMULACIÓN EN VIVO</div>
+        <div class="mono-tag">05 · TOPOLOGÍA DE TRANSACCIÓN EN VIVO (CÓDIGO QR INICIADO POR EL COMERCIO)</div>
         <div class="slide-title-action">
-          Flujo de Liquidación en Tiempo Real: Procesamiento de orden de $85 USD en &lt;3 segundos vía SPEI
+          Flujo Animado en 10 Pasos: Desde el Mostrador hasta la Liquidación SPEI & Notificación
         </div>
       </div>
 
-      <!-- Simulation Toolbar -->
-      <div class="sim-toolbar">
-        <div style="display: flex; align-items: center; gap: 14px;">
-          <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700; color: var(--slate-600);">RED SELECCIONADA:</span>
-          <div class="sim-currency-pills">
-            <button class="sim-pill active" onclick="selectApp('pix', '🇧🇷 PIX (Brasil - R$ 425 BRL)', 'IOF 3.5% ELUDIDO')">🇧🇷 PIX (Brasil)</button>
-            <button class="sim-pill" onclick="selectApp('nequi', '🇨🇴 Nequi / DaviPlata (Colombia - $340k COP)', 'CERO COSTO FX')">🇨🇴 Nequi (Colombia)</button>
-            <button class="sim-pill" onclick="selectApp('yape', '🇵🇪 Yape / Plin (Perú - S/ 315 PEN)', 'BCRP INTEROPERABLE')">🇵🇪 Yape (Perú)</button>
-            <button class="sim-pill" onclick="selectApp('ewallet', '🇦🇷 eWallet CBU (Argentina - $105k ARS)', 'AFIP 25% EVITADO')">🇦🇷 eWallet (Argentina)</button>
-            <button class="sim-pill" onclick="selectApp('codi', '🇲🇽 CoDi / DiMo (México - $1,700 MXN)', '0% COMISIÓN TPV')">🇲🇽 CoDi / DiMo (Banxico)</button>
-          </div>
-        </div>
-        <button class="sim-trigger-btn" id="runSimBtn" onclick="runTransactionSimulation()">
-          <span>⚡ Simular Cobro ($85 USD)</span>
-        </button>
-      </div>
-      
-      <!-- Interactive Animated Flow Stage -->
-      <div class="diagram-interactive-stage">
+      <!-- Main Graphical Topology Stage with Continuous Movement -->
+      <div class="topology-stage-wrapper">
         
-        <!-- Step 1, 2, 3 -->
-        <div class="nodes-row">
-          <div class="flow-node" id="node-1">
-            <div class="node-header">
-              <div class="node-badge">01</div>
-              <div class="node-status-tag" id="tag-1">ESPERANDO ORDEN</div>
-            </div>
-            <div class="node-title">1. Comercio (QROO)</div>
-            <div class="node-desc">Muestra el <strong>QR de Mostrador/Mesa</strong> con el monto de la orden en acrílico institucional.</div>
-            <div class="node-meta" style="color: var(--blue-500);">⚡ INTERFAZ: ZERO-DEVICE (CERO TPV)</div>
-          </div>
-
-          <div class="flow-node" id="node-2">
-            <div class="node-header">
-              <div class="node-badge">02</div>
-              <div class="node-status-tag" id="tag-2">APP NATIVA</div>
-            </div>
-            <div class="node-title">2. Turista LATAM</div>
-            <div class="node-desc" id="turista-app-desc">Escanea con <strong>PIX (Brasil)</strong> en moneda local (Reales) sin comisiones ocultas.</div>
-            <div class="node-meta" id="turista-app-meta" style="color: var(--teal-500);">📲 RED SELECCIONADA: PIX (BCB)</div>
-          </div>
-
-          <div class="flow-node" id="node-3">
-            <div class="node-header">
-              <div class="node-badge">03</div>
-              <div class="node-status-tag" id="tag-3">ROUTING HUB</div>
-            </div>
-            <div class="node-title">3. Smart QR Hub (FETUR)</div>
-            <div class="node-desc">Enruta hacia el banco extranjero emisor y congela el tipo de cambio FX en tiempo real.</div>
-            <div class="node-meta" style="color: var(--blue-500);">⏱ LATENCIA: &lt;80 MILISEGUNDOS</div>
-          </div>
+        <!-- Left Vertical Indicator Banner matching user reference -->
+        <div class="topology-left-banner">
+          <div class="topology-left-text">Código QR iniciado por el comercio</div>
         </div>
 
-        <!-- Central High-Velocity Transborder Cable -->
-        <div class="center-stream-banner">
-          <div class="stream-particle-track">
-            <div class="stream-beam" id="activeBeam"></div>
+        <div class="topology-canvas-area" id="topoArea">
+          
+          <!-- Top Interactive Control Bar -->
+          <div class="topology-toolbar">
+            <div class="topology-mode-selector">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; font-weight: 700; color: var(--slate-600); margin-right: 6px; display: flex; align-items: center;">MODALIDAD QR:</span>
+              <button class="topo-btn active" id="btnModeDin" onclick="setQRMode('dinamico')">2A. QR Dinámico (Monto Fijo)</button>
+              <button class="topo-btn" id="btnModeEst" onclick="setQRMode('estatico')">2B. QR Estático (Monto Manual)</button>
+            </div>
+            
+            <div style="display: flex; gap: 10px;">
+              <button class="topo-btn" id="btnAutoPlay" onclick="toggleAutoPlayLoop()">⏸ Pausar Movimiento</button>
+              <button class="topo-action-btn" onclick="triggerSingleStepCycle()">⚡ Disparar Transacción ($85 USD)</button>
+            </div>
           </div>
-          <div class="banner-left">
-            <div class="pulse-indicator"></div>
+
+          <!-- Dynamic SVG Vector Canvas with Animated Traveling Light Pulses -->
+          <svg width="100%" height="100%" viewBox="0 0 1380 540" style="position: absolute; top: 0; left: 0; pointer-events: none;" id="topoSvg">
+            <defs>
+              <linearGradient id="gradBlue" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#2563EB" />
+                <stop offset="100%" stop-color="#3B82F6" />
+              </linearGradient>
+              <linearGradient id="gradTeal" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#3B82F6" />
+                <stop offset="100%" stop-color="#0D9488" />
+              </linearGradient>
+              <linearGradient id="gradPurple" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#0D9488" />
+                <stop offset="100%" stop-color="#8B5CF6" />
+              </linearGradient>
+              <linearGradient id="gradGreen" x1="100%" y1="0%" x2="0%" y2="0%">
+                <stop offset="0%" stop-color="#2563EB" />
+                <stop offset="100%" stop-color="#10B981" />
+              </linearGradient>
+
+              <!-- Arrow Markers -->
+              <marker id="arrowBlue" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                <path d="M 0 0 L 8 4 L 0 8 z" fill="#2563EB" />
+              </marker>
+              <marker id="arrowTeal" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                <path d="M 0 0 L 8 4 L 0 8 z" fill="#0D9488" />
+              </marker>
+              <marker id="arrowGreen" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                <path d="M 0 0 L 8 4 L 0 8 z" fill="#10B981" />
+              </marker>
+              <marker id="arrowPurple" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                <path d="M 0 0 L 8 4 L 0 8 z" fill="#8B5CF6" />
+              </marker>
+              <marker id="arrowRed" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                <path d="M 0 0 L 8 4 L 0 8 z" fill="#DC2626" />
+              </marker>
+            </defs>
+
+            <!-- 1. Flow line Comercio to Tourist via QR -->
+            <path id="path1" d="M 270 140 L 780 140" fill="none" stroke="#2563EB" stroke-width="3" stroke-linecap="round" class="animated-flow-path" marker-end="url(#arrowBlue)" />
+            <text x="350" y="125" fill="#1E3A8A" font-family="Inter" font-weight="700" font-size="12.5">1. El comercio inicia código QR Dinámico o Estático</text>
+
+            <!-- Branch to 2A (Dinámico) -->
+            <path id="path2A" d="M 980 130 L 1090 100" fill="none" stroke="#059669" stroke-width="2.5" class="animated-flow-path-fast" marker-end="url(#arrowGreen)" />
+            <text x="1000" y="90" fill="#059669" font-family="JetBrains Mono" font-weight="800" font-size="11.5">2A. Dinámico</text>
+
+            <!-- Branch to 2B (Estático) -->
+            <path id="path2B" d="M 980 150 L 1090 180" fill="none" stroke="#DC2626" stroke-width="2.5" class="animated-flow-path-fast" marker-end="url(#arrowRed)" />
+            <text x="1000" y="195" fill="#DC2626" font-family="JetBrains Mono" font-weight="800" font-size="11.5">2B. Estático</text>
+
+            <!-- 3. Tourist to Origin Bank -->
+            <path id="path3" d="M 870 200 L 870 370" fill="none" stroke="#0D9488" stroke-width="3" stroke-linecap="round" class="animated-flow-path" marker-end="url(#arrowTeal)" />
+            <text x="885" y="280" fill="#0D9488" font-family="Inter" font-weight="700" font-size="12">3. Enviar datos para iniciar pago QR</text>
+
+            <!-- 10. Notification to Tourist -->
+            <path id="path10" d="M 840 370 L 840 200" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" class="animated-flow-path-fast" marker-end="url(#arrowGreen)" />
+            <text x="730" y="280" fill="#10B981" font-family="Inter" font-weight="800" font-size="12">10. Notificación</text>
+
+            <!-- 4. Debit Tourist Account Branch -->
+            <path id="path4" d="M 990 415 L 1100 415" fill="none" stroke="#8B5CF6" stroke-width="2.5" class="animated-flow-path" marker-end="url(#arrowPurple)" />
+            <text x="1005" y="405" fill="#8B5CF6" font-family="Inter" font-weight="700" font-size="11.5">4. Autorización</text>
+
+            <!-- 5. Origin Bank to Central Switch -->
+            <path id="path5" d="M 750 415 L 610 415" fill="none" stroke="#2563EB" stroke-width="3" class="animated-flow-path" marker-end="url(#arrowBlue)" />
+            <text x="635" y="400" fill="#1E3A8A" font-family="Inter" font-weight="700" font-size="12">5. Solicitud de pago</text>
+
+            <!-- 9. Return Response to Origin Bank -->
+            <path id="path9" d="M 610 440 L 750 440" fill="none" stroke="#0D9488" stroke-width="2.5" class="animated-flow-path-fast" marker-end="url(#arrowTeal)" />
+            <text x="625" y="465" fill="#0D9488" font-family="Inter" font-weight="700" font-size="11.5">9. Respuesta de pago</text>
+
+            <!-- 6. Switch to Merchant Bank (SPEI) -->
+            <path id="path6" d="M 390 415 L 260 415" fill="none" stroke="#2563EB" stroke-width="3" class="animated-flow-path" marker-end="url(#arrowBlue)" />
+            <text x="275" y="400" fill="#1E3A8A" font-family="Inter" font-weight="700" font-size="12">6. Solicitud SPEI</text>
+
+            <!-- 8. Return Response Merchant Bank -->
+            <path id="path8" d="M 260 440 L 390 440" fill="none" stroke="#10B981" stroke-width="2.5" class="animated-flow-path-fast" marker-end="url(#arrowGreen)" />
+            <text x="275" y="465" fill="#10B981" font-family="Inter" font-weight="700" font-size="11.5">8. Acreditación MXN</text>
+
+            <!-- 7. Merchant Bank to Store Approval Notification -->
+            <path id="path7" d="M 170 360 L 170 195" fill="none" stroke="#10B981" stroke-width="3.5" class="animated-flow-path-fast" marker-end="url(#arrowGreen)" />
+            <text x="25" y="270" fill="#059669" font-family="Inter" font-weight="800" font-size="12.5" style="transform: rotate(-90deg); transform-origin: 160px 270px;">7. Se aprueba y notifica al comercio (&lt;3s)</text>
+          </svg>
+
+          <!-- ACTOR 1: COMERCIO (Top Left) -->
+          <div class="actor-card" id="actorStore" style="top: 100px; left: 40px; width: 220px;">
+            <div class="actor-icon" style="background: #EFF6FF;">🏪</div>
             <div>
-              <div class="banner-text-main" id="simStatusBanner">⚡ SMART PAY TRANSBORDER ENGINE · CANAL SPEI ACTIVO</div>
-              <div style="font-size: 11.5px; color: #94A3B8; margin-top: 2px;">CERTIFICACIÓN EMVCo · ENCRIPTACIÓN ISO 8583 · REGULACIÓN BANXICO</div>
+              <div class="actor-info-title">Comercio (QROO)</div>
+              <div class="actor-info-sub">Restaurante / Boutique</div>
             </div>
           </div>
-          <div class="banner-right-meta">
-            <div>ESTADO: <strong id="simClockLabel" style="color: #5EEAD4;">STANDBY (0.0s)</strong></div>
-            <div>LIQUIDACIÓN: <strong style="color: #93C5FD;">100% MXN</strong></div>
+
+          <!-- FLOATING QR (Top Center) -->
+          <div style="position: absolute; top: 75px; left: 470px; display: flex; flex-direction: column; align-items: center; z-index: 6;">
+            <div style="background: #FFFFFF; border: 2px solid var(--navy-950); padding: 8px; border-radius: 8px; box-shadow: 0 6px 16px rgba(0,0,0,0.1);">
+              <svg width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="2">
+                <rect x="3" y="3" width="6" height="6" rx="1" fill="#0F172A" />
+                <rect x="15" y="3" width="6" height="6" rx="1" fill="#0F172A" />
+                <rect x="3" y="15" width="6" height="6" rx="1" fill="#0F172A" />
+                <path d="M15 15h2v2h-2zM19 19h2v2h-2zM15 19h2v2h-2zM19 15h2v2h-2zM10 3v4M3 10h4M10 10h4v4h-4z" />
+              </svg>
+            </div>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 800; color: var(--navy-950); margin-top: 4px;">QR PAY</span>
           </div>
+
+          <!-- ACTOR 2: TURISTA (Top Right) -->
+          <div class="actor-card" id="actorTourist" style="top: 100px; left: 790px; width: 220px;">
+            <div class="actor-icon" style="background: #ECFDF5;">📱</div>
+            <div>
+              <div class="actor-info-title">2. Cliente Escanea</div>
+              <div class="actor-info-sub">Turista con App Bancaria</div>
+            </div>
+          </div>
+
+          <!-- BRANCH 2A: DINÁMICO (Far Right Top) -->
+          <div class="branch-pill branch-2a" id="pill2A" style="top: 85px; left: 1100px;">
+            <span>🟢 Visualiza importe y confirma</span>
+          </div>
+
+          <!-- BRANCH 2B: ESTÁTICO (Far Right Bottom) -->
+          <div class="branch-pill branch-2b dimmed" id="pill2B" style="top: 165px; left: 1100px;">
+            <span>🔴 Introduce importe y confirma</span>
+          </div>
+
+          <!-- ACTOR 4: BANCO ORIGEN (Bottom Right) -->
+          <div class="actor-card" id="actorOriginBank" style="top: 380px; left: 760px; width: 230px;">
+            <div class="actor-icon" style="background: #F5F3FF;">🏛️</div>
+            <div>
+              <div class="actor-info-title">Originador / Banco Turista</div>
+              <div class="actor-info-sub">PIX / Nequi / Yape / CBU</div>
+            </div>
+          </div>
+
+          <!-- DEBIT IN ACCOUNT PILL (Far Right Bottom) -->
+          <div class="branch-pill" style="top: 395px; left: 1110px; background: #8B5CF6; color: #FFFFFF; border: 1.5px solid #7C3AED;">
+            <span>🟣 Debitar en cuenta del cliente</span>
+          </div>
+
+          <!-- CENTRAL SWITCH HUB (Bottom Center) -->
+          <div class="switch-hub-card" id="actorSwitch" style="top: 360px; left: 400px; width: 200px;">
+            <div class="switch-logos-row">
+              <span class="switch-badge" style="background: #EFF6FF; color: #1E3A8A;">🇧🇷 PIX</span>
+              <span class="switch-badge" style="background: #CCFBF1; color: #0D9488;">🇨🇴 NEQUI</span>
+              <span class="switch-badge" style="background: #EDE9FE; color: #6D28D9;">🇵🇪 YAPE</span>
+            </div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; font-weight: 800; color: var(--navy-950); margin: 2px 0;">
+              SMART PAY HUB
+            </div>
+            <div style="font-size: 10px; color: var(--slate-500); text-align: center;">
+              Switch FX + Red CoDi / Banxico
+            </div>
+          </div>
+
+          <!-- ACTOR 5: BANCO DEL COMERCIO (Bottom Left) -->
+          <div class="actor-card" id="actorMerchantBank" style="top: 380px; left: 40px; width: 210px;">
+            <div class="actor-icon" style="background: #ECFDF5;">🏦</div>
+            <div>
+              <div class="actor-info-title">Banco del Comercio</div>
+              <div class="actor-info-sub">Liquidación SPEI (MXN)</div>
+            </div>
+          </div>
+
+          <!-- Bottom Live Status Notification Toast -->
+          <div class="step-toast-box">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span style="display: inline-block; width: 8px; height: 8px; background: #10B981; border-radius: 50%; box-shadow: 0 0 8px #10B981;"></span>
+              <span id="liveStatusText">ESTADO: CICLO ACTIVO CONTINUO · FLUJO TRANSFRONTERIZO BIDIRECCIONAL EN TIEMPO REAL</span>
+            </div>
+            <div style="color: #93C5FD;" id="liveStepCounter">VELOCIDAD: 100% (SPEI &lt;3 SEG)</div>
+          </div>
+
         </div>
-
-        <!-- Step 6, 5, 4 (Reversed for visual circuit loop) -->
-        <div class="nodes-row">
-          <div class="flow-node" id="node-6">
-            <div class="node-header">
-              <div class="node-badge">06</div>
-              <div class="node-status-tag" id="tag-6">NOTIFICACIÓN</div>
-            </div>
-            <div class="node-title">6. Confirmación Instantánea</div>
-            <div class="node-desc">El comercio recibe <strong>alerta instantánea (&lt;3 seg)</strong> vía WhatsApp, SMS o impresión de comanda.</div>
-            <div class="node-meta" style="color: var(--emerald-500);">✅ TIEMPO TOTAL: 1.8 SEGUNDOS</div>
-          </div>
-
-          <div class="flow-node" id="node-5">
-            <div class="node-header">
-              <div class="node-badge">05</div>
-              <div class="node-status-tag" id="tag-5">SPEI MXN</div>
-            </div>
-            <div class="node-title">5. Banco del Comercio</div>
-            <div class="node-desc">Acreditación directa e irrevocable en <strong>Pesos Mexicanos (MXN)</strong> vía SPEI a la cuenta bancaria.</div>
-            <div class="node-meta" style="color: #312E81;">🏦 FONDO LÍQUIDO DISPONIBLE</div>
-          </div>
-
-          <div class="flow-node" id="node-4">
-            <div class="node-header">
-              <div class="node-badge">04</div>
-              <div class="node-status-tag" id="tag-4">DÉBITO ORIGEN</div>
-            </div>
-            <div class="node-title">4. Banco de Origen</div>
-            <div class="node-desc">Debita automáticamente la cuenta bancaria del turista en su moneda de origen.</div>
-            <div class="node-meta" style="color: var(--amber-500);">💳 CERO RECARGO DE TARJETA</div>
-          </div>
-        </div>
-
-        <!-- Telemetry Progress Bar -->
-        <div class="telemetry-progress-wrap">
-          <div class="telemetry-bar-fill" id="telemetryFill"></div>
-        </div>
-
       </div>
 
       <div class="sources-box">
@@ -1552,100 +1629,78 @@
   window.addEventListener('resize', scaleDeck);
   scaleDeck();
 
-  // ------------------ SLIDE 5: LIVE PAYMENT SIMULATOR ENGINE ------------------
-  let activeApp = 'pix';
-  let isSimulating = false;
+  // ------------------ SLIDE 5: TOPOLOGY ANIMATION CONTROLS ------------------
+  let isAutoPlay = true;
+  let qrMode = 'dinamico';
 
-  function selectApp(appKey, titleText, metaText) {
-    if (isSimulating) return;
-    activeApp = appKey;
-    document.querySelectorAll('.sim-pill').forEach(pill => pill.classList.remove('active'));
-    event.target.classList.add('active');
+  function setQRMode(mode) {
+    qrMode = mode;
+    const btnDin = document.getElementById('btnModeDin');
+    const btnEst = document.getElementById('btnModeEst');
+    const pill2A = document.getElementById('pill2A');
+    const pill2B = document.getElementById('pill2B');
+    const path2A = document.getElementById('path2A');
+    const path2B = document.getElementById('path2B');
 
-    const descEl = document.getElementById('turista-app-desc');
-    const metaEl = document.getElementById('turista-app-meta');
-
-    if (appKey === 'pix') {
-      descEl.innerHTML = `Escanea con <strong>PIX (Banco Central do Brasil)</strong> en Reales (R$ 425 BRL) eludiendo el 3.5% IOF.`;
-      metaEl.innerText = `📲 RED: PIX DO BRASIL (BCB)`;
-    } else if (appKey === 'nequi') {
-      descEl.innerHTML = `Escanea con <strong>Nequi / DaviPlata (Colombia)</strong> en Pesos Colombianos ($340,000 COP) sin cobros ocultos.`;
-      metaEl.innerText = `📲 RED: NEQUI / SFC (COLOMBIA)`;
-    } else if (appKey === 'yape') {
-      descEl.innerHTML = `Escanea con <strong>Yape / Plin (Perú)</strong> en Soles Peruanos (S/ 315 PEN) vía interoperabilidad BCRP.`;
-      metaEl.innerText = `📲 RED: YAPE / BCRP (PERÚ)`;
-    } else if (appKey === 'ewallet') {
-      descEl.innerHTML = `Escanea con <strong>eWallet CBU/CVU (Argentina)</strong> en Pesos Argentinos ($105,000 ARS) eludiendo el 25% AFIP.`;
-      metaEl.innerText = `📲 RED: CBU / BCRA (ARGENTINA)`;
-    } else if (appKey === 'codi') {
-      descEl.innerHTML = `Escanea con <strong>CoDi / DiMo (México)</strong> en Pesos Mexicanos ($1,700 MXN) con <strong>0% de comisión TPV</strong>.`;
-      metaEl.innerText = `🇲🇽 RED: CoDi / DiMo (BANXICO)`;
+    if (mode === 'dinamico') {
+      btnDin.classList.add('active');
+      btnEst.classList.remove('active');
+      pill2A.classList.remove('dimmed');
+      pill2B.classList.add('dimmed');
+      path2A.style.opacity = '1';
+      path2B.style.opacity = '0.2';
+    } else {
+      btnEst.classList.add('active');
+      btnDin.classList.remove('active');
+      pill2B.classList.remove('dimmed');
+      pill2A.classList.add('dimmed');
+      path2B.style.opacity = '1';
+      path2A.style.opacity = '0.2';
     }
   }
 
-  function runTransactionSimulation() {
-    if (isSimulating) return;
-    isSimulating = true;
-
-    const btn = document.getElementById('runSimBtn');
-    const clockLabel = document.getElementById('simClockLabel');
-    const statusBanner = document.getElementById('simStatusBanner');
-    const telemetryFill = document.getElementById('telemetryFill');
-
-    btn.disabled = true;
-    btn.style.opacity = '0.6';
-
-    for (let i = 1; i <= 6; i++) {
-      const node = document.getElementById(`node-${i}`);
-      const tag = document.getElementById(`tag-${i}`);
-      node.classList.remove('active-step', 'completed-step');
-      tag.innerText = 'EN COLA';
+  function toggleAutoPlayLoop() {
+    isAutoPlay = !isAutoPlay;
+    const btn = document.getElementById('btnAutoPlay');
+    const paths = document.querySelectorAll('#topoSvg path');
+    
+    if (isAutoPlay) {
+      btn.innerText = '⏸ Pausar Movimiento';
+      paths.forEach(p => p.style.animationPlayState = 'running');
+      document.getElementById('liveStatusText').innerText = 'ESTADO: CICLO ACTIVO CONTINUO · FLUJO TRANSFRONTERIZO BIDIRECCIONAL EN TIEMPO REAL';
+    } else {
+      btn.innerText = '▶ Reanudar Movimiento';
+      paths.forEach(p => p.style.animationPlayState = 'paused');
+      document.getElementById('liveStatusText').innerText = 'ESTADO: MOVIMIENTO PAUSADO · LISTO PARA DISPARO MANUAL';
     }
+  }
 
-    const steps = [
-      { node: 1, time: 300, tag: 'ORDEN EMITIDA', banner: '1/6: COMERCIO GENERA QR DINÁMICO ($85 USD)', progress: 16 },
-      { node: 2, time: 700, tag: 'QR ESCANEADO', banner: `2/6: TURISTA CONFIRMA EN SU APP (${activeApp.toUpperCase()})`, progress: 35 },
-      { node: 3, time: 1100, tag: 'ROUTED & FX LOCKED', banner: '3/6: SMART HUB CALCULA FX SPOT (<80ms)', progress: 55 },
-      { node: 4, time: 1500, tag: 'DÉBITO EXITOSO', banner: '4/6: BANCO INTERNACIONAL DEBITA FONDOS', progress: 72 },
-      { node: 5, time: 1900, tag: 'SPEI ACREDITADO', banner: '5/6: BANCO DE MÉXICO LIQUIDA SPEI EN MXN', progress: 90 },
-      { node: 6, time: 2300, tag: 'TRANSACCIÓN APROBADA', banner: '6/6: CONFIRMACIÓN EN RESTAURANTE (<3s)', progress: 100 }
+  function triggerSingleStepCycle() {
+    const actors = [
+      { id: 'actorStore', text: '1. COMERCIO EMITE QR' },
+      { id: 'actorTourist', text: '2. TURISTA ESCANEA Y AUTORIZA EN SU APP' },
+      { id: 'actorOriginBank', text: '3 & 4. BANCO ORIGEN AUTORIZA Y DEBITA MONEDA LOCAL' },
+      { id: 'actorSwitch', text: '5 & 9. SMART PAY HUB ENRUTA Y CONVIERTE FX' },
+      { id: 'actorMerchantBank', text: '6 & 8. BANCO DEL COMERCIO ACREDITA SPEI MXN' },
+      { id: 'actorStore', text: '7 & 10. NOTIFICACIÓN EXITOSA EN MOSTRADOR (<3s)' }
     ];
 
-    let start = Date.now();
-    let timer = setInterval(() => {
-      let elapsed = ((Date.now() - start) / 1000).toFixed(1);
-      clockLabel.innerText = `PROCESANDO (${elapsed}s)`;
-    }, 100);
-
-    steps.forEach((step, index) => {
+    actors.forEach((act, index) => {
       setTimeout(() => {
-        if (index > 0) {
-          const prev = document.getElementById(`node-${steps[index - 1].node}`);
-          prev.classList.remove('active-step');
-          prev.classList.add('completed-step');
-        }
+        document.querySelectorAll('.actor-card').forEach(a => a.classList.remove('highlight'));
+        const el = document.getElementById(act.id);
+        if (el) el.classList.add('highlight');
+        document.getElementById('liveStatusText').innerText = `⚡ ${act.text}`;
+        document.getElementById('liveStepCounter').innerText = `PASO ${index + 1} DE 6`;
 
-        const curr = document.getElementById(`node-${step.node}`);
-        const currTag = document.getElementById(`tag-${step.node}`);
-        curr.classList.add('active-step');
-        currTag.innerText = step.tag;
-
-        statusBanner.innerText = step.banner;
-        telemetryFill.style.width = `${step.progress}%`;
-
-        if (index === steps.length - 1) {
+        if (index === actors.length - 1) {
           setTimeout(() => {
-            curr.classList.remove('active-step');
-            curr.classList.add('completed-step');
-            clearInterval(timer);
-            clockLabel.innerText = 'LIQUIDADO (2.3s) ✅';
-            statusBanner.innerText = '🎉 COBRO APROBADO · $1,700.00 MXN DISPONIBLES EN CUENTA BANCARIA DEL COMERCIO';
-            btn.disabled = false;
-            btn.style.opacity = '1';
-            isSimulating = false;
-          }, 600);
+            el.classList.remove('highlight');
+            document.getElementById('liveStatusText').innerText = '✅ TRANSACCIÓN COMPLETADA EXITOSAMENTE · $85 USD LIQUIDADOS VÍA SPEI';
+            document.getElementById('liveStepCounter').innerText = 'TIEMPO TOTAL: 1.8s';
+          }, 800);
         }
-      }, step.time);
+      }, index * 600);
     });
   }
 
@@ -1668,17 +1723,14 @@
     const annualTxsTotal = dailyTxsTotal * 365;
     const annualVolumeUSD = annualTxsTotal * ticketUSD;
 
-    // Traditional Costs: 4.5% fee (3.5% interchange + 1.0% cross border) + $35 USD/mo terminal rent
     const tradFeeCost = annualVolumeUSD * 0.045;
     const tradTerminalRent = merchants * 35 * 12;
     const tradTotalCost = tradFeeCost + tradTerminalRent;
 
-    // Smart Pay Costs: feeRate (e.g. 1.5%) + $0 terminal rent
     const smartPayTotalCost = annualVolumeUSD * feeRate;
 
-    // Net Savings
     const netSavingsUSD = tradTotalCost - smartPayTotalCost;
-    const netSavingsMXN = netSavingsUSD * 18.0; // Tipo de cambio estimado
+    const netSavingsMXN = netSavingsUSD * 18.0;
 
     // Formatted Outputs
     document.getElementById('kpiVolUSD').innerText = `$${(annualVolumeUSD / 1000000).toFixed(2)}M USD`;
@@ -1690,7 +1742,6 @@
     document.getElementById('kpiTerminalSavings').innerText = `$${tradTerminalRent.toLocaleString('es-MX')} USD`;
   }
 
-  // Initial Run of Simulator on load
   calculateROI();
 </script>
 
