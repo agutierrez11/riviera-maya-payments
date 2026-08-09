@@ -261,6 +261,142 @@
   }
 
   /* -------------------------------------------------------------
+     SLIDE 4: SEASONALITY HEATMAP MATRIX (CALENDARIO DE CUADRITOS)
+     ------------------------------------------------------------- */
+  .heatmap-matrix-card {
+    background: #FFFFFF;
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 16px 20px;
+    box-shadow: 0 10px 30px rgba(15,23,42,0.04);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 8px 0;
+  }
+
+  .heatmap-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 5px 6px;
+  }
+
+  .heatmap-table th {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11.5px;
+    font-weight: 800;
+    color: var(--slate-500);
+    text-align: center;
+    padding: 4px;
+    letter-spacing: 0.5px;
+  }
+
+  .heatmap-country-th {
+    text-align: left !important;
+    width: 250px;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 12px !important;
+    color: var(--navy-950) !important;
+  }
+
+  .heatmap-cell-pod {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    border-radius: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    transition: all 0.2s ease;
+    cursor: default;
+    border: 1px solid transparent;
+  }
+
+  .heatmap-cell-pod:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  }
+
+  .heat-pct {
+    font-size: 11px;
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  .heat-tag {
+    font-size: 8px;
+    font-weight: 700;
+    margin-top: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    opacity: 0.9;
+  }
+
+  /* Colombia Theme (Blue) */
+  .cell-co-peak { background: #1D4ED8; color: #FFFFFF; border-color: #1E40AF; box-shadow: 0 2px 8px rgba(29, 78, 216, 0.35); }
+  .cell-co-high { background: #3B82F6; color: #FFFFFF; }
+  .cell-co-med  { background: #93C5FD; color: #1E3A8A; }
+  .cell-co-low  { background: #EFF6FF; color: #64748B; border-color: #E2E8F0; }
+
+  /* Brasil Theme (Emerald) */
+  .cell-br-peak { background: #047857; color: #FFFFFF; border-color: #065F46; box-shadow: 0 2px 8px rgba(4, 120, 87, 0.35); }
+  .cell-br-high { background: #10B981; color: #FFFFFF; }
+  .cell-br-med  { background: #6EE7B7; color: #064E3B; }
+  .cell-br-low  { background: #ECFDF5; color: #64748B; border-color: #E2E8F0; }
+
+  /* Argentina Theme (Cyan) */
+  .cell-ar-peak { background: #0369A1; color: #FFFFFF; border-color: #075985; box-shadow: 0 2px 8px rgba(3, 105, 161, 0.35); }
+  .cell-ar-high { background: #0EA5E9; color: #FFFFFF; }
+  .cell-ar-med  { background: #7DD3FC; color: #0C4A6E; }
+  .cell-ar-low  { background: #F0F9FF; color: #64748B; border-color: #E2E8F0; }
+
+  /* Peru Theme (Amber) */
+  .cell-pe-peak { background: #B45309; color: #FFFFFF; border-color: #92400E; box-shadow: 0 2px 8px rgba(180, 83, 9, 0.35); }
+  .cell-pe-high { background: #F59E0B; color: #FFFFFF; }
+  .cell-pe-med  { background: #FDE68A; color: #78350F; }
+  .cell-pe-low  { background: #FFFBEB; color: #64748B; border-color: #E2E8F0; }
+
+  /* USA / Canada Benchmark */
+  .cell-us-high { background: #334155; color: #FFFFFF; }
+  .cell-us-med  { background: #94A3B8; color: #0F172A; }
+  .cell-us-drop { background: #FEE2E2; color: #DC2626; border-color: #FCA5A5; font-weight: 800; }
+
+  .heatmap-pills-dock {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 4px;
+  }
+
+  .heatmap-insight-pill {
+    background: #F8FAFC;
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .heatmap-insight-icon {
+    font-size: 22px;
+    line-height: 1;
+  }
+
+  .heatmap-insight-title {
+    font-weight: 800;
+    font-size: 13.5px;
+    color: var(--navy-950);
+    margin-bottom: 3px;
+  }
+
+  .heatmap-insight-text {
+    font-size: 12px;
+    color: var(--slate-600);
+    line-height: 1.4;
+  }
+
+  /* -------------------------------------------------------------
      SLIDE 5: ORIGINAL "SMART TRANSIT DIGITAL TWIN" (ORIGINAL COCKPIT)
      ------------------------------------------------------------- */
   .cockpit-stage-container {
@@ -1119,55 +1255,179 @@
     </div>
     <div class="main-canvas">
       <div>
-        <div class="mono-tag">04 · CONTRA-CICLO DE TEMPORADA BAJA EN QUINTANA ROO</div>
+        <div class="mono-tag">04 · CALENDARIO DE ESTACIONALIDAD MENSUAL & CONTRA-CICLO DE TEMPORADA BAJA</div>
         <div class="slide-title-action">
-          El turismo sudamericano genera picos de afluencia durante la temporada baja norteamericana (Junio a Agosto)
+          Matriz de Intensidad de Flujo y Volumen Mensual por País: Rescate de la Temporada Baja de Quintana Roo
         </div>
       </div>
-      <div class="card-grid grid-2x2">
-        <div class="exec-card exec-card-blue">
+      
+      <!-- Seasonality Heatmap Matrix Card -->
+      <div class="heatmap-matrix-card">
+        <table class="heatmap-table">
+          <thead>
+            <tr>
+              <th class="heatmap-country-th">PAÍS / DERRAMA ANUAL</th>
+              <th>ENE</th>
+              <th>FEB</th>
+              <th>MAR</th>
+              <th>ABR</th>
+              <th>MAY</th>
+              <th>JUN</th>
+              <th>JUL</th>
+              <th>AGO</th>
+              <th>SEP</th>
+              <th>OCT</th>
+              <th>NOV</th>
+              <th>DIC</th>
+              <th style="width: 170px; text-align: right; padding-right: 8px;">VENTANAS CLAVE</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Colombia Row -->
+            <tr>
+              <td class="heatmap-country-th">
+                <div style="font-weight: 800; font-size: 13.5px; color: #1E3A8A;">🇨🇴 COLOMBIA</div>
+                <div style="font-size: 11px; color: #64748B;">380k Turistas · <strong>$395.0M USD</strong></div>
+              </td>
+              <td><div class="heatmap-cell-pod cell-co-high"><span class="heat-pct">75%</span><span class="heat-tag">Alto</span></div></td>
+              <td><div class="heatmap-cell-pod cell-co-low"><span class="heat-pct">35%</span><span class="heat-tag">Base</span></div></td>
+              <td><div class="heatmap-cell-pod cell-co-low"><span class="heat-pct">40%</span><span class="heat-tag">Base</span></div></td>
+              <td><div class="heatmap-cell-pod cell-co-med"><span class="heat-pct">65%</span><span class="heat-tag">Sem.Sta</span></div></td>
+              <td><div class="heatmap-cell-pod cell-co-low"><span class="heat-pct">30%</span><span class="heat-tag">Base</span></div></td>
+              <td><div class="heatmap-cell-pod cell-co-high"><span class="heat-pct">90%</span><span class="heat-tag">Verano</span></div></td>
+              <td><div class="heatmap-cell-pod cell-co-peak"><span class="heat-pct">100%</span><span class="heat-tag">PICO</span></div></td>
+              <td><div class="heatmap-cell-pod cell-co-med"><span class="heat-pct">60%</span><span class="heat-tag">Medio</span></div></td>
+              <td><div class="heatmap-cell-pod cell-co-low"><span class="heat-pct">35%</span><span class="heat-tag">Base</span></div></td>
+              <td><div class="heatmap-cell-pod cell-co-peak"><span class="heat-pct">85%</span><span class="heat-tag">Receso</span></div></td>
+              <td><div class="heatmap-cell-pod cell-co-med"><span class="heat-pct">55%</span><span class="heat-tag">Puentes</span></div></td>
+              <td><div class="heatmap-cell-pod cell-co-peak"><span class="heat-pct">95%</span><span class="heat-tag">Fiestas</span></div></td>
+              <td style="text-align: right; padding-right: 8px;">
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; font-weight: 700; background: #DBEAFE; color: #1E40AF; padding: 4px 8px; border-radius: 6px;">Jun-Jul · Oct · Dic</span>
+              </td>
+            </tr>
+
+            <!-- Brasil Row -->
+            <tr>
+              <td class="heatmap-country-th">
+                <div style="font-weight: 800; font-size: 13.5px; color: #065F46;">🇧🇷 BRASIL</div>
+                <div style="font-size: 11px; color: #64748B;">150k Turistas · <strong>$181.3M USD</strong></div>
+              </td>
+              <td><div class="heatmap-cell-pod cell-br-peak"><span class="heat-pct">95%</span><span class="heat-tag">Verano</span></div></td>
+              <td><div class="heatmap-cell-pod cell-br-peak"><span class="heat-pct">90%</span><span class="heat-tag">Carnaval</span></div></td>
+              <td><div class="heatmap-cell-pod cell-br-med"><span class="heat-pct">55%</span><span class="heat-tag">Medio</span></div></td>
+              <td><div class="heatmap-cell-pod cell-br-low"><span class="heat-pct">30%</span><span class="heat-tag">Base</span></div></td>
+              <td><div class="heatmap-cell-pod cell-br-low"><span class="heat-pct">30%</span><span class="heat-tag">Base</span></div></td>
+              <td><div class="heatmap-cell-pod cell-br-med"><span class="heat-pct">60%</span><span class="heat-tag">Medio</span></div></td>
+              <td><div class="heatmap-cell-pod cell-br-peak"><span class="heat-pct">100%</span><span class="heat-tag">PICO</span></div></td>
+              <td><div class="heatmap-cell-pod cell-br-med"><span class="heat-pct">50%</span><span class="heat-tag">Invierno</span></div></td>
+              <td><div class="heatmap-cell-pod cell-br-low"><span class="heat-pct">35%</span><span class="heat-tag">Base</span></div></td>
+              <td><div class="heatmap-cell-pod cell-br-low"><span class="heat-pct">40%</span><span class="heat-tag">Base</span></div></td>
+              <td><div class="heatmap-cell-pod cell-br-med"><span class="heat-pct">60%</span><span class="heat-tag">Feriados</span></div></td>
+              <td><div class="heatmap-cell-pod cell-br-peak"><span class="heat-pct">90%</span><span class="heat-tag">Reveillon</span></div></td>
+              <td style="text-align: right; padding-right: 8px;">
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; font-weight: 700; background: #D1FAE5; color: #065F46; padding: 4px 8px; border-radius: 6px;">Ene-Feb · Jul · Dic</span>
+              </td>
+            </tr>
+
+            <!-- Argentina Row -->
+            <tr>
+              <td class="heatmap-country-th">
+                <div style="font-weight: 800; font-size: 13.5px; color: #075985;">🇦🇷 ARGENTINA</div>
+                <div style="font-size: 11px; color: #64748B;">160k Turistas · <strong>$180.1M USD</strong></div>
+              </td>
+              <td><div class="heatmap-cell-pod cell-ar-peak"><span class="heat-pct">100%</span><span class="heat-tag">PICO</span></div></td>
+              <td><div class="heatmap-cell-pod cell-ar-peak"><span class="heat-pct">95%</span><span class="heat-tag">Verano</span></div></td>
+              <td><div class="heatmap-cell-pod cell-ar-med"><span class="heat-pct">50%</span><span class="heat-tag">Otoño</span></div></td>
+              <td><div class="heatmap-cell-pod cell-ar-low"><span class="heat-pct">35%</span><span class="heat-tag">Base</span></div></td>
+              <td><div class="heatmap-cell-pod cell-ar-low"><span class="heat-pct">25%</span><span class="heat-tag">Base</span></div></td>
+              <td><div class="heatmap-cell-pod cell-ar-low"><span class="heat-pct">35%</span><span class="heat-tag">Base</span></div></td>
+              <td><div class="heatmap-cell-pod cell-ar-peak"><span class="heat-pct">85%</span><span class="heat-tag">Receso</span></div></td>
+              <td><div class="heatmap-cell-pod cell-ar-low"><span class="heat-pct">40%</span><span class="heat-tag">Invierno</span></div></td>
+              <td><div class="heatmap-cell-pod cell-ar-low"><span class="heat-pct">30%</span><span class="heat-tag">Base</span></div></td>
+              <td><div class="heatmap-cell-pod cell-ar-low"><span class="heat-pct">35%</span><span class="heat-tag">Base</span></div></td>
+              <td><div class="heatmap-cell-pod cell-ar-med"><span class="heat-pct">60%</span><span class="heat-tag">Pretemp</span></div></td>
+              <td><div class="heatmap-cell-pod cell-ar-peak"><span class="heat-pct">90%</span><span class="heat-tag">Fiestas</span></div></td>
+              <td style="text-align: right; padding-right: 8px;">
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; font-weight: 700; background: #E0F2FE; color: #0369A1; padding: 4px 8px; border-radius: 6px;">Ene-Feb · Jul · Dic</span>
+              </td>
+            </tr>
+
+            <!-- Peru Row -->
+            <tr>
+              <td class="heatmap-country-th">
+                <div style="font-weight: 800; font-size: 13.5px; color: #92400E;">🇵🇪 PERÚ</div>
+                <div style="font-size: 11px; color: #64748B;">135k Turistas · <strong>$132.3M USD</strong></div>
+              </td>
+              <td><div class="heatmap-cell-pod cell-pe-med"><span class="heat-pct">65%</span><span class="heat-tag">Verano</span></div></td>
+              <td><div class="heatmap-cell-pod cell-pe-med"><span class="heat-pct">60%</span><span class="heat-tag">Verano</span></div></td>
+              <td><div class="heatmap-cell-pod cell-pe-low"><span class="heat-pct">35%</span><span class="heat-tag">Base</span></div></td>
+              <td><div class="heatmap-cell-pod cell-pe-low"><span class="heat-pct">40%</span><span class="heat-tag">Sem.Sta</span></div></td>
+              <td><div class="heatmap-cell-pod cell-pe-low"><span class="heat-pct">30%</span><span class="heat-tag">Base</span></div></td>
+              <td><div class="heatmap-cell-pod cell-pe-med"><span class="heat-pct">50%</span><span class="heat-tag">Medio</span></div></td>
+              <td><div class="heatmap-cell-pod cell-pe-peak"><span class="heat-pct">100%</span><span class="heat-tag">F.PATRIAS</span></div></td>
+              <td><div class="heatmap-cell-pod cell-pe-high"><span class="heat-pct">80%</span><span class="heat-tag">Escolar</span></div></td>
+              <td><div class="heatmap-cell-pod cell-pe-low"><span class="heat-pct">30%</span><span class="heat-tag">Base</span></div></td>
+              <td><div class="heatmap-cell-pod cell-pe-low"><span class="heat-pct">40%</span><span class="heat-tag">Milagros</span></div></td>
+              <td><div class="heatmap-cell-pod cell-pe-med"><span class="heat-pct">50%</span><span class="heat-tag">Base</span></div></td>
+              <td><div class="heatmap-cell-pod cell-pe-peak"><span class="heat-pct">85%</span><span class="heat-tag">Navidad</span></div></td>
+              <td style="text-align: right; padding-right: 8px;">
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; font-weight: 700; background: #FEF3C7; color: #92400E; padding: 4px 8px; border-radius: 6px;">Jul-Ago · Ene · Dic</span>
+              </td>
+            </tr>
+
+            <!-- USA Benchmark Row -->
+            <tr style="border-top: 2px dashed #E2E8F0;">
+              <td class="heatmap-country-th">
+                <div style="font-weight: 800; font-size: 13.5px; color: #475569;">🇺🇸 EE.UU. (BENCHMARK)</div>
+                <div style="font-size: 11px; color: #DC2626;">Caída Drástica en Verano</div>
+              </td>
+              <td><div class="heatmap-cell-pod cell-us-high"><span class="heat-pct">85%</span><span class="heat-tag">Alto</span></div></td>
+              <td><div class="heatmap-cell-pod cell-us-high"><span class="heat-pct">90%</span><span class="heat-tag">Invierno</span></div></td>
+              <td><div class="heatmap-cell-pod cell-us-high"><span class="heat-pct">100%</span><span class="heat-tag">Spring</span></div></td>
+              <td><div class="heatmap-cell-pod cell-us-high"><span class="heat-pct">75%</span><span class="heat-tag">Easter</span></div></td>
+              <td><div class="heatmap-cell-pod cell-us-drop"><span class="heat-pct">35%</span><span class="heat-tag">Cae</span></div></td>
+              <td><div class="heatmap-cell-pod cell-us-drop"><span class="heat-pct">30%</span><span class="heat-tag">Baja</span></div></td>
+              <td><div class="heatmap-cell-pod cell-us-drop"><span class="heat-pct">25%</span><span class="heat-tag">MÍNIMO</span></div></td>
+              <td><div class="heatmap-cell-pod cell-us-drop"><span class="heat-pct">25%</span><span class="heat-tag">MÍNIMO</span></div></td>
+              <td><div class="heatmap-cell-pod cell-us-drop"><span class="heat-pct">20%</span><span class="heat-tag">Huracán</span></div></td>
+              <td><div class="heatmap-cell-pod cell-us-med"><span class="heat-pct">50%</span><span class="heat-tag">Otoño</span></div></td>
+              <td><div class="heatmap-cell-pod cell-us-high"><span class="heat-pct">75%</span><span class="heat-tag">Thxgvg</span></div></td>
+              <td><div class="heatmap-cell-pod cell-us-high"><span class="heat-pct">90%</span><span class="heat-tag">Holidays</span></div></td>
+              <td style="text-align: right; padding-right: 8px;">
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; font-weight: 700; background: #FEE2E2; color: #DC2626; padding: 4px 8px; border-radius: 6px;">CAE EN VERANO (-70%)</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Strategic Takeaway Dock -->
+      <div class="heatmap-pills-dock">
+        <div class="heatmap-insight-pill">
+          <div class="heatmap-insight-icon">☀️</div>
           <div>
-            <div class="stat-val" style="font-size: 34px; color: #1E3A8A;">Junio - Julio & Oct</div>
-            <div class="stat-label">🇨🇴 Colombia (380,000 Turistas)</div>
-          </div>
-          <div class="stat-desc">• Vacaciones de mitad de año (Junio/Julio).<br>• Semana de Receso escolar (Octubre).<br>• Fiestas de fin de año (Diciembre/Enero).</div>
-          <div style="margin-top: 15px; padding-top: 10px; border-top: 1px solid #E2E8F0; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #1E3A8A; font-weight: 700;">
-            • IMPACTO: COBERTURA DE VERANO Y RECESO ESCOLAR
+            <div class="heatmap-insight-title">Rescate de Verano (Jun - Ago)</div>
+            <div class="heatmap-insight-text">Sudamérica aporta +210,000 turistas cuando el turismo anglosajón se contrae un 70%.</div>
           </div>
         </div>
-        <div class="exec-card exec-card-navy">
+        <div class="heatmap-insight-pill">
+          <div class="heatmap-insight-icon">❄️</div>
           <div>
-            <div class="stat-val" style="font-size: 34px; color: #312E81;">Julio, Dic & Feb/Mar</div>
-            <div class="stat-label">🇧🇷 Brasil (150,000 Turistas)</div>
-          </div>
-          <div class="stat-desc">• Vacaciones de invierno austral (Julio).<br>• Fiestas y verano del hemisferio sur (Dic/Ene).<br>• Semana de Carnaval (Febrero/Marzo).</div>
-          <div style="margin-top: 15px; padding-top: 10px; border-top: 1px solid #E2E8F0; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #312E81; font-weight: 700;">
-            • IMPACTO: INVIERNO AUSTRAL Y CARNAVAL
+            <div class="heatmap-insight-title">Inyección Verano Austral (Dic - Feb)</div>
+            <div class="heatmap-insight-text">Brasil y Argentina viajan con el ticket promedio más alto del año ($1,125 - $1,209 USD).</div>
           </div>
         </div>
-        <div class="exec-card exec-card-teal">
+        <div class="heatmap-insight-pill">
+          <div class="heatmap-insight-icon">🇵🇪🇨🇴</div>
           <div>
-            <div class="stat-val" style="font-size: 34px; color: #0D9488;">Enero - Feb & Julio</div>
-            <div class="stat-label">🇦🇷 Argentina (160,000 Turistas)</div>
-          </div>
-          <div class="stat-desc">• Verano austral principal (Enero/Febrero).<br>• Receso escolar de invierno (Julio).<br>• Escapadas de fin de año (Nov/Dic).</div>
-          <div style="margin-top: 15px; padding-top: 10px; border-top: 1px solid #E2E8F0; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #0D9488; font-weight: 700;">
-            • IMPACTO: PICO DE VERANO AUSTRAL Y JULIO
-          </div>
-        </div>
-        <div class="exec-card exec-card-amber">
-          <div>
-            <div class="stat-val" style="font-size: 34px; color: #B45309;">Julio - Ago & Ene/Feb</div>
-            <div class="stat-label">🇵🇪 Perú (135,000 Turistas)</div>
-          </div>
-          <div class="stat-desc">• Fiestas Patrias peruanas (28-29 de Julio).<br>• Vacaciones escolares de invierno (Julio/Ago).<br>• Receso de verano (Enero/Febrero).</div>
-          <div style="margin-top: 15px; padding-top: 10px; border-top: 1px solid #E2E8F0; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #B45309; font-weight: 700;">
-            • IMPACTO: FIESTAS PATRIAS Y VACACIONES DE INVIERNO
+            <div class="heatmap-insight-title">Picos Festivos Regionales (Jul & Oct)</div>
+            <div class="heatmap-insight-text">Fiestas Patrias Perú (28-29 Jul) y Receso Escolar Colombia (Oct) dinamizan fechas neutras en México.</div>
           </div>
         </div>
       </div>
+
       <div class="sources-box">
-        📌 <strong>IMPACTO ESTRATÉGICO DE ESTACIONALIDAD:</strong> Mientras el flujo de EE.UU. cae entre Mayo y Agosto, los 4 mercados sudamericanos tienen sus picos máximos de vacaciones familiares en Junio, Julio y Agosto, equilibrando la ocupación hotelera de Quintana Roo.
+        📌 <strong>ANÁLISIS DE ESTACIONALIDAD CRUZADA:</strong> Datos combinados de Tráfico de Pasajeros ASUR (Cancún/Cozumel/Tulum) · Calendarios Escolares Oficiales (Mineducación Colombia, MEC Brasil, Ministerio Educación Argentina, Minedu Perú) · Secretaría de Turismo de Quintana Roo (SEDETUR).
       </div>
     </div>
   </div>
