@@ -1283,23 +1283,23 @@
               </div>
             </div>
 
-            <!-- Dual-Rail Engine: Domestic vs International -->
+            <!-- Dual-Rail Engine: Dynamic Origin & Dynamic Settlement Pods -->
             <div class="dual-rail-container">
               <div class="rail-pod" style="border-color: rgba(56, 189, 248, 0.4);">
-                <div class="rail-pod-title" style="color: #38BDF8;">
-                  <span>🌐 RIEL TURISTA LATAM</span>
+                <div class="rail-pod-title" style="color: #38BDF8;" id="lblOriginPodTitle">
+                  <span>🏛️ RED DE ORIGEN (BANCO CENTRAL DO BRASIL)</span>
                 </div>
                 <div class="rail-pod-meta" id="lblLatinRailMeta">
-                  El turista paga en sus Reales / Pesos locales; el sistema garantiza el tipo de cambio spot interbancario.
+                  Débito directo en cuenta en Reales (BRL) vía red PIX, eludiendo el 3.5% de impuesto IOF de tarjeta.
                 </div>
               </div>
 
               <div class="rail-pod" style="border-color: rgba(16, 185, 129, 0.4);">
-                <div class="rail-pod-title" style="color: #34D399;">
-                  <span>🇲🇽 RIEL NACIONAL (CoDi / DiMo)</span>
+                <div class="rail-pod-title" style="color: #34D399;" id="lblDestPodTitle">
+                  <span>🇲🇽 LIQUIDACIÓN EN MÉXICO (SPEI MXN)</span>
                 </div>
-                <div class="rail-pod-meta">
-                  Efecto Caballo de Troya: Turista nacional paga exactamente <strong>$1,500 MXN a $0 comisión TPV</strong>.
+                <div class="rail-pod-meta" id="lblDestPodMeta">
+                  Acreditación del 100% en Pesos Mexicanos ($1,500 MXN) en cuenta bancaria local en &lt;3 segundos. Cero riesgo cambiario.
                 </div>
               </div>
             </div>
@@ -1502,12 +1502,12 @@
             </div>
           </div>
 
-          <!-- Trojan Horse Summary Banner -->
+          <!-- Institutional CoDi / DiMo Domestic Interoperability Banner -->
           <div style="background: #ECFDF5; border: 1px solid #A7F3D0; border-radius: 10px; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between;">
             <div style="display: flex; align-items: center; gap: 10px;">
-              <span style="font-size: 18px;">🐴</span>
+              <span style="font-size: 18px;">🏛️</span>
               <span style="font-size: 13.5px; font-weight: 700; color: #065F46;">
-                Activación CoDi / DiMo: En cobros a turistas nacionales, la comisión interbancaria es $0 MXN (100% de ahorro TPV).
+                Interoperabilidad Banxico: Integración nativa de CoDi® y DiMo® para cobros a clientes nacionales con $0 de comisión interbancaria.
               </span>
             </div>
             <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 800; color: #047857;">CERO COMISIÓN NACIONAL</span>
@@ -1668,20 +1668,40 @@
     document.getElementById('lblSubRouting').innerText = `MXN ➔ ${code.toUpperCase()} CONVERTER`;
     document.getElementById('lblLatency').innerText = `${Math.floor(Math.random() * 15 + 28)}ms`;
     
+    const origTitle = document.getElementById('lblOriginPodTitle');
+    const origMeta = document.getElementById('lblLatinRailMeta');
+    const destTitle = document.getElementById('lblDestPodTitle');
+    const destMeta = document.getElementById('lblDestPodMeta');
+
     if (code === 'br') {
-      document.getElementById('lblLatinRailMeta').innerHTML = `El turista debita <strong>${displayAmount}</strong> desde su app bancaria en Brasil (PIX / BCB) eludiendo el 3.5% de impuesto IOF.`;
+      origTitle.innerHTML = `<span>🇧🇷 RED DE ORIGEN: PIX (BANCO CENTRAL DO BRASIL)</span>`;
+      origMeta.innerHTML = `Débito directo de <strong>${displayAmount}</strong> en cuenta bancaria brasileña, eludiendo el 3.5% de impuesto IOF de tarjeta.`;
+      destTitle.innerHTML = `<span>🇲🇽 LIQUIDACIÓN EN MÉXICO: SPEI (BANXICO)</span>`;
+      destMeta.innerHTML = `Acreditación íntegra de <strong>$1,500.00 MXN</strong> en cuenta del comercio en &lt;3 segundos. Cero riesgo cambiario.`;
       document.getElementById('lblSpeiHash').innerText = `SPEI-BANXICO-PIX-20260808-8841-BR`;
     } else if (code === 'co') {
-      document.getElementById('lblLatinRailMeta').innerHTML = `El turista debita <strong>${displayAmount}</strong> mediante su llave Nequi / DaviPlata (SFC) con tasa spot en tiempo real.`;
+      origTitle.innerHTML = `<span>🇨🇴 RED DE ORIGEN: NEQUI / DAVIPLATA (SFC)</span>`;
+      origMeta.innerHTML = `Débito directo de <strong>${displayAmount}</strong> mediante llave digital interoperable supervisada por la SFC Colombia.`;
+      destTitle.innerHTML = `<span>🇲🇽 LIQUIDACIÓN EN MÉXICO: SPEI (BANXICO)</span>`;
+      destMeta.innerHTML = `Acreditación íntegra de <strong>$1,500.00 MXN</strong> en cuenta del comercio en &lt;3 segundos. Cero riesgo cambiario.`;
       document.getElementById('lblSpeiHash').innerText = `SPEI-BANXICO-NEQUI-20260808-3391-CO`;
     } else if (code === 'pe') {
-      document.getElementById('lblLatinRailMeta').innerHTML = `El turista debita <strong>${displayAmount}</strong> desde su app Yape / Plin (BCRP) con compensación inmediata.`;
+      origTitle.innerHTML = `<span>🇵🇪 RED DE ORIGEN: YAPE / PLIN (BCRP PERÚ)</span>`;
+      origMeta.innerHTML = `Débito directo de <strong>${displayAmount}</strong> vía el sistema de interoperabilidad obligatoria del Banco Central de Reserva del Perú.`;
+      destTitle.innerHTML = `<span>🇲🇽 LIQUIDACIÓN EN MÉXICO: SPEI (BANXICO)</span>`;
+      destMeta.innerHTML = `Acreditación íntegra de <strong>$1,500.00 MXN</strong> en cuenta del comercio en &lt;3 segundos. Cero riesgo cambiario.`;
       document.getElementById('lblSpeiHash').innerText = `SPEI-BANXICO-YAPE-20260808-5521-PE`;
     } else if (code === 'ar') {
-      document.getElementById('lblLatinRailMeta').innerHTML = `El turista transfiere <strong>${displayAmount}</strong> vía CBU / DEBIN eludiendo el 25% de retención AFIP.`;
+      origTitle.innerHTML = `<span>🇦🇷 RED DE ORIGEN: CBU / DEBIN / MODO (BCRA)</span>`;
+      origMeta.innerHTML = `Transferencia directa de <strong>${displayAmount}</strong> desde cuenta argentina eludiendo el 25% de retención AFIP ("Dólar Tarjeta").`;
+      destTitle.innerHTML = `<span>🇲🇽 LIQUIDACIÓN EN MÉXICO: SPEI (BANXICO)</span>`;
+      destMeta.innerHTML = `Acreditación íntegra de <strong>$1,500.00 MXN</strong> en cuenta del comercio en &lt;3 segundos. Cero riesgo cambiario.`;
       document.getElementById('lblSpeiHash').innerText = `SPEI-BANXICO-CBU-20260808-1102-AR`;
     } else if (code === 'mx') {
-      document.getElementById('lblLatinRailMeta').innerHTML = `Turista nacional paga exactamente <strong>$1,500.00 MXN</strong> vía CoDi / DiMo con <strong>$0 comisión interbancaria</strong>.`;
+      origTitle.innerHTML = `<span>🇲🇽 RED DE ORIGEN: CODI® / DIMO® (BANCO DE MÉXICO)</span>`;
+      origMeta.innerHTML = `Pago móvil interbancario directo en Pesos Mexicanos desde cualquier app bancaria nacional (BBVA, Banamex, Banorte, Santander).`;
+      destTitle.innerHTML = `<span>🇲🇽 BENEFICIO NACIONAL: $0 COMISIÓN TPV</span>`;
+      destMeta.innerHTML = `Para clientes nacionales: Cobro de <strong>$1,500.00 MXN a $0 comisión interbancaria</strong> (100% de ahorro en terminal).`;
       document.getElementById('lblSpeiHash').innerText = `SPEI-BANXICO-CODI-20260808-9901-MX`;
     }
 

@@ -380,9 +380,9 @@ def generate_pdf():
     story.append(Paragraph("📌 <b>ESTÁNDARES DE ARQUITECTURA:</b> Estándar de Comunicación EMVCo QR Code · Regulación de Pagos Electrónicos Banco de México (SPEI) · Enrutamiento Certificado ISO 8583.", source_style))
     story.append(PageBreak())
 
-    # ------------------ SLIDE 6: MATRIZ DE ESCENARIOS Y EFECTO CABALLO DE TROYA ------------------
-    story.append(Paragraph("06 · MODELO DE ESCENARIOS & EFECTO CABALLO DE TROYA CoDi / DiMo", tag_style))
-    story.append(Paragraph("Análisis de Sensibilidad ($3.1M a $23.25M USD) y Activación Orgánica de CoDi / DiMo (Banxico)", title_style))
+    # ------------------ SLIDE 6: MATRIZ DE ESCENARIOS E INTEROPERABILIDAD BANXICO ------------------
+    story.append(Paragraph("06 · MODELO DE ESCENARIOS & INTEROPERABILIDAD CoDi / DiMo", tag_style))
+    story.append(Paragraph("Análisis de Sensibilidad ($3.1M a $23.25M USD) e Integración Nativa de CoDi / DiMo (Banxico)", title_style))
     
     data_scenarios_cards = [
         [
@@ -453,10 +453,10 @@ def generate_pdf():
 
     trojan_data = [
         [
-            Paragraph("<b>🇲🇽 EFECTO CABALLO DE TROYA: ACTIVACIÓN ORGANICA DE CoDi / DiMo (BANXICO)</b>", card_label_style)
+            Paragraph("<b>🇲🇽 INTEROPERABILIDAD TOTAL: INTEGRACIÓN NATIVA DE CoDi / DiMo (BANXICO)</b>", card_label_style)
         ],
         [
-            Paragraph("• <b>Adopción por Ganancia Comercial:</b> El comercio instala el QR atraído por los dólares del turista sudamericano. Al estar conectado a SPEI, el mismo QR activa <b>CoDi y DiMo para cobros nacionales</b> sin costo de subsidio.<br/>• <b>Ahorro de Comisiones TPV Nacional:</b> En cobros a turistas locales vía CoDi/DiMo, la comisión interbancaria es <b>$0 MXN</b>, ahorrando al comercio el 2.5% a 3.5% de TPV.", card_desc_style)
+            Paragraph("• <b>Adopción Orgánica en Mostrador:</b> El comercio instala el código QR para cobros turísticos transfronterizos. Al estar conectado a la red SPEI, el mismo QR activa automáticamente <b>CoDi y DiMo para cobros nacionales</b>.<br/>• <b>Ahorro de Comisiones TPV Nacional:</b> En cobros a turistas locales vía CoDi/DiMo, la comisión interbancaria es <b>$0 MXN</b>, ahorrando al comercio el 2.5% a 3.5% de TPV.", card_desc_style)
         ]
     ]
     t_trojan = Table(trojan_data, colWidths=[520])
