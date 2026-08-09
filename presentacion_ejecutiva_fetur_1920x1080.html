@@ -261,41 +261,41 @@
   }
 
   /* -------------------------------------------------------------
-     SLIDE 4: SEASONALITY HEATMAP MATRIX (CALENDARIO DE CUADRITOS)
+     SLIDE 4: SEASONALITY HEATMAP MATRIX (CALENDARIO DE CUADRITOS - TAMAÑO GRANDE & ALTO CONTRASTE)
      ------------------------------------------------------------- */
   .heatmap-matrix-card {
     background: #FFFFFF;
     border: 1px solid var(--card-border);
-    border-radius: 14px;
-    padding: 16px 20px;
-    box-shadow: 0 10px 30px rgba(15,23,42,0.04);
+    border-radius: 16px;
+    padding: 18px 24px;
+    box-shadow: 0 12px 35px rgba(15,23,42,0.06);
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
     margin: 8px 0;
   }
 
   .heatmap-table {
     width: 100%;
     border-collapse: separate;
-    border-spacing: 5px 6px;
+    border-spacing: 6px 8px;
   }
 
   .heatmap-table th {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 11.5px;
-    font-weight: 800;
-    color: var(--slate-500);
+    font-size: 14px;
+    font-weight: 900;
+    color: #0F172A;
     text-align: center;
-    padding: 4px;
-    letter-spacing: 0.5px;
+    padding: 6px 2px;
+    letter-spacing: 0.8px;
   }
 
   .heatmap-country-th {
     text-align: left !important;
-    width: 250px;
+    width: 270px;
     font-family: 'Inter', sans-serif !important;
-    font-size: 12px !important;
+    font-size: 15px !important;
     color: var(--navy-950) !important;
   }
 
@@ -304,68 +304,69 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 48px;
-    border-radius: 8px;
-    font-family: 'JetBrains Mono', monospace;
+    height: 58px;
+    border-radius: 10px;
+    font-family: 'Inter', sans-serif;
     transition: all 0.2s ease;
     cursor: default;
-    border: 1px solid transparent;
+    border: 1.5px solid transparent;
   }
 
   .heatmap-cell-pod:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
   }
 
-  .heat-pct {
-    font-size: 11px;
-    font-weight: 800;
-    line-height: 1;
+  .heat-label-main {
+    font-size: 13.5px;
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
   }
 
-  .heat-tag {
-    font-size: 8px;
+  .heat-label-sub {
+    font-size: 10.5px;
     font-weight: 700;
     margin-top: 3px;
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
-    opacity: 0.9;
+    letter-spacing: 0.2px;
+    opacity: 0.95;
   }
 
   /* Colombia Theme (Blue) */
-  .cell-co-peak { background: #1D4ED8; color: #FFFFFF; border-color: #1E40AF; box-shadow: 0 2px 8px rgba(29, 78, 216, 0.35); }
-  .cell-co-high { background: #3B82F6; color: #FFFFFF; }
-  .cell-co-med  { background: #93C5FD; color: #1E3A8A; }
-  .cell-co-low  { background: #EFF6FF; color: #64748B; border-color: #E2E8F0; }
+  .cell-co-peak { background: #1D4ED8; color: #FFFFFF; border-color: #1E40AF; box-shadow: 0 3px 10px rgba(29, 78, 216, 0.4); }
+  .cell-co-high { background: #3B82F6; color: #FFFFFF; border-color: #2563EB; }
+  .cell-co-med  { background: #BFDBFE; color: #1E3A8A; font-weight: 800; }
+  .cell-co-low  { background: #F8FAFC; color: #94A3B8; border-color: #E2E8F0; font-size: 16px; font-weight: 700; }
 
   /* Brasil Theme (Emerald) */
-  .cell-br-peak { background: #047857; color: #FFFFFF; border-color: #065F46; box-shadow: 0 2px 8px rgba(4, 120, 87, 0.35); }
-  .cell-br-high { background: #10B981; color: #FFFFFF; }
-  .cell-br-med  { background: #6EE7B7; color: #064E3B; }
-  .cell-br-low  { background: #ECFDF5; color: #64748B; border-color: #E2E8F0; }
+  .cell-br-peak { background: #047857; color: #FFFFFF; border-color: #065F46; box-shadow: 0 3px 10px rgba(4, 120, 87, 0.4); }
+  .cell-br-high { background: #10B981; color: #FFFFFF; border-color: #059669; }
+  .cell-br-med  { background: #A7F3D0; color: #064E3B; font-weight: 800; }
+  .cell-br-low  { background: #F8FAFC; color: #94A3B8; border-color: #E2E8F0; font-size: 16px; font-weight: 700; }
 
   /* Argentina Theme (Cyan) */
-  .cell-ar-peak { background: #0369A1; color: #FFFFFF; border-color: #075985; box-shadow: 0 2px 8px rgba(3, 105, 161, 0.35); }
-  .cell-ar-high { background: #0EA5E9; color: #FFFFFF; }
-  .cell-ar-med  { background: #7DD3FC; color: #0C4A6E; }
-  .cell-ar-low  { background: #F0F9FF; color: #64748B; border-color: #E2E8F0; }
+  .cell-ar-peak { background: #0369A1; color: #FFFFFF; border-color: #075985; box-shadow: 0 3px 10px rgba(3, 105, 161, 0.4); }
+  .cell-ar-high { background: #0EA5E9; color: #FFFFFF; border-color: #0284C7; }
+  .cell-ar-med  { background: #BAE6FD; color: #0C4A6E; font-weight: 800; }
+  .cell-ar-low  { background: #F8FAFC; color: #94A3B8; border-color: #E2E8F0; font-size: 16px; font-weight: 700; }
 
   /* Peru Theme (Amber) */
-  .cell-pe-peak { background: #B45309; color: #FFFFFF; border-color: #92400E; box-shadow: 0 2px 8px rgba(180, 83, 9, 0.35); }
-  .cell-pe-high { background: #F59E0B; color: #FFFFFF; }
-  .cell-pe-med  { background: #FDE68A; color: #78350F; }
-  .cell-pe-low  { background: #FFFBEB; color: #64748B; border-color: #E2E8F0; }
+  .cell-pe-peak { background: #B45309; color: #FFFFFF; border-color: #92400E; box-shadow: 0 3px 10px rgba(180, 83, 9, 0.4); }
+  .cell-pe-high { background: #F59E0B; color: #FFFFFF; border-color: #D97706; }
+  .cell-pe-med  { background: #FDE68A; color: #78350F; font-weight: 800; }
+  .cell-pe-low  { background: #F8FAFC; color: #94A3B8; border-color: #E2E8F0; font-size: 16px; font-weight: 700; }
 
   /* USA / Canada Benchmark */
   .cell-us-high { background: #334155; color: #FFFFFF; }
   .cell-us-med  { background: #94A3B8; color: #0F172A; }
-  .cell-us-drop { background: #FEE2E2; color: #DC2626; border-color: #FCA5A5; font-weight: 800; }
+  .cell-us-drop { background: #FEE2E2; color: #DC2626; border-color: #FCA5A5; font-weight: 900; }
 
   .heatmap-pills-dock {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
-    margin-top: 4px;
+    gap: 16px;
+    margin-top: 6px;
   }
 
   .heatmap-insight-pill {
@@ -1286,115 +1287,115 @@
             <!-- Brasil Row -->
             <tr>
               <td class="heatmap-country-th">
-                <div style="font-weight: 800; font-size: 13.5px; color: #065F46;">🇧🇷 BRASIL (BR)</div>
-                <div style="font-size: 11px; color: #64748B;">150k Turistas · <strong>$181.3M USD</strong></div>
+                <div style="font-weight: 900; font-size: 16px; color: #065F46;">🇧🇷 BRASIL (BR)</div>
+                <div style="font-size: 13px; font-weight: 700; color: #334155; margin-top: 2px;">150k Turistas · <strong>$181.3M USD</strong></div>
               </td>
-              <td><div class="heatmap-cell-pod cell-br-peak"><span class="heat-pct">███</span><span class="heat-tag">Verano</span></div></td>
-              <td><div class="heatmap-cell-pod cell-br-peak"><span class="heat-pct">███</span><span class="heat-tag">Carnaval</span></div></td>
-              <td><div class="heatmap-cell-pod cell-br-low"><span class="heat-pct">·</span><span class="heat-tag">Base</span></div></td>
-              <td><div class="heatmap-cell-pod cell-br-med"><span class="heat-pct">░░░</span><span class="heat-tag">Pascua</span></div></td>
-              <td><div class="heatmap-cell-pod cell-br-low"><span class="heat-pct">·</span><span class="heat-tag">Base</span></div></td>
-              <td><div class="heatmap-cell-pod cell-br-low"><span class="heat-pct">·</span><span class="heat-tag">Base</span></div></td>
-              <td><div class="heatmap-cell-pod cell-br-peak"><span class="heat-pct">███</span><span class="heat-tag">Invierno</span></div></td>
-              <td><div class="heatmap-cell-pod cell-br-med"><span class="heat-pct">░░░</span><span class="heat-tag">Medio</span></div></td>
-              <td><div class="heatmap-cell-pod cell-br-low"><span class="heat-pct">·</span><span class="heat-tag">Base</span></div></td>
-              <td><div class="heatmap-cell-pod cell-br-low"><span class="heat-pct">·</span><span class="heat-tag">Base</span></div></td>
-              <td><div class="heatmap-cell-pod cell-br-peak"><span class="heat-pct">███</span><span class="heat-tag">Feriados</span></div></td>
-              <td><div class="heatmap-cell-pod cell-br-peak"><span class="heat-pct">███</span><span class="heat-tag">Reveillon</span></div></td>
+              <td><div class="heatmap-cell-pod cell-br-peak"><span class="heat-label-main">PICO</span><span class="heat-label-sub">Verano</span></div></td>
+              <td><div class="heatmap-cell-pod cell-br-peak"><span class="heat-label-main">PICO</span><span class="heat-label-sub">Carnaval</span></div></td>
+              <td><div class="heatmap-cell-pod cell-br-low"><span>—</span></div></td>
+              <td><div class="heatmap-cell-pod cell-br-med"><span class="heat-label-main">MED</span><span class="heat-label-sub">Pascua</span></div></td>
+              <td><div class="heatmap-cell-pod cell-br-low"><span>—</span></div></td>
+              <td><div class="heatmap-cell-pod cell-br-low"><span>—</span></div></td>
+              <td><div class="heatmap-cell-pod cell-br-peak"><span class="heat-label-main">PICO</span><span class="heat-label-sub">Invierno</span></div></td>
+              <td><div class="heatmap-cell-pod cell-br-med"><span class="heat-label-main">MED</span><span class="heat-label-sub">Escolar</span></div></td>
+              <td><div class="heatmap-cell-pod cell-br-low"><span>—</span></div></td>
+              <td><div class="heatmap-cell-pod cell-br-low"><span>—</span></div></td>
+              <td><div class="heatmap-cell-pod cell-br-high"><span class="heat-label-main">ALTO</span><span class="heat-label-sub">Feriados</span></div></td>
+              <td><div class="heatmap-cell-pod cell-br-peak"><span class="heat-label-main">PICO</span><span class="heat-label-sub">Reveillon</span></div></td>
               <td style="text-align: right; padding-right: 8px;">
-                <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; font-weight: 700; background: #D1FAE5; color: #065F46; padding: 4px 8px; border-radius: 6px;">Ene-Feb · Jul · Nov-Dic</span>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 12.5px; font-weight: 800; background: #D1FAE5; color: #065F46; padding: 6px 12px; border-radius: 8px;">Ene-Feb · Jul · Nov-Dic</span>
               </td>
             </tr>
 
             <!-- Argentina Row -->
             <tr>
               <td class="heatmap-country-th">
-                <div style="font-weight: 800; font-size: 13.5px; color: #075985;">🇦🇷 ARGENTINA (AR)</div>
-                <div style="font-size: 11px; color: #64748B;">160k Turistas · <strong>$180.1M USD</strong></div>
+                <div style="font-weight: 900; font-size: 16px; color: #075985;">🇦🇷 ARGENTINA (AR)</div>
+                <div style="font-size: 13px; font-weight: 700; color: #334155; margin-top: 2px;">160k Turistas · <strong>$180.1M USD</strong></div>
               </td>
-              <td><div class="heatmap-cell-pod cell-ar-peak"><span class="heat-pct">███</span><span class="heat-tag">Verano</span></div></td>
-              <td><div class="heatmap-cell-pod cell-ar-peak"><span class="heat-pct">███</span><span class="heat-tag">Verano</span></div></td>
-              <td><div class="heatmap-cell-pod cell-ar-high"><span class="heat-pct">███</span><span class="heat-tag">Otoño</span></div></td>
-              <td><div class="heatmap-cell-pod cell-ar-low"><span class="heat-pct">·</span><span class="heat-tag">Base</span></div></td>
-              <td><div class="heatmap-cell-pod cell-ar-low"><span class="heat-pct">·</span><span class="heat-tag">Base</span></div></td>
-              <td><div class="heatmap-cell-pod cell-ar-low"><span class="heat-pct">·</span><span class="heat-tag">Base</span></div></td>
-              <td><div class="heatmap-cell-pod cell-ar-low"><span class="heat-pct">·</span><span class="heat-tag">Base</span></div></td>
-              <td><div class="heatmap-cell-pod cell-ar-high"><span class="heat-pct">███</span><span class="heat-tag">Invernal</span></div></td>
-              <td><div class="heatmap-cell-pod cell-ar-low"><span class="heat-pct">·</span><span class="heat-tag">Base</span></div></td>
-              <td><div class="heatmap-cell-pod cell-ar-low"><span class="heat-pct">·</span><span class="heat-tag">Base</span></div></td>
-              <td><div class="heatmap-cell-pod cell-ar-low"><span class="heat-pct">·</span><span class="heat-tag">Base</span></div></td>
-              <td><div class="heatmap-cell-pod cell-ar-med"><span class="heat-pct">░░░</span><span class="heat-tag">Fiestas</span></div></td>
+              <td><div class="heatmap-cell-pod cell-ar-peak"><span class="heat-label-main">PICO</span><span class="heat-label-sub">Verano</span></div></td>
+              <td><div class="heatmap-cell-pod cell-ar-peak"><span class="heat-label-main">PICO</span><span class="heat-label-sub">Verano</span></div></td>
+              <td><div class="heatmap-cell-pod cell-ar-high"><span class="heat-label-main">ALTO</span><span class="heat-label-sub">Otoño</span></div></td>
+              <td><div class="heatmap-cell-pod cell-ar-low"><span>—</span></div></td>
+              <td><div class="heatmap-cell-pod cell-ar-low"><span>—</span></div></td>
+              <td><div class="heatmap-cell-pod cell-ar-low"><span>—</span></div></td>
+              <td><div class="heatmap-cell-pod cell-ar-low"><span>—</span></div></td>
+              <td><div class="heatmap-cell-pod cell-ar-high"><span class="heat-label-main">ALTO</span><span class="heat-label-sub">Invernal</span></div></td>
+              <td><div class="heatmap-cell-pod cell-ar-low"><span>—</span></div></td>
+              <td><div class="heatmap-cell-pod cell-ar-low"><span>—</span></div></td>
+              <td><div class="heatmap-cell-pod cell-ar-low"><span>—</span></div></td>
+              <td><div class="heatmap-cell-pod cell-ar-med"><span class="heat-label-main">MED</span><span class="heat-label-sub">Fiestas</span></div></td>
               <td style="text-align: right; padding-right: 8px;">
-                <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; font-weight: 700; background: #E0F2FE; color: #0369A1; padding: 4px 8px; border-radius: 6px;">Ene-Mar · Ago · Dic</span>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 12.5px; font-weight: 800; background: #E0F2FE; color: #0369A1; padding: 6px 12px; border-radius: 8px;">Ene-Mar · Ago · Dic</span>
               </td>
             </tr>
 
             <!-- Colombia Row -->
             <tr>
               <td class="heatmap-country-th">
-                <div style="font-weight: 800; font-size: 13.5px; color: #1E3A8A;">🇨🇴 COLOMBIA (CO)</div>
-                <div style="font-size: 11px; color: #64748B;">380k Turistas · <strong>$395.0M USD</strong></div>
+                <div style="font-weight: 900; font-size: 16px; color: #1E3A8A;">🇨🇴 COLOMBIA (CO)</div>
+                <div style="font-size: 13px; font-weight: 700; color: #334155; margin-top: 2px;">380k Turistas · <strong>$395.0M USD</strong></div>
               </td>
-              <td><div class="heatmap-cell-pod cell-co-low"><span class="heat-pct">·</span><span class="heat-tag">Base</span></div></td>
-              <td><div class="heatmap-cell-pod cell-co-low"><span class="heat-pct">·</span><span class="heat-tag">Base</span></div></td>
-              <td><div class="heatmap-cell-pod cell-co-low"><span class="heat-pct">·</span><span class="heat-tag">Base</span></div></td>
-              <td><div class="heatmap-cell-pod cell-co-med"><span class="heat-pct">░░░</span><span class="heat-tag">Sem.Sta</span></div></td>
-              <td><div class="heatmap-cell-pod cell-co-high"><span class="heat-pct">███</span><span class="heat-tag">Puentes</span></div></td>
-              <td><div class="heatmap-cell-pod cell-co-low"><span class="heat-pct">·</span><span class="heat-tag">Base</span></div></td>
-              <td><div class="heatmap-cell-pod cell-co-peak"><span class="heat-pct">███</span><span class="heat-tag">Verano</span></div></td>
-              <td><div class="heatmap-cell-pod cell-co-high"><span class="heat-pct">███</span><span class="heat-tag">Verano</span></div></td>
-              <td><div class="heatmap-cell-pod cell-co-high"><span class="heat-pct">███</span><span class="heat-tag">Amistad</span></div></td>
-              <td><div class="heatmap-cell-pod cell-co-low"><span class="heat-pct">·</span><span class="heat-tag">Base</span></div></td>
-              <td><div class="heatmap-cell-pod cell-co-low"><span class="heat-pct">·</span><span class="heat-tag">Base</span></div></td>
-              <td><div class="heatmap-cell-pod cell-co-peak"><span class="heat-pct">███</span><span class="heat-tag">Fiestas</span></div></td>
+              <td><div class="heatmap-cell-pod cell-co-low"><span>—</span></div></td>
+              <td><div class="heatmap-cell-pod cell-co-low"><span>—</span></div></td>
+              <td><div class="heatmap-cell-pod cell-co-low"><span>—</span></div></td>
+              <td><div class="heatmap-cell-pod cell-co-med"><span class="heat-label-main">MED</span><span class="heat-label-sub">Sem.Sta</span></div></td>
+              <td><div class="heatmap-cell-pod cell-co-high"><span class="heat-label-main">ALTO</span><span class="heat-label-sub">Puentes</span></div></td>
+              <td><div class="heatmap-cell-pod cell-co-low"><span>—</span></div></td>
+              <td><div class="heatmap-cell-pod cell-co-peak"><span class="heat-label-main">PICO</span><span class="heat-label-sub">Verano</span></div></td>
+              <td><div class="heatmap-cell-pod cell-co-high"><span class="heat-label-main">ALTO</span><span class="heat-label-sub">Verano</span></div></td>
+              <td><div class="heatmap-cell-pod cell-co-high"><span class="heat-label-main">ALTO</span><span class="heat-label-sub">Amistad</span></div></td>
+              <td><div class="heatmap-cell-pod cell-co-low"><span>—</span></div></td>
+              <td><div class="heatmap-cell-pod cell-co-low"><span>—</span></div></td>
+              <td><div class="heatmap-cell-pod cell-co-peak"><span class="heat-label-main">PICO</span><span class="heat-label-sub">Fiestas</span></div></td>
               <td style="text-align: right; padding-right: 8px;">
-                <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; font-weight: 700; background: #DBEAFE; color: #1E40AF; padding: 4px 8px; border-radius: 6px;">May · Jul-Sep · Dic</span>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 12.5px; font-weight: 800; background: #DBEAFE; color: #1E40AF; padding: 6px 12px; border-radius: 8px;">May · Jul-Sep · Dic</span>
               </td>
             </tr>
 
             <!-- Peru Row -->
             <tr>
               <td class="heatmap-country-th">
-                <div style="font-weight: 800; font-size: 13.5px; color: #92400E;">🇵🇪 PERÚ (PE)</div>
-                <div style="font-size: 11px; color: #64748B;">135k Turistas · <strong>$132.3M USD</strong></div>
+                <div style="font-weight: 900; font-size: 16px; color: #92400E;">🇵🇪 PERÚ (PE)</div>
+                <div style="font-size: 13px; font-weight: 700; color: #334155; margin-top: 2px;">135k Turistas · <strong>$132.3M USD</strong></div>
               </td>
-              <td><div class="heatmap-cell-pod cell-pe-high"><span class="heat-pct">███</span><span class="heat-tag">Verano</span></div></td>
-              <td><div class="heatmap-cell-pod cell-pe-med"><span class="heat-pct">░░░</span><span class="heat-tag">Verano</span></div></td>
-              <td><div class="heatmap-cell-pod cell-pe-low"><span class="heat-pct">·</span><span class="heat-tag">Base</span></div></td>
-              <td><div class="heatmap-cell-pod cell-pe-low"><span class="heat-pct">·</span><span class="heat-tag">Base</span></div></td>
-              <td><div class="heatmap-cell-pod cell-pe-low"><span class="heat-pct">·</span><span class="heat-tag">Base</span></div></td>
-              <td><div class="heatmap-cell-pod cell-pe-med"><span class="heat-pct">░░░</span><span class="heat-tag">IntiRaymi</span></div></td>
-              <td><div class="heatmap-cell-pod cell-pe-peak"><span class="heat-pct">███</span><span class="heat-tag">F.Patrias</span></div></td>
-              <td><div class="heatmap-cell-pod cell-pe-peak"><span class="heat-pct">███</span><span class="heat-tag">Escolar</span></div></td>
-              <td><div class="heatmap-cell-pod cell-pe-low"><span class="heat-pct">·</span><span class="heat-tag">Base</span></div></td>
-              <td><div class="heatmap-cell-pod cell-pe-low"><span class="heat-pct">·</span><span class="heat-tag">Base</span></div></td>
-              <td><div class="heatmap-cell-pod cell-pe-low"><span class="heat-pct">·</span><span class="heat-tag">Base</span></div></td>
-              <td><div class="heatmap-cell-pod cell-pe-low"><span class="heat-pct">·</span><span class="heat-tag">Base</span></div></td>
+              <td><div class="heatmap-cell-pod cell-pe-high"><span class="heat-label-main">ALTO</span><span class="heat-label-sub">Verano</span></div></td>
+              <td><div class="heatmap-cell-pod cell-pe-med"><span class="heat-label-main">MED</span><span class="heat-label-sub">Verano</span></div></td>
+              <td><div class="heatmap-cell-pod cell-pe-low"><span>—</span></div></td>
+              <td><div class="heatmap-cell-pod cell-pe-low"><span>—</span></div></td>
+              <td><div class="heatmap-cell-pod cell-pe-low"><span>—</span></div></td>
+              <td><div class="heatmap-cell-pod cell-pe-med"><span class="heat-label-main">MED</span><span class="heat-label-sub">IntiRaymi</span></div></td>
+              <td><div class="heatmap-cell-pod cell-pe-peak"><span class="heat-label-main">PICO</span><span class="heat-label-sub">F.Patrias</span></div></td>
+              <td><div class="heatmap-cell-pod cell-pe-peak"><span class="heat-label-main">PICO</span><span class="heat-label-sub">Escolar</span></div></td>
+              <td><div class="heatmap-cell-pod cell-pe-low"><span>—</span></div></td>
+              <td><div class="heatmap-cell-pod cell-pe-low"><span>—</span></div></td>
+              <td><div class="heatmap-cell-pod cell-pe-low"><span>—</span></div></td>
+              <td><div class="heatmap-cell-pod cell-pe-low"><span>—</span></div></td>
               <td style="text-align: right; padding-right: 8px;">
-                <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; font-weight: 700; background: #FEF3C7; color: #92400E; padding: 4px 8px; border-radius: 6px;">Ene-Feb · Jun-Ago</span>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 12.5px; font-weight: 800; background: #FEF3C7; color: #92400E; padding: 6px 12px; border-radius: 8px;">Ene-Feb · Jun-Ago</span>
               </td>
             </tr>
 
             <!-- TOTAL CONSOLIDADO QUINTANA ROO (Exact Blueprint) -->
             <tr style="border-top: 3px solid #0F172A; background: #0F172A;">
-              <td class="heatmap-country-th" style="background: #0F172A; color: #FFFFFF !important; border-radius: 8px 0 0 8px; padding-left: 10px;">
-                <div style="font-weight: 900; font-size: 13px; color: #5EEAD4; letter-spacing: 0.5px;">TOTAL AFLUENCIA QROO:</div>
-                <div style="font-size: 10.5px; color: #94A3B8;">Impacto Sudamericano Combinado</div>
+              <td class="heatmap-country-th" style="background: #0F172A; color: #FFFFFF !important; border-radius: 10px 0 0 10px; padding: 12px 14px;">
+                <div style="font-weight: 900; font-size: 15px; color: #5EEAD4; letter-spacing: 0.8px;">TOTAL AFLUENCIA QROO:</div>
+                <div style="font-size: 12px; font-weight: 600; color: #94A3B8; margin-top: 2px;">Impacto Sudamericano Combinado</div>
               </td>
-              <td><div class="heatmap-cell-pod" style="background: #1E3A8A; color: #FFFFFF;"><span class="heat-pct">ALTO</span><span class="heat-tag" style="color: #93C5FD;">85%</span></div></td>
-              <td><div class="heatmap-cell-pod" style="background: #1E3A8A; color: #FFFFFF;"><span class="heat-pct">ALTO</span><span class="heat-tag" style="color: #93C5FD;">80%</span></div></td>
-              <td><div class="heatmap-cell-pod" style="background: #0369A1; color: #FFFFFF;"><span class="heat-pct">MED</span><span class="heat-tag" style="color: #7DD3FC;">55%</span></div></td>
-              <td><div class="heatmap-cell-pod" style="background: #0369A1; color: #FFFFFF;"><span class="heat-pct">MED</span><span class="heat-tag" style="color: #7DD3FC;">50%</span></div></td>
-              <td><div class="heatmap-cell-pod" style="background: #334155; color: #CBD5E1;"><span class="heat-pct">BAJO</span><span class="heat-tag" style="color: #94A3B8;">35%</span></div></td>
-              <td><div class="heatmap-cell-pod" style="background: #1E3A8A; color: #FFFFFF;"><span class="heat-pct">ALTO</span><span class="heat-tag" style="color: #93C5FD;">75%</span></div></td>
-              <td><div class="heatmap-cell-pod" style="background: linear-gradient(135deg, #059669 0%, #10B981 100%); color: #FFFFFF; box-shadow: 0 0 12px rgba(16, 185, 129, 0.5);"><span class="heat-pct">MÁX</span><span class="heat-tag" style="color: #ECFDF5;">100%</span></div></td>
-              <td><div class="heatmap-cell-pod" style="background: linear-gradient(135deg, #059669 0%, #10B981 100%); color: #FFFFFF; box-shadow: 0 0 12px rgba(16, 185, 129, 0.5);"><span class="heat-pct">MÁX</span><span class="heat-tag" style="color: #ECFDF5;">95%</span></div></td>
-              <td><div class="heatmap-cell-pod" style="background: #334155; color: #CBD5E1;"><span class="heat-pct">BAJO</span><span class="heat-tag" style="color: #94A3B8;">35%</span></div></td>
-              <td><div class="heatmap-cell-pod" style="background: #334155; color: #CBD5E1;"><span class="heat-pct">BAJO</span><span class="heat-tag" style="color: #94A3B8;">35%</span></div></td>
-              <td><div class="heatmap-cell-pod" style="background: #0369A1; color: #FFFFFF;"><span class="heat-pct">MED</span><span class="heat-tag" style="color: #7DD3FC;">60%</span></div></td>
-              <td><div class="heatmap-cell-pod" style="background: linear-gradient(135deg, #059669 0%, #10B981 100%); color: #FFFFFF; box-shadow: 0 0 12px rgba(16, 185, 129, 0.5);"><span class="heat-pct">MÁX</span><span class="heat-tag" style="color: #ECFDF5;">100%</span></div></td>
-              <td style="text-align: right; padding-right: 8px; background: #0F172A; border-radius: 0 8px 8px 0;">
-                <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 800; background: #059669; color: #FFFFFF; padding: 5px 10px; border-radius: 6px; box-shadow: 0 0 10px rgba(5,150,105,0.4);">RESCATE VERANO</span>
+              <td><div class="heatmap-cell-pod" style="background: #1E3A8A; color: #FFFFFF;"><span class="heat-label-main" style="color: #93C5FD; font-size: 14.5px;">ALTO</span><span class="heat-label-sub" style="color: #E2E8F0; font-size: 12px;">85%</span></div></td>
+              <td><div class="heatmap-cell-pod" style="background: #1E3A8A; color: #FFFFFF;"><span class="heat-label-main" style="color: #93C5FD; font-size: 14.5px;">ALTO</span><span class="heat-label-sub" style="color: #E2E8F0; font-size: 12px;">80%</span></div></td>
+              <td><div class="heatmap-cell-pod" style="background: #0369A1; color: #FFFFFF;"><span class="heat-label-main" style="color: #7DD3FC; font-size: 14.5px;">MED</span><span class="heat-label-sub" style="color: #E2E8F0; font-size: 12px;">55%</span></div></td>
+              <td><div class="heatmap-cell-pod" style="background: #0369A1; color: #FFFFFF;"><span class="heat-label-main" style="color: #7DD3FC; font-size: 14.5px;">MED</span><span class="heat-label-sub" style="color: #E2E8F0; font-size: 12px;">50%</span></div></td>
+              <td><div class="heatmap-cell-pod" style="background: #334155; color: #CBD5E1;"><span class="heat-label-main" style="color: #94A3B8; font-size: 14.5px;">BAJO</span><span class="heat-label-sub" style="color: #E2E8F0; font-size: 12px;">35%</span></div></td>
+              <td><div class="heatmap-cell-pod" style="background: #1E3A8A; color: #FFFFFF;"><span class="heat-label-main" style="color: #93C5FD; font-size: 14.5px;">ALTO</span><span class="heat-label-sub" style="color: #E2E8F0; font-size: 12px;">75%</span></div></td>
+              <td><div class="heatmap-cell-pod" style="background: linear-gradient(135deg, #059669 0%, #10B981 100%); color: #FFFFFF; box-shadow: 0 0 14px rgba(16, 185, 129, 0.6);"><span class="heat-label-main" style="color: #FFFFFF; font-size: 15.5px; font-weight: 900;">MÁX</span><span class="heat-label-sub" style="color: #ECFDF5; font-size: 12px; font-weight: 900;">100%</span></div></td>
+              <td><div class="heatmap-cell-pod" style="background: linear-gradient(135deg, #059669 0%, #10B981 100%); color: #FFFFFF; box-shadow: 0 0 14px rgba(16, 185, 129, 0.6);"><span class="heat-label-main" style="color: #FFFFFF; font-size: 15.5px; font-weight: 900;">MÁX</span><span class="heat-label-sub" style="color: #ECFDF5; font-size: 12px; font-weight: 900;">95%</span></div></td>
+              <td><div class="heatmap-cell-pod" style="background: #334155; color: #CBD5E1;"><span class="heat-label-main" style="color: #94A3B8; font-size: 14.5px;">BAJO</span><span class="heat-label-sub" style="color: #E2E8F0; font-size: 12px;">35%</span></div></td>
+              <td><div class="heatmap-cell-pod" style="background: #334155; color: #CBD5E1;"><span class="heat-label-main" style="color: #94A3B8; font-size: 14.5px;">BAJO</span><span class="heat-label-sub" style="color: #E2E8F0; font-size: 12px;">35%</span></div></td>
+              <td><div class="heatmap-cell-pod" style="background: #0369A1; color: #FFFFFF;"><span class="heat-label-main" style="color: #7DD3FC; font-size: 14.5px;">MED</span><span class="heat-label-sub" style="color: #E2E8F0; font-size: 12px;">60%</span></div></td>
+              <td><div class="heatmap-cell-pod" style="background: linear-gradient(135deg, #059669 0%, #10B981 100%); color: #FFFFFF; box-shadow: 0 0 14px rgba(16, 185, 129, 0.6);"><span class="heat-label-main" style="color: #FFFFFF; font-size: 15.5px; font-weight: 900;">MÁX</span><span class="heat-label-sub" style="color: #ECFDF5; font-size: 12px; font-weight: 900;">100%</span></div></td>
+              <td style="text-align: right; padding-right: 12px; background: #0F172A; border-radius: 0 10px 10px 0;">
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 900; background: #059669; color: #FFFFFF; padding: 7px 14px; border-radius: 8px; box-shadow: 0 0 12px rgba(5,150,105,0.5);">RESCATE VERANO</span>
               </td>
             </tr>
           </tbody>
