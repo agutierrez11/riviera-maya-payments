@@ -34,6 +34,63 @@
       --text-dim: #64748B;
     }
 
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 8mm;
+      }
+      body {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        padding: 0 !important;
+        background-color: #090D16 !important;
+      }
+      .container {
+        max-width: 100% !important;
+        gap: 16px !important;
+      }
+      .header {
+        padding: 20px 24px !important;
+        border-radius: 14px !important;
+      }
+      .header-content h1 {
+        font-size: 22px !important;
+      }
+      .kpi-grid {
+        gap: 10px !important;
+      }
+      .kpi-card {
+        padding: 14px !important;
+        border-radius: 12px !important;
+      }
+      .kpi-value {
+        font-size: 24px !important;
+      }
+      .countries-grid {
+        gap: 12px !important;
+      }
+      .country-card {
+        padding: 16px !important;
+        border-radius: 14px !important;
+      }
+      .country-title h2 {
+        font-size: 17px !important;
+      }
+      .mini-metric .num {
+        font-size: 16px !important;
+      }
+      .bottom-grid {
+        gap: 12px !important;
+      }
+      .geo-card, .takeaway-card {
+        padding: 16px !important;
+        border-radius: 14px !important;
+      }
+      .takeaway-card h3 {
+        font-size: 17px !important;
+      }
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
