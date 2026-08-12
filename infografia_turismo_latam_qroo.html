@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Infografía: Concentración Turística y Derrama LATAM en Quintana Roo</title>
+  
+  <!-- Google Fonts: Outfit & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome for crisp icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --bg-primary: #090D16;
+      --bg-surface: #0F172A;
+      --bg-card: rgba(30, 41, 59, 0.65);
+      --bg-card-hover: rgba(30, 41, 59, 0.85);
+      --border-color: rgba(255, 255, 255, 0.08);
+      --border-highlight: rgba(56, 189, 248, 0.25);
+      
+      --accent-cyan: #00F0FF;
+      --accent-blue: #38BDF8;
+      --accent-emerald: #10B981;
+      --accent-amber: #F59E0B;
+      --accent-purple: #A855F7;
+      --accent-rose: #F43F5E;
+      
+      --text-main: #F8FAFC;
+      --text-muted: #94A3B8;
+      --text-dim: #64748B;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.12) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(168, 85, 247, 0.12) 0px, transparent 50%),
+        radial-gradient(at 50% 50%, rgba(16, 185, 129, 0.06) 0px, transparent 60%);
+      background-attachment: fixed;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1400px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    /* HEADER */
+    .header {
+      background: var(--bg-card);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border-color);
+      border-radius: 24px;
+      padding: 36px 44px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #00F0FF, #38BDF8, #A855F7, #10B981);
+    }
+
+    .header-content h1 {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #FFFFFF 30%, #94A3B8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 8px;
+    }
+
+    .header-content p {
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 750px;
+      line-height: 1.5;
+    }
+
+    .source-badge {
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid var(--border-highlight);
+      padding: 12px 20px;
+      border-radius: 14px;
+      text-align: right;
+    }
+
+    .source-badge span {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--accent-cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .source-badge strong {
+      font-size: 13px;
+      color: var(--text-main);
+    }
+
+    /* KPI HERO ROW */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .kpi-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .kpi-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-highlight);
+      background: var(--bg-card-hover);
+    }
+
+    .kpi-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      margin-bottom: 16px;
+    }
+
+    .kpi-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+    }
+
+    .kpi-value {
+      font-size: 34px;
+      font-weight: 800;
+      color: #FFF;
+      line-height: 1.1;
+      margin-bottom: 6px;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .kpi-sub {
+      font-size: 13px;
+      color: var(--text-dim);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .kpi-sub.highlight {
+      color: var(--accent-emerald);
+      font-weight: 600;
+    }
+
+    /* COUNTRIES TRIPLE COLUMN */
+    .countries-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .country-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border-color);
+      border-radius: 24px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .country-card:hover {
+      border-color: var(--border-highlight);
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px -15px rgba(0,0,0,0.5);
+    }
+
+    .country-card.colombia { border-top: 4px solid #FCD34D; }
+    .country-card.brasil { border-top: 4px solid #10B981; }
+    .country-card.argentina { border-top: 4px solid #38BDF8; }
+
+    .country-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .country-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .flag-icon {
+      font-size: 32px;
+    }
+
+    .country-title h2 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #FFF;
+    }
+
+    .country-title span {
+      font-size: 12px;
+      color: var(--text-dim);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .country-badge {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-colombia { background: rgba(252, 211, 77, 0.15); color: #FCD34D; border: 1px solid rgba(252, 211, 77, 0.3); }
+    .badge-brasil { background: rgba(16, 185, 129, 0.15); color: #10B981; border: 1px solid rgba(16, 185, 129, 0.3); }
+    .badge-argentina { background: rgba(56, 189, 248, 0.15); color: #38BDF8; border: 1px solid rgba(56, 189, 248, 0.3); }
+
+    .metrics-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .mini-metric {
+      background: rgba(15, 23, 42, 0.6);
+      padding: 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.03);
+    }
+
+    .mini-metric label {
+      font-size: 11px;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .mini-metric .num {
+      font-size: 20px;
+      font-weight: 700;
+      color: #FFF;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* BREAKDOWN PROGRESS BARS */
+    .spend-breakdown {
+      margin-bottom: 24px;
+    }
+
+    .spend-breakdown h4 {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .bar-item {
+      margin-bottom: 10px;
+    }
+
+    .bar-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      margin-bottom: 4px;
+    }
+
+    .bar-labels span:first-child { color: var(--text-main); font-weight: 500; }
+    .bar-labels span:last-child { color: var(--text-dim); font-family: 'JetBrains Mono', monospace; }
+
+    .progress-track {
+      width: 100%;
+      height: 7px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      border-radius: 10px;
+      transition: width 1s ease;
+    }
+
+    .fill-colombia { background: linear-gradient(90deg, #F59E0B, #FCD34D); }
+    .fill-brasil { background: linear-gradient(90deg, #059669, #10B981); }
+    .fill-argentina { background: linear-gradient(90deg, #0284C7, #38BDF8); }
+
+    /* PAIN POINT & PAYMENT PREFERENCE BOX */
+    .pain-box {
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 16px;
+      padding: 16px;
+      border: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .payment-pref {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .payment-pref i {
+      font-size: 16px;
+      color: var(--accent-cyan);
+    }
+
+    .pain-text {
+      font-size: 12px;
+      color: #F87171;
+      line-height: 1.4;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .pain-text i {
+      margin-top: 2px;
+    }
+
+    /* LOWER SECTION: GEOGRAPHY & FETUR TAKEAWAY */
+    .bottom-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 24px;
+    }
+
+    .geo-card, .takeaway-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border-color);
+      border-radius: 24px;
+      padding: 30px;
+    }
+
+    .card-heading {
+      font-size: 18px;
+      font-weight: 700;
+      color: #FFF;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .card-heading i {
+      color: var(--accent-blue);
+    }
+
+    .geo-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .geo-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      background: rgba(15, 23, 42, 0.6);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .geo-item .name {
+      font-weight: 600;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .geo-item .pct {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--accent-cyan);
+    }
+
+    /* STRATEGIC CALLOUT (FETUR HOOK) */
+    .takeaway-card {
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.95) 100%);
+      border: 1px solid var(--border-highlight);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .takeaway-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: var(--accent-blue);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 16px;
+      align-self: flex-start;
+    }
+
+    .takeaway-card h3 {
+      font-size: 24px;
+      font-weight: 800;
+      line-height: 1.3;
+      color: #FFF;
+      margin-bottom: 12px;
+    }
+
+    .takeaway-card p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .takeaway-stats-bar {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .takeaway-stat-box {
+      text-align: center;
+    }
+
+    .takeaway-stat-box .val {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--accent-emerald);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .takeaway-stat-box .lbl {
+      font-size: 11px;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    @media (max-width: 1024px) {
+      .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+      .countries-grid { grid-template-columns: 1fr; }
+      .bottom-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .header { flex-direction: column; text-align: center; gap: 16px; }
+      .source-badge { text-align: center; }
+      .kpi-grid { grid-template-columns: 1fr; }
+      .takeaway-stats-bar { grid-template-columns: 1fr; gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- 1. HEADER -->
+    <header class="header">
+      <div class="header-content">
+        <h1>Radiografía Turística: Sudamérica en Quintana Roo</h1>
+        <p>Análisis de concentración, derrama económica en sitio y fricción financiera en medios de pago para los 3 mercados emisores clave de LATAM.</p>
+      </div>
+      <div class="source-badge">
+        <span>Fuentes Oficiales Verificadas</span>
+        <strong>SECTUR · DATATUR · DANE · INDEC · BCB</strong>
+      </div>
+    </header>
+
+    <!-- 2. KPI HERO METRICS -->
+    <section class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-icon" style="background: rgba(56, 189, 248, 0.15); color: #38BDF8;">
+          <i class="fa-solid fa-users"></i>
+        </div>
+        <div class="kpi-title">Volumen Anual Top 3</div>
+        <div class="kpi-value">690,000</div>
+        <div class="kpi-sub highlight"><i class="fa-solid fa-plane-arrival"></i> Turistas aéreos en QRoo</div>
+      </div>
+
+      <div class="kpi-card">
+        <div class="kpi-icon" style="background: rgba(16, 185, 129, 0.15); color: #10B981;">
+          <i class="fa-solid fa-money-bill-wave"></i>
+        </div>
+        <div class="kpi-title">Gasto Anual en Sitio</div>
+        <div class="kpi-value">$756M – $970M</div>
+        <div class="kpi-sub highlight"><i class="fa-solid fa-dollar-sign"></i> USD derrama directa en destino</div>
+      </div>
+
+      <div class="kpi-card">
+        <div class="kpi-icon" style="background: rgba(245, 158, 11, 0.15); color: #F59E0B;">
+          <i class="fa-solid fa-location-dot"></i>
+        </div>
+        <div class="kpi-title">Concentración en QRoo</div>
+        <div class="kpi-value">72%</div>
+        <div class="kpi-sub"><i class="fa-solid fa-umbrella-beach"></i> Cancún, Riviera Maya y Tulum</div>
+      </div>
+
+      <div class="kpi-card">
+        <div class="kpi-icon" style="background: rgba(168, 85, 247, 0.15); color: #A855F7;">
+          <i class="fa-solid fa-receipt"></i>
+        </div>
+        <div class="kpi-title">Ticket Promedio Global</div>
+        <div class="kpi-value">$1,124.76</div>
+        <div class="kpi-sub"><i class="fa-solid fa-calendar-days"></i> USD por estancia (8.7 noches)</div>
+      </div>
+    </section>
+
+    <!-- 3. COUNTRY DEEP DIVE (3 COLUMNS) -->
+    <section class="countries-grid">
+
+      <!-- COLOMBIA -->
+      <div class="country-card colombia">
+        <div>
+          <div class="country-header">
+            <div class="country-title">
+              <span class="flag-icon">🇨🇴</span>
+              <div>
+                <h2>Colombia</h2>
+                <span>#1 EN VOLUMEN LATAM</span>
+              </div>
+            </div>
+            <div class="country-badge badge-colombia">380K Turistas</div>
+          </div>
+
+          <div class="metrics-row">
+            <div class="mini-metric">
+              <label>Gasto en Sitio</label>
+              <div class="num">$395.0M USD</div>
+            </div>
+            <div class="mini-metric">
+              <label>Estadía / Diario</label>
+              <div class="num">8.5 d · $122 USD</div>
+            </div>
+          </div>
+
+          <div class="spend-breakdown">
+            <h4><span>Distribución del Gasto</span> <i class="fa-solid fa-chart-pie"></i></h4>
+            <div class="bar-item">
+              <div class="bar-labels">
+                <span>Parques y Excursiones (Xcaret, Tours)</span>
+                <span>35%</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-fill fill-colombia" style="width: 35%;"></div>
+              </div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-labels">
+                <span>Restaurantes y Vida Nocturna</span>
+                <span>30%</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-fill fill-colombia" style="width: 30%;"></div>
+              </div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-labels">
+                <span>Consumos en Hotel & Spa</span>
+                <span>20%</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-fill fill-colombia" style="width: 20%;"></div>
+              </div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-labels">
+                <span>Shopping y Artesanías</span>
+                <span>15%</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-fill fill-colombia" style="width: 15%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pain-box">
+          <div class="payment-pref">
+            <i class="fa-solid fa-mobile-screen-button"></i>
+            <span>48% prefiere Billeteras (Bre-B / Nequi)</span>
+          </div>
+          <div class="pain-text">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span>Bloqueos bancarios anti-fraude frecuentes en tarjetas físicas al pagar en el extranjero.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- BRASIL -->
+      <div class="country-card brasil">
+        <div>
+          <div class="country-header">
+            <div class="country-title">
+              <span class="flag-icon">🇧🇷</span>
+              <div>
+                <h2>Brasil</h2>
+                <span>#1 EN GASTO POR PERSONA</span>
+              </div>
+            </div>
+            <div class="country-badge badge-brasil">150K Turistas</div>
+          </div>
+
+          <div class="metrics-row">
+            <div class="mini-metric">
+              <label>Gasto en Sitio</label>
+              <div class="num">$181M–$310M USD</div>
+            </div>
+            <div class="mini-metric">
+              <label>Ticket Estancia</label>
+              <div class="num">$1,209 USD</div>
+            </div>
+          </div>
+
+          <div class="spend-breakdown">
+            <h4><span>Distribución del Gasto</span> <i class="fa-solid fa-chart-pie"></i></h4>
+            <div class="bar-item">
+              <div class="bar-labels">
+                <span>Parques y Tours de Lujo (Catamaranes)</span>
+                <span>34%</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-fill fill-brasil" style="width: 34%;"></div>
+              </div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-labels">
+                <span>Gastronomía de Alta Gama</span>
+                <span>29%</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-fill fill-brasil" style="width: 29%;"></div>
+              </div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-labels">
+                <span>Hotel Incidentals & Upgrades</span>
+                <span>23%</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-fill fill-brasil" style="width: 23%;"></div>
+              </div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-labels">
+                <span>Shopping Marcas Internacionales</span>
+                <span>14%</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-fill fill-brasil" style="width: 14%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pain-box">
+          <div class="payment-pref">
+            <i class="fa-solid fa-qrcode"></i>
+            <span>>85% prefiere pagar con PIX directo</span>
+          </div>
+          <div class="pain-text">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span>Castigados con 3.5% de Impuesto IOF + 4% a 7% de spread cambiario al usar tarjeta física.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ARGENTINA -->
+      <div class="country-card argentina">
+        <div>
+          <div class="country-header">
+            <div class="country-title">
+              <span class="flag-icon">🇦🇷</span>
+              <div>
+                <h2>Argentina</h2>
+                <span>#1 EN DÍAS DE ESTADÍA</span>
+              </div>
+            </div>
+            <div class="country-badge badge-argentina">160K Turistas</div>
+          </div>
+
+          <div class="metrics-row">
+            <div class="mini-metric">
+              <label>Gasto en Sitio</label>
+              <div class="num">$180M–$240M USD</div>
+            </div>
+            <div class="mini-metric">
+              <label>Estadía Media</label>
+              <div class="num">9.5 Noches</div>
+            </div>
+          </div>
+
+          <div class="spend-breakdown">
+            <h4><span>Distribución del Gasto</span> <i class="fa-solid fa-chart-pie"></i></h4>
+            <div class="bar-item">
+              <div class="bar-labels">
+                <span>Beach Clubs & Gastronomía (Tulum/Playa)</span>
+                <span>38%</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-fill fill-argentina" style="width: 38%;"></div>
+              </div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-labels">
+                <span>Hotelería Boutique & Upgrades</span>
+                <span>28%</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-fill fill-argentina" style="width: 28%;"></div>
+              </div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-labels">
+                <span>Tours & Excursiones en Naturaleza</span>
+                <span>22%</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-fill fill-argentina" style="width: 22%;"></div>
+              </div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-labels">
+                <span>Retail & Souvenirs</span>
+                <span>12%</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-fill fill-argentina" style="width: 12%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pain-box">
+          <div class="payment-pref">
+            <i class="fa-solid fa-wallet"></i>
+            <span>62% usa Mercado Pago / CBU digital</span>
+          </div>
+          <div class="pain-text">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span>Recargos del 15% al 25% por "Dólar Tarjeta" bancario tradicional. Evitan activamente los plásticos.</span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- 4. BOTTOM SECTION: GEOGRAPHY & STRATEGIC TAKEAWAY -->
+    <section class="bottom-grid">
+      
+      <!-- GEOGRAPHY CONCENTRATION -->
+      <div class="geo-card">
+        <div class="card-heading">
+          <i class="fa-solid fa-map-location-dot"></i>
+          <span>Concentración en Destinos de México</span>
+        </div>
+        <div class="geo-list">
+          <div class="geo-item">
+            <span class="name"><i class="fa-solid fa-umbrella-beach" style="color: #00F0FF;"></i> Quintana Roo (Cancún, Riviera Maya, Tulum)</span>
+            <span class="pct">72%</span>
+          </div>
+          <div class="geo-item">
+            <span class="name"><i class="fa-solid fa-city" style="color: #94A3B8;"></i> Ciudad de México (Corporativo / Escalas)</span>
+            <span class="pct">18%</span>
+          </div>
+          <div class="geo-item">
+            <span class="name"><i class="fa-solid fa-sun" style="color: #F59E0B;"></i> Los Cabos y Puerto Vallarta</span>
+            <span class="pct">6%</span>
+          </div>
+          <div class="geo-item">
+            <span class="name"><i class="fa-solid fa-compass" style="color: #64748B;"></i> Resto de la República</span>
+            <span class="pct">4%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- FETUR STRATEGIC HOOK -->
+      <div class="takeaway-card">
+        <div>
+          <div class="takeaway-badge">
+            <i class="fa-solid fa-bolt"></i> Oportunidad Comercial FETUR
+          </div>
+          <h3>El 65% de todo el gasto ocurre en los afiliados de FETUR</h3>
+          <p>
+            Más de <strong>$580 Millones de USD</strong> se gastan directamente en <em>Parques, Tours, Beach Clubs y Restaurantes</em>. Habilitar cobros directos por QR (Pix, Bre-B, Mercado Pago) elimina los rechazos de tarjetas, erradica los contracargos y ahorra a los comercios hasta el 5% de comisiones por intermediación bancaria.
+          </p>
+        </div>
+
+        <div class="takeaway-stats-bar">
+          <div class="takeaway-stat-box">
+            <div class="val">$0 MXN</div>
+            <div class="lbl">Costo de Hardware</div>
+          </div>
+          <div class="takeaway-stat-box">
+            <div class="val">0%</div>
+            <div class="lbl">Riesgo Contracargos</div>
+          </div>
+          <div class="takeaway-stat-box">
+            <div class="val">+28%</div>
+            <div class="lbl">Alza en Ticket Promedio</div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+</body>
+</html>
