@@ -91,11 +91,24 @@ Datos oficiales del **Banco Central de la República Argentina (BCRA)** analizad
 
 ---
 
-## 4. Implicación Estratégica para el Proyecto Riviera Maya SmartPay
+## 5. La Fricción en la Cadena B2B Turística y Corporativa (Dasbanq Market Insights)
 
-| Enfoque Tradicional (Ej. Clip / Bancos TPVs) | Enfoque SmartPay (APMs / Local-to-Local / QR) |
+El problema transfronterizo no solo afecta al turista individual (B2C), sino que paraliza la cadena de suministro B2B entre agencias emisoras en Sudamérica y operadores receptivos/hoteles en México ([Dasbanq Cross-Border Report](https://www.linkedin.com/company/dasbanq/)):
+
+* **77% de las empresas en LATAM** reportan pagos internacionales demorados o bloqueados (frente al 51% previo).
+* **Términos de pago extendidos:** El promedio de liquidación regional subió a **59 días**, con **retrasos promedio de 42 días** en el clearing bancario tradicional.
+* **Términos más largos por país:** Brasil enfrenta los plazos de liquidación transfronteriza más largos de la región (**66 días promedio**).
+* **Crisis de Liquidez de Divisas:** En mercados como Bolivia y Argentina, los bancos comerciales rechazan transferencias en USD sin explicación debido a la escasez de reservas, dejando a agencias de viaje y mayoristas imposibilitados para prepagar hoteles o tours en México mediante SWIFT tradicional.
+* **Mercado Objetivo:** Mientras el mercado de pagos digitales en LATAM supera los **$300 mil millones de USD para 2027**, la infraestructura bancaria tradicional sigue operando con tecnologías heredadas lentas y costosas.
+
+---
+
+## 6. Implicación Estratégica para el Proyecto Riviera Maya SmartPay
+
+| Enfoque Tradicional (Ej. Clip / Bancos TPVs / SWIFT) | Enfoque SmartPay (APMs / Local-to-Local / Stablecoins / QR) |
 | :--- | :--- |
-| **Pérdida del 30% al 50% de las ventas** de visitantes de LATAM por rechazo emisor. | **Tasa de aprobación >99%** al procesar vía rieles locales (Pix, PSE, Yape/Plin, Stablecoins). |
+| **Pérdida del 30% al 50% de las ventas B2C** de visitantes de LATAM por rechazo emisor. | **Tasa de aprobación >99%** al procesar vía rieles locales (Pix, PSE, Yape/Plin, Stablecoins). |
+| **42 a 66 días de retraso** en pagos B2B entre agencias mayoristas de LATAM y hoteles/DMCs en México. | **Liquidación B2B en minutos** vía rieles directos / stablecoins, eliminando el riesgo cambiario. |
 | **Cero trazabilidad:** El comercio no sabe por qué la tarjeta no pasó y asume que el cliente no tiene fondos. | **Confirmación biométrica instantánea:** El cliente autoriza en su propia app bancaria. |
 | **Riesgo de fraude y contracargos** asumido por el comercio o pasarela. | **Cero riesgo de contracargo (*Zero Chargebacks*)** y liquidación garantizada. |
 | **CAC elevado:** Obligación de vender hardware físico TPV. | **Zero-Hardware:** Despliegue inmediato vía código QR impreso o en pantalla. |
