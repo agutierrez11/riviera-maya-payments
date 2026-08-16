@@ -16,9 +16,11 @@ Este documento reúne la recopilación de datos duros, benchmarks de procesadore
   * **5% de los viajeros** abandonan la compra por completo.
   * Pérdidas estimadas de hasta **$117 mil millones de dólares** anuales en turismo y aerolíneas por declinaciones de pago.
 
-### C. Falla de Procesamiento Transfronterizo Tradicional (Kushki, Rapyd, EBANX)
-* Las pasarelas de pago explican que el problema **no radica en la red bancaria mexicana**, sino en los **filtros preventivos antifraude de los bancos emisores extranjeros** y la falta de interoperabilidad de adquirencia local ([Kushki / Milenio](https://www.milenio.com/negocios/politicas-autorizacion-fallas-rechazos-bancarios-e-commerce)).
-* **Tasa de Rechazo Histórica Promedio en LATAM (Cross-Border):** **30% al 50%** ([Rapyd Research](https://www.rapyd.net/blog/payment-processing-decline-rates-in-latam/), [PayRetailers Cross-Border Guide](https://www.payretailers.com/en/blog/cross-border-payments-in-latin-america-a-complete-guide-for-merchants-2026), [Yuno Payment Declines](https://y.uno/es/blog/payment-declines)).
+### C. Falla de Procesamiento Transfronterizo Tradicional (Rapyd, Kushki, EBANX)
+* **Offshore vs. Local Acquiring (Rapyd Global Insights):**
+  * Las pasarelas de pago offshore/cross-border tradicionales sufren tasas de aprobación de apenas **20% a 45%** (tasas de rechazo de hasta 55%-80%), mientras que la adquirencia local o APMs alcanzan **60% a 80%+** ([Rapyd Decline Rates in LATAM](https://www.rapyd.net/blog/payment-processing-decline-rates-in-latam/)).
+  * **Fraude y Falsos Positivos:** El fraude drena casi el **20% de los ingresos de eCommerce en LATAM** (el doble del promedio global). En Brasil, los rechazos por sospecha de fraude alcanzan el **5%** (vs 2.6% global).
+  * **Fragmentación de Pasarelas:** En la región operan más de 80 gateways con tasas de autorización sumamente dispares (algunas caen a **16.3%**).
 
 ---
 
@@ -39,7 +41,22 @@ Este documento reúne la recopilación de datos duros, benchmarks de procesadore
 
 ---
 
-## 3. Desglose de Motivos Técnicos y Macroeconómicos por País
+## 3. Evidencia Macro: La Muerte del Efectivo vs. El Auge del QR (BCRA / Cámara Argentina Fintech)
+
+Datos oficiales del **Banco Central de la República Argentina (BCRA)** analizados por **Mariano Agustín Giraffa** (Director de Medios de Pago @ Cámara Argentina Fintech):
+
+* **Explosión de Pagos con QR:** **+75.4% interanual en operaciones** (108.2 millones de transacciones) y **+67.4% en volumen real** descontada la inflación ($2.6 billones de pesos).
+* **Desplome de Cajeros Automáticos (ATMs):** Las extracciones en efectivo cayeron **-30% interanual**.
+* **Comportamiento por Ticket Promedio:**
+  * **Extracción en Cajero:** ~$107,000 ARS (baja frecuencia, montos altos por necesidad/emergencia).
+  * **Pago con QR:** ~$24,000 ARS (alta frecuencia, micropagos y consumo diario en comercios).
+* **Tesis Central de Mercado:**
+  > *"Lo que pierde terreno no es la tarjeta frente al QR: es el efectivo frente a todo lo demás."*
+* **Infraestructura Interoperable en Escala:** 90 billeteras digitales interoperables, 62 aceptadores de Pagos con Transferencia (PCT) y 219 PSPs registrados.
+
+---
+
+## 4. Desglose de Motivos Técnicos y Macroeconómicos por País
 
 ### 🇦🇷 Argentina (Rechazo: 45% - 55%)
 1. **Restricciones de Divisas y Cepo Cambiario:**
