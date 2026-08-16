@@ -129,4 +129,31 @@ La evolución de los medios de pago en 2026 marca el fin definitivo de la hegemo
 | **Costo y Tiempo de Despliegue** | **Alto CAC:** Venta, subsidio y logística de hardware físico ($500-$1,500 MXN/TPV). | **Zero-Hardware:** Despliegue en 2 minutos vía software, pantalla o QR impreso. |
 | **Seguridad para el Turista** | Fricción y desconfianza por riesgo de clonación/estafas en destino. | **Zero-Trust / Biometría Nativa:** El turista jamás suelta su tarjeta ni datos bancarios. |
 | **Liquidación B2B** | **42 a 66 días** en transferencias bancarias internacionales (SWIFT). | **Liquidación instantánea** (minutos) entre agencias, DMCs y hoteles. |
-| **Enfoque de Mercado** | Optimización de comercios ya bancarizados (*Same-Store Sales*). | **Captación masiva** de nuevos prestadores turísticos e informales (*Market Creation*). |
+---
+
+## 8. Directorio de Fuentes Oficiales y Enlaces Verificados
+
+### A. Impacto Económico de Pix y Recuperación de Ingresos (+37%)
+1. **EBANX / GlobeNewswire:** [*Adding Pix lifts global merchant revenue by up to 37% in Brazil*](https://www.globenewswire.com/news-release/2024/08/07/2926122/0/en/Adding-Pix-lifts-global-merchant-revenue-by-up-to-37-in-Brazil-reveals-new-EBANX-data.html)
+2. **EBANX Beyond Borders Report:** [*Global Hub de Pagos Transfronterizos en LATAM*](https://www.ebanx.com/en/beyond-borders/)
+3. **EBANX Press Room:** [*Stripe users can now accept Pix via EBANX*](https://business.ebanx.com/en/press-room/press-releases/stripe-users-can-now-accept-pix-in-brazil-via-ebanx)
+4. **Emerald Insight:** [*Fast payment, credit and bank diversification: the impact of Pix*](https://www.emerald.com/insight/content/doi/10.1108/RAUSP-07-2023-0130/full/html)
+
+### B. Casos Reales de Pix en Turismo Internacional Fuera de Brasil
+1. **kamiPay Argentina:** [*Solución de Cobro con Pix en Turismo y Comercios en Argentina*](https://kamipay.io/es/cobrar-pix-argentina/)
+2. **Mercado Pago:** [*Cobro a Turistas Brasileños con QR Pix en Terminales Point*](https://www.mercadolibre.com.ar/ayuda/point-cobrar-con-qr-pix_30628)
+3. **Rapyd Blog:** [*What is Pix and How Does it Work for Global Merchants*](https://www.rapyd.net/blog/what-is-pix/)
+
+### C. Benchmarks de Rechazos Bancarios y Fricción Transfronteriza
+1. **Rapyd:** [*Why Payment Processing Decline Rates Are So High in LATAM*](https://www.rapyd.net/blog/payment-processing-decline-rates-in-latam/)
+2. **PayRetailers:** [*Cross-Border Payments in Latin America: Complete Guide 2026*](https://www.payretailers.com/en/blog/cross-border-payments-in-latin-america-a-complete-guide-for-merchants-2026)
+3. **Yuno Payments:** [*Análisis de Declinaciones y Rechazos en Pasarelas LATAM*](https://y.uno/es/blog/payment-declines)
+4. **Kushki / Milenio:** [*Políticas de autorización y fallas en rechazos bancarios e-commerce*](https://www.milenio.com/negocios/politicas-autorizacion-fallas-rechazos-bancarios-e-commerce)
+
+### D. Pérdidas en Turismo y Estadísticas Oficiales
+1. **Nuvei / Consumotic:** [*Sector turismo enfrentaría pérdidas de $117B por rechazo de tarjetas*](https://consumotic.mx/ecommerce/medios_de_pago/sector-turismo-enfrentaria-perdidas-millonarias-por-rechazo-de-tarjetas-de-credito/)
+2. **CONDUSEF México:** [*Estadísticas de Compras y Rechazos en Comercio Electrónico*](https://www.condusef.gob.mx/?p=estadisticas)
+3. **Banco Central do Brasil:** [*Portal Oficial y Datos de Operación de Pix*](https://www.bcb.gov.br/estabilidadefinanceira/pix)
+4. **Cámara Argentina Fintech:** [*Informe de Pagos Minoristas del BCRA*](https://www.linkedin.com/company/camara-argentina-de-fintech/)
+5. **Trustonic:** [*Disminución de penetración de tarjetas de crédito y auge de APMs en LATAM*](https://www.trustonic.com/la-es/opinion/disminuye-tarjetas-credito-latam/)
+6. **Mexico Business News:** [*Instant Payments Reshape LATAM Banking Competition*](https://mexicobusiness.news/finance/news/instant-payments-reshape-latam-banking-competition-study)
