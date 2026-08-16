@@ -103,12 +103,30 @@ El problema transfronterizo no solo afecta al turista individual (B2C), sino que
 
 ---
 
-## 6. Implicación Estratégica para el Proyecto Riviera Maya SmartPay
+## 6. El Paradigma FinTech 2026: "Poliamor Financiero", Biometría Multimodal y Stablecoins (Bianca Prieto / Tech Lawyer Analysis)
 
-| Enfoque Tradicional (Ej. Clip / Bancos TPVs / SWIFT) | Enfoque SmartPay (APMs / Local-to-Local / Stablecoins / QR) |
-| :--- | :--- |
-| **Pérdida del 30% al 50% de las ventas B2C** de visitantes de LATAM por rechazo emisor. | **Tasa de aprobación >99%** al procesar vía rieles locales (Pix, PSE, Yape/Plin, Stablecoins). |
-| **42 a 66 días de retraso** en pagos B2B entre agencias mayoristas de LATAM y hoteles/DMCs en México. | **Liquidación B2B en minutos** vía rieles directos / stablecoins, eliminando el riesgo cambiario. |
-| **Cero trazabilidad:** El comercio no sabe por qué la tarjeta no pasó y asume que el cliente no tiene fondos. | **Confirmación biométrica instantánea:** El cliente autoriza en su propia app bancaria. |
-| **Riesgo de fraude y contracargos** asumido por el comercio o pasarela. | **Cero riesgo de contracargo (*Zero Chargebacks*)** y liquidación garantizada. |
-| **CAC elevado:** Obligación de vender hardware físico TPV. | **Zero-Hardware:** Despliegue inmediato vía código QR impreso o en pantalla. |
+La evolución de los medios de pago en 2026 marca el fin definitivo de la hegemonía del plástico físico y la terminal TPV rígida, dando paso a tres pilares estructurales:
+
+### A. "Poliamor Financiero" y Diversidad de Rieles
+* El consumidor y turista moderno no depende de un solo plástico bancario; exige coexistencia de **Billeteras Digitales (>60% penetración global)**, **Pagos Instantáneos A2A (Pix, SPEI, Transferencias 3.0)**, **Stablecoins respaldadas (USDC de Circle, Paxos)** y tarjetas tokenizadas.
+* Forzar a un turista a pagar exclusivamente con tarjeta física deslizada en una terminal genera fricción inmediata y abandono.
+
+### B. Biometría Multimodal y Passkeys (Visa / Mastercard Standards)
+* La autenticación ha migrado hacia el estándar de **Visa Payment Passkey** y biometría multimodal (*FaceID, huella, liveness detection, comportamiento*).
+* **Impacto en Aprobación:** Al validar biométricamente en el dispositivo del usuario, se eliminan los falsos positivos por sospecha de fraude y se neutraliza el miedo del turista a la clonación física (*skimming*) en destinos turísticos.
+
+### C. Convergencia FinTech + Stablecoins Reguladas
+* Integración de rieles *on-chain* (USDC, protocolos cross-chain) con autenticación biométrica *off-chain*: transferencias transfronterizas instantáneas, de bajo costo y con liquidación inmediata en moneda local (MXN) para los comercios receptores.
+
+---
+
+## 7. Cuadro Comparativo: El Modelo TPV Tradicional (Clip) vs. Ecosistema SmartPay 2026
+
+| Dimensión | Modelo TPV Tradicional (Clip / Adquirentes Legacy) | Ecosistema SmartPay Riviera Maya (2026) |
+| :--- | :--- | :--- |
+| **Arquitectura de Pago** | Monolítica: Tarjeta física + PIN / Chip en hardware propietario. | **Multimodal / "Poliamor Financiero":** QR dinámico, Pix, APMs, Stablecoins (USDC), Passkeys. |
+| **Tasa de Rechazo Turística** | **30% al 50% de rechazos** en plásticos de LATAM por filtros emisores. | **>99% de aprobación** mediante autorización biométrica y rieles locales. |
+| **Costo y Tiempo de Despliegue** | **Alto CAC:** Venta, subsidio y logística de hardware físico ($500-$1,500 MXN/TPV). | **Zero-Hardware:** Despliegue en 2 minutos vía software, pantalla o QR impreso. |
+| **Seguridad para el Turista** | Fricción y desconfianza por riesgo de clonación/estafas en destino. | **Zero-Trust / Biometría Nativa:** El turista jamás suelta su tarjeta ni datos bancarios. |
+| **Liquidación B2B** | **42 a 66 días** en transferencias bancarias internacionales (SWIFT). | **Liquidación instantánea** (minutos) entre agencias, DMCs y hoteles. |
+| **Enfoque de Mercado** | Optimización de comercios ya bancarizados (*Same-Store Sales*). | **Captación masiva** de nuevos prestadores turísticos e informales (*Market Creation*). |
