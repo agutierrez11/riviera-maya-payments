@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Caribe Mexicano Smart Pay — One Pager Ejecutivo</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap');
+
+    @page {
+      size: letter portrait;
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #FFFFFF;
+      color: #0F172A;
+      width: 8.5in;
+      height: 11in;
+      padding: 0.25in 0.32in;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+
+    /* HEADER */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1.5px solid #E2E8F0;
+      padding-bottom: 4px;
+    }
+    .header-left h1 {
+      font-size: 16.5px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #0B132B;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .header-left h1 span {
+      background: linear-gradient(135deg, #0284C7, #0D9488);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .header-left p {
+      font-size: 7.8px;
+      color: #475569;
+      font-weight: 500;
+      margin-top: 1px;
+    }
+    .header-badges {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 1.5px;
+    }
+    .badge-pill {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 6.5px;
+      font-weight: 700;
+      padding: 1.5px 5.5px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    .badge-blue {
+      background: #E0F2FE;
+      color: #0369A1;
+      border: 1px solid #BAE6FD;
+    }
+    .badge-sub {
+      font-size: 5.8px;
+      color: #0284C7;
+      font-weight: 700;
+    }
+
+    /* KPI / MARKET SIZING GRID (TAM / SAM / SOM / FRAUDE) */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 5px;
+      margin-top: 3.5px;
+    }
+    .kpi-card {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 6px;
+      padding: 3.5px 5px;
+      text-align: center;
+      position: relative;
+      border-top: 2px solid #0284C7;
+    }
+    .kpi-card:nth-child(2) { border-top-color: #0D9488; }
+    .kpi-card:nth-child(3) { border-top-color: #10B981; }
+    .kpi-card:nth-child(4) { border-top-color: #EF4444; }
+    
+    .kpi-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 5.5px;
+      font-weight: 700;
+      padding: 1px 3.5px;
+      border-radius: 3px;
+      display: inline-block;
+      margin-bottom: 1.5px;
+      text-transform: uppercase;
+    }
+    .tag-tam { background: #E0F2FE; color: #0369A1; }
+    .tag-sam { background: #CCFBF1; color: #0F766E; }
+    .tag-som { background: #D1FAE5; color: #047857; }
+    .tag-risk { background: #FEE2E2; color: #B91C1C; }
+
+    .kpi-val {
+      font-size: 12.5px;
+      font-weight: 800;
+      color: #0F172A;
+      letter-spacing: -0.4px;
+      line-height: 1.1;
+    }
+    .kpi-title {
+      font-size: 5.8px;
+      font-weight: 700;
+      color: #0284C7;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      margin-top: 1px;
+    }
+    .kpi-card:nth-child(2) .kpi-title { color: #0D9488; }
+    .kpi-card:nth-child(3) .kpi-title { color: #059669; }
+    .kpi-card:nth-child(4) .kpi-title { color: #DC2626; }
+
+    .kpi-desc {
+      font-size: 5.2px;
+      color: #64748B;
+      margin-top: 1px;
+      font-weight: 500;
+      line-height: 1.15;
+    }
+
+    /* SECTION TITLE */
+    .section-title {
+      font-size: 7.8px;
+      font-weight: 800;
+      color: #0F172A;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      display: flex;
+      align-items: center;
+      gap: 3.5px;
+      margin-top: 3.5px;
+      margin-bottom: 2px;
+    }
+    .section-title::before {
+      content: '';
+      display: inline-block;
+      width: 2.5px;
+      height: 7.5px;
+      background: #0284C7;
+      border-radius: 2px;
+    }
+
+    /* VENN SECTION */
+    .venn-container {
+      display: grid;
+      grid-template-columns: 215px 1fr;
+      gap: 7px;
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 7px;
+      padding: 4.5px 6.5px;
+      align-items: center;
+    }
+
+    .venn-svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .venn-details {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .venn-detail-item {
+      display: flex;
+      gap: 3.5px;
+      align-items: flex-start;
+      font-size: 6.2px;
+      line-height: 1.18;
+      color: #334155;
+    }
+    .venn-bullet {
+      width: 4.5px;
+      height: 4.5px;
+      border-radius: 50%;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+    .bullet-blue { background: #0284C7; box-shadow: 0 0 0 1.5px #E0F2FE; }
+    .bullet-amber { background: #D97706; box-shadow: 0 0 0 1.5px #FEF3C7; }
+    .bullet-emerald { background: #059669; box-shadow: 0 0 0 1.5px #D1FAE5; }
+
+    .venn-detail-item b {
+      color: #0F172A;
+      font-weight: 700;
+    }
+
+    .sweet-spot-box {
+      background: linear-gradient(135deg, #0B132B, #1C2541);
+      color: #FFFFFF;
+      border-radius: 4px;
+      padding: 2.5px 5px;
+      margin-top: 1px;
+      border: 1px solid #38BDF8;
+    }
+    .sweet-spot-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1px;
+    }
+    .sweet-spot-title {
+      font-size: 6.5px;
+      font-weight: 800;
+      color: #38BDF8;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }
+    .sweet-spot-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 5.2px;
+      background: #0284C7;
+      color: #FFFFFF;
+      padding: 1px 3px;
+      border-radius: 2px;
+      font-weight: 700;
+    }
+    .sweet-spot-desc {
+      font-size: 5.8px;
+      color: #E2E8F0;
+      line-height: 1.18;
+    }
+
+    /* LATAM ADOPTION & BENCHMARK STRIP */
+    .latam-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr) 1.2fr;
+      gap: 4px;
+      background: #F1F5F9;
+      border: 1px solid #CBD5E1;
+      border-radius: 5px;
+      padding: 3px 5px;
+    }
+    .latam-item {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 4px;
+      padding: 2.5px 3.5px;
+      font-size: 5.4px;
+      line-height: 1.15;
+    }
+    .latam-item b {
+      color: #0F172A;
+      display: block;
+      font-size: 5.8px;
+      margin-bottom: 0.5px;
+    }
+    .latam-item span {
+      color: #0284C7;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+    }
+    .latam-item.benchmark {
+      background: #0F172A;
+      color: #FFFFFF;
+      border-color: #38BDF8;
+    }
+    .latam-item.benchmark b {
+      color: #38BDF8;
+    }
+    .latam-item.benchmark span {
+      color: #34D399;
+    }
+
+    /* TABLE */
+    .matrix-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 5.9px;
+      line-height: 1.15;
+      border: 1px solid #CBD5E1;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .matrix-table th {
+      background: #0F172A;
+      color: #FFFFFF;
+      font-weight: 700;
+      text-align: left;
+      padding: 2.5px 3.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      font-size: 5.7px;
+    }
+    .matrix-table td {
+      padding: 2.2px 3.5px;
+      border-bottom: 1px solid #E2E8F0;
+      color: #334155;
+      vertical-align: middle;
+    }
+    .matrix-table tr:nth-child(even) td {
+      background: #F8FAFC;
+    }
+    .matrix-table tr:last-child td {
+      border-bottom: none;
+    }
+    .matrix-table td b {
+      color: #0F172A;
+      font-weight: 700;
+    }
+
+    /* FETUR BLOG ALIGNMENT CARDS */
+    .fetur-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4.5px;
+    }
+    .fetur-card {
+      background: #F8FAFC;
+      border: 1px solid #CBD5E1;
+      border-radius: 5px;
+      padding: 3.5px 4.5px;
+      border-left: 2.5px solid #0284C7;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .fetur-card:nth-child(2) { border-left-color: #D97706; }
+    .fetur-card:nth-child(3) { border-left-color: #059669; }
+
+    .fetur-author {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 5.3px;
+      font-weight: 700;
+      color: #0284C7;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1px;
+    }
+    .fetur-card:nth-child(2) .fetur-author { color: #D97706; }
+    .fetur-card:nth-child(3) .fetur-author { color: #059669; }
+
+    .fetur-quote {
+      font-size: 5.6px;
+      font-style: italic;
+      color: #1E293B;
+      line-height: 1.15;
+      margin-bottom: 1.5px;
+    }
+    .fetur-match {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 3px;
+      padding: 2px 2.5px;
+      font-size: 5.3px;
+      color: #0F172A;
+      line-height: 1.15;
+    }
+    .fetur-match b {
+      color: #0284C7;
+    }
+    .fetur-card:nth-child(2) .fetur-match b { color: #D97706; }
+    .fetur-card:nth-child(3) .fetur-match b { color: #059669; }
+
+    /* FOOTER */
+    .footer {
+      border-top: 1px solid #E2E8F0;
+      padding-top: 2.5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 5.3px;
+      color: #64748B;
+      font-weight: 600;
+    }
+    .footer-left {
+      display: flex;
+      gap: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-left">
+      <h1>CARIBE MEXICANO <span>SMART PAY</span></h1>
+      <p>Ecosistema Transaccional A2A & Pagos Transfronterizos · <b>FETUR Quintana Roo & Agregador Aliado</b></p>
+    </div>
+    <div class="header-badges">
+      <div class="badge-pill badge-blue">REGULACIÓN CNBV / BANXICO (SPEI)</div>
+      <div class="badge-sub">Alianza Estratégica FETUR Nacional · Agosto 2026</div>
+    </div>
+  </div>
+
+  <!-- MARKET SIZING & RISK HERO (TAM / SAM / SOM / FRAUDE CONDUSEF) -->
+  <div class="kpi-grid">
+    
+    <!-- TAM -->
+    <div class="kpi-card">
+      <div class="kpi-tag tag-tam">TAM · DERRAMA TOTAL</div>
+      <div class="kpi-val">$1,113M USD</div>
+      <div class="kpi-title">Gasto Anual Sudamérica</div>
+      <div class="kpi-desc">850,000 turistas/año (Brasil, Colombia, Arg., Perú) en Q. Roo</div>
+    </div>
+
+    <!-- SAM -->
+    <div class="kpi-card">
+      <div class="kpi-tag tag-sam">SAM · GASTO EN SITIO</div>
+      <div class="kpi-val">$350.6M USD</div>
+      <div class="kpi-title">Mercado Atendible A2A</div>
+      <div class="kpi-desc">Hoteles independientes, bodas, tours y consumo formal capturable</div>
+    </div>
+
+    <!-- SOM -->
+    <div class="kpi-card">
+      <div class="kpi-tag tag-som">SOM · PILOTO (1% PISO)</div>
+      <div class="kpi-val">$3.5M USD</div>
+      <div class="kpi-title">Padrón Ancla FETUR</div>
+      <div class="kpi-desc"><b>175 comercios (~$70M MXN)</b> · 113 tx/día de $85 USD en Q. Roo</div>
+    </div>
+
+    <!-- RISK / CONDUSEF SHIELD -->
+    <div class="kpi-card">
+      <div class="kpi-tag tag-risk">BLINDAJE CONDUSEF</div>
+      <div class="kpi-val">$209.3M MXN</div>
+      <div class="kpi-title">Fraude Local en Q. Roo</div>
+      <div class="kpi-desc">85.7% en Cancún/Playa · <b>0% Contracargos con Smart Pay A2A</b></div>
+    </div>
+
+  </div>
+
+  <!-- SECTION 1: LATAM ADOPTION & BENCHMARK EVIDENCE STRIP -->
+  <div>
+    <div class="section-title">1. Adopción Oficial en LATAM (Bancos Centrales) &amp; Benchmark Internacional</div>
+    <div class="latam-strip">
+      
+      <!-- Brasil -->
+      <div class="latam-item">
+        <b>🇧🇷 Brasil · PIX (BCB)</b>
+        <span>95% Adopción (163.5M)</span><br>
+        Elimina 3.5% IOF + 5% spread bancario.
+      </div>
+
+      <!-- Colombia -->
+      <div class="latam-item">
+        <b>🇨🇴 Colombia · Nequi/Bre-B</b>
+        <span>80% Adopción (22M)</span><br>
+        Evita 5% sobrecosto internacional.
+      </div>
+
+      <!-- Argentina -->
+      <div class="latam-item">
+        <b>🇦🇷 Argentina · CBU/MODO</b>
+        <span>85% (108M tx/mes)</span><br>
+        Elude retención 30% "Dólar Tarjeta".
+      </div>
+
+      <!-- Perú -->
+      <div class="latam-item">
+        <b>🇵🇪 Perú · Yape &amp; Plin</b>
+        <span>90% Adopción (16M)</span><br>
+        Débito directo sin penalización FX.
+      </div>
+
+      <!-- Benchmark Global -->
+      <div class="latam-item benchmark">
+        <b>🌎 Benchmark Internacional</b>
+        <span>• Verifone: +500 tiendas Miami/Orlando</span><br>
+        <span>• Fiserv: 70% comercios Bariloche</span><br>
+        <span>• dLocal: 60% paradores Punta del Este</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SECTION 2: VENN DIAGRAM & STRATEGIC ALIGNMENT -->
+  <div>
+    <div class="section-title">2. Convergencia Estratégica: El Riel Scan to Pay</div>
+    
+    <div class="venn-container">
+      
+      <!-- SVG VENN DIAGRAM -->
+      <svg class="venn-svg" viewBox="0 0 300 230" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="gradBlue" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.5"/>
+            <stop offset="100%" stop-color="#0284C7" stop-opacity="0.25"/>
+          </radialGradient>
+          <radialGradient id="gradAmber" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#FDE047" stop-opacity="0.55"/>
+            <stop offset="100%" stop-color="#CA8A04" stop-opacity="0.25"/>
+          </radialGradient>
+          <radialGradient id="gradGreen" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#6EE7B7" stop-opacity="0.55"/>
+            <stop offset="100%" stop-color="#059669" stop-opacity="0.25"/>
+          </radialGradient>
+          <filter id="shadowCenter" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.3"/>
+          </filter>
+        </defs>
+
+        <!-- Circle 1: FETUR (Top) -->
+        <circle cx="150" cy="76" r="64" fill="url(#gradBlue)" stroke="#0284C7" stroke-width="2"/>
+        
+        <!-- Circle 2: COMERCIOS (Bottom Left) -->
+        <circle cx="106" cy="142" r="64" fill="url(#gradAmber)" stroke="#CA8A04" stroke-width="2"/>
+        
+        <!-- Circle 3: AGREGADOR (Bottom Right) -->
+        <circle cx="194" cy="142" r="64" fill="url(#gradGreen)" stroke="#059669" stroke-width="2"/>
+
+        <!-- Labels: FETUR (Top) -->
+        <text x="150" y="34" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" font-weight="800" fill="#0369A1" text-anchor="middle">1. FETUR &amp; Q. ROO</text>
+        <text x="150" y="46" font-family="'Plus Jakarta Sans', sans-serif" font-size="6.5" font-weight="600" fill="#075985" text-anchor="middle">• Turismo Inteligente &amp; Hub</text>
+        <text x="150" y="55" font-family="'Plus Jakarta Sans', sans-serif" font-size="6.5" font-weight="600" fill="#075985" text-anchor="middle">• Retención de $1,113M USD (TAM)</text>
+
+        <!-- Labels: COMERCIOS (Bottom Left) -->
+        <text x="76" y="148" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" font-weight="800" fill="#854D0E" text-anchor="middle">2. COMERCIOS</text>
+        <text x="76" y="160" font-family="'Plus Jakarta Sans', sans-serif" font-size="6.5" font-weight="600" fill="#713F12" text-anchor="middle">• 0% Contracargos</text>
+        <text x="76" y="169" font-family="'Plus Jakarta Sans', sans-serif" font-size="6.5" font-weight="600" fill="#713F12" text-anchor="middle">• Zero Hardware / Links Web</text>
+
+        <!-- Labels: AGREGADOR (Bottom Right) -->
+        <text x="224" y="148" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" font-weight="800" fill="#065F46" text-anchor="middle">3. AGREGADOR</text>
+        <text x="224" y="160" font-family="'Plus Jakarta Sans', sans-serif" font-size="6.5" font-weight="600" fill="#064E3B" text-anchor="middle">• Licencia CNBV</text>
+        <text x="224" y="169" font-family="'Plus Jakarta Sans', sans-serif" font-size="6.5" font-weight="600" fill="#064E3B" text-anchor="middle">• Riel STP / SPEI (T+0)</text>
+
+        <!-- CENTER SWEET SPOT: SCAN TO PAY -->
+        <g filter="url(#shadowCenter)">
+          <circle cx="150" cy="124" r="25" fill="#0B132B" stroke="#38BDF8" stroke-width="2"/>
+          <text x="150" y="119" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" font-weight="800" fill="#38BDF8" text-anchor="middle" letter-spacing="0.3">SCAN TO PAY</text>
+          <text x="150" y="129" font-family="'JetBrains Mono', monospace" font-size="5.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">RIEL 8B / A2A</text>
+          <text x="150" y="138" font-family="'Plus Jakarta Sans', sans-serif" font-size="5" font-weight="600" fill="#94A3B8" text-anchor="middle">Speed to Revenue</text>
+        </g>
+      </svg>
+
+      <!-- VENN TEXT EXPLANATION -->
+      <div class="venn-details">
+        <div class="venn-detail-item">
+          <div class="venn-bullet bullet-blue"></div>
+          <div><b>1. FETUR &amp; Q. Roo (Demanda &amp; Soberanía):</b> Frena la fuga de +$40M USD anuales en comisiones bancarias tradicionales al extranjero y alimenta el Hub con data transaccional de Turismo Inteligente.</div>
+        </div>
+        <div class="venn-detail-item">
+          <div class="venn-bullet bullet-amber"></div>
+          <div><b>2. Comercio / Socio (Operación en Mostrador):</b> Cobra al turista en segundos desde su celular (Web POS), acrílico QR de mesa o Ligas Web por WhatsApp; 0% contracargos y 50% de ahorro vs Clip (3.6%).</div>
+        </div>
+        <div class="venn-detail-item">
+          <div class="venn-bullet bullet-emerald"></div>
+          <div><b>3. Agregador / EthosPay (Infraestructura &amp; Escala):</b> Adquisición masiva B2B con CAC=$0, millones en volumen transaccional para su licencia CNBV y colocación de crédito comercial a hoteles.</div>
+        </div>
+        
+        <div class="sweet-spot-box">
+          <div class="sweet-spot-header">
+            <div class="sweet-spot-title">🎯 Intersección Central: Scan to Pay (Sweet Spot)</div>
+            <div class="sweet-spot-badge">Liquidación &lt; 3s SPEI</div>
+          </div>
+          <div class="sweet-spot-desc">
+            Conecta los <b>850,000 turistas sudamericanos</b> (ahorrando 7.5%-10.5% en IOF/spread) directamente a la CLABE bancaria del hotel vía SPEI, generando <b>ingresos inmediatos con $0 contracargos</b>.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SECTION 3: FETUR BLOG THESIS ALIGNMENT & CYBERSECURITY SHIELD -->
+  <div>
+    <div class="section-title">3. Blindaje de Ciberseguridad ante CONDUSEF ($209.3M) &amp; Tesis de FETUR</div>
+    <div class="fetur-grid">
+      
+      <!-- Card 1: Marcela Mexia + CONDUSEF + Deepfakes Shield -->
+      <div class="fetur-card">
+        <div>
+          <div class="fetur-author">
+            <span>Marcela Mexia · Ciberseguridad</span>
+            <span>Blindaje Total de Datos</span>
+          </div>
+          <div class="fetur-quote">"50.4% de empresas de turismo sufrieron ciberataques ($3.82M USD costo brecha) y $1.5 Billones en fraudes con IA/Deepfakes. CONDUSEF: $209.3M en fraudes en Q. Roo."</div>
+        </div>
+        <div class="fetur-match">
+          <b>• Cero Datos Almacenados:</b> El hotel no custodia tarjetas ni CVVs; elimina el riesgo de hackeos y multas de INAI/PCI-DSS.<br>
+          <b>• Biometría Local (FaceID):</b> Neutraliza Deepfakes y suplantación.
+        </div>
+      </div>
+
+      <!-- Card 2: Arturo Carvajal -->
+      <div class="fetur-card">
+        <div>
+          <div class="fetur-author">
+            <span>Arturo Carvajal</span>
+            <span>Consejero Congresos y MICE</span>
+          </div>
+          <div class="fetur-quote">"Cuando el turismo no gana por igual: la derrama debe llegar a toda la cadena de valor real (bodas de destino, eventos y proveedores)." (Jul 2026)</div>
+        </div>
+        <div class="fetur-match">
+          <b>Respuesta Smart Pay:</b> Cobro sin hardware para bodas, tours y PyMEs; liquida tickets de $5k a $20k USD en segundos sin topes ni rechazos de tarjeta.
+        </div>
+      </div>
+
+      <!-- Card 3: Margarita Carbajal -->
+      <div class="fetur-card">
+        <div>
+          <div class="fetur-author">
+            <span>Margarita Carbajal</span>
+            <span>Presidenta Fundadora FETUR</span>
+          </div>
+          <div class="fetur-quote">"Seguridad jurídica y Turismo Inteligente: construir ecosistemas tecnológicos y de datos que fortalezcan la competitividad de México." (Ago 2026)</div>
+        </div>
+        <div class="fetur-match">
+          <b>Respuesta Smart Pay:</b> Riel regulado por CNBV / Banco de México con data transaccional que alimenta el Hub de Innovación de FETUR.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-left">
+      <span>• Documento Ejecutivo de Trabajo</span>
+      <span>• Sesión de Trabajo Presidencia &amp; Dirección Ejecutiva FETUR Nacional</span>
+    </div>
+    <div>Agosto 2026 · Confidencial</div>
+  </div>
+
+</body>
+</html>
