@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Activation Map</title>
+<link rel="stylesheet" href="../assets/styles.css">
+<style>
+  .slide-container { background: #FFFFFF; color: var(--ink); }
+</style>
+</head>
+<body>
+<div class="slide-container" style="position:relative; width:1920px; height:1080px; overflow:hidden;">
+
+  <!-- Top rail -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:60px; width:1760px; height:1px; background:rgba(10,13,20,0.18);"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:78px; width:1760px;">
+    <div style="display:flex; justify-content:space-between; font-family:'Barlow Condensed'; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; font-size:14px; color:#6B7280;">
+      <span>06 · Activation Map — named assets plotted by primary outcome moved</span>
+      <span>NWSL × MERIDIAN · 2026–2029</span>
+    </div>
+  </div>
+
+  <!-- Eyebrow + title -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:140px; width:1140px;">
+    <div class="eyebrow" style="font-size:18px; color:#D7263D;">Logos are inventory. Activations are contribution.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:184px; width:1500px;">
+    <div class="display" style="font-size:60px; color:var(--ink); line-height:1;">Every named asset, plotted on<br>one of four outcome axes.</div>
+  </div>
+
+  <!-- Legend -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1240px; top:140px; width:600px;">
+    <div class="eyebrow" style="font-size:11px; color:#6B7280; margin-bottom:8px; text-align:right;">Asset size = annual gross media value</div>
+    <div style="display:flex; gap:20px; align-items:center; justify-content:flex-end; font-family:'Inter'; font-weight:500; font-size:13px; color:var(--ink);">
+      <div style="display:flex; align-items:center; gap:8px;"><span style="width:14px; height:14px; background:#D7263D; border-radius:50%; display:inline-block;"></span> Tier 1 ($2M+)</div>
+      <div style="display:flex; align-items:center; gap:8px;"><span style="width:11px; height:11px; background:#2B6BFF; border-radius:50%; display:inline-block;"></span> Tier 2 ($0.5–2M)</div>
+      <div style="display:flex; align-items:center; gap:8px;"><span style="width:8px; height:8px; background:#0E5C3F; border-radius:50%; display:inline-block;"></span> Tier 3 (&lt;$0.5M)</div>
+    </div>
+  </div>
+
+  <!-- 4-quadrant matrix -->
+  <!-- Outer frame -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:200px; top:360px; width:1480px; height:580px; background:#F4F5F7; border:1px solid rgba(10,13,20,0.18);"></div>
+
+  <!-- Horizontal divider -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:200px; top:650px; width:1480px; height:1px; background:rgba(10,13,20,0.22);"></div>
+
+  <!-- Vertical divider -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:940px; top:360px; width:1px; height:580px; background:rgba(10,13,20,0.22);"></div>
+
+  <!-- Axis labels - top header (column labels) -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:210px; top:325px; width:720px;">
+    <div class="eyebrow" style="font-size:12px; color:#6B7280;">Top-of-funnel</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:950px; top:325px; width:720px;">
+    <div class="eyebrow" style="font-size:12px; color:#6B7280;">Bottom-of-funnel</div>
+  </div>
+
+  <!-- Quadrant headers -->
+  <!-- Q1: Awareness (top-left) -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:220px; top:380px; width:700px;">
+    <div class="eyebrow" style="font-size:13px; color:#D7263D;">Quadrant I · Awareness</div>
+    <div style="font-family:'Inter'; font-weight:600; font-size:13px; color:#6B7280; margin-top:4px;">Aided/unaided awareness · share of voice</div>
+  </div>
+
+  <!-- Q2: Category Share (top-right) -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:960px; top:380px; width:700px;">
+    <div class="eyebrow" style="font-size:13px; color:#D7263D;">Quadrant II · Category Share</div>
+    <div style="font-family:'Inter'; font-weight:600; font-size:13px; color:#6B7280; margin-top:4px;">Competitive blocking · category SOV</div>
+  </div>
+
+  <!-- Q3: Consideration (bottom-left) -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:220px; top:670px; width:700px;">
+    <div class="eyebrow" style="font-size:13px; color:#D7263D;">Quadrant III · Consideration</div>
+    <div style="font-family:'Inter'; font-weight:600; font-size:13px; color:#6B7280; margin-top:4px;">Intent · app installs · branded search</div>
+  </div>
+
+  <!-- Q4: LTV (bottom-right) -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:960px; top:670px; width:700px;">
+    <div class="eyebrow" style="font-size:13px; color:#D7263D;">Quadrant IV · LTV / Retention</div>
+    <div style="font-family:'Inter'; font-weight:600; font-size:13px; color:#6B7280; margin-top:4px;">Spend depth · attrition · NPS</div>
+  </div>
+
+  <!-- Asset dots Q1 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:380px; top:500px; width:34px; height:34px; border-radius:50%; background:#D7263D;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:425px; top:500px; width:240px;">
+    <div style="font-family:'Inter'; font-weight:700; font-size:15px; color:var(--ink);">Front-of-shirt</div>
+    <div style="font-family:'Inter'; font-weight:400; font-size:12px; color:#6B7280;">14 clubs · 27 windows</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:680px; top:560px; width:24px; height:24px; border-radius:50%; background:#2B6BFF;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:715px; top:555px; width:210px;">
+    <div style="font-family:'Inter'; font-weight:700; font-size:15px; color:var(--ink);">LED + broadcast bug</div>
+    <div style="font-family:'Inter'; font-weight:400; font-size:12px; color:#6B7280;">Always-on visibility</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:550px; top:440px; width:16px; height:16px; border-radius:50%; background:#0E5C3F;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:575px; top:435px; width:210px;">
+    <div style="font-family:'Inter'; font-weight:700; font-size:14px; color:var(--ink);">Stadium naming sub-brand</div>
+    <div style="font-family:'Inter'; font-weight:400; font-size:12px; color:#6B7280;">"Meridian Match of the Week"</div>
+  </div>
+
+  <!-- Asset dots Q2 (Category Share) -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1080px; top:500px; width:34px; height:34px; border-radius:50%; background:#D7263D;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1125px; top:500px; width:280px;">
+    <div style="font-family:'Inter'; font-weight:700; font-size:15px; color:var(--ink);">Category exclusivity (36 mo.)</div>
+    <div style="font-family:'Inter'; font-weight:400; font-size:12px; color:#6B7280;">Blocks Chase, Amex, Capital One</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1400px; top:570px; width:20px; height:20px; border-radius:50%; background:#2B6BFF;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1430px; top:565px; width:240px;">
+    <div style="font-family:'Inter'; font-weight:700; font-size:14px; color:var(--ink);">Designated broadcast sponsor</div>
+    <div style="font-family:'Inter'; font-weight:400; font-size:12px; color:#6B7280;">CBS Sunday + Prime Friday</div>
+  </div>
+
+  <!-- Asset dots Q3 (Consideration) -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:380px; top:780px; width:34px; height:34px; border-radius:50%; background:#D7263D;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:425px; top:780px; width:280px;">
+    <div style="font-family:'Inter'; font-weight:700; font-size:15px; color:var(--ink);">Athlete content series (12)</div>
+    <div style="font-family:'Inter'; font-weight:400; font-size:12px; color:#6B7280;">Wasserman talent · always-on</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:680px; top:850px; width:24px; height:24px; border-radius:50%; background:#2B6BFF;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:715px; top:845px; width:210px;">
+    <div style="font-family:'Inter'; font-weight:700; font-size:15px; color:var(--ink);">Stadium QR → app install</div>
+    <div style="font-family:'Inter'; font-weight:400; font-size:12px; color:#6B7280;">In-bowl conversion path</div>
+  </div>
+
+  <!-- Asset dots Q4 (LTV) -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1080px; top:790px; width:34px; height:34px; border-radius:50%; background:#D7263D;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1125px; top:790px; width:280px;">
+    <div style="font-family:'Inter'; font-weight:700; font-size:15px; color:var(--ink);">Co-branded card + perks</div>
+    <div style="font-family:'Inter'; font-weight:400; font-size:12px; color:#6B7280;">Match-day cashback, presale</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1450px; top:860px; width:16px; height:16px; border-radius:50%; background:#0E5C3F;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1475px; top:855px; width:200px;">
+    <div style="font-family:'Inter'; font-weight:700; font-size:14px; color:var(--ink);">Hospitality (12 suites)</div>
+    <div style="font-family:'Inter'; font-weight:400; font-size:12px; color:#6B7280;">Cardholder elite tier</div>
+  </div>
+
+  <!-- Footer note -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:960px; width:1760px;">
+    <div class="eyebrow" style="font-size:11px; color:#6B7280;">Reading the map · An asset's quadrant is the outcome it <em>primarily</em> moves. Halo into adjacent quadrants is real but not the basis of pricing.</div>
+  </div>
+
+  <!-- Bottom rail -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:1000px; width:1760px; height:1px; background:rgba(10,13,20,0.18);"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:1020px; width:1760px;">
+    <div style="display:flex; justify-content:space-between; font-family:'Barlow Condensed'; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; font-size:13px; color:#6B7280;">
+      <span>Attribution framework: Relo Metrics, <em>Closing the Attribution Gap in Sponsorship</em> (Dec 2025)<span class="footnote-sup">[6]</span>.</span>
+      <span>06 / 14</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

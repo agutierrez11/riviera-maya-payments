@@ -1,0 +1,36 @@
+/* Editorial sports system — Wasserman pitch */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --slate: #1A1F2B;
+  --slate-2: #0F131C;
+  --signal: #D7263D;
+  --electric: #2B6BFF;
+  --green: #0E5C3F;
+  --ink: #0A0D14;
+  --line: rgba(255,255,255,0.14);
+  --line-d: rgba(10,13,20,0.12);
+  --mute: #6B7280;
+  --paper: #FFFFFF;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; padding: 0; overflow: hidden; font-family: 'Inter', system-ui, sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+
+.display { font-family: 'Barlow Condensed', 'Inter', sans-serif; font-weight: 800; letter-spacing: -0.01em; line-height: 0.95; text-transform: uppercase; }
+.eyebrow { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.tabular { font-variant-numeric: tabular-nums; }
+.mono-num { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
+
+.chip {
+  display: inline-block;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border: 1px solid currentColor;
+  font-size: 14px;
+}
+
+.footnote-sup { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.55em; vertical-align: super; color: var(--signal); }

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "1.0",
+  "format": "html",
+  "metadata": {
+    "title": "NWSL × Meridian Financial — Category-Exclusive Partnership Pitch",
+    "description": "A 14-slide sponsorship pitch by Wasserman pitching a 3-year category-exclusive financial-services partnership with a women's pro soccer league. Built on the six-lever financial-contribution model (Diorio, Forbes).",
+    "author": "Wasserman Properties — Partnerships SVP"
+  },
+  "canvas": {"width": 1920, "height": 1080},
+  "playlist": [
+    "01-cover.html",
+    "02-brand-problem.html",
+    "03-property-one-number.html",
+    "04-audience-overlap.html",
+    "05-three-of-six-levers.html",
+    "06-activation-map.html",
+    "07-asset-jersey.html",
+    "08-asset-athlete-content.html",
+    "09-asset-stadium-commerce.html",
+    "10-comparable-case.html",
+    "11-measurement-plan.html",
+    "12-exclusivity-architecture.html",
+    "13-investment-roi.html",
+    "14-decision-ask.html",
+    "15-sources.html"
+  ]
+}

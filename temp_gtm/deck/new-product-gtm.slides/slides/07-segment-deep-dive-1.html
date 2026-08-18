@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Segment Deep Dive — Mid-Market B2B Tech</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>html,body{margin:0;padding:0;overflow:hidden;background:#FFFFFF;font-family:'Inter',sans-serif;color:#0F172A;}</style>
+</head>
+<body>
+<div class="slide-container" data-screen-label="07 Segment 1 deep dive" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#FFFFFF;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:0;top:0;width:1920px;height:6px;background:#B91C1C;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:80px;width:900px;height:24px;font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.28em;color:#B91C1C;font-weight:600;z-index:10;">07 · WINNING SEGMENT · DEEP DIVE</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:120px;width:1500px;height:64px;font-family:'IBM Plex Sans',sans-serif;font-size:48px;font-weight:600;color:#0B2545;letter-spacing:-0.015em;z-index:10;">Mid-market B2B Tech (250–2,500 FTE).</div>
+
+  <!-- Stat strip across top -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:120px;top:230px;width:1680px;height:1px;background:#E2E8F0;z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:260px;width:280px;height:120px;z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#64748B;letter-spacing:0.22em;margin-bottom:8px;">TAM</div>
+    <div style="font-family:'IBM Plex Sans',sans-serif;font-size:44px;color:#0B2545;font-weight:600;line-height:1;letter-spacing:-0.02em;">$2.4B</div>
+    <div style="font-family:'Inter',sans-serif;font-size:13px;color:#64748B;margin-top:8px;">mid-market wedge, US+EMEA</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:420px;top:260px;width:280px;height:120px;z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#64748B;letter-spacing:0.22em;margin-bottom:8px;">NAMED ACCOUNTS</div>
+    <div style="font-family:'IBM Plex Sans',sans-serif;font-size:44px;color:#0B2545;font-weight:600;line-height:1;letter-spacing:-0.02em;">3,840</div>
+    <div style="font-family:'Inter',sans-serif;font-size:13px;color:#64748B;margin-top:8px;">SAM after ICP filtering</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:720px;top:260px;width:280px;height:120px;z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#64748B;letter-spacing:0.22em;margin-bottom:8px;">PHASE-1 TARGET</div>
+    <div style="font-family:'IBM Plex Sans',sans-serif;font-size:44px;color:#B91C1C;font-weight:600;line-height:1;letter-spacing:-0.02em;">240</div>
+    <div style="font-family:'Inter',sans-serif;font-size:13px;color:#64748B;margin-top:8px;">tier-1 accounts in year-1</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1020px;top:260px;width:280px;height:120px;z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#64748B;letter-spacing:0.22em;margin-bottom:8px;">ANCHOR ACV</div>
+    <div style="font-family:'IBM Plex Sans',sans-serif;font-size:44px;color:#0B2545;font-weight:600;line-height:1;letter-spacing:-0.02em;">$58K</div>
+    <div style="font-family:'Inter',sans-serif;font-size:13px;color:#64748B;margin-top:8px;">median of 14 design partners</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1320px;top:260px;width:280px;height:120px;z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#64748B;letter-spacing:0.22em;margin-bottom:8px;">MEDIAN SALES CYCLE</div>
+    <div style="font-family:'IBM Plex Sans',sans-serif;font-size:44px;color:#0B2545;font-weight:600;line-height:1;letter-spacing:-0.02em;">84 d</div>
+    <div style="font-family:'Inter',sans-serif;font-size:13px;color:#64748B;margin-top:8px;">first-call to signature</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:120px;top:400px;width:1680px;height:1px;background:#E2E8F0;z-index:1;"></div>
+
+  <!-- Left: ICP definition -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:440px;width:540px;height:30px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.22em;color:#0B2545;font-weight:600;z-index:10;">ICP DEFINITION · QUALIFICATION FILTERS</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:480px;width:540px;height:440px;font-family:'Inter',sans-serif;font-size:15px;line-height:1.5;color:#334155;z-index:10;">
+    <div style="padding:10px 0;border-bottom:1px dashed #E2E8F0;display:flex;gap:14px;">
+      <span style="font-family:'JetBrains Mono',monospace;color:#B91C1C;font-size:13px;font-weight:600;width:90px;flex-shrink:0;">SIZE</span>
+      <span>250–2,500 FTE; ARR $20–250M; ≥18 sales-org headcount</span>
+    </div>
+    <div style="padding:10px 0;border-bottom:1px dashed #E2E8F0;display:flex;gap:14px;">
+      <span style="font-family:'JetBrains Mono',monospace;color:#B91C1C;font-size:13px;font-weight:600;width:90px;flex-shrink:0;">VERTICAL</span>
+      <span>B2B SaaS, dev-tools, fintech-infra, cyber. Excludes pure consumer.</span>
+    </div>
+    <div style="padding:10px 0;border-bottom:1px dashed #E2E8F0;display:flex;gap:14px;">
+      <span style="font-family:'JetBrains Mono',monospace;color:#B91C1C;font-size:13px;font-weight:600;width:90px;flex-shrink:0;">STACK</span>
+      <span>Salesforce Enterprise or HubSpot Sales Hub Enterprise + Outreach/Salesloft + Gong/Chorus</span>
+    </div>
+    <div style="padding:10px 0;border-bottom:1px dashed #E2E8F0;display:flex;gap:14px;">
+      <span style="font-family:'JetBrains Mono',monospace;color:#B91C1C;font-size:13px;font-weight:600;width:90px;flex-shrink:0;">MOTION</span>
+      <span>Quarterly board cadence; CRO presenting forecast; CFO scrutinising same</span>
+    </div>
+    <div style="padding:10px 0;border-bottom:1px dashed #E2E8F0;display:flex;gap:14px;">
+      <span style="font-family:'JetBrains Mono',monospace;color:#B91C1C;font-size:13px;font-weight:600;width:90px;flex-shrink:0;">TRIGGER</span>
+      <span>One missed quarter in the trailing 4; or Series B+ funding announcement</span>
+    </div>
+    <div style="padding:10px 0;display:flex;gap:14px;">
+      <span style="font-family:'JetBrains Mono',monospace;color:#B91C1C;font-size:13px;font-weight:600;width:90px;flex-shrink:0;">EXCLUDE</span>
+      <span>PE-owned with mandate &lt; 6mo to flip; pre-PMF startups; air-gapped procurement</span>
+    </div>
+  </div>
+
+  <!-- Middle: channel-fit -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:700px;top:440px;width:540px;height:30px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.22em;color:#0B2545;font-weight:600;z-index:10;">WHY THIS SEGMENT IS ACCESSIBLE</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:700px;top:480px;width:540px;height:420px;font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;color:#334155;z-index:10;">
+    <p style="margin:0 0 16px;"><strong style="color:#0B2545;">Founder reach.</strong> CEO has 9 first-degree connections to RevOps leaders in our top-50 named accounts via Pavilion + the SaaStr alumni network.</p>
+    <p style="margin:0 0 16px;"><strong style="color:#0B2545;">LinkedIn ABM is cheap.</strong> Median CPM to reach this title cluster is $74 vs. $310 for F500 banking CFOs.</p>
+    <p style="margin:0 0 16px;"><strong style="color:#0B2545;">Procurement is light.</strong> Median PO sign-off in this segment is 2 stakeholders vs. 9 in F500. No info-sec walkthrough below $100K ACV.</p>
+    <p style="margin:0;"><strong style="color:#0B2545;">Reference compounding works.</strong> RevOps Slack communities (RevOps Co-op, Pavilion) circulate vendor recommendations in days — the segment is reference-dense.</p>
+  </div>
+
+  <!-- Right: pilot signal -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1280px;top:440px;width:520px;height:460px;background:#0B2545;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1320px;top:470px;width:440px;height:24px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.22em;color:#B91C1C;font-weight:600;z-index:10;">PILOT SIGNAL · 11 IN-SEGMENT DESIGN PARTNERS</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1320px;top:510px;width:440px;height:380px;color:#E2E8F0;font-family:'Inter',sans-serif;z-index:10;">
+    <div style="border-bottom:1px solid #1E3A5F;padding:14px 0;">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;"><span style="font-size:14px;color:#94A3B8;">PILOT-TO-PAID CONVERSION</span><span style="font-family:'JetBrains Mono',monospace;color:#FFFFFF;font-size:30px;font-weight:600;">82%</span></div>
+    </div>
+    <div style="border-bottom:1px solid #1E3A5F;padding:14px 0;">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;"><span style="font-size:14px;color:#94A3B8;">MEDIAN NPS · 90 DAYS POST-GO-LIVE</span><span style="font-family:'JetBrains Mono',monospace;color:#FFFFFF;font-size:30px;font-weight:600;">+62</span></div>
+    </div>
+    <div style="border-bottom:1px solid #1E3A5F;padding:14px 0;">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;"><span style="font-size:14px;color:#94A3B8;">CASE-STUDY CONSENT RATE</span><span style="font-family:'JetBrains Mono',monospace;color:#FFFFFF;font-size:30px;font-weight:600;">9/11</span></div>
+    </div>
+    <div style="padding:14px 0;">
+      <div style="font-size:14px;color:#94A3B8;margin-bottom:6px;">REFERENCE LOGOS (UNDER NDA)</div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;font-family:'JetBrains Mono',monospace;font-size:11px;color:#CBD5E1;">
+        <span style="border:1px solid #334155;padding:6px 10px;">DEVTOOL CO.</span>
+        <span style="border:1px solid #334155;padding:6px 10px;">FINTECH-INFRA CO.</span>
+        <span style="border:1px solid #334155;padding:6px 10px;">CYBER CO.</span>
+        <span style="border:1px solid #334155;padding:6px 10px;">SAAS-OPS CO.</span>
+        <span style="border:1px solid #334155;padding:6px 10px;">+ 7 MORE</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom call-out -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:120px;top:930px;width:1680px;height:54px;background:#FEF2F2;border-left:6px solid #B91C1C;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:150px;top:945px;width:1640px;height:26px;font-family:'Inter',sans-serif;font-size:18px;color:#334155;z-index:10;"><strong style="color:#B91C1C;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.22em;">WHY THIS WINS · </strong>High access × high WtP × already-warm reference base. The math and the signal agree.</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:1010px;width:1680px;height:20px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.18em;color:#94A3B8;z-index:10;">FORECASTLY GTM · 07 / 23 · DESIGN-PARTNER CONTRACTS Q4 2025 – Q1 2026 · LINKEDIN CAMPAIGN MANAGER CPM PROBE FEB 2026.</div>
+
+</div>
+</body>
+</html>

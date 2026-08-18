@@ -1,0 +1,15 @@
+/* Forecastly GTM Deck — shared tokens. Used inline per-slide for editor compatibility. */
+:root {
+  --navy: #0B2545;
+  --slate: #334155;
+  --slate-2: #475569;
+  --slate-3: #64748B;
+  --crimson: #B91C1C;
+  --crimson-2: #7F1D1D;
+  --grey-50: #F8FAFC;
+  --grey-100: #F1F5F9;
+  --grey-200: #E2E8F0;
+  --grey-300: #CBD5E1;
+  --ink: #0F172A;
+  --white: #FFFFFF;
+}

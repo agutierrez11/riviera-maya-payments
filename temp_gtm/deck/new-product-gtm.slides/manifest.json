@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "1.0",
+  "format": "html",
+  "metadata": {
+    "title": "New Product GTM Plan — Beach-head Discipline",
+    "description": "A 22-slide Bain-style GTM deck for a vertical-SaaS launch: STP backbone, Moore beach-head, Dunford positioning.",
+    "author": "GTM Strategy"
+  },
+  "canvas": {"width": 1920, "height": 1080},
+  "playlist": [
+    "01-cover.html",
+    "02-tldr.html",
+    "03-product-summary.html",
+    "04-tam.html",
+    "05-customer-discovery.html",
+    "06-segmentation-matrix.html",
+    "07-segment-deep-dive-1.html",
+    "08-segment-deep-dive-2.html",
+    "09-targeting-beachhead.html",
+    "10-bowling-pin-phases.html",
+    "11-buyer-personas.html",
+    "12-positioning-statement.html",
+    "13-messaging-architecture.html",
+    "14-first-100-channels.html",
+    "15-sales-motion.html",
+    "16-pricing-packaging.html",
+    "17-activation-success.html",
+    "18-team-hiring.html",
+    "19-roi-scenarios.html",
+    "20-risks-experiments.html",
+    "21-90-day-plan.html",
+    "22-closing-beachhead.html",
+    "23-sources.html"
+  ]
+}

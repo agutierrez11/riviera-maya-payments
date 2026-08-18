@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Segmentation Matrix</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>html,body{margin:0;padding:0;overflow:hidden;background:#FFFFFF;font-family:'Inter',sans-serif;color:#0F172A;}</style>
+</head>
+<body>
+<div class="slide-container" data-screen-label="06 Segmentation matrix" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#FFFFFF;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:0;top:0;width:1920px;height:6px;background:#B91C1C;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:80px;width:1000px;height:24px;font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.28em;color:#B91C1C;font-weight:600;z-index:10;">06 · SEGMENTATION  ·  STP STEP ONE</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:120px;width:1300px;height:64px;font-family:'IBM Plex Sans',sans-serif;font-size:48px;font-weight:600;color:#0B2545;letter-spacing:-0.015em;z-index:10;">Five segments scored. One row wins on the math.</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:200px;width:1300px;height:30px;font-family:'Inter',sans-serif;font-size:18px;color:#64748B;z-index:10;">Axes are the public Bain GTM convention<sup style="color:#B91C1C;font-size:13px;">[5]</sup>: TAM × Accessibility (0–10) × Willingness-to-pay (0–10). Composite is the unweighted mean.</div>
+
+  <!-- Axes legend on right -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1480px;top:260px;width:320px;height:540px;background:#F8FAFC;border:1px solid #E2E8F0;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1500px;top:280px;width:280px;height:24px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.22em;color:#0B2545;font-weight:600;z-index:10;">SCORING AXES</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1500px;top:320px;width:280px;height:480px;font-family:'Inter',sans-serif;font-size:14px;line-height:1.5;color:#334155;z-index:10;">
+    <div style="padding:14px 0;border-top:1px solid #E2E8F0;">
+      <div style="font-family:'IBM Plex Sans',sans-serif;font-size:18px;color:#0B2545;font-weight:600;">TAM ($)</div>
+      <div style="margin-top:6px;color:#64748B;">2025 mid-market spend in the forecasting wedge for this vertical.</div>
+    </div>
+    <div style="padding:14px 0;border-top:1px solid #E2E8F0;">
+      <div style="font-family:'IBM Plex Sans',sans-serif;font-size:18px;color:#0B2545;font-weight:600;">Accessibility · 0–10</div>
+      <div style="margin-top:6px;color:#64748B;">Channel fit, sales cycle, decision-maker reach. Founder network on LinkedIn × outbound feasibility.</div>
+    </div>
+    <div style="padding:14px 0;border-top:1px solid #E2E8F0;border-bottom:1px solid #E2E8F0;">
+      <div style="font-family:'IBM Plex Sans',sans-serif;font-size:18px;color:#0B2545;font-weight:600;">WtP · 0–10</div>
+      <div style="margin-top:6px;color:#64748B;">Pilot conversions, LOIs, comp pricing, willingness-to-pay signal from 84 discovery interviews.</div>
+    </div>
+    <div style="padding:14px 0;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#B91C1C;letter-spacing:0.2em;">COMPOSITE</div>
+      <div style="margin-top:6px;color:#334155;">Unweighted mean of normalised TAM, Access, WtP. Highest score wins.</div>
+    </div>
+  </div>
+
+  <!-- Matrix table -->
+  <!-- Header row -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:260px;width:1340px;height:600px;font-family:'JetBrains Mono',monospace;color:#0F172A;z-index:10;">
+    <table style="width:100%;border-collapse:collapse;font-family:'JetBrains Mono',monospace;">
+      <thead>
+        <tr style="background:#0B2545;color:#FFFFFF;">
+          <th style="text-align:left;padding:18px 20px;font-size:12px;letter-spacing:0.2em;font-weight:600;width:40%;">SEGMENT</th>
+          <th style="text-align:right;padding:18px 20px;font-size:12px;letter-spacing:0.2em;font-weight:600;">TAM&nbsp;($)</th>
+          <th style="text-align:right;padding:18px 20px;font-size:12px;letter-spacing:0.2em;font-weight:600;">ACCESS</th>
+          <th style="text-align:right;padding:18px 20px;font-size:12px;letter-spacing:0.2em;font-weight:600;">WTP</th>
+          <th style="text-align:right;padding:18px 20px;font-size:12px;letter-spacing:0.2em;font-weight:600;background:#7F1D1D;">COMPOSITE</th>
+        </tr>
+      </thead>
+      <tbody style="font-family:'Inter',sans-serif;font-size:18px;color:#334155;">
+        <tr style="background:#FFFFFF;border-bottom:1px solid #E2E8F0;">
+          <td style="padding:22px 20px;"><strong style="color:#0B2545;font-family:'IBM Plex Sans',sans-serif;font-size:20px;">F500 — Banking</strong><div style="font-size:13px;color:#64748B;margin-top:4px;font-family:'Inter',sans-serif;">Tier-1 banks, RevOps in capital-markets sales</div></td>
+          <td style="padding:22px 20px;text-align:right;font-family:'JetBrains Mono',monospace;font-size:22px;color:#0F172A;">$4.2B</td>
+          <td style="padding:22px 20px;text-align:right;font-family:'JetBrains Mono',monospace;font-size:22px;color:#0F172A;">3</td>
+          <td style="padding:22px 20px;text-align:right;font-family:'JetBrains Mono',monospace;font-size:22px;color:#0F172A;">9</td>
+          <td style="padding:22px 20px;text-align:right;font-family:'JetBrains Mono',monospace;font-size:24px;font-weight:600;color:#334155;background:#F8FAFC;">5.9</td>
+        </tr>
+        <tr style="background:#FFFFFF;border-bottom:1px solid #E2E8F0;">
+          <td style="padding:22px 20px;"><strong style="color:#0B2545;font-family:'IBM Plex Sans',sans-serif;font-size:20px;">F500 — Healthcare</strong><div style="font-size:13px;color:#64748B;margin-top:4px;font-family:'Inter',sans-serif;">Health systems, medical-device commercial ops</div></td>
+          <td style="padding:22px 20px;text-align:right;font-family:'JetBrains Mono',monospace;font-size:22px;color:#0F172A;">$3.8B</td>
+          <td style="padding:22px 20px;text-align:right;font-family:'JetBrains Mono',monospace;font-size:22px;color:#0F172A;">4</td>
+          <td style="padding:22px 20px;text-align:right;font-family:'JetBrains Mono',monospace;font-size:22px;color:#0F172A;">7</td>
+          <td style="padding:22px 20px;text-align:right;font-family:'JetBrains Mono',monospace;font-size:24px;font-weight:600;color:#334155;background:#F8FAFC;">5.4</td>
+        </tr>
+        <tr style="background:#B91C1C;color:#FFFFFF;border-bottom:1px solid #7F1D1D;">
+          <td style="padding:24px 20px;"><strong style="color:#FFFFFF;font-family:'IBM Plex Sans',sans-serif;font-size:22px;">▸ Mid-market — B2B Tech</strong><div style="font-size:13px;color:#FECACA;margin-top:4px;font-family:'Inter',sans-serif;">250–2,500 FTE, ARR $20–250M, CRO + RevOps buyer</div></td>
+          <td style="padding:24px 20px;text-align:right;font-family:'JetBrains Mono',monospace;font-size:24px;color:#FFFFFF;font-weight:600;">$2.4B</td>
+          <td style="padding:24px 20px;text-align:right;font-family:'JetBrains Mono',monospace;font-size:24px;color:#FFFFFF;font-weight:600;">8</td>
+          <td style="padding:24px 20px;text-align:right;font-family:'JetBrains Mono',monospace;font-size:24px;color:#FFFFFF;font-weight:600;">7</td>
+          <td style="padding:24px 20px;text-align:right;font-family:'JetBrains Mono',monospace;font-size:30px;font-weight:700;color:#FFFFFF;background:#7F1D1D;">7.3</td>
+        </tr>
+        <tr style="background:#FFFFFF;border-bottom:1px solid #E2E8F0;">
+          <td style="padding:22px 20px;"><strong style="color:#0B2545;font-family:'IBM Plex Sans',sans-serif;font-size:20px;">Mid-market — Retail</strong><div style="font-size:13px;color:#64748B;margin-top:4px;font-family:'Inter',sans-serif;">Omnichannel retailers, wholesale-account ops</div></td>
+          <td style="padding:22px 20px;text-align:right;font-family:'JetBrains Mono',monospace;font-size:22px;color:#0F172A;">$1.8B</td>
+          <td style="padding:22px 20px;text-align:right;font-family:'JetBrains Mono',monospace;font-size:22px;color:#0F172A;">6</td>
+          <td style="padding:22px 20px;text-align:right;font-family:'JetBrains Mono',monospace;font-size:22px;color:#0F172A;">5</td>
+          <td style="padding:22px 20px;text-align:right;font-family:'JetBrains Mono',monospace;font-size:24px;font-weight:600;color:#334155;background:#F8FAFC;">5.0</td>
+        </tr>
+        <tr style="background:#FFFFFF;">
+          <td style="padding:22px 20px;"><strong style="color:#0B2545;font-family:'IBM Plex Sans',sans-serif;font-size:20px;">SMB — Tech</strong><div style="font-size:13px;color:#64748B;margin-top:4px;font-family:'Inter',sans-serif;">&lt;250 FTE, founder-led sales orgs</div></td>
+          <td style="padding:22px 20px;text-align:right;font-family:'JetBrains Mono',monospace;font-size:22px;color:#0F172A;">$0.9B</td>
+          <td style="padding:22px 20px;text-align:right;font-family:'JetBrains Mono',monospace;font-size:22px;color:#0F172A;">9</td>
+          <td style="padding:22px 20px;text-align:right;font-family:'JetBrains Mono',monospace;font-size:22px;color:#0F172A;">4</td>
+          <td style="padding:22px 20px;text-align:right;font-family:'JetBrains Mono',monospace;font-size:24px;font-weight:600;color:#334155;background:#F8FAFC;">5.1</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Decision chips at bottom -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:880px;width:1340px;height:80px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.18em;color:#0B2545;z-index:10;">
+    <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+      <span style="background:#B91C1C;color:#FFFFFF;padding:8px 14px;font-weight:600;">PHASE 1 · MID-MARKET B2B TECH</span>
+      <span style="background:#F1F5F9;color:#0B2545;padding:8px 14px;font-weight:500;">DEFERRED · F500-BANKING</span>
+      <span style="background:#F1F5F9;color:#0B2545;padding:8px 14px;font-weight:500;">DEFERRED · F500-HEALTHCARE</span>
+      <span style="background:#F1F5F9;color:#0B2545;padding:8px 14px;font-weight:500;">DEFERRED · MID-RETAIL</span>
+      <span style="background:#F1F5F9;color:#0B2545;padding:8px 14px;font-weight:500;">DEFERRED · SMB-TECH</span>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:1010px;width:1680px;height:20px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.18em;color:#94A3B8;z-index:10;">FORECASTLY GTM · 06 / 23 · TAM SOURCE: GARTNER 2025 + FORRESTER WAVE 2025. ACCESS + WTP SCORED FROM 84 DISCOVERY INTERVIEWS (JAN–APR 2026). FRAMEWORK: BAIN GTM<sup>[5]</sup>.</div>
+
+</div>
+</body>
+</html>

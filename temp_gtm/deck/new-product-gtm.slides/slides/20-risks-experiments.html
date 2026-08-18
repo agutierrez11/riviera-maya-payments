@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Risks + Experiments</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>html,body{margin:0;padding:0;overflow:hidden;background:#FFFFFF;font-family:'Inter',sans-serif;color:#0F172A;}</style>
+</head>
+<body>
+<div class="slide-container" data-screen-label="20 Risks experiments" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#FFFFFF;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:0;top:0;width:1920px;height:6px;background:#B91C1C;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:80px;width:900px;height:24px;font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.28em;color:#B91C1C;font-weight:600;z-index:10;">20 · RISKS · NAMED EXPERIMENTS · KILL CRITERIA</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:120px;width:1500px;height:64px;font-family:'IBM Plex Sans',sans-serif;font-size:48px;font-weight:600;color:#0B2545;letter-spacing:-0.015em;z-index:10;">Three failure modes. Each has an experiment that disproves it.</div>
+
+  <!-- Risk rows -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:240px;width:1680px;height:700px;font-family:'Inter',sans-serif;color:#0F172A;font-size:15px;z-index:10;">
+    <!-- Risk 1 -->
+    <div style="display:grid;grid-template-columns:80px 1fr 1fr 1fr;gap:30px;padding:32px 0;border-top:1px solid #E2E8F0;">
+      <div style="font-family:'JetBrains Mono',monospace;color:#B91C1C;font-size:48px;font-weight:700;line-height:1;letter-spacing:-0.02em;">R1</div>
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#64748B;letter-spacing:0.2em;margin-bottom:8px;">FAILURE MODE</div>
+        <div style="font-family:'IBM Plex Sans',sans-serif;font-size:22px;color:#0B2545;font-weight:600;line-height:1.2;margin-bottom:12px;">Forecast accuracy decays at scale.</div>
+        <div style="color:#334155;line-height:1.5;font-size:14px;">14 cohort customers showed 9.4% median error, but n is small. At 100 customers, mid-quarter rep behaviour drift may degrade accuracy beyond 18% in some segments.</div>
+      </div>
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#B91C1C;letter-spacing:0.2em;margin-bottom:8px;">EXPERIMENT (4 WEEKS)</div>
+        <div style="font-family:'IBM Plex Sans',sans-serif;font-size:18px;color:#0B2545;font-weight:600;line-height:1.25;margin-bottom:10px;">Blind backtest on 20 prospect pipelines.</div>
+        <div style="color:#334155;line-height:1.5;font-size:14px;">Owner: VP Eng + RevOps lead. Run Predict against 4 trailing quarters of prospect data; compare to their actuals; produce dispersion histogram.</div>
+      </div>
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#B91C1C;letter-spacing:0.2em;margin-bottom:8px;">KILL CRITERION</div>
+        <div style="font-family:'IBM Plex Sans',sans-serif;font-size:18px;color:#0B2545;font-weight:600;line-height:1.25;margin-bottom:10px;">If &gt; 30% of cases exceed 18% error.</div>
+        <div style="color:#334155;line-height:1.5;font-size:14px;">→ pause guarantee marketing; engineering recalibrates before next 20 customers signed.</div>
+      </div>
+    </div>
+
+    <!-- Risk 2 -->
+    <div style="display:grid;grid-template-columns:80px 1fr 1fr 1fr;gap:30px;padding:32px 0;border-top:1px solid #E2E8F0;">
+      <div style="font-family:'JetBrains Mono',monospace;color:#B91C1C;font-size:48px;font-weight:700;line-height:1;letter-spacing:-0.02em;">R2</div>
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#64748B;letter-spacing:0.2em;margin-bottom:8px;">FAILURE MODE</div>
+        <div style="font-family:'IBM Plex Sans',sans-serif;font-size:22px;color:#0B2545;font-weight:600;line-height:1.2;margin-bottom:12px;">Clari counter-launches a mid-market SKU.</div>
+        <div style="color:#334155;line-height:1.5;font-size:14px;">Clari has the brand and the cash to ship a mid-market-priced variant within 6 months and bundle it into existing seats. Our differentiation collapses on price.</div>
+      </div>
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#B91C1C;letter-spacing:0.2em;margin-bottom:8px;">EXPERIMENT (6 WEEKS)</div>
+        <div style="font-family:'IBM Plex Sans',sans-serif;font-size:18px;color:#0B2545;font-weight:600;line-height:1.25;margin-bottom:10px;">10 paid head-to-head bake-offs.</div>
+        <div style="color:#334155;line-height:1.5;font-size:14px;">Owner: VP Sales. Offer 10 named prospects a $5K credit to run Predict alongside their existing Clari instance for 30 days. Measure delta in board-ready quality.</div>
+      </div>
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#B91C1C;letter-spacing:0.2em;margin-bottom:8px;">KILL CRITERION</div>
+        <div style="font-family:'IBM Plex Sans',sans-serif;font-size:18px;color:#0B2545;font-weight:600;line-height:1.25;margin-bottom:10px;">If &lt; 5 of 10 prefer Predict.</div>
+        <div style="color:#334155;line-height:1.5;font-size:14px;">→ rewrite slide 12 alternative; pivot positioning to a workflow Clari does not occupy (CFO-side audit).</div>
+      </div>
+    </div>
+
+    <!-- Risk 3 -->
+    <div style="display:grid;grid-template-columns:80px 1fr 1fr 1fr;gap:30px;padding:32px 0;border-top:1px solid #E2E8F0;border-bottom:1px solid #E2E8F0;">
+      <div style="font-family:'JetBrains Mono',monospace;color:#B91C1C;font-size:48px;font-weight:700;line-height:1;letter-spacing:-0.02em;">R3</div>
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#64748B;letter-spacing:0.2em;margin-bottom:8px;">FAILURE MODE</div>
+        <div style="font-family:'IBM Plex Sans',sans-serif;font-size:22px;color:#0B2545;font-weight:600;line-height:1.2;margin-bottom:12px;">Sales cycle is longer than 84 days.</div>
+        <div style="color:#334155;line-height:1.5;font-size:14px;">CFO involvement may stretch procurement timelines. If median cycle exceeds 120 days, the cash plan and headcount triggers slip by a quarter.</div>
+      </div>
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#B91C1C;letter-spacing:0.2em;margin-bottom:8px;">EXPERIMENT (2 WEEKS)</div>
+        <div style="font-family:'IBM Plex Sans',sans-serif;font-size:18px;color:#0B2545;font-weight:600;line-height:1.25;margin-bottom:10px;">CFO-first sales sprint.</div>
+        <div style="color:#334155;line-height:1.5;font-size:14px;">Owner: Founder + Head of Finance. Lead 6 named conversations with the CFO before the CRO. Compare cycle length vs. the RevOps-first control group.</div>
+      </div>
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#B91C1C;letter-spacing:0.2em;margin-bottom:8px;">KILL CRITERION</div>
+        <div style="font-family:'IBM Plex Sans',sans-serif;font-size:18px;color:#0B2545;font-weight:600;line-height:1.25;margin-bottom:10px;">If CFO-first delta ≥ +21 days.</div>
+        <div style="color:#334155;line-height:1.5;font-size:14px;">→ retain RevOps-first sequencing; the CFO becomes a stage-3 stakeholder, not a stage-1 buyer.</div>
+      </div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:1010px;width:1680px;height:20px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.18em;color:#94A3B8;z-index:10;">FORECASTLY GTM · 20 / 23 · EVERY RISK HAS A 2–6 WEEK EXPERIMENT + A NUMERIC KILL CRITERION. NO "MONITOR CLOSELY".</div>
+
+</div>
+</body>
+</html>
