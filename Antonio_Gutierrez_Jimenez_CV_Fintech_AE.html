@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Antonio Gutiérrez Jiménez - Resume</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+    @page {
+      size: letter;
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #1e293b;
+      background-color: #ffffff;
+      line-height: 1.32;
+      font-size: 8.8pt;
+      width: 8.5in;
+      height: 11in;
+      padding: 0.38in 0.45in;
+      position: relative;
+    }
+
+    /* HEADER */
+    .header {
+      border-bottom: 2px solid #0f172a;
+      padding-bottom: 7px;
+      margin-bottom: 9px;
+    }
+
+    .name {
+      font-size: 19pt;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.5px;
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+
+    .headline {
+      font-size: 10pt;
+      font-weight: 700;
+      color: #0284c7;
+      margin-top: 3px;
+      letter-spacing: 0.1px;
+    }
+
+    .contact-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 5px;
+      font-size: 8pt;
+      color: #475569;
+      font-weight: 500;
+    }
+
+    .contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .contact-item a {
+      color: #475569;
+      text-decoration: none;
+    }
+
+    /* SECTIONS */
+    .section {
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-size: 9pt;
+      font-weight: 800;
+      color: #0f172a;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      border-bottom: 1px solid #cbd5e1;
+      padding-bottom: 2px;
+      margin-bottom: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* SUMMARY */
+    .summary-text {
+      font-size: 8.4pt;
+      color: #334155;
+      text-align: justify;
+      line-height: 1.35;
+    }
+
+    /* SKILLS GRID */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px 14px;
+      font-size: 8.2pt;
+      color: #334155;
+    }
+
+    .skill-item strong {
+      color: #0f172a;
+      font-weight: 600;
+    }
+
+    /* EXPERIENCE */
+    .job {
+      margin-bottom: 6.5px;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2px;
+    }
+
+    .job-role {
+      font-size: 9pt;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .job-company {
+      font-weight: 700;
+      color: #0284c7;
+    }
+
+    .job-meta {
+      font-size: 7.8pt;
+      color: #64748b;
+      font-weight: 500;
+    }
+
+    .job-bullets {
+      list-style-type: disc;
+      padding-left: 14px;
+      margin-top: 2px;
+    }
+
+    .job-bullets li {
+      font-size: 8.2pt;
+      color: #334155;
+      margin-bottom: 2px;
+      line-height: 1.28;
+      text-align: justify;
+    }
+
+    .job-bullets li strong {
+      color: #0f172a;
+      font-weight: 600;
+    }
+
+    /* EDUCATION & CERTIFICATIONS */
+    .edu-cert-container {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 12px;
+    }
+
+    .edu-item-title {
+      font-size: 8.4pt;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .edu-item-sub {
+      font-size: 7.8pt;
+      color: #475569;
+    }
+
+    .cert-list {
+      list-style-type: disc;
+      padding-left: 12px;
+    }
+
+    .cert-list li {
+      font-size: 7.8pt;
+      color: #334155;
+      margin-bottom: 1.5px;
+      line-height: 1.22;
+    }
+
+    .cert-list li strong {
+      color: #0f172a;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="name">Antonio Gutiérrez Jiménez</div>
+    <div class="headline">Senior B2B Sales Executive | Fintech, Merchant Acquiring & Payment Infrastructure</div>
+    <div class="contact-bar">
+      <span class="contact-item">📍 Cancún, Quintana Roo, Mexico</span>
+      <span class="contact-item">📞 +52 998 119 1903</span>
+      <span class="contact-item">✉️ antoniogtzjimenez@gmail.com</span>
+      <span class="contact-item">🔗 linkedin.com/in/agjbusiness/</span>
+    </div>
+  </div>
+
+  <!-- PROFESSIONAL SUMMARY -->
+  <div class="section">
+    <div class="section-title">Professional Summary</div>
+    <div class="summary-text">
+      High-performing <strong>B2B Sales Executive</strong> with <strong>5+ years of experience</strong> driving commercial revenue, outbound hunting, and scaling payment technology (PayTech) and merchant acquiring solutions across Mexico and LATAM. Proven track record managing full-cycle sales for Mid-Market & Enterprise accounts, delivering <strong>$69M+ MXN (~$3.8M+ USD)</strong> in cumulative volume. Strong domain expertise in payment gateways, POS/SmartPOS infrastructure, API/ISV integrations, and solving transactional frictions for high-volume merchants with international customer exposure. Co-founder of an active regional community of 500+ payments and fintech professionals.
+    </div>
+  </div>
+
+  <!-- AREAS OF EXPERTISE -->
+  <div class="section">
+    <div class="section-title">Core Competencies & Expertise</div>
+    <div class="skills-grid">
+      <div class="skill-item"><strong>• Payment Tech & Acquiring:</strong> Payment gateways, SmartPOS, multi-currency processing, interchange & fees, fraud mitigation.</div>
+      <div class="skill-item"><strong>• Consultative Sales & Hunting:</strong> End-to-end B2B sales cycles, cold outbound prospecting, C-Level/CFO discovery, pipeline management.</div>
+      <div class="skill-item"><strong>• API & ISV Partnerships:</strong> Commercial negotiations and technical integrations with ERP, PMS, and Point of Sale systems.</div>
+      <div class="skill-item"><strong>• SalesTech & Revenue Ops:</strong> Power BI transactional analytics, Power Automate workflow automation, Salesforce, CRM pipeline hygiene.</div>
+    </div>
+  </div>
+
+  <!-- PROFESSIONAL EXPERIENCE -->
+  <div class="section">
+    <div class="section-title">Professional Experience</div>
+
+    <!-- LATAM PAYMENTS -->
+    <div class="job">
+      <div class="job-header">
+        <div><span class="job-role">Co-Founder</span> | <span class="job-company">LATAM Payments & eCommerce</span></div>
+        <div class="job-meta">05/2024 – Present | LATAM · Remote</div>
+      </div>
+      <ul class="job-bullets">
+        <li>Co-founded and lead an active professional community of <strong>500+ digital payments, acquiring, and fintech specialists</strong> in Mexico and LATAM, analyzing regional payment rails, emerging fintech infrastructure, and cross-border settlement trends.</li>
+      </ul>
+    </div>
+
+    <!-- FISERV -->
+    <div class="job">
+      <div class="job-header">
+        <div><span class="job-role">Business Advisor</span> | <span class="job-company">Fiserv</span></div>
+        <div class="job-meta">02/2025 – 10/2025 | Cancún, Mexico</div>
+      </div>
+      <ul class="job-bullets">
+        <li>Managed commercial retention, portfolio expansion, and churn mitigation for an active portfolio of <strong>80+ high-volume corporate merchants</strong> across hospitality, retail, and commercial services.</li>
+        <li>Designed and deployed a dynamic <strong>Month-over-Month (MoM) transactional monitoring model in Power BI</strong>, identifying cross-sell opportunities and optimizing data-driven commercial decisions.</li>
+        <li>Developed an automated merchant reactivation workflow integrating Power Automate and Salesforce, generating an average of <strong>+15 qualified monthly pipeline opportunities</strong> from banking alliance referrals.</li>
+      </ul>
+    </div>
+
+    <!-- CLIP -->
+    <div class="job">
+      <div class="job-header">
+        <div><span class="job-role">Commercial Advisor – Middle Market / High Potential</span> | <span class="job-company">Clip</span></div>
+        <div class="job-meta">07/2021 – 02/2025 | Cancún, Mexico</div>
+      </div>
+      <ul class="job-bullets">
+        <li><strong>Top Performer & Quota Overachievement:</strong> Ranked in the <strong>Top 12% nationally (#22 out of 184 executives)</strong> in H1 2022; consistently exceeded monthly transactional quotas by <strong>over 280% ($2.8M to $5.8M MXN average vs. $1.0M goal)</strong>, earning 3rd place on the national performance podium.</li>
+        <li><strong>Volume & High-Value Deals:</strong> Built a consolidated portfolio yielding <strong>$69.0M+ MXN (~$3.8M+ USD) in cumulative TPV</strong>, with <strong>75.3% self-generated via outbound hunting</strong>. Achieved an average TPV per deal of $555K MXN (60% above segment benchmark).</li>
+        <li><strong>High-Volume Enterprise Closings:</strong> Successfully prospected and closed top regional accounts with high tourist/international customer inflows and multi-currency volume, including a luxury yacht charter ($14.5M MXN YTD TPV) and an adventure tourism operator ($20.0M MXN YTD TPV).</li>
+        <li><strong>API & ISV Integrations:</strong> Led complex commercial and technical integration negotiations with key software platforms (Bistrosoft, Profitroom, Odoo ERP), reducing merchant operational friction and securing near-zero client churn.</li>
+      </ul>
+    </div>
+
+    <!-- JTI -->
+    <div class="job">
+      <div class="job-header">
+        <div><span class="job-role">Account Executive · Southeast & Bajío</span> | <span class="job-company">Japan Tobacco International (JTI)</span></div>
+        <div class="job-meta">07/2018 – 12/2020 | Cancún & Aguascalientes, Mexico</div>
+      </div>
+      <ul class="job-bullets">
+        <li>Led territorial Key Account Management (KAM) in the HORECA sector, achieving <strong>+40% growth in Share of Opportunity</strong> in Cancún and Riviera Maya vs. prior year.</li>
+        <li>Expanded active commercial client base by <strong>+35%</strong>, negotiating direct distribution agreements with <strong>100+ premium hotels and international hospitality chains</strong>. Coordinated a 3-person field sales team in Bajío.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- EDUCATION & CONTINUOUS TRAINING -->
+  <div class="section">
+    <div class="section-title">Education & Certifications</div>
+    <div class="edu-cert-container">
+      <div>
+        <div class="edu-item-title">Bachelor's Degree in Commercial Relations</div>
+        <div class="edu-item-sub"><strong>Licenciatura en Relaciones Comerciales (Titulado)</strong></div>
+        <div class="edu-item-sub">Instituto Politécnico Nacional (IPN) — Mexico | 2014 – 2018</div>
+      </div>
+      <div>
+        <ul class="cert-list">
+          <li><strong>McKinsey Forward Program</strong> (McKinsey.org · 120h) — Adaptive leadership & problem solving.</li>
+          <li><strong>Growth 101</strong> (Kurios · 30h) — B2B growth and rapid experimentation frameworks.</li>
+          <li><strong>Mastering Ventas</strong> (Sales Professional · 70h) — B2B sales playbooks & SalesTech automation.</li>
+          <li><strong>SDR Course – First Meeting</strong> (LATAM SDR Leaders · 16h) — Outbound cold prospecting.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
